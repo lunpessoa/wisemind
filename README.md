@@ -1,0 +1,2 @@
+# wisemind
+plataforma educativa
