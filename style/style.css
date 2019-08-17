@@ -1,0 +1,97 @@
+body{
+    height: 2000px;
+}
+.text-warning:hover{
+    color: none;
+    color:#fff;
+}
+
+.navbarMenuItens{
+    margin-top: 45px; 
+    z-index: 1;
+    transition: 0.1s;
+    box-shadow: 5px 10px 10px rgba(0,0,0,0.5);
+}
+
+
+/* JQUERY Menu */
+
+.navbarMenuItens.hide{
+    transform: translateY(-45px);
+}
+
+.svgRetrat{
+    transform: scale(0.8) translateY(-20px);
+}
+
+.logoRetrat{
+    transform: scale(0.9) translateY(5px);
+}
+
+@media (max-width: 800px) {
+    .fundoLogo{
+        transform: scale(0.7) translateY(10px);
+    }
+    .svgLogo{
+        transform: scale(1.1) translateY(-15px);
+    }
+
+    .svgRetrat{
+        transform: scale(0.6) translateY(-20px);
+    }
+    
+    .logoRetrat{
+        transform: scale(1) translateY(-6px);
+    }
+}
+
+@media (max-width: 576px) {
+    .fundoLogo{
+        transform: scale(0.35) translateY(110px);
+    }
+    .svgLogo{
+        transform: scale(1.1) translateY(-15px);
+    }
+
+    .svgRetrat{
+        transform: scale(0.5) translateY(-20px);
+    }
+    
+    .logoRetrat{
+        transform: scale(1) translateY(-6px);
+    }
+}
+
+/* JQUERY Menu */
+
+
+.logoWiseMind{
+    position: relative; 
+    left:50%; 
+    transform: translateX(-50%); 
+    top:70px;
+    width:150px;
+    height:150px;
+}
+
+#logo{
+    position: fixed;
+    z-index: 2;
+    left:50%; 
+    transform: translateX(-50%);
+}
+
+#botoes-entrada button{
+    cursor: pointer;
+}
+
+.fundoLogo{
+    background-color: white; 
+    width:200px; 
+    height: 200px;
+    margin-top:-110px; 
+    border-radius:100%;
+    transition: 0.1s;
+    box-shadow: 5px 10px 10px rgba(0,0,0,0.5);
+}
+
