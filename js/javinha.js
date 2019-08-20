@@ -12,3 +12,7 @@ $(document).ready(function(){
             $('.svgLogo').toggleClass('logoRetrat', $(window).scrollTop() > zero);
     })
 })
+
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+})

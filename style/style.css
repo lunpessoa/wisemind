@@ -1,97 +1,175 @@
-body{
-    height: 2000px;
-}
-.text-warning:hover{
+body {}
+
+.text-warning:hover {
     color: none;
-    color:#fff;
+    color: #fff;
 }
 
-.navbarMenuItens{
-    margin-top: 45px; 
+.navbarMenuItens {
+    margin-top: 45px;
     z-index: 1;
     transition: 0.1s;
-    box-shadow: 5px 10px 10px rgba(0,0,0,0.5);
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.5);
 }
 
+.areas-slide {
+    margin-top: 50px;
+}
+
+.areasLinks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.areasLinks:hover {
+    filter: brightness(80%);
+}
+
+.iconsArea {
+    font-size: 35px;
+}
+
+.lista-area-links {
+    width: 100%;
+    background-color: #000;
+    height: 80px;
+}
 
 /* JQUERY Menu */
 
-.navbarMenuItens.hide{
+.navbarMenuItens.hide {
     transform: translateY(-45px);
 }
 
-.svgRetrat{
+.svgRetrat {
     transform: scale(0.8) translateY(-20px);
 }
 
-.logoRetrat{
+.logoRetrat {
     transform: scale(0.9) translateY(5px);
 }
-
+@media (max-width: 992px) {
+    .content_student{
+        display: none;
+        
+    }
+    .content_profissional{
+        display: none;
+    }
+    .student{
+        background-position: -250px;
+    }
+}
 @media (max-width: 800px) {
-    .fundoLogo{
+    .fundoLogo {
         transform: scale(0.7) translateY(10px);
     }
-    .svgLogo{
+
+    .svgLogo {
         transform: scale(1.1) translateY(-15px);
     }
 
-    .svgRetrat{
+    .svgRetrat {
         transform: scale(0.6) translateY(-20px);
     }
-    
-    .logoRetrat{
+
+    .logoRetrat {
         transform: scale(1) translateY(-6px);
+    }
+    .student{
+        background-position: -350px;
     }
 }
 
 @media (max-width: 576px) {
-    .fundoLogo{
-        transform: scale(0.35) translateY(110px);
-    }
-    .svgLogo{
-        transform: scale(1.1) translateY(-15px);
+    .fundoLogo {
+        transform: scale(0.28) translateY(115px);
     }
 
-    .svgRetrat{
-        transform: scale(0.5) translateY(-20px);
+    .svgLogo {
+        transform: scale(1.2) translateY(-25px);
     }
-    
-    .logoRetrat{
-        transform: scale(1) translateY(-6px);
+
+    .svgRetrat {
+        transform: scale(0.4) translateY(-50px);
+    }
+
+    .logoRetrat {
+        transform: scale(1) translateY(-10px);
+    }
+
+    .lista-area-links {
+        height: 50px;
+    }
+
+    .iconsArea {
+        font-size: 20px;
+    }
+    .student{
+        background-position: -350px;
     }
 }
 
 /* JQUERY Menu */
 
 
-.logoWiseMind{
-    position: relative; 
-    left:50%; 
-    transform: translateX(-50%); 
-    top:70px;
-    width:150px;
-    height:150px;
+.logoWiseMind {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 70px;
+    width: 150px;
+    height: 150px;
 }
 
-#logo{
+#logo {
     position: fixed;
     z-index: 2;
-    left:50%; 
+    left: 50%;
     transform: translateX(-50%);
 }
 
-#botoes-entrada button{
+#botoes-entrada button {
     cursor: pointer;
 }
 
-.fundoLogo{
-    background-color: white; 
-    width:200px; 
+.fundoLogo {
+    background-color: white;
+    width: 200px;
     height: 200px;
-    margin-top:-110px; 
-    border-radius:100%;
+    margin-top: -110px;
+    border-radius: 100%;
     transition: 0.1s;
-    box-shadow: 5px 10px 10px rgba(0,0,0,0.5);
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.5);
 }
-
+.student{
+    width:100%; 
+    height: 400px;
+    background-image: url('../img/estudante.jpg');
+    background-attachment: fixed;
+    background-size:cover;
+}
+.profissional{
+    width:100%; 
+    height: 400px;
+    position: relative;
+    background-image: url('../img/profissional.png');
+    background-size: cover; 
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+.content_student{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: #fff;
+    clip-path: polygon(0% 0%, 0% 101%, 60% 101%, 40% 0%, 0% 0%);
+}
+.content_profissional{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: #fff;
+    clip-path: polygon(100% 0%, 100% 101%, 40% 101%, 50% 0%, 100% 0%);
+}
