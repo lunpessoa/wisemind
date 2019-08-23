@@ -37,7 +37,7 @@
 			<section class="col-12 col-md-4">
 				<a class="btn" href="#">
 					<section class="card">
-						<img src="img/fundo_azul.png" class="card-img-top" alt="...">
+						<img src="img/slide.gif" class="card-img-top" alt="...">
 						<section class="card-body text-center">
 							<h3 class="card-title h3"><b><em>Medicina</em></b></h3>
 						</section>
