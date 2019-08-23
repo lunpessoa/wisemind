@@ -174,39 +174,8 @@
     </section>
   </section>
 
-  <section class="container-fluid">
-  <section class="row">
-          <section class="col-12 mb-3"><hr></section>
-          <section class="col-sm-4">
-            <h3 class="text-center">Curso</h3>
-            <p class="text-left">g Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-          </section>
-          <section class="col-sm-4">
-            <h3 class="text-center">Menu</h3>
-            <section class="list-group text-center">
-              <a href="" class="list-group-item list-group-item-action list-group-item-warning">Perfil</a>
-              <a href="" class="list-group-item list-group-item-action list-group-item-warning">Serviços</a>
-              <a href="" class="list-group-item list-group-item-action list-group-item-warning">Depoimentos</a>
-              <a href="" class="list-group-item list-group-item-action list-group-item-warning">Contatos</a>
-            </section>
-          </section>
-          <section class="col-sm-4">
-            <h3 class="text-center">Social</h3>
-            <section class="btn-group-vertical btn-block btn-group-lg" role="group">
-              <a class="btn btn-warning" href=""><i class="fab fa-facebook-f"></i> Facebook</a>
-              <a class="btn btn-primary" href=""><i class="fab fa-twitter"></i> Twitter</a>
-              <a class="btn btn-warning" href=""><i class="fab fa-instagram"></i> Instagram</a>
-            </section>
-          </section>
-          <section class="col-12 mt-5">
-            <blockquote class="blockquote text-center">
-              <p class="mb-0">O sucesso não é garantido, mas o fracasso é certo se você não estiver emocionalmente envolvido com seu trabalho</p>
-              <footer class="blockquote-footer">Biz Stone <cite title="titulo">Fundador do Twitter</cite></footer>
-            </blockquote>
-          </section>
-        </section>
-      </section>
-</section>
+  <?php include('rodape.html'); ?>
+  
 </body>
 
 </html>
