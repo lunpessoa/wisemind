@@ -1,0 +1,36 @@
+body{
+    background-image: url("../img/.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: 'Numans', sans-serif;
+    }
+    
+    .container{
+    height: 100%;
+    align-content: center;
+    }
+    
+    .card{
+    height: 500px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 600px;
+    background-color: rgba(0,0,0,0.5) !important;
+    box-shadow: 5px 5px 40px black;
+    border-radius: 10px;
+    }
+    
+    .card-header h3{
+    color: white;
+    }
+    
+    .links{
+    color: white;
+    }
+    
+    #botao-voltar{
+        margin-left: 170px;
+        margin-top: -45px;
+    }
+    

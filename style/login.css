@@ -1,0 +1,111 @@
+body {
+    background-image: url("../img/back3.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: 'Numans', sans-serif;
+}
+
+.card {
+    width: 40%;
+    -webkit-box-shadow: 2px -3px 48px -14px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px -3px 48px -14px rgba(0, 0, 0, 0.75);
+    box-shadow: 2px -3px 48px -14px rgba(0, 0, 0, 0.75);
+}
+
+.login_btn:hover {
+    color: black;
+    background-color: white;
+}
+
+.text-font {
+    font-family: "Calibri";
+}
+
+.entrar {
+    background-color: #ffcf29;
+}
+
+.entrar:hover {
+    background-color: #e0b000;
+}
+
+.fundoLogo {
+    background-color: white;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    transition: 0.1s;
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+.svg-login {
+    animation: move_eye 50s linear infinite alternate;
+}
+
+.card{
+    animation: zoomInDown 0.5s linear;
+}
+
+@keyframes move_eye{
+    from{
+        transform: rotate(30deg);
+    }
+    20%{
+        transform: rotate(-10deg);
+    }
+    40%{
+        transform: rotate(10deg);
+    }
+    60%{
+        transform: rotate(30deg);
+    }
+    80%{
+        transform: rotate(-20deg);
+    }
+    100%{
+        transform: rotate(30deg);
+    }
+}
+
+@-webkit-keyframes zoomInDown {
+    from {
+        opacity: 0;
+        -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -1000px, 0);
+        transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -1000px, 0);
+        -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+        animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+
+    60% {
+        opacity: 1;
+        -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
+        transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
+        -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+        animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    }
+}
+
+@keyframes zoomInDown {
+    from {
+        opacity: 0;
+        -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -1000px, 0);
+        transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -1000px, 0);
+        -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+        animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+
+    60% {
+        opacity: 1;
+        -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
+        transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
+        -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+        animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    }
+}
+
+.zoomInDown {
+    -webkit-animation-name: zoomInDown;
+    animation-name: zoomInDown;
+}

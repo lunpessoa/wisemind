@@ -1,0 +1,35 @@
+body{
+    background-image: url("../img/fundo-amarelo.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: 'Numans', sans-serif;
+}
+    
+ .container{
+    margin-left: 0px;
+}
+        
+.card{
+    height: 380px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 600px;
+    background-color: rgb(78, 78, 78) !important;
+    box-shadow: 5px 5px 40px black;
+    border-radius: 10px;
+}
+    
+.card-header h3{
+    color: #ffce2a;
+    font-weight: bold;
+    
+}
+
+.card-header h5{
+    color: white;
+}
+    
+.links{
+    color: white;
+}
