@@ -55,7 +55,7 @@
 		</section>
 	</section>
 
-
+	<?php include('teste.svg'); ?>
 	<div class="container d-flex align-items-center" style="height: 100vh;">
 		<div class="card border border-0 bg-transparent" style="border-radius: 10px;">
 			<div class="card-header border-bottom-0 bg-dark"
@@ -123,14 +123,14 @@
 							</div>
 						</div>
 						<div class="row " id="rua">
-							<div class="col-10">
+							<div class="col-8">
 								<label style="color:#b5b5b5; text-dark" class="text-font">Rua</label>
 								<div class="input-group form-group">
 									<input type="text" class="form-control text-light"
 										style="background-color:#282d30; border-color:#1f1f1f;">
 								</div>
 							</div>
-							<div class="col-2" id="numero">
+							<div class="col-4" id="numero">
 								<label class="text-font" style="color:#b5b5b5;">N°</label>
 								<div class="input-group form-group">
 									<input type="text" class="form-control text-light"
@@ -156,6 +156,27 @@
 						</div>
 					</div>
 					<div id="fase3" style="display: none;">
+						<div class="row">
+							<div class="col-12">
+								<label style="color:#b5b5b5; text-dark" class="text-font">Certicado</label>
+								<div class="input-group form-group">
+									<input type="text" class="form-control text-light"
+										style="background-color:#282d30; border-color:#1f1f1f;">
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-12" id="cidade">
+								<label class="text-font" style="color:#b5b5b5;">Experiência</label>
+								<div class="input-group form-group">
+									<textarea type="text" class="form-control text-light" rows="5"
+										style="background-color:#282d30; border-color:#1f1f1f;resize: none;">
+									</textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="fase4" style="display: none;">
 						<div class="row">
 							<div class="col-12">
 								<label style="color:#b5b5b5; text-dark" class="text-font">E-mail</label>
@@ -185,29 +206,30 @@
 						</div>
 					</div>
 					<div class="form-group  justify-content-center mt-3" style="display: none;" id="enviar">
-							<button type="submit" value="Criar" class="btn w-50 entrar"
-								style="font-waight:bold; font-family:'Franklin Gothic';" > <i
-									class="fas fa-arrow-right"></i>
-							</button>
-		
-						</div>
+						<button type="submit" value="Criar" class="btn w-50 entrar"
+							style="font-waight:bold; font-family:'Franklin Gothic';">Criar</i>
+						</button>
+
+					</div>
 
 				</form>
+
 				<div class="form-group justify-content-center mt-3" id="botao" style="display: flex;">
 					<button type="submit" value="Criar" class="btn w-50 entrar"
-						style="font-waight:bold; font-family:'Franklin Gothic';" > <i
-							class="fas fa-arrow-right"></i>
+						style="font-waight:bold; font-family:'Franklin Gothic';"> <i class="fas fa-arrow-right"></i>
 					</button>
-
 				</div>
-				<div class="form-group  justify-content-center mt-3" style="display: none;" id="botao2">
+				<div class="form-group justify-content-center mt-3" id="botao2" style="display: none;">
 					<button type="submit" value="Criar" class="btn w-50 entrar"
-						style="font-waight:bold; font-family:'Franklin Gothic';" > <i
-							class="fas fa-arrow-right"></i>
+						style="font-waight:bold; font-family:'Franklin Gothic';"> <i class="fas fa-arrow-right"></i>
 					</button>
-
 				</div>
-				
+				<div class="form-group  justify-content-center mt-3" style="display: none;" id="botao3">
+					<button type="submit" value="Criar" class="btn w-50 entrar"
+						style="font-waight:bold; font-family:'Franklin Gothic';"> <i class="fas fa-arrow-right"></i>
+					</button>
+				</div>
+
 			</div>
 			<div class="card-footer bg-dark border-top-0 text-center text-font"
 				style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; color:#b5b5b5;">
@@ -220,38 +242,9 @@
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="node_modules/jquery/dist/jquery.js"></script>
-	<script src="js/javinha.js"></script>
+	<script src="js/cadastro.js"></script>
 	<script src="node_modules/popper.js/dist/umd/popper.js"></script>
 	<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
-	<script>
-		var fase1 = document.getElementById("fase1")
-		var fase2 = document.getElementById("fase2")
-		var fase3 = document.getElementById("fase3")
-		var botao = document.getElementById("botao")
-		var botao2 = document.getElementById("botao2")
-		var enviar = document.getElementById("enviar")
-
-		botao.onclick = () => {
-			fase1.style.display = "none"
-			fase2.style.display = "block"
-			botao2.style.display = "flex"
-			botao.style.display = "none"
-		}
-
-		botao2.onclick = () =>{
-			fase2.style.display = "none"
-			fase3.style.display = "block"
-			enviar.style.display = "flex"
-			botao2.style.display = "none"
-		}
-
-		enviar.onclick = () =>{
-			alert("cadastrado com sucesso")
-			window.location.href = "index.php"
-		}
-
-
-	</script>
 </body>
 
 </html>
