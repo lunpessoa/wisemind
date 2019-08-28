@@ -65,34 +65,23 @@
 						<h1 class="h1 text-warning"><b>WISE MIND</b></h1>
 					</div>
 					<div class="col-12 text-center">
-						<h6 class="text-light text-font h5">Boas-vindas de volta!</h6>
+						<h6 class="text-light text-font h5">O que você é?</h6>
 					</div>
 				</div>
 			</div>
 			<div class="card-body bg-dark border-0">
-				<form>
-					<label style="color:#b5b5b5;" class="text-font">E-mail</label>
-					<div class="input-group form-group">
-						<input type="text" class="form-control text-light"
-							style="background-color:#282d30; border-color:#1f1f1f;">
+				<div class="row text-center">
+					<div class="col-6">
+						<a href="cad-estudy.php" class="btn text-light"><i class="fas fa-user-graduate" style="font-size:100px"></i><br><label class="mt-1 text-font">Estudante</label></a>
 					</div>
-					<label class="text-font" style="color:#b5b5b5;">Senha</label>
-					<div class="input-group form-group">
-						<input type="password" class="form-control text-light"
-							style="background-color:#282d30; border-color:#1f1f1f;">
+					<div class="col-6">
+						<a href="cad-prof.php" class="btn text-light"><i class="fas fa-user-tie" style="font-size:100px"></i><br><label class="mt-1 text-font">Profissional</label></a>
 					</div>
-					<div class="d-flex justify-content links">
-						<a href="#" class="btn text-warning p-0 mb-3 text-font">Esqueceu sua senha?</a>
-					</div>
-					<div class="form-group d-flex justify-content-center mt-3">
-						<input type="submit" value="Entrar" class="btn w-50 entrar"
-							style="font-waight:bold; font-family:'Franklin Gothic';">
-					</div>
-				</form>
+				</div>
 			</div>
 			<div class="card-footer bg-dark border-top-0 text-center text-font"
 				style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; color:#b5b5b5;">
-				Não possui conta? <a href="op-cad.php" class="btn text-warning p-0">Criar!</a>
+				Já possui conta? <a href="login.php" class="btn text-warning p-0">Entrar!</a>
 			</div>
 		</div>
 	</div>

@@ -51,7 +51,7 @@
 					<polygon class="fil3" points="257,631 254,652 173,652 129,457 141,402 " />
 					<polygon class="fil0" points="210,27 48,27 189,643 325,643 " />
 				</g>
-			</svg>	
+			</svg>
 		</section>
 	</section>
 
@@ -65,34 +65,80 @@
 						<h1 class="h1 text-warning"><b>WISE MIND</b></h1>
 					</div>
 					<div class="col-12 text-center">
-						<h6 class="text-light text-font h5">Boas-vindas de volta!</h6>
+						<h6 class="text-light text-font h5">Torne-se um Wiser!</h6>
 					</div>
 				</div>
 			</div>
 			<div class="card-body bg-dark border-0">
 				<form>
-					<label style="color:#b5b5b5;" class="text-font">E-mail</label>
-					<div class="input-group form-group">
-						<input type="text" class="form-control text-light"
-							style="background-color:#282d30; border-color:#1f1f1f;">
+					<div class="row">
+						<div class="col-6">
+							<label style="color:#b5b5b5; text-dark" class="text-font">Nome</label>
+							<div class="input-group form-group">
+								<input type="text" class="form-control text-light"
+									style="background-color:#282d30; border-color:#1f1f1f;">
+							</div>
+						</div>
+						<div class="col-6">
+							<label class="text-font" style="color:#b5b5b5;">Sobrenome</label>
+							<div class="input-group form-group">
+								<input type="text" class="form-control text-light"
+									style="background-color:#282d30; border-color:#1f1f1f;">
+							</div>
+						</div>
 					</div>
-					<label class="text-font" style="color:#b5b5b5;">Senha</label>
-					<div class="input-group form-group">
-						<input type="password" class="form-control text-light"
-							style="background-color:#282d30; border-color:#1f1f1f;">
+					<div class="row">
+						<div class="col-6">
+							<label style="color:#b5b5b5; text-dark" class="text-font">Data de Nascimento</label>
+							<div class="input-group form-group">
+								<input type="date" class="form-control text-light"
+									style="background-color:#282d30; border-color:#1f1f1f;">
+							</div>
+						</div>
+						<div class="col-6">
+							<label class="text-font" style="color:#b5b5b5;">Celular</label>
+							<div class="input-group form-group">
+								<input type="password" class="form-control text-light"
+									style="background-color:#282d30; border-color:#1f1f1f;">
+							</div>
+						</div>
 					</div>
-					<div class="d-flex justify-content links">
-						<a href="#" class="btn text-warning p-0 mb-3 text-font">Esqueceu sua senha?</a>
+					<div class="row">
+						<div class="col-12">
+							<label style="color:#b5b5b5; text-dark" class="text-font">E-mail</label>
+							<div class="input-group form-group">
+								<input type="text" class="form-control text-light"
+									style="background-color:#282d30; border-color:#1f1f1f;">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<label style="color:#b5b5b5; text-dark" class="text-font">Senha</label>
+							<div class="input-group form-group">
+								<input type="password" class="form-control text-light"
+									style="background-color:#282d30; border-color:#1f1f1f;">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<label style="color:#b5b5b5; text-dark" class="text-font">Confirmar Senha</label>
+							<div class="input-group form-group">
+								<input type="password" class="form-control text-light"
+									style="background-color:#282d30; border-color:#1f1f1f;">
+							</div>
+						</div>
 					</div>
 					<div class="form-group d-flex justify-content-center mt-3">
-						<input type="submit" value="Entrar" class="btn w-50 entrar"
+						<input type="submit" value="Criar" class="btn w-50 entrar"
 							style="font-waight:bold; font-family:'Franklin Gothic';">
 					</div>
 				</form>
 			</div>
 			<div class="card-footer bg-dark border-top-0 text-center text-font"
 				style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; color:#b5b5b5;">
-				Não possui conta? <a href="op-cad.php" class="btn text-warning p-0">Criar!</a>
+				Já possui conta? <a href="login.php" class="btn text-warning p-0">Entrar!</a>
 			</div>
 		</div>
 	</div>
