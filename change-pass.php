@@ -61,38 +61,32 @@
 			<div class="card-header border-bottom-0 bg-dark"
 				style="border-top-left-radius: 10px; border-top-right-radius: 10px;">
 				<div class="row">
-					<div class="col-12 text-center">
-						<h1 class="h1 text-warning"><b>WISE MIND</b></h1>
+						<div class="col-12 text-center">
+							<h1 class="h4 text-warning"><b>REDEFINIR SENHA</b></h1>
+						</div>
+						<div class="col-12 text-center mt-3">
+							<h6 class="text-font h5" style="color:#b5b5b5;">Alterar senha, lembre-se de não esquece-la!
+							</h6>
+						</div>
 					</div>
-					<div class="col-12 text-center">
-						<h6 class="text-light text-font h5">Boas-vindas de volta!</h6>
-					</div>
-				</div>
 			</div>
-			<div class="card-body bg-dark border-0">
+			<div class="card-body bg-dark border-0" style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
 				<form>
-					<label style="color:#b5b5b5;" class="text-font">E-mail</label>
+					<label style="color:#b5b5b5;" class="text-font">Senha</label>
 					<div class="input-group form-group">
 						<input type="text" class="form-control text-light"
 							style="background-color:#282d30; border-color:#1f1f1f;">
 					</div>
-					<label class="text-font" style="color:#b5b5b5;">Senha</label>
+					<label class="text-font" style="color:#b5b5b5;">Confirmar Senha</label>
 					<div class="input-group form-group">
 						<input type="password" class="form-control text-light"
 							style="background-color:#282d30; border-color:#1f1f1f;">
 					</div>
-					<div class="d-flex justify-content links">
-						<a href="fgt.php" class="btn text-warning p-0 mb-3 text-font">Esqueceu sua senha?</a>
-					</div>
-					<div class="form-group d-flex justify-content-center mt-3">
-						<input type="submit" value="Entrar" class="btn w-50 entrar"
+					<div class="form-group d-flex justify-content-center mt-5">
+						<input type="submit" value="Redefinir" class="btn w-50 entrar"
 							style="font-waight:bold; font-family:'Franklin Gothic';">
 					</div>
 				</form>
-			</div>
-			<div class="card-footer bg-dark border-top-0 text-center text-font"
-				style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; color:#b5b5b5;">
-				Não possui conta? <a href="op-cad.php" class="btn text-warning p-0">Criar!</a>
 			</div>
 		</div>
 	</div>
