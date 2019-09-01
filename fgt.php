@@ -56,68 +56,100 @@
 	</section>
 
 	<?php include('teste.svg'); ?>
+
 	<div class="container d-flex align-items-center" style="height: 100vh;">
 		<div class="card border border-0 bg-transparent" style="border-radius: 10px;">
-			<div id="fase1">
-				<div class="card-header border-bottom-0 bg-dark"
-					style="border-top-left-radius: 10px; border-top-right-radius: 10px;">
-					<div class="row">
-						<div class="col-12 text-center">
-							<h1 class="h4 text-warning"><b>REDEFINIR SENHA</b></h1>
-						</div>
-						<div class="col-12 text-center mt-3">
-							<h6 class="text-font h5" style="color:#b5b5b5;">Um código será enviado ao seu endereço de email para redefinir sua senha.								endereço de email.
-							</h6>
-						</div>
+
+			<div class="card-header border-bottom-0 bg-dark"
+				style="border-top-left-radius: 10px; border-top-right-radius: 10px;">
+
+				<div class="row">
+					<div class="col-12 text-center">
+						<h1 class="h4 text-warning"><b id="titulo">REDEFINIR SENHA</b></h1>
 					</div>
 				</div>
-				<div class="card-body bg-dark border-0"
-					style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
-					<form>
+
+			</div>
+
+			<div class="card-body bg-dark border-0">
+				<form>
+
+					<div id="fase1">
+						<div class="row">
+							<div class="col-12 text-center mt-3">
+								<h6 class="text-font h5" style="color:#b5b5b5;">Um código será enviado ao seu endereço
+									de
+									email para redefinir sua senha.
+								</h6>
+							</div>
+						</div>
 						<label class="text-font" style="color:#b5b5b5;">E-mail</label>
 						<div class="input-group form-group mb-5">
 							<input type="text" class="form-control text-light"
 								style="background-color:#282d30; border-color:#1f1f1f;">
 						</div>
-						<div class="form-group d-flex justify-content-center mt-3">
-							<input type="submit" id="enviar" value="Enviar email" class="btn w-50 entrar"
-								style="font-waight:bold; font-family:'Franklin Gothic';">
+					</div>
+
+					<div id="fase2" style="display: none;">
+						<div class="row">
+							<div class="col-12 text-center mt-3">
+								<h6 class="text-font h5" style="color:#b5b5b5;">
+									Insira o código enviado ao e-mail (Colocar código que apareça o email digitado).
+								</h6>
+							</div>
 						</div>
-					</form>
-				</div>
-			</div>
-			<div id="fase2" style="display: none;">
-				<div class="card-header border-bottom-0 bg-dark"
-					style="border-top-left-radius: 10px; border-top-right-radius: 10px;">
-					<div class="row">
-						<div class="col-12 text-center">
-							<h1 class="h4 text-warning"><b>REDEFINIR SENHA</b></h1>
-						</div>
-						<div class="col-12 text-center mt-3">
+						<div class="col-12 text-center mt-3" style="display: none;">
 							<h6 class="text-font h5" style="color:#b5b5b5;">Insira o código enviado.
 							</h6>
 						</div>
-					</div>
-				</div>
-				<div class="card-body bg-dark border-0"
-					style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
-					<form>
+
+
 						<label class="text-font" style="color:#b5b5b5;">Código</label>
 						<div class="input-group form-group mb-5">
 							<input type="text" class="form-control text-light"
 								style="background-color:#282d30; border-color:#1f1f1f;">
 						</div>
-						<div class="form-group d-flex justify-content-center mt-3">
+						<div class="form-group  justify-content-center " style="display: flex;">
 							<input type="submit" id="botao" value="Enviar código" class="btn w-50 entrar"
 								style="font-waight:bold; font-family:'Franklin Gothic';">
 						</div>
-					</form>
+					</div>
+
+
+
+
+				</form>
+				<div class="form-group justify-content-center " id="enviar" style="display: flex;">
+					<button type="submit" value="Enviar" class="btn w-50 entrar"
+						style="font-waight:bold; font-family:'Franklin Gothic';">Enviar Email
+					</button>
 				</div>
+
+
+
 			</div>
+
+
+
+
+
+
 		</div>
 	</div>
 
+	<script>
+		var fase1 = document.getElementById("fase1")
+		var fase2 = document.getElementById("fase2")
+		var botao = document.getElementById("botao")
+		var enviar = document.getElementById("enviar")
 
+		enviar.onclick = () => {
+			fase1.style.display = "none"
+			fase2.style.display = "block"
+			enviar.style.display = "none"
+			botao.style.display = "block"
+		}
+	</script>
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="node_modules/jquery/dist/jquery.js"></script>
