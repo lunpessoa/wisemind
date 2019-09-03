@@ -70,19 +70,19 @@
 				</div>
 			</div>
 			<div class="card-body bg-dark border-0">
-				<form>
+				<form name="cad" action="cadastro.php" method="POST">
 					<div class="row">
 						<div class="col-6">
 							<label style="color:#b5b5b5; text-dark" class="text-font">Nome</label>
 							<div class="input-group form-group">
-								<input type="text" class="form-control text-light"
+								<input type="text" class="form-control text-light" name="nome"
 									style="background-color:#282d30; border-color:#1f1f1f;">
 							</div>
 						</div>
 						<div class="col-6">
 							<label class="text-font" style="color:#b5b5b5;">Sobrenome</label>
 							<div class="input-group form-group">
-								<input type="text" class="form-control text-light"
+								<input type="text" class="form-control text-light" name="sobrenome"
 									style="background-color:#282d30; border-color:#1f1f1f;">
 							</div>
 						</div>
@@ -91,14 +91,14 @@
 						<div class="col-6">
 							<label style="color:#b5b5b5; text-dark" class="text-font">Data de Nascimento</label>
 							<div class="input-group form-group">
-								<input type="date" class="form-control text-light"
+								<input type="date" class="form-control text-light" name="datanasc"
 									style="background-color:#282d30; border-color:#1f1f1f;">
 							</div>
 						</div>
 						<div class="col-6">
 							<label class="text-font" style="color:#b5b5b5;">Celular</label>
 							<div class="input-group form-group">
-								<input type="password" class="form-control text-light"
+								<input type="text" placeholder="(**) *****-****" class="form-control text-light" name="celular"
 									style="background-color:#282d30; border-color:#1f1f1f;">
 							</div>
 						</div>
@@ -107,7 +107,7 @@
 						<div class="col-12">
 							<label style="color:#b5b5b5; text-dark" class="text-font">E-mail</label>
 							<div class="input-group form-group">
-								<input type="text" class="form-control text-light"
+								<input type="text" class="form-control text-light" name="email"
 									style="background-color:#282d30; border-color:#1f1f1f;">
 							</div>
 						</div>
@@ -116,7 +116,7 @@
 						<div class="col-12">
 							<label style="color:#b5b5b5; text-dark" class="text-font">Senha</label>
 							<div class="input-group form-group">
-								<input type="password" class="form-control text-light"
+								<input type="password" class="form-control text-light" name="senha"
 									style="background-color:#282d30; border-color:#1f1f1f;">
 							</div>
 						</div>
@@ -125,13 +125,13 @@
 						<div class="col-12">
 							<label style="color:#b5b5b5; text-dark" class="text-font">Confirmar Senha</label>
 							<div class="input-group form-group">
-								<input type="password" class="form-control text-light"
+								<input type="password" class="form-control text-light" name="confirme"
 									style="background-color:#282d30; border-color:#1f1f1f;">
 							</div>
 						</div>
 					</div>
 					<div class="form-group d-flex justify-content-center mt-3">
-						<input type="submit" value="Criar" class="btn w-50 entrar"
+						<input type="submit" value="Criar" class="btn w-50 entrar" name="criar"
 							style="font-waight:bold; font-family:'Franklin Gothic';">
 					</div>
 				</form>
