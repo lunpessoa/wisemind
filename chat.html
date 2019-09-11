@@ -78,10 +78,17 @@
                 <section class="menssage">
                     <div class="container-fluid">
                         <hr class="bg-light">
-                        <form>
+                        <form autocomplete="off">
                             <div class="input-group form-group">
-                                <input type="text" class="form-control bg-dark text-light" placeholder="Conversar no chat.." name="email"
-                                    style="border-color:#1f1f1f;">
+                                <input autofocus type="text" class="form-control bg-dark text-light"
+                                    placeholder="Conversar no chat.."
+                                    aria-describedby="basic-addon2" name="email" style="border-color:#1f1f1f;">
+                                <div class="input-group-append">
+                                    <button class="chat-btn btn bg-dark text-light" style="border: 1px solid #1f1f1f;" id="button-addon2"><i class="fas fa-paperclip"></i></button>
+                                </div>
+                                <div class="input-group-append">
+                                    <button class="chat-btn btn bg-dark text-light" style="border: 1px solid #1f1f1f;" id="button-addon2"><i class="fas fa-paper-plane"></i></button>
+                                </div>
                             </div>
                         </form>
                     </div>
