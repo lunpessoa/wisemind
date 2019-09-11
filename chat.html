@@ -17,23 +17,74 @@
 <body class="align-items-center d-flex">
     <section class="bg-dark container-fluid fundo">
         <section class="topo">
-            <section class="user float-left">
-
+            <section class="user d-flex float-left align-items-center">
+                <div class="image-user rounded-circle bg-light ml-5"></div>
+                <label class="user-name ml-3 mt-3 text-light font-weight-bold font-italic">Luan_BCoin <br><label
+                        class="situacao font-weight-bold font-italic">#Online</label> </label>
+                <a class="btn sair-btn float-right" href=""><i class="text-danger fas fa-sign-out-alt"></i></a>
             </section>
-            <section class="info-class bg-dark float-right">
+            <section class="info-class position-relative float-left bg-dark float-right">
+                <label class="chat-name ml-5 mt-2 text-light font-weight-bold font-italic float-left">Sala:
+                    Biologia<br><label class="area-chat font-weight-bold font-italic">Área: Biológicas</label> </label>
+
+
+                <div class="profissional float-right mt-2">
+                    <label
+                        class="user-name mr-3 mt-3 text-warning font-weight-bold font-italic text-right">Eduardo_Saul<br>
+
+                        <label class="situacao font-weight-bold font-italic">#Online</label>
+
+                    </label>
+                    <div class="image-user rounded-circle bg-light" style="background-image: url('img/saul.jpg');">
+                    </div>
+
+                </div>
 
             </section>
         </section>
         <section class="corpo border-top-0">
             <section class="estudantes bg-dark float-left">
-
+                <ul class="pt-3 pl-0">
+                    <li>
+                        <div class="class-users rounded-circle bg-light ml-5"
+                            style="background-image: url('img/lima.jpg');"></div>
+                        <label class="user-name ml-3 mt-3 h6 font-weight-bold font-italic">Lima_Barreto <br><label
+                                class="users-situacao font-weight-bold font-italic">#Online</label> </label>
+                    </li>
+                    <li>
+                        <div class="class-users rounded-circle bg-light ml-5"
+                            style="background-image: url('img/antonio.jpg');"></div>
+                        <label class="user-name ml-3 mt-3 h6 font-weight-bold font-italic">Antonio_Conselheiro
+                            <br><label class="users-situacao font-weight-bold font-italic">#Online</label></label>
+                    </li>
+                    <li>
+                        <div class="class-users rounded-circle bg-light ml-5"
+                            style="background-image: url('img/jorge.jpg');"></div>
+                        <label class="user-name ml-3 mt-3 h6 font-weight-bold font-italic">Jorge_MegaFire <br><label
+                                class="users-situacao font-weight-bold font-italic">#Online</label></label>
+                    </li>
+                </ul>
+                <div class="buttons d-flex justify-content-center">
+                    <a class="btn text-light" href=""><i class="fas fa-user-friends"></i> <label
+                            class="font-weight-bold font-italic mb-0" style="cursor:pointer;"> 04/20</label></a>
+                    <a class="btn text-light" href=""><i class="fas fa-ban"></i> <label
+                            class="font-weight-bold font-italic mb-0" style="cursor:pointer;"> Ocupado</label></a>
+                </div>
             </section>
-            <section class="content-chat float-right"> 
-                <section class="chat bg-light">
-                    <section class="escrevendo text-dark p-3 align-text-bottom"><em>Luan está escrevendo...</em></section>
+            <section class="content-chat float-right">
+                <section class="chat">
+                    <section class="escrevendo p-4 align-text-bottom"><em>Luan está escrevendo...</em></section>
                 </section>
                 <section class="menssage">
-
+                    <div class="container-fluid">
+                        <hr class="bg-light">
+                        <form>
+                            <div class="input-group form-group">
+                                <input type="text" class="form-control bg-dark text-light" placeholder="Conversar no chat.." name="email"
+                                    style="border-color:#1f1f1f;">
+                            </div>
+                        </form>
+                    </div>
                 </section>
             </section>
         </section>

@@ -2,28 +2,31 @@ body{
     height: 100vh;
     width: 100vw;
     background-image: url('../img/chat_back.png');
+    
 }
 
 .fundo{
     width: 95%;
     height: 90%;
-    border-radius: 15px; 
     overflow: hidden;
     padding: 0px;
+}
+
+.sair-btn{
+    font-size:25px;
+    position: relative;
 }
 
 .topo{
     width: 100%;
     height: 10%;
     background-color:#282d30; 
-    border: 1px solid #1f1f1f;
     padding: 0px;
 }
 
 .user{
     width: 20%;
     height: 100%;
-    border-right: 1px solid #1f1f1f;
     margin: 0px;
 }
 
@@ -31,32 +34,30 @@ body{
     width: 100%;
     height: 90%;
     background-color:#282d30; 
-    border: 1px solid #1f1f1f;
 }
 
 .estudantes{
     width: 20%;
     height: 100%;
-    border-right: 1px solid #1f1f1f;
 }
 
 .content-chat{
     width: 80%;
     height: 100%;
-    background-color: #000;
+    /*background-image: url('../img/chat_back.png');*/
 }
 
 .menssage{
     width: 100%;
     height: 15%;
-    background-color:#282d30; 
-    border-top: 1px solid #1f1f1f;
+    background-color:rgba(40, 45, 48, 0.8); 
 }
 
 .escrevendo{
     width:100%;
     height: 10%;
     position: relative;
+    color: #949799;
     top: 90%;
     font-size: 20px;
 }
@@ -69,4 +70,96 @@ body{
 .info-class{
     width: 80%;
     height: 100%;
+}
+
+.image-user{
+    height: 65px;
+    width: 65px;
+    background-image: url('../img/Luan.jpeg');
+    background-size: cover;
+    position: relative;
+}
+
+.image-user:after{
+    content: "";
+    height: 35%;
+    width: 35%;
+    border-radius: 100%;
+    background-color: #43b581;
+    position: absolute;
+    right: -2px;
+    bottom: -2px;
+    border: 4px solid #282d30;
+}
+
+.class-users{
+    height: 55px;
+    width: 55px;
+    background-size: cover;
+    position: relative;
+}
+
+.class-users:after{
+    content: "";
+    height: 34%;
+    width: 35%;
+    border-radius: 100%;
+    background-color: #43b581;
+    position: absolute;
+    right: -2px;
+    bottom: -2px;
+    border: 4px solid #343a40;
+}
+
+.user-name{
+    color: #949799;
+    width: 50%;
+}
+
+.situacao{
+    color: #949799;
+    font-size:16px;
+}
+
+.users-situacao{
+    color: #6e6f70;
+    font-size:14px;
+}
+
+li{
+    width:100%;
+    height: 70px;
+    list-style: none;
+    align-items: center;
+    display: flex;
+}
+
+ul{
+    height:85%;
+}
+
+.chat-name{
+    font-size: 20px;
+}
+
+.profissional{
+    display: flex;
+    position: relative;
+    width: 15%;
+}
+
+.area-chat{
+    font-size: 16px;
+    color: #949799;
+    margin-bottom: 0px;
+}
+
+.buttons{
+    width: 250px;
+    border-radius: 30px;
+    background-color: #282d30;
+    position: relative;
+    left:50%;
+    transform: translateX(-50%);
+    
 }
