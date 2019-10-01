@@ -1,0 +1,12 @@
+.acordtodos .btn-link{
+    width: 100%;
+}
+
+.acordtodos h3{
+    text-align:left;
+}
+
+.acordtodos h3 i{
+    float:right;
+    margin-top: 3px;
+}

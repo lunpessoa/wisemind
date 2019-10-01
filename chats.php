@@ -5,6 +5,7 @@
 	<title>Página de chats</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="style/chats.css">
+
 </head>
 
 <body>
@@ -14,8 +15,13 @@
 		<h3 class="h5 text-warning"><em>Faça parte desta comunidade<em></h3>
 	</section>
 	<section class="container d-flex justify-content-center">
-		<input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar"
-			style="width:50%;">
+		<div class="input-group mb-3 w-50">
+			<input type="text" id="form-border-none" class="form-control border-right-0" placeholder="Pesquisar" aria-label="Pesquisar" aria-describedby="basic-addon2">
+			<div class="input-group-append">
+				<span class="input-group-text bg-transparent border-left-0" id="basic-addon2"><i
+						class="fas fa-search"></i></span>
+			</div>
+		</div>
 	</section>
 	<section class="container mb-5">
 		<hr>
@@ -144,7 +150,7 @@
 			<section class="col-12 col-md-4">
 				<a class="btn" href="#">
 					<section class="card">
-						<img src="img/slide.gif" class="card-img-top" alt="...">
+						<img src="img/slide_amarelo.gif" class="card-img-top" alt="...">
 						<section class="card-body text-center">
 							<h3 class="h3"><b><em>Engenharia</em></b></h3>
 						</section>
