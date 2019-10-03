@@ -2,6 +2,8 @@
 <html>
 
 <head>
+  <?php include('menu.html'); ?>
+
   <title>Conteúdo Pago</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="style/cpago.css">
@@ -9,15 +11,13 @@
 </head>
 
 <body>
-  <?php include('menu.html'); ?>
   <br><br><br><br><br>
-
   <div id="accordion" class="acordtodos">
     <div class="card">
       <div class="card-header" id="headingOne">
         <h5 class="mb-0">
-          <button class="btn btn-link text-decoration-none" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
-            aria-controls="collapseOne">
+          <button class="btn btn-link text-decoration-none" data-toggle="collapse" data-target="#collapseOne"
+            aria-expanded="true" aria-controls="collapseOne">
             <h3>Medicina <i class="fas fa-plus"></i></h3>
           </button>
         </h5>
@@ -139,8 +139,8 @@
       <div class="card">
         <div class="card-header" id="headingTwo">
           <h5 class="mb-0">
-            <button class="btn btn-link text-decoration-none" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
-              aria-controls="collapseTwo">
+            <button class="btn btn-link text-decoration-none" data-toggle="collapse" data-target="#collapseTwo"
+              aria-expanded="true" aria-controls="collapseTwo">
               <h3>Direito <i class="fas fa-plus"></i></h3>
             </button>
           </h5>
@@ -262,8 +262,8 @@
         <div class="card">
           <div class="card-header" id="headingThree">
             <h5 class="mb-0">
-              <button class="btn btn-link text-decoration-none" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true"
-                aria-controls="collapseThree">
+              <button class="btn btn-link text-decoration-none" data-toggle="collapse" data-target="#collapseThree"
+                aria-expanded="true" aria-controls="collapseThree">
                 <h3>Engenharia <i class="fas fa-plus"></i></h3>
               </button>
             </h5>
@@ -385,8 +385,8 @@
           <div class="card">
             <div class="card-header" id="headingFour">
               <h5 class="mb-0">
-                <button class="btn btn-link text-decoration-none" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true"
-                  aria-controls="collapseFour">
+                <button class="btn btn-link text-decoration-none" data-toggle="collapse" data-target="#collapseFour"
+                  aria-expanded="true" aria-controls="collapseFour">
                   <h3>Biologia <i class="fas fa-plus"></i></h3>
                 </button>
               </h5>
@@ -509,8 +509,8 @@
           <div class="card">
             <div class="card-header" id="headingFive">
               <h5 class="mb-0">
-                <button class="btn btn-link text-decoration-none" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true"
-                  aria-controls="collapseFive">
+                <button class="btn btn-link text-decoration-none" data-toggle="collapse" data-target="#collapseFive"
+                  aria-expanded="true" aria-controls="collapseFive">
                   <h3 class="h3 teste">Psicologia <i class="fas fa-plus"></i></h3>
                 </button>
               </h5>

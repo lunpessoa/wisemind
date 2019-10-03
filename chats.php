@@ -2,6 +2,8 @@
 <html>
 
 <head>
+	<?php include('menu.html'); ?>
+
 	<title>Página de chats</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="style/chats.css">
@@ -9,14 +11,15 @@
 </head>
 
 <body>
-	<?php include('menu.html'); ?>
+
 	<section class="container text-center mb-5" style="margin-top:100px;">
 		<h3 class="display-3 text-primary"><i class="fas fa-comments "></i> <b><em>WiseChat</em></b></h3>
 		<h3 class="h5 text-warning"><em>Faça parte desta comunidade<em></h3>
 	</section>
 	<section class="container d-flex justify-content-center">
 		<div class="input-group mb-3 w-50">
-			<input type="text" id="form-border-none" class="form-control border-right-0" placeholder="Pesquisar" aria-label="Pesquisar" aria-describedby="basic-addon2">
+			<input type="text" id="form-border-none" class="form-control border-right-0" placeholder="Pesquisar"
+				aria-label="Pesquisar" aria-describedby="basic-addon2">
 			<div class="input-group-append">
 				<span class="input-group-text bg-transparent border-left-0" id="basic-addon2"><i
 						class="fas fa-search"></i></span>
