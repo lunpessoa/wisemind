@@ -26,13 +26,6 @@ body {
   border-radius:50%;
 }
 
-.ft-perfil{
-  position:relative;
-  height:200px;
-  width:200px;
-  border-radius:50%;
-}
-
 .btn-hover-white{
   color:#ffcf29;
 }
@@ -55,6 +48,60 @@ body {
 
 .card{
   animation: zoomInDown 0.5s linear;
+}
+
+.img-usu{
+  position: relative;
+  margin-left: -50px;
+  margin-top: -30px;
+  margin-bottom: -10px;
+}
+
+.nav-item:hover{
+  background-color: #ffcf29;
+}
+
+.nav-link i{
+  color:#ffcf29;
+}
+
+.nav-item:hover .nav-link i{
+  color:#212529;
+}
+
+.nav-link{
+  color:#fff;
+}
+
+.cursor-pointer{
+  cursor: pointer;
+}
+
+.alter-image{
+
+}
+
+.image-usu{
+  background-image: url('../img/Luan.jpeg'); 
+  width:100px;
+  height: 100px;
+  background-size: cover; 
+}
+
+/* Opção Ativado */
+
+.ativado{
+  border-left: 10px solid #ffc700;
+  background-color: #e0b107;
+  color:#212529;
+}
+
+.ativado i{
+  color:#212529;
+}
+
+.ativado:hover{
+  background-color: #ffcf29;
 }
 
 @keyframes move_eye{

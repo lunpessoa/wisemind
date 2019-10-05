@@ -2,9 +2,8 @@
 <html>
 
 <head>
-	<?php include('menu.html'); ?>
-
 	<title>Painel Usuário</title>
+	<?php include('menu.html'); ?>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="style/painel-usu.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,9 +14,42 @@
 	<div class="container-fluid position-fixed" style="margin-top:130px">
 		<div class="row">
 			<div class="col-2 offset-1">
-				<div class="card border border-0 bg-transparent" style="height:450px;">
-					<div class="card-body border-0" style="background-color:#26282E;">
-						<h1 class="h4 text-warning"><b>Perfil</b></h1>
+				<div class="card border border-0">
+					<div class="card-header bg-warning pb-0 border-0 d-inline">
+						<div class="img-usu w-50 h-50 float-left mr-3">
+							<img src="img/Luan.jpeg" class="img-fluid rounded-circle">
+							<!-- <button class="btn btn-link alter-image position-absolute"><i class="fas fa-pen"></i> Alterar</button> -->
+						</div>
+						<label class="d-flex text-font-calibri h4 font-italic font-weight-bold mt-4">#Luan
+							Pessoa</label>
+					</div>
+					<div class="card-body border-0 p-0" style="background-color:#26282E;">
+						<div id="itens-nav" class="list-nav w-100">
+							<ul class="nav flex-column text-font-calibri">
+								<li class="nav-item">
+									<a class="nav-link h5 mb-0 px-3 pt-4" href="#"><i class="fas fa-user-cog mr-3"></i>
+										<label class="h5 cursor-pointer">Informações</label></a>
+								</li>
+								<hr class="w-75 bg-white my-1">
+								<li class="nav-item">
+									<a class="nav-link h5 mb-0 px-3 pt-4" href="#"><i
+											class="fas fa-shield-alt mr-3"></i> <label
+											class="h5 cursor-pointer">Segurança</label></a>
+								</li>
+								<hr class="w-75 bg-white my-1">
+								<li class="nav-item">
+									<a class="nav-link h5 mb-0 px-3 pt-4" href="#"><i class="fas fa-mail-bulk mr-3"></i>
+										<label class="h5 cursor-pointer">Endereço</label></a>
+								</li>
+								<hr class="w-75 bg-white my-1">
+								<li class="nav-item">
+									<a class="nav-link h5 mb-0 px-3 pt-4" href="#"><i
+											class="fas fa-credit-card mr-3"></i> <label class="h5 cursor-pointer">Plano
+											/
+											Pagamento</label></a>
+								</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -49,6 +81,22 @@
 								<span class="h5 text-white">Pessoa</span>
 							</div>
 						</div>
+						<div class="row p-2">
+							<div class="col-3">
+								<span class="text-clear">Data de Nascimento</span>
+							</div>
+							<div class="col-9">
+								<span class="h5 text-white">##/##/####</span>
+							</div>
+						</div>
+						<div class="row p-2">
+							<div class="col-3">
+								<span class="text-clear">CPF</span>
+							</div>
+							<div class="col-9">
+								<span class="h5 text-white">xxx.xxx.xxx-xx</span>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -58,16 +106,41 @@
 			<div class="col-7 offset-4">
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
-						<label class="h3 text-font-calibri"><b>ENDEREÇO DE E-MAIL</b></label>
+						<label class="h3 text-font-calibri"><b>DESCRIÇÃO DO USUÁRIO</b></label>
 						<button class="btn btn-hover-white ml-auto"><i class="fas fa-pen"></i><b> ATUALIZAR</b></button>
 					</div>
 					<div class="card-body border-0 p-5">
 						<div class="row p-2">
 							<div class="col-3">
-								<span class="text-clear">Endereço de E-mail</span>
+								<span class="text-clear">Descrição</span>
 							</div>
 							<div class="col-9">
-								<span class="h5 text-white">luan.pessoa.393@hotmail.com</span>
+								<span class="h5 text-white">Silvio Santos Ipsum wellintaaammmmmmmmm. Eu não queria
+									perguntar isso publicamenteam, ma vou perguntar. Carla, você tem o ensino
+									fundamentauam? Você veio da caravana de ondeammm? É dinheiro ou não é? Ma você, topa
+									ou no topamm. Mah ooooee vem pra cá. Vem pra cá. Mah é a porta da esperçamm. Boca
+									sujuam... sem vergonhuamm. Ma quem quer dinheiroam? Ma vai pra lá. O Raul Gil é
+									gayam! ... Maa O Ah Ae! Ih Ih! O Raul Gil é gayamm!</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row mb-5">
+			<div class="col-7 offset-4">
+				<div class="card border border-0 bg-transparent">
+					<div class="card-header border-bottom-0 text-white p-4 d-flex">
+						<label class="h3 text-font-calibri"><b>NÚMERO DE CONTATO</b></label>
+						<button class="btn btn-hover-white ml-auto"><i class="fas fa-pen"></i><b> ATUALIZAR</b></button>
+					</div>
+					<div class="card-body border-0 p-5">
+						<div class="row p-2">
+							<div class="col-3">
+								<span class="text-clear">Número de celular</span>
+							</div>
+							<div class="col-9">
+								<span class="h5 text-white">(xx)xxxxx-xxxx</span>
 							</div>
 						</div>
 					</div>
