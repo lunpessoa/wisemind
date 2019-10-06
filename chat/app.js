@@ -1,5 +1,5 @@
 
-var express = require('express');
+/*var express = require('express');
 var app = express();
 var path = require('path');
 var server = require('http').createServer(app);
@@ -13,6 +13,27 @@ server.listen(port, () => {
 // Routing
 app.use(express.static(path.join(__dirname, 'public')));
 
+*/
+
+//Teste diferentes caminhos
+
+const express = require('express')
+const path = require('path')
+const app = express()
+const server = require('http').createServer(app)
+const io = require('socket.io')(server)
+
+//Caminhos
+/*app.use(express.static(path.join(__dirname, 'public')))
+app.set('views', path.join(__dirname, 'public'))
+app.engine('html', require('ejs').renderFile)
+app.set('view engine', 'html')*/
+
+//Desativado para uso do php na pagina
+
+app.use('/', (req, res) => {
+    res.send('index.html')
+})
 
 //Definindo Variaveis
 let sala = ''
@@ -22,21 +43,25 @@ var users = []
 
 //Conexão Socket
 io.on('connection', socket => {
-    console.log(socket.id)
+    
 
     //Recebendo dados usuario
     socket.on('sala', data => {
-        sala = data
+        sala = data.sala
+        socket.id = data.id_usuario
+        console.log(socket.id)
         socket.join(sala);
         console.log(sala)
-
+        console.log(data.nome_usuario)
         users.push(socket.id)
         console.log(users)
+        console.log(users.length)
+        socket.broadcast.to(sala).emit('usersList', users)
     })
 
 
 
-    //usurio clica em sair
+    //usuario clica em sair
     socket.on('leaveUser',(sala)=>{
         socket.leave(sala)
     })
@@ -55,8 +80,13 @@ io.on('connection', socket => {
     socket.on('sendMessage', data => {
         console.log(data)
         messages.push(data)
-        socket.broadcast.to(data.sala).emit('receiveMessage', data)
+        socket.broadcast.to(sala).emit('receiveMessage', data)
+    })
+
+    socket.on('disconnect', ()=>{
+        
     })
 })
 
 //porta do servidor
+server.listen(3001)

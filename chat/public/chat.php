@@ -1,8 +1,16 @@
+<?php
+    include('../../assets/conexao.php');
+	session_start();
+	if(isset($_SESSION["log_status"]) && $_SESSION["log_status"]==true){
+	$sql=('select * from usuarios where id_usuario = '. $_SESSION["id_user"].';');
+	$resul=mysqli_query($conexao, $sql);
+    $con=mysqli_fetch_array($resul);
+?>
 <!doctype html>
 <html lang="pt-br">
 
 <head>
-    <title>Title</title>
+    <title>Chat</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -19,7 +27,7 @@
         <section class="topo">
             <section class="user d-flex float-left align-items-center">
                 <div class="image-user rounded-circle bg-light ml-5"></div>
-                <label class="user-name ml-3 mt-3 text-light font-weight-bold font-italic">Luan_BCoin <br><label
+                <label class="user-name ml-3 mt-3 text-light font-weight-bold font-italic"><?php echo($con['Nome']);?><br><label
                         class="situacao font-weight-bold font-italic">#Online</label> </label>
                 <a class="sair-btn text-decoration-none float-right text-danger" href="" id="sair"><i
                         class="fas fa-sign-out-alt"></i></a>
@@ -121,15 +129,30 @@
 <script src="node_modules/jquery/dist/jquery.js"></script>
 <script src="node_modules/popper.js/dist/umd/popper.js"></script>
 <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
-<script src="/socket.io/socket.io.js"></script>
+<!-- <script src="/socket.io/socket.io.js"></script>  -->
+<script src="../node_modules/socket.io-client/dist/socket.io.js"></script>
+<?php
+    echo("<script>
+        var id_usuario = ".$con['id_usuario']."
+        var nome_usuario = '".$con['Nome']."'
+    </script>");    
+?>
 <script>
-    var socket = io(); //conexão
+    var socket = io.connect("http://localhost:3001");
+    //var socket = io(); //conexão
     var sala = 'Medicina' //sala
+    
     const campoMessagem = document.getElementById('msg')
+    
 
     //Enviando a sala para o servidor - posteriormente outros dados 
-    var funSala = function (sala) {
-        socket.emit('sala', sala)
+    var funSala = function (salaObject) {
+        var salaObject = {
+        id_usuario,
+        nome_usuario,
+        sala
+    }
+        socket.emit('sala', salaObject)
     }
     funSala(sala)
 
@@ -197,10 +220,10 @@
         var div = document.createElement("div")
         div.setAttribute('id', 'fild')
         var link = document.createElement("a")
-        link.setAttribute(`href`, `http://localhost/index2.php?id=${message.author}`)
+        link.setAttribute(`href`, `http://localhost/index2.php?id=${message.nome_usuario}`)
         link.setAttribute(`id`, `link-user`)
         link.setAttribute(`class`, `text-decoration-none float-left p-0`)
-        var text = document.createTextNode(message.author)
+        var text = document.createTextNode(message.nome_usuario)
         var textMessage = document.createTextNode(`${message.message}`)
         link.appendChild(text)
         div.appendChild(link)
@@ -226,12 +249,12 @@
 
 
 
-    function sair() {
-        document.getElementById("sair").onclick = (e) => {
-            e.preventDefault()
-            socket.emit('leaveUser', sala)
-        }
+    document.getElementById("sair").onclick = (e) => {
+        e.preventDefault()
+        socket.emit('leaveUser', sala)
+        window.location.href='../../index.php'
     }
+    
 
     //Recebendo mensagens
     socket.on('receiveMessage', function (message) {
@@ -245,6 +268,9 @@
         userList(data)
     })
 
+    //receber usuarios conectados
+    
+
     //Enviando mensagens
     document.getElementById('chat').onsubmit = function (e) {
         e.preventDefault()
@@ -254,6 +280,7 @@
         //Dados da mensgem
         if (msg.length != 0) {
             var messageObject = {
+                nome_usuario: nome_usuario,
                 message: msg,
                 sala: sala
             }
@@ -268,6 +295,18 @@
         }
     }
 </script>
+<?php
+    echo("<script>socket.on('usersList', (users)=>{
+        alert('ta funcionando')
+    })</script>");
+?>
+<?php
+		}else{
+			echo('<script>window.alert("Faça o login antes")
+			window.location.href = "../../login.php";</script>');
+		}
+	
+?>
 
 
 </html>
