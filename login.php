@@ -70,22 +70,22 @@
 				</div>
 			</div>
 			<div class="card-body bg-dark border-0">
-				<form>
+				<form name="log" action="assets/login_config.php" method="POST">
 					<label style="color:#b5b5b5;" class="text-font">E-mail</label>
 					<div class="input-group form-group">
 						<input type="text" class="form-control text-light"
-							style="background-color:#282d30; border-color:#1f1f1f;">
+							style="background-color:#282d30; border-color:#1f1f1f;" name="email">
 					</div>
 					<label class="text-font" style="color:#b5b5b5;">Senha</label>
 					<div class="input-group form-group">
 						<input type="password" class="form-control text-light"
-							style="background-color:#282d30; border-color:#1f1f1f;">
+							style="background-color:#282d30; border-color:#1f1f1f;" name="senha">
 					</div>
 					<div class="d-flex justify-content links">
 						<a href="fgt.php" class="btn text-warning p-0 mb-3 text-font">Esqueceu sua senha?</a>
 					</div>
 					<div class="form-group d-flex justify-content-center mt-3">
-						<input type="submit" value="Entrar" class="btn w-50 entrar"
+						<input type="submit" value="Entrar" class="btn w-50 entrar" name="Entrar"
 							style="font-waight:bold; font-family:'Franklin Gothic';">
 					</div>
 				</form>
