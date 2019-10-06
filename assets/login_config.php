@@ -29,18 +29,17 @@
                 }else{
                     session_start();
                     $_SESSION["id_user"]=$con['id_usuario'];
-                    if($con['id_privilegio']==1){
+                    if($con['id_privilegio']==1 || $con['id_privilegio']==2){
                         $_SESSION["log_status"]=true;
                         echo"<script language='javascript' type='text/javascript'>
                         alert('Parabens porra');window.location
                         .href='../index.php';</script>";
                         //setcookie("login",$login);
-                        //header("Location:index.php");
-                    }else{
+                    }else if($con['id_privilegio']==3){
                         $_SESSION["adminlog_status"]=true;
                         echo"<script language='javascript' type='text/javascript'>
                         alert('Bem vindo Administrador ".$con['Nome']."');window.location
-                        .href='../index.php';</script>";
+                        .href='../admin/admin.php';</script>";
                     }
             }
         }
