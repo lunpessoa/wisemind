@@ -1,3 +1,10 @@
+<?php
+	session_start();
+	if(isset($_SESSION["log_status"]) && $_SESSION["log_status"]==true){
+
+	
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -204,6 +211,13 @@
 
 
 </body>
+<?php
+		}else{
+			echo('<script>window.alert("Faça o login antes")
+			window.location.href = "login.php";</script>');
+		}
+	
+?>
 
 
 </html>
