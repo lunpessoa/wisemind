@@ -1,3 +1,8 @@
+<?php
+if (!isset($_SESSION)) {
+	session_start();
+}
+?>
 <!doctype html>
 <html lang="pt-br">
   <head>
@@ -16,8 +21,15 @@
 
     <nav class="navbar navbar-light bg-warning">
         <section class="ml-auto" id="botoes-entrada">
-          <a class="btn btn-outline-dark btn-sm" href="login.php">Entrar <i class="fas fa-sign-in-alt"></i></a>
-          <a class="btn btn-outline-dark btn-sm" href="op-cad.php">Registre-se <i class="fa fa-user-circle" aria-hidden="true"></i></a>
+          <?php
+            if(isset($_SESSION["log_status"]) && $_SESSION["log_status"]==true){
+              echo('<a class="btn btn-outline-dark btn-sm" href="painel-usu.php">Perfil <i class="fa fa-user-circle" aria-hidden="true"></i></a>
+              <a class="btn btn-outline-dark btn-sm" href="assets/destroy-log.php">Sair <i class="fas fa-sign-in-alt"></i></a>');
+            }else{
+              echo('<a class="btn btn-outline-dark btn-sm" href="login.php">Entrar <i class="fas fa-sign-in-alt"></i></a>
+              <a class="btn btn-outline-dark btn-sm" href="op-cad.php">Registre-se <i class="fa fa-user-circle" aria-hidden="true"></i></a>');
+            }
+          ?>
         </section>
     </nav>
 

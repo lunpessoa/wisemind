@@ -1,7 +1,7 @@
 <html>
 
 <head>
-	<?php include('menu.html');?>
+	<?php include('menu.php');?>
 
 	<title> Wise Mind </title>
 	<link rel="shortcut icon" href="img/ico.png" />

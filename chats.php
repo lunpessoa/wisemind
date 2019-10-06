@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<?php include('menu.html'); ?>
+	<?php include('menu.php'); ?>
 
 	<title>Página de chats</title>
 	<meta charset="utf-8">

@@ -10,7 +10,7 @@
 <body id="body">
 
 	<?php
-			include('menu.html');
+			include('menu.php');
 		?>
 
 	<section id="fundo1"></section>

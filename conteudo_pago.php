@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <?php include('menu.html'); ?>
+  <?php include('menu.php'); ?>
 
   <title>Conteúdo Pago</title>
   <meta charset="utf-8">

@@ -12,7 +12,7 @@
 
 <head>
 	<title>Painel Usuário</title>
-	<?php include('menu.html'); ?>
+	<?php include('menu.php'); ?>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="style/painel-usu.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
