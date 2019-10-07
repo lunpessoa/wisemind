@@ -1,0 +1,290 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    background-image: url('../img/chat_back.png');
+
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#teste {
+    list-style: none;
+    background: none;
+    position: relative;
+    margin: 0;
+    padding: 0 0 50px 0;
+    width: 100%;
+    height: 100%;
+    background-color: #282d30;
+    overflow: auto;
+}
+
+/*mensagens*/
+#self {
+    color: #000;
+    max-width: 50%;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    background-color: #ffcf29;
+    border-radius: 10px;
+    border-top-right-radius: 0%;
+    margin-right: 20px;
+    position: relative;
+
+}
+
+#self:after {
+    content: "";
+    position: absolute;
+    border-bottom: 10px solid transparent;
+    border-left: 8px solid #ffcf29;
+    top: 0px;
+    right: -8px;
+}
+
+#fild {
+    color: #fff;
+    max-width: 50%;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    background-color: #343a40;
+    border-radius: 10px;
+    border-top-left-radius: 0%;
+    position: relative;
+}
+
+#fild:after {
+    content: "";
+    position: absolute;
+    border-bottom: 10px solid transparent;
+    border-right: 8px solid #343a40;
+    top: 0px;
+    left: -8px;
+}
+
+#data-fild {
+    color: #949799;
+    font-size: 15px;
+}
+
+#data-self {
+    color: #977701;
+    font-size: 15px;
+    height: 24px;
+}
+
+#link-user {
+    color: rgb(25, 147, 247);
+    transition: 0.1s linear;
+}
+
+#link-user:hover {
+    color: rgb(0, 113, 206);
+}
+
+#messages li {
+    padding: 0.5rem;
+    overflow: hidden;
+    display: flex;
+}
+
+#typingSpace {
+    display: none;
+}
+
+
+.fundo {
+    width: 95%;
+    height: 90%;
+    overflow: hidden;
+    padding: 0px;
+}
+
+.sair-btn {
+    font-size: 25px;
+    position: relative;
+    transition: 0.1s linear;
+}
+
+.sair-btn:hover {
+    color: #af0011;
+}
+
+.topo {
+    width: 100%;
+    height: 10%;
+    background-color: #282d30;
+    padding: 0px;
+}
+
+.user {
+    width: 20%;
+    height: 100%;
+    margin: 0px;
+}
+
+.corpo {
+    width: 100%;
+    height: 90%;
+    background-color: #282d30;
+}
+
+.estudantes {
+    width: 20%;
+    height: 100%;
+}
+
+.content-chat {
+    width: 80%;
+    height: 100%;
+    /*background-image: url('../img/chat_back.png');*/
+}
+
+.menssage {
+    width: 100%;
+    height: 15%;
+    background-color: rgba(40, 45, 48, 0.8);
+}
+
+.escrevendo {
+    width: 100%;
+    height: 10%;
+    position: relative;
+    color: #949799;
+    top: 90%;
+    font-size: 20px;
+}
+
+.chat {
+    width: 100%;
+    height: 85%;
+}
+
+.info-class {
+    width: 80%;
+    height: 100%;
+}
+
+.image-user {
+    height: 65px;
+    width: 65px;
+    background-image: url('../img/Luan.jpeg');
+    background-size: cover;
+    position: relative;
+}
+
+.image-user:after {
+    content: "";
+    height: 35%;
+    width: 35%;
+    border-radius: 100%;
+    background-color: #43b581;
+    position: absolute;
+    right: -2px;
+    bottom: -2px;
+    border: 4px solid #282d30;
+}
+
+.class-users {
+    height: 55px;
+    width: 55px;
+    background-size: cover;
+    position: relative;
+}
+
+.class-users:after {
+    content: "";
+    height: 34%;
+    width: 35%;
+    border-radius: 100%;
+    background-color: #43b581;
+    position: absolute;
+    right: -2px;
+    bottom: -2px;
+    border: 4px solid #343a40;
+}
+
+.user-name {
+    color: #949799;
+    width: 50%;
+    cursor: pointer;
+}
+
+.situacao {
+    color: #949799;
+    font-size: 16px;
+}
+
+.users-situacao {
+    color: #6e6f70;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.list-user {
+    width: 100%;
+    height: 70px;
+    list-style: none;
+    align-items: center;
+    display: flex;
+}
+
+.users {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    align-items: center;
+    display: flex;
+    transition: 0.15s linear;
+    cursor: pointer;
+}
+
+.users:hover {
+    background-color: #282d30;
+}
+
+.users:hover .class-users:after {
+    border: 4px solid #282d30;
+}
+
+.users:hover .user-name,
+.users:hover .users-situacao{
+    color: #fff;
+}
+
+ul {
+    height: 85%;
+}
+
+.chat-name {
+    font-size: 20px;
+}
+
+.profissional {
+    display: flex;
+    position: relative;
+    width: 15%;
+}
+
+.area-chat {
+    font-size: 16px;
+    color: #949799;
+    margin-bottom: 0px;
+}
+
+.buttons {
+    width: 250px;
+    border-radius: 30px;
+    background-color: #282d30;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+
+}

@@ -1,9 +1,18 @@
+<?php
+	include('assets/conexao.php');
+	session_start();
+	if(isset($_SESSION["log_status"]) && $_SESSION["log_status"]==true){
+	$sql=('select * from usuarios where id_usuario = '. $_SESSION["id_user"].';');
+	$resul=mysqli_query($conexao, $sql);
+    $con=mysqli_fetch_array($resul);
+?>
+
 <!DOCTYPE html>
 <html>
 
 <head>
 	<title>Painel Usuário</title>
-	<?php include('menu.html'); ?>
+	<?php include('menu.php'); ?>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="style/painel-usu.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -20,8 +29,7 @@
 							<img src="img/Luan.jpeg" class="img-fluid rounded-circle">
 							<!-- <button class="btn btn-link alter-image position-absolute"><i class="fas fa-pen"></i> Alterar</button> -->
 						</div>
-						<label class="d-flex text-font-calibri h4 font-italic font-weight-bold mt-4">#Luan
-							Pessoa</label>
+						<label class="d-flex text-font-calibri h4 font-italic font-weight-bold mt-4"><?php echo($con['Nome']);?></label>
 					</div>
 					<div class="card-body border-0 p-0" style="background-color:#26282E;">
 						<div id="itens-nav" class="list-nav w-100">
@@ -70,7 +78,7 @@
 								<span class="text-clear">Nome</span>
 							</div>
 							<div class="col-9">
-								<span class="h5 text-white">Luan</span>
+								<span class="h5 text-white"><?php echo($con['Nome']);?></span>
 							</div>
 						</div>
 						<div class="row p-2">
@@ -78,7 +86,7 @@
 								<span class="text-clear">Sobrenome</span>
 							</div>
 							<div class="col-9">
-								<span class="h5 text-white">Pessoa</span>
+								<span class="h5 text-white"><?php echo($con['Sobrenome']);?></span>
 							</div>
 						</div>
 						<div class="row p-2">
@@ -86,7 +94,7 @@
 								<span class="text-clear">Data de Nascimento</span>
 							</div>
 							<div class="col-9">
-								<span class="h5 text-white">##/##/####</span>
+								<span class="h5 text-white"><?php echo($con['Data_Nasc']);?></span>
 							</div>
 						</div>
 						<div class="row p-2">
@@ -140,7 +148,7 @@
 								<span class="text-clear">Número de celular</span>
 							</div>
 							<div class="col-9">
-								<span class="h5 text-white">(xx)xxxxx-xxxx</span>
+								<span class="h5 text-white"><?php echo($con['Cell']);?></span>
 							</div>
 						</div>
 					</div>
@@ -204,6 +212,13 @@
 
 
 </body>
+<?php
+		}else{
+			echo('<script>window.alert("Faça o login antes")
+			window.location.href = "login.php";</script>');
+		}
+	
+?>
 
 
 </html>

@@ -10,7 +10,7 @@
 
 <body>
 
-  <?php include('menu.html'); ?>
+  <?php include('menu.php'); ?>
 
   <section id="carouselSite" class="carousel slide" style="z-index: 0" data-ride="carousel">
     <ol class="carousel-indicators">

@@ -70,37 +70,37 @@
 				</div>
 			</div>
 			<div class="card-body bg-dark border-0">
-				<form>
+				<form name="cad" action="assets/cadastro.php" method="POST">
 					<div id="fase1">
 						<div class="row ">
 							<div class="col-6">
-								<label style="color:#b5b5b5; text-dark" class="text-font">Nome</label>
+								<label style="color:#b5b5b5; text-dark" class="text-font" >Nome</label>
 								<div class="input-group form-group">
 									<input type="text" class="form-control text-light"
-										style="background-color:#282d30; border-color:#1f1f1f;">
+										style="background-color:#282d30; border-color:#1f1f1f; " name="nome">
 								</div>
 							</div>
 							<div class="col-6">
-								<label class="text-font" style="color:#b5b5b5;">Sobrenome</label>
+								<label class="text-font" style="color:#b5b5b5;" >Sobrenome</label>
 								<div class="input-group form-group">
 									<input type="text" class="form-control text-light"
-										style="background-color:#282d30; border-color:#1f1f1f;">
+										style="background-color:#282d30; border-color:#1f1f1f;" name="sobrenome">
 								</div>
 							</div>
 						</div>
 						<div class="row " id="data">
 							<div class="col-6">
-								<label style="color:#b5b5b5; text-dark" class="text-font">Data de Nascimento</label>
+								<label style="color:#b5b5b5; text-dark" class="text-font" >Data de Nascimento</label>
 								<div class="input-group form-group">
 									<input type="date" class="form-control text-light"
-										style="background-color:#282d30; border-color:#1f1f1f;">
+										style="background-color:#282d30; border-color:#1f1f1f;" name="datanasc">
 								</div>
 							</div>
 							<div class="col-6">
 								<label class="text-font" style="color:#b5b5b5;">Celular</label>
 								<div class="input-group form-group">
-									<input type="password" class="form-control text-light"
-										style="background-color:#282d30; border-color:#1f1f1f;">
+									<input type="text" class="form-control text-light"
+										style="background-color:#282d30; border-color:#1f1f1f;" name="celular">
 								</div>
 							</div>
 						</div>
@@ -108,17 +108,17 @@
 					<div id="fase2" style="display: none;">
 						<div class="row" id="estado">
 							<div class="col-4">
-								<label style="color:#b5b5b5; text-dark" class="text-font">Estado</label>
+								<label style="color:#b5b5b5; text-dark" class="text-font" >Estado</label>
 								<div class="input-group form-group">
 									<input type="text" class="form-control text-light"
-										style="background-color:#282d30; border-color:#1f1f1f;">
+										style="background-color:#282d30; border-color:#1f1f1f;" name="estado">
 								</div>
 							</div>
 							<div class="col-8" id="cidade">
 								<label class="text-font" style="color:#b5b5b5;">Cidade</label>
 								<div class="input-group form-group">
 									<input type="text" class="form-control text-light"
-										style="background-color:#282d30; border-color:#1f1f1f;">
+										style="background-color:#282d30; border-color:#1f1f1f;" name="cidade">
 								</div>
 							</div>
 						</div>
@@ -127,14 +127,14 @@
 								<label style="color:#b5b5b5; text-dark" class="text-font">Rua</label>
 								<div class="input-group form-group">
 									<input type="text" class="form-control text-light"
-										style="background-color:#282d30; border-color:#1f1f1f;">
+										style="background-color:#282d30; border-color:#1f1f1f;" name="rua">
 								</div>
 							</div>
 							<div class="col-4" id="numero">
 								<label class="text-font" style="color:#b5b5b5;">N°</label>
 								<div class="input-group form-group">
 									<input type="text" class="form-control text-light"
-										style="background-color:#282d30; border-color:#1f1f1f;">
+										style="background-color:#282d30; border-color:#1f1f1f;" name="numero">
 								</div>
 							</div>
 						</div>
@@ -143,14 +143,21 @@
 								<label class="text-font" style="color:#b5b5b5;">CEP</label>
 								<div class="input-group form-group">
 									<input type="text" class="form-control text-light"
-										style="background-color:#282d30; border-color:#1f1f1f;">
+										style="background-color:#282d30; border-color:#1f1f1f;" name="cep">
 								</div>
 							</div>
 							<div class="col-6">
 								<label class="text-font" style="color:#b5b5b5;">CPF</label>
 								<div class="input-group form-group">
 									<input type="text" class="form-control text-light"
-										style="background-color:#282d30; border-color:#1f1f1f;">
+										style="background-color:#282d30; border-color:#1f1f1f;" name="cpf">
+								</div>
+							</div>
+							<div class="col-12">
+								<label class="text-font" style="color:#b5b5b5;">Bairro</label>
+								<div class="input-group form-group">
+									<input type="text" class="form-control text-light"
+										style="background-color:#282d30; border-color:#1f1f1f;" name="bairro">
 								</div>
 							</div>
 						</div>
@@ -161,7 +168,7 @@
 								<label style="color:#b5b5b5; text-dark" class="text-font">Certicado</label>
 								<div class="input-group form-group">
 									<input type="text" class="form-control text-light"
-										style="background-color:#282d30; border-color:#1f1f1f;">
+										style="background-color:#282d30; border-color:#1f1f1f;" name="certificado">
 								</div>
 							</div>
 						</div>
@@ -170,7 +177,7 @@
 								<label class="text-font" style="color:#b5b5b5;">Experiência</label>
 								<div class="input-group form-group">
 									<textarea type="text" class="form-control text-light" rows="5"
-										style="background-color:#282d30; border-color:#1f1f1f;resize: none;">
+										style="background-color:#282d30; border-color:#1f1f1f;resize: none;" name="experiencia">
 									</textarea>
 								</div>
 							</div>
@@ -179,35 +186,35 @@
 					<div id="fase4" style="display: none;">
 						<div class="row">
 							<div class="col-12">
-								<label style="color:#b5b5b5; text-dark" class="text-font">E-mail</label>
+								<label style="color:#b5b5b5; text-dark" class="text-font" >E-mail</label>
 								<div class="input-group form-group">
 									<input type="text" class="form-control text-light"
-										style="background-color:#282d30; border-color:#1f1f1f;">
+										style="background-color:#282d30; border-color:#1f1f1f;" name="email">
 								</div>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-12">
-								<label style="color:#b5b5b5; text-dark" class="text-font">Senha</label>
+								<label style="color:#b5b5b5; text-dark" class="text-font" >Senha</label>
 								<div class="input-group form-group">
 									<input type="password" class="form-control text-light"
-										style="background-color:#282d30; border-color:#1f1f1f;">
+										style="background-color:#282d30; border-color:#1f1f1f;" name="senha">
 								</div>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-12">
-								<label style="color:#b5b5b5; text-dark" class="text-font">Confirmar Senha</label>
+								<label style="color:#b5b5b5; text-dark" class="text-font" >Confirmar Senha</label>
 								<div class="input-group form-group">
 									<input type="password" class="form-control text-light"
-										style="background-color:#282d30; border-color:#1f1f1f;">
+										style="background-color:#282d30; border-color:#1f1f1f;" name="confirme">
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="form-group  justify-content-center mt-3" style="display: none;" id="enviar">
-						<button type="submit" value="Criar" class="btn w-50 entrar"
-							style="font-waight:bold; font-family:'Franklin Gothic';">Criar</i>
+						<button type="submit" value="Criar-prof" class="btn w-50 entrar"
+							style="font-waight:bold; font-family:'Franklin Gothic';" name="Criar-prof">Criar</i>
 						</button>
 
 					</div>
