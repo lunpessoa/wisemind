@@ -29,8 +29,3 @@ botao3.onclick = () => {
     botao3.style.display = "none"
     enviar.style.display = "flex"
 }
-
-enviar.onclick = () => {
-    alert("cadastrado com sucesso")
-    window.location.href = "index.php"
-}

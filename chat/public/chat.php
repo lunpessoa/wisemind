@@ -269,7 +269,9 @@
     })
 
     //receber usuarios conectados
-    
+    socket.on('usersList', (users)=>{
+        alert('ta funcionando')
+    })
 
     //Enviando mensagens
     document.getElementById('chat').onsubmit = function (e) {
@@ -295,11 +297,6 @@
         }
     }
 </script>
-<?php
-    echo("<script>socket.on('usersList', (users)=>{
-        alert('ta funcionando')
-    })</script>");
-?>
 <?php
 		}else{
 			echo('<script>window.alert("Faça o login antes")
