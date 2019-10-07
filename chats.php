@@ -18,7 +18,7 @@
 	</section>
 	<section class="container d-flex justify-content-center">
 		<div class="input-group mb-3 w-50">
-			<input type="text" id="form-border-none" class="form-control border-right-0" placeholder="Pesquisar"
+			<input type="text" id="form-border-none" class="form-control border-right-0 search-place" placeholder="Pesquisar"
 				aria-label="Pesquisar" aria-describedby="basic-addon2">
 			<div class="input-group-append">
 				<span class="input-group-text bg-transparent border-left-0" id="basic-addon2"><i

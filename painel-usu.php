@@ -26,23 +26,23 @@
 					<div class="card-body border-0 p-0" style="background-color:#26282E;">
 						<div id="itens-nav" class="list-nav w-100">
 							<ul class="nav flex-column text-font-calibri">
-								<li class="nav-item">
+								<li class="nav-item config-item">
 									<a class="nav-link h5 mb-0 px-3 pt-4" href="#"><i class="fas fa-user-cog mr-3"></i>
 										<label class="h5 cursor-pointer">Informações</label></a>
 								</li>
 								<hr class="w-75 bg-white my-1">
-								<li class="nav-item">
+								<li class="nav-item config-item">
 									<a class="nav-link h5 mb-0 px-3 pt-4" href="#"><i
 											class="fas fa-shield-alt mr-3"></i> <label
 											class="h5 cursor-pointer">Segurança</label></a>
 								</li>
 								<hr class="w-75 bg-white my-1">
-								<li class="nav-item">
+								<li class="nav-item config-item">
 									<a class="nav-link h5 mb-0 px-3 pt-4" href="#"><i class="fas fa-mail-bulk mr-3"></i>
 										<label class="h5 cursor-pointer">Endereço</label></a>
 								</li>
 								<hr class="w-75 bg-white my-1">
-								<li class="nav-item">
+								<li class="nav-item config-item">
 									<a class="nav-link h5 mb-0 px-3 pt-4" href="#"><i
 											class="fas fa-credit-card mr-3"></i> <label class="h5 cursor-pointer">Plano
 											/

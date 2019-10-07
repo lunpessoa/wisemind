@@ -57,7 +57,7 @@ body {
   margin-bottom: -10px;
 }
 
-.nav-item:hover{
+.config-item:hover{
   background-color: #ffcf29;
 }
 
@@ -65,7 +65,7 @@ body {
   color:#ffcf29;
 }
 
-.nav-item:hover .nav-link i{
+.config-item:hover .nav-link i{
   color:#212529;
 }
 
