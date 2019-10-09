@@ -165,8 +165,8 @@
     </section>
   </section>
 
-  <section class="container-fluid"
-    style="height:500px; background-image: url('img/fundo_azul.png'); background-attachment: fixed;">
+  <section class="container-fluid pb-5"
+    style="background-image: url('img/fundo_azul.png'); background-attachment: fixed;">
     <section class="container  d-flex">
       <p class="h4 text-center text-light mt-5" style="line-height: 50px;">Mussum Ipsum, cacilds vidis litro abertis.
         Interessantiss quisso pudia ce receita de bolis, mais
