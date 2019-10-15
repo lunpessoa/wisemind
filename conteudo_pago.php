@@ -12,7 +12,7 @@
 
 <body>
   <br><br><br><br><br>
-  <div id="accordion" class="acordtodos">
+  <div id="accordion" class="container-fluid acordtodos">
     <div class="card">
       <div class="card-header" id="headingOne">
         <h5 class="mb-0">
@@ -634,8 +634,11 @@
             </div>
           </div>
         </div>
-        <br>
-        <?php include('rodape.html'); ?>
+      </div>
+    </div>
+  </div>
+  <br>
+  <?php include('rodape.html'); ?>
 </body>
 
 </html>
