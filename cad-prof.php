@@ -74,32 +74,32 @@
 					<div id="fase1">
 						<div class="row ">
 							<div class="col-6">
-								<label style="color:#b5b5b5; text-dark" class="text-font" >Nome</label>
+								<label style="color:#b5b5b5; text-dark" class="text-font">Nome</label>
 								<div class="input-group form-group">
-									<input type="text" class="form-control text-light"
+									<input type="text" placeholder="Ex. Joaquim" class="form-control text-light"
 										style="background-color:#282d30; border-color:#1f1f1f; " name="nome">
 								</div>
 							</div>
 							<div class="col-6">
-								<label class="text-font" style="color:#b5b5b5;" >Sobrenome</label>
+								<label class="text-font" style="color:#b5b5b5;">Sobrenome</label>
 								<div class="input-group form-group">
-									<input type="text" class="form-control text-light"
+									<input type="text" placeholder="Ex. Souza" class="form-control text-light"
 										style="background-color:#282d30; border-color:#1f1f1f;" name="sobrenome">
 								</div>
 							</div>
 						</div>
 						<div class="row " id="data">
 							<div class="col-6">
-								<label style="color:#b5b5b5; text-dark" class="text-font" >Data de Nascimento</label>
+								<label style="color:#b5b5b5; text-dark" class="text-font">Data de Nascimento</label>
 								<div class="input-group form-group">
-									<input type="date" class="form-control text-light"
+									<input type="text" placeholder="10/02/1979" class="form-control date text-light"
 										style="background-color:#282d30; border-color:#1f1f1f;" name="datanasc">
 								</div>
 							</div>
 							<div class="col-6">
 								<label class="text-font" style="color:#b5b5b5;">Celular</label>
 								<div class="input-group form-group">
-									<input type="text" class="form-control text-light"
+									<input type="text" placeholder="(11) 94973-2918" class="form-control phone_with_ddd text-light"
 										style="background-color:#282d30; border-color:#1f1f1f;" name="celular">
 								</div>
 							</div>
@@ -108,33 +108,42 @@
 					<div id="fase2" style="display: none;">
 						<div class="row" id="estado">
 							<div class="col-4">
-								<label style="color:#b5b5b5; text-dark" class="text-font" >Estado</label>
+								<label style="color:#b5b5b5; text-dark" class="text-font">UF</label>
 								<div class="input-group form-group">
-									<input type="text" class="form-control text-light"
+									<input type="text" placeholder="SP" class="form-control uf text-light"
 										style="background-color:#282d30; border-color:#1f1f1f;" name="estado">
 								</div>
 							</div>
 							<div class="col-8" id="cidade">
 								<label class="text-font" style="color:#b5b5b5;">Cidade</label>
 								<div class="input-group form-group">
-									<input type="text" class="form-control text-light"
+									<input type="text" placeholder="Suzano" class="form-control text-light"
 										style="background-color:#282d30; border-color:#1f1f1f;" name="cidade">
 								</div>
 							</div>
 						</div>
-						<div class="row " id="rua">
+						<div class="row" id="bairro">
 							<div class="col-8">
-								<label style="color:#b5b5b5; text-dark" class="text-font">Rua</label>
+								<label class="text-font" style="color:#b5b5b5;">Bairro</label>
 								<div class="input-group form-group">
-									<input type="text" class="form-control text-light"
-										style="background-color:#282d30; border-color:#1f1f1f;" name="rua">
+									<input type="text" placeholder="25 de Janeiro" class="form-control text-light"
+										style="background-color:#282d30; border-color:#1f1f1f;" name="bairro">
 								</div>
 							</div>
 							<div class="col-4" id="numero">
 								<label class="text-font" style="color:#b5b5b5;">N°</label>
 								<div class="input-group form-group">
-									<input type="text" class="form-control text-light"
+									<input type="text" placeholder="227" class="form-control text-light"
 										style="background-color:#282d30; border-color:#1f1f1f;" name="numero">
+								</div>
+							</div>
+						</div>
+						<div class="row " id="rua">
+							<div class="col-12">
+								<label style="color:#b5b5b5; text-dark" class="text-font">Rua</label>
+								<div class="input-group form-group">
+									<input type="text" placeholder="R. Vila Rica" class="form-control text-light"
+										style="background-color:#282d30; border-color:#1f1f1f;" name="rua">
 								</div>
 							</div>
 						</div>
@@ -142,22 +151,15 @@
 							<div class="col-6">
 								<label class="text-font" style="color:#b5b5b5;">CEP</label>
 								<div class="input-group form-group">
-									<input type="text" class="form-control text-light"
+									<input type="text" placeholder="07459-000" class="form-control cep text-light"
 										style="background-color:#282d30; border-color:#1f1f1f;" name="cep">
 								</div>
 							</div>
 							<div class="col-6">
 								<label class="text-font" style="color:#b5b5b5;">CPF</label>
 								<div class="input-group form-group">
-									<input type="text" class="form-control text-light"
+									<input type="text" placeholder="230.391.188-10" class="form-control cpf text-light"
 										style="background-color:#282d30; border-color:#1f1f1f;" name="cpf">
-								</div>
-							</div>
-							<div class="col-12">
-								<label class="text-font" style="color:#b5b5b5;">Bairro</label>
-								<div class="input-group form-group">
-									<input type="text" class="form-control text-light"
-										style="background-color:#282d30; border-color:#1f1f1f;" name="bairro">
 								</div>
 							</div>
 						</div>
@@ -177,7 +179,8 @@
 								<label class="text-font" style="color:#b5b5b5;">Experiência</label>
 								<div class="input-group form-group">
 									<textarea type="text" class="form-control text-light" rows="5"
-										style="background-color:#282d30; border-color:#1f1f1f;resize: none;" name="experiencia">
+										style="background-color:#282d30; border-color:#1f1f1f;resize: none;"
+										name="experiencia">
 									</textarea>
 								</div>
 							</div>
@@ -186,7 +189,7 @@
 					<div id="fase4" style="display: none;">
 						<div class="row">
 							<div class="col-12">
-								<label style="color:#b5b5b5; text-dark" class="text-font" >E-mail</label>
+								<label style="color:#b5b5b5; text-dark" class="text-font">E-mail</label>
 								<div class="input-group form-group">
 									<input type="text" class="form-control text-light"
 										style="background-color:#282d30; border-color:#1f1f1f;" name="email">
@@ -195,7 +198,7 @@
 						</div>
 						<div class="row">
 							<div class="col-12">
-								<label style="color:#b5b5b5; text-dark" class="text-font" >Senha</label>
+								<label style="color:#b5b5b5; text-dark" class="text-font">Senha</label>
 								<div class="input-group form-group">
 									<input type="password" class="form-control text-light"
 										style="background-color:#282d30; border-color:#1f1f1f;" name="senha">
@@ -204,7 +207,7 @@
 						</div>
 						<div class="row">
 							<div class="col-12">
-								<label style="color:#b5b5b5; text-dark" class="text-font" >Confirmar Senha</label>
+								<label style="color:#b5b5b5; text-dark" class="text-font">Confirmar Senha</label>
 								<div class="input-group form-group">
 									<input type="password" class="form-control text-light"
 										style="background-color:#282d30; border-color:#1f1f1f;" name="confirme">
@@ -252,6 +255,16 @@
 	<script src="js/cadastro.js"></script>
 	<script src="node_modules/popper.js/dist/umd/popper.js"></script>
 	<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
 </body>
+<script>
+	$(document).ready(function () {
+		$('.date').mask('99/99/9999');
+		$('.cep').mask('99999-999');
+		$('.cpf').mask('999.999.999-99');
+		$('.phone_with_ddd').mask('(99) 99999-9999');
+		$('.uf').mask('AA');
+	});
+</script>
 
 </html>

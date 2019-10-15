@@ -75,15 +75,15 @@
 						<div class="col-6">
 							<label style="color:#b5b5b5; text-dark" class="text-font">Nome</label>
 							<div class="input-group form-group">
-								<input type="text" class="form-control text-light" name="nome"
+								<input type="text" placeholder="Ex. Joaquim" class="form-control text-light" name="nome"
 									style="background-color:#282d30; border-color:#1f1f1f;" required>
-									
+
 							</div>
 						</div>
 						<div class="col-6">
 							<label class="text-font" style="color:#b5b5b5;">Sobrenome</label>
 							<div class="input-group form-group">
-								<input type="text" class="form-control text-light" name="sobrenome"
+								<input type="text" placeholder="Ex. Souza" class="form-control text-light" name="sobrenome"
 									style="background-color:#282d30; border-color:#1f1f1f;" required>
 							</div>
 						</div>
@@ -92,15 +92,16 @@
 						<div class="col-6">
 							<label style="color:#b5b5b5; text-dark" class="text-font">Data de Nascimento</label>
 							<div class="input-group form-group">
-								<input type="date" class="form-control text-light" name="datanasc"
+								<input type="text" placeholder="10/02/1979" class="form-control date text-light" name="datanasc"
 									style="background-color:#282d30; border-color:#1f1f1f;" required>
 							</div>
 						</div>
 						<div class="col-6">
 							<label class="text-font" style="color:#b5b5b5;">Celular</label>
 							<div class="input-group form-group">
-								<input type="text" placeholder="(**) *****-****" class="form-control text-light"
-									name="celular" style="background-color:#282d30; border-color:#1f1f1f;" required>
+								<input type="text" placeholder="(11) 94973-2918"
+									class="form-control phone_with_ddd text-light" name="celular"
+									style="background-color:#282d30; border-color:#1f1f1f;" required>
 							</div>
 						</div>
 					</div>
@@ -151,6 +152,13 @@
 	<script src="js/javinha.js"></script>
 	<script src="node_modules/popper.js/dist/umd/popper.js"></script>
 	<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>       
 </body>
+<script>
+	$(document).ready(function () {
+		$('.date').mask('99/99/9999');
+		$('.phone_with_ddd').mask('(99) 99999-9999');
+	});
+</script>
 
 </html>
