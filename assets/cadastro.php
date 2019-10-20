@@ -1,7 +1,12 @@
 <?php
     include('conexao.php');
-
+    //funcao limpar caracteres nao numericos 
+    function limpar_texto($str){ 
+        return preg_replace("/[^0-9]/", "", $str); 
+    }
     if(isset($_POST['criar'])){
+        
+           
 
         $nome=$_POST['nome'];
         $sobrenome=$_POST['sobrenome'];
@@ -11,6 +16,12 @@
         $senha=$_POST['senha'];
         $confirme=$_POST['confirme'];
 
+        //formatando data
+        $datanasc = explode("/",$datanasc);
+        $datanasc = array_reverse($datanasc);
+        $datanasc = implode ('-', $datanasc);
+
+        $celular = limpar_texto($celular);
         $sql=('select * from usuarios where Email = "'.$email.'";');
         $resul=mysqli_query($conexao, $sql);
         $con=mysqli_fetch_array($resul);
@@ -63,6 +74,12 @@
         $cert=$_POST['certificado'];
         $exp=$_POST['experiencia'];
         $bairro=$_POST['bairro'];
+        //formatando data
+        $datanasc = explode("/",$datanasc);
+        $datanasc = array_reverse($datanasc);
+        $datanasc = implode ('-', $datanasc);
+         
+        $celular = limpar_texto($celular);
 
         $sql=('select * from usuarios where Email = "'.$email.'";');
         $resul=mysqli_query($conexao, $sql);

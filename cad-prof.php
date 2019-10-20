@@ -76,15 +76,18 @@
 							<div class="col-6">
 								<label style="color:#b5b5b5; text-dark" class="text-font">Nome</label>
 								<div class="input-group form-group">
-									<input type="text" placeholder="Ex. Joaquim" class="form-control text-light"
-										style="background-color:#282d30; border-color:#1f1f1f; " name="nome">
+									<input id="nome" type="text" placeholder="Ex. Joaquim"
+										class="form-control text-light"
+										style="background-color:#282d30; border-color:#1f1f1f; " name="nome" required>
 								</div>
 							</div>
 							<div class="col-6">
 								<label class="text-font" style="color:#b5b5b5;">Sobrenome</label>
 								<div class="input-group form-group">
-									<input type="text" placeholder="Ex. Souza" class="form-control text-light"
-										style="background-color:#282d30; border-color:#1f1f1f;" name="sobrenome">
+									<input id="sobrenome" type="text" placeholder="Ex. Souza"
+										class="form-control text-light"
+										style="background-color:#282d30; border-color:#1f1f1f;" name="sobrenome"
+										required>
 								</div>
 							</div>
 						</div>
@@ -92,15 +95,18 @@
 							<div class="col-6">
 								<label style="color:#b5b5b5; text-dark" class="text-font">Data de Nascimento</label>
 								<div class="input-group form-group">
-									<input type="text" placeholder="10/02/1979" class="form-control date text-light"
-										style="background-color:#282d30; border-color:#1f1f1f;" name="datanasc">
+									<input id="datanasc" type="text" placeholder="10/02/1979"
+										class="form-control date text-light"
+										style="background-color:#282d30; border-color:#1f1f1f;" name="datanasc"
+										required>
 								</div>
 							</div>
 							<div class="col-6">
 								<label class="text-font" style="color:#b5b5b5;">Celular</label>
 								<div class="input-group form-group">
-									<input type="text" placeholder="(11) 94973-2918" class="form-control phone_with_ddd text-light"
-										style="background-color:#282d30; border-color:#1f1f1f;" name="celular">
+									<input id="celular" type="text" placeholder="(11) 94973-2918"
+										class="form-control phone_with_ddd text-light"
+										style="background-color:#282d30; border-color:#1f1f1f;" name="celular" required>
 								</div>
 							</div>
 						</div>
@@ -110,15 +116,15 @@
 							<div class="col-4">
 								<label style="color:#b5b5b5; text-dark" class="text-font">UF</label>
 								<div class="input-group form-group">
-									<input type="text" placeholder="SP" class="form-control uf text-light"
-										style="background-color:#282d30; border-color:#1f1f1f;" name="estado">
+									<input id="estado-camp" type="text" placeholder="SP" class="form-control uf text-light"
+										style="background-color:#282d30; border-color:#1f1f1f;" name="estado" required>
 								</div>
 							</div>
 							<div class="col-8" id="cidade">
 								<label class="text-font" style="color:#b5b5b5;">Cidade</label>
 								<div class="input-group form-group">
-									<input type="text" placeholder="Suzano" class="form-control text-light"
-										style="background-color:#282d30; border-color:#1f1f1f;" name="cidade">
+									<input id="cidade-camp" type="text" placeholder="Suzano" class="form-control text-light"
+										style="background-color:#282d30; border-color:#1f1f1f;" name="cidade" required>
 								</div>
 							</div>
 						</div>
@@ -126,15 +132,15 @@
 							<div class="col-8">
 								<label class="text-font" style="color:#b5b5b5;">Bairro</label>
 								<div class="input-group form-group">
-									<input type="text" placeholder="25 de Janeiro" class="form-control text-light"
-										style="background-color:#282d30; border-color:#1f1f1f;" name="bairro">
+									<input id="bairro-camp" type="text" placeholder="25 de Janeiro" class="form-control text-light"
+										style="background-color:#282d30; border-color:#1f1f1f;" name="bairro" required>
 								</div>
 							</div>
 							<div class="col-4" id="numero">
 								<label class="text-font" style="color:#b5b5b5;">N°</label>
 								<div class="input-group form-group">
-									<input type="text" placeholder="227" class="form-control text-light"
-										style="background-color:#282d30; border-color:#1f1f1f;" name="numero">
+									<input id="numero-camp" type="text" placeholder="227" class="form-control text-light"
+										style="background-color:#282d30; border-color:#1f1f1f;" name="numero" required>
 								</div>
 							</div>
 						</div>
@@ -142,8 +148,8 @@
 							<div class="col-12">
 								<label style="color:#b5b5b5; text-dark" class="text-font">Rua</label>
 								<div class="input-group form-group">
-									<input type="text" placeholder="R. Vila Rica" class="form-control text-light"
-										style="background-color:#282d30; border-color:#1f1f1f;" name="rua">
+									<input id="rua-camp" type="text" placeholder="R. Vila Rica" class="form-control text-light"
+										style="background-color:#282d30; border-color:#1f1f1f;" name="rua" required>
 								</div>
 							</div>
 						</div>
@@ -151,15 +157,15 @@
 							<div class="col-6">
 								<label class="text-font" style="color:#b5b5b5;">CEP</label>
 								<div class="input-group form-group">
-									<input type="text" placeholder="07459-000" class="form-control cep text-light"
-										style="background-color:#282d30; border-color:#1f1f1f;" name="cep">
+									<input id="cep-camp" type="text" placeholder="07459-000" class="form-control cep text-light"
+										style="background-color:#282d30; border-color:#1f1f1f;" name="cep" required>
 								</div>
 							</div>
 							<div class="col-6">
 								<label class="text-font" style="color:#b5b5b5;">CPF</label>
 								<div class="input-group form-group">
-									<input type="text" placeholder="230.391.188-10" class="form-control cpf text-light"
-										style="background-color:#282d30; border-color:#1f1f1f;" name="cpf">
+									<input id="cpf-camp" type="text" placeholder="230.391.188-10" class="form-control cpf text-light"
+										style="background-color:#282d30; border-color:#1f1f1f;" name="cpf" required>
 								</div>
 							</div>
 						</div>
@@ -169,8 +175,9 @@
 							<div class="col-12">
 								<label style="color:#b5b5b5; text-dark" class="text-font">Certicado</label>
 								<div class="input-group form-group">
-									<input type="text" class="form-control text-light"
-										style="background-color:#282d30; border-color:#1f1f1f;" name="certificado">
+									<input id="certificado" type="text" class="form-control text-light"
+										style="background-color:#282d30; border-color:#1f1f1f;" name="certificado"
+										required>
 								</div>
 							</div>
 						</div>
@@ -178,10 +185,9 @@
 							<div class="col-12" id="cidade">
 								<label class="text-font" style="color:#b5b5b5;">Experiência</label>
 								<div class="input-group form-group">
-									<textarea type="text" class="form-control text-light" rows="5"
+									<input id="experiencia" type="text" class="form-control text-light" rows="5"
 										style="background-color:#282d30; border-color:#1f1f1f;resize: none;"
-										name="experiencia">
-									</textarea>
+										name="experiencia" required>
 								</div>
 							</div>
 						</div>
@@ -192,7 +198,7 @@
 								<label style="color:#b5b5b5; text-dark" class="text-font">E-mail</label>
 								<div class="input-group form-group">
 									<input type="text" class="form-control text-light"
-										style="background-color:#282d30; border-color:#1f1f1f;" name="email">
+										style="background-color:#282d30; border-color:#1f1f1f;" name="email" required>
 								</div>
 							</div>
 						</div>
@@ -201,7 +207,7 @@
 								<label style="color:#b5b5b5; text-dark" class="text-font">Senha</label>
 								<div class="input-group form-group">
 									<input type="password" class="form-control text-light"
-										style="background-color:#282d30; border-color:#1f1f1f;" name="senha">
+										style="background-color:#282d30; border-color:#1f1f1f;" name="senha" required>
 								</div>
 							</div>
 						</div>
@@ -210,7 +216,8 @@
 								<label style="color:#b5b5b5; text-dark" class="text-font">Confirmar Senha</label>
 								<div class="input-group form-group">
 									<input type="password" class="form-control text-light"
-										style="background-color:#282d30; border-color:#1f1f1f;" name="confirme">
+										style="background-color:#282d30; border-color:#1f1f1f;" name="confirme"
+										required>
 								</div>
 							</div>
 						</div>
@@ -258,6 +265,15 @@
 	<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
 </body>
 <script>
+	$(document).ready(function () {
+		$(window).keydown(function (event) {
+			if (event.keyCode == 13) {
+				event.preventDefault();
+				return false;
+			}
+		});
+	});
+
 	$(document).ready(function () {
 		$('.date').mask('99/99/9999');
 		$('.cep').mask('99999-999');
