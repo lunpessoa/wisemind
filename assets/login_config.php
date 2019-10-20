@@ -19,7 +19,7 @@
         }else{
                 $sql_final=('select * from usuarios where Email = "'.$email.'" and Senha = "'.sha1($senha.$email).'";')
                 or die("Erro ao selecionar");
-                $res_final=mysqli_query($conexao, $sql_final);
+                $res_final=mysqli_query($conexao, $sql_final) or die (mysqli_error($conexao));
                 
                 if (mysqli_num_rows($res_final)<=0){
                     echo"<script language='javascript' type='text/javascript'>
@@ -32,13 +32,13 @@
                     if($con['id_privilegio']==1 || $con['id_privilegio']==2){
                         $_SESSION["log_status"]=true;
                         echo"<script language='javascript' type='text/javascript'>
-                        alert('Parabens porra');window.location
+                        alert('Bem vindo, ".$con['Nome']."');window.location
                         .href='../index.php';</script>";
                         //setcookie("login",$login);
                     }else if($con['id_privilegio']==3){
                         $_SESSION["adminlog_status"]=true;
                         echo"<script language='javascript' type='text/javascript'>
-                        alert('Bem vindo Administrador ".$con['Nome']."');window.location
+                        alert('Bem vindo".$con['Nome']."');window.location
                         .href='../admin/admin.php';</script>";
                     }
             }

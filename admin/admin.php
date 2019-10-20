@@ -16,6 +16,8 @@
 </head>
 <body>
     <a href="users.php">Usuarios</a>
+    <a href="users.php">Usuarios</a>
+    <a href="users.php">Usuarios</a>
 </body>
 <?php
    }else{
