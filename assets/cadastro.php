@@ -32,7 +32,7 @@
 
                
                 $sqlinserir = ('insert into usuarios (nome, sobrenome, Data_Nasc, Email, Senha, Cell, id_privilegio) values ("'.$nome.'", "'.$sobrenome.'", "'.$datanasc.'", "'.$email.'", "'.sha1($senha.$email).'", "'.$celular.'", 1);');
-                $inserir=mysqli_query($conexao,$sqlinserir);
+                $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));
 
                 if($inserir){ 
                     
@@ -41,10 +41,6 @@
                     
                     
                     }
-                    else{
-                        echo('<script>alert("Deu pt")</script>');//cadastro inc=valido 
-                    }
-            
 
                 }else {
                     echo('<script>alert("senhas diferentes")
@@ -80,29 +76,35 @@
         $datanasc = implode ('-', $datanasc);
          
         $celular = limpar_texto($celular);
+        $cpf = limpar_texto($cpf);
+        $cep = limpar_texto($cep);
 
         $sql=('select * from usuarios where Email = "'.$email.'";');
         $resul=mysqli_query($conexao, $sql);
         $con=mysqli_fetch_array($resul);
-
+        echo('<script>alert("esta inserindo'.$datanasc.'")</script>');
+        echo('<script>alert("esta inserindo'.$cpf.'")</script>');
+        echo('<script>alert("esta inserindo'.strlen($cpf).'")</script>');
+        echo('<script>alert("esta inserindo'.$cep.'")</script>');
+        echo('<script>alert("esta inserindo'.$celular.'")</script>');
+        echo('<script>alert("esta inserindo'.$estado.'")</script>');
         if($email== $con['Email']){
             echo('<script>alert("email ja cadastrado")</script>');
         } else if($senha==$confirme){
 
                
-                $sqlinserir = ('insert into usuarios (Nome, Sobrenome, Data_Nasc, Email, Senha, Cell, Cidade, Rua, Estado, Numero, CEP, Bairro, CPF, id_privilegio) values ("'.$nome.'", "'.$sobrenome.'", "'.$datanasc.'", "'.$email.'", "'.sha1($senha.$email).'", "'.$celular.'","'.$cidade.'","'.$rua.'","'.$estado.'","'.$num.'","'.$cep.'","'.$bairro.'","'.$cpf.'", 3);');
-                $inserir=mysqli_query($conexao,$sqlinserir);
+                $sqlinserir = ('insert into usuarios (Nome, Sobrenome, Data_Nasc, Email, Senha, Cell, Cidade, Rua, Estado, Numero, CEP, Bairro, CPF, id_privilegio) values 
+                ("'.$nome.'", "'.$sobrenome.'", "'.$datanasc.'", "'.$email.'", "'.sha1($senha.$email).'", "'.$celular.'","'.$cidade.'","'.$rua.'","'.$estado.'","'.$num.'","'.$cep.'","'.$bairro.'","'.$cpf.'", 3);');
+                $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));
                 if($inserir){
                     echo('<script>alert("foi esse")</script>');
-                }else{
-                    echo('<script>alert("Deu pt aqui")</script>');
                 }
                 $sql=('select * from usuarios where Email = "'.$email.'";');
                 $resul=mysqli_query($conexao, $sql);
                 $con=mysqli_fetch_array($resul);
 
                 $sqlinserir2 = ('insert into profissional (id_profissional, experiencia, certificado, id_especial) values('.$con['id_usuario'].',"'.$exp.'","'.$cert.'",32);');
-                $inserir2=mysqli_query($conexao,$sqlinserir2);
+                $inserir2=mysqli_query($conexao,$sqlinserir2) or die (mysqli_error($conexao));
 
                 if($inserir2){ 
                     
@@ -110,9 +112,6 @@
                     window.location.href = "../index.php";</script>');//cadastro com sucesso
                     
                     
-                    }
-                    else{
-                        echo('<script>alert("Deu pt")</script>');//cadastro inc=valido 
                     }
             
 
