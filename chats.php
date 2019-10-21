@@ -90,7 +90,7 @@
 
 						<div class="form-group">
 							<label for="exampleInputNome1">Nome</label>
-							<input name="nome" type="email" class="form-control" id="exampleInputEmail1"
+							<input name="nome" type="text" class="form-control" id="exampleInputEmail1"
 								placeholder="Nome da sala">
 							<small id="emailHelp" class="form-text text-muted">Crie um nome sugestivo</small>
 							<label for="exampleInputNome1">Área</label>
