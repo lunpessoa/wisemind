@@ -68,6 +68,7 @@
 					</section>
 				</a>
 			</section>
+		</section>
 		
 		');
 		}
