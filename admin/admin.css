@@ -1,0 +1,66 @@
+body {
+    background-image: url('../img/admin.png');
+    background-size: cover;
+    overflow:hidden;
+}
+
+.btn-hover-white {
+    color: #ffcf29;
+}
+
+.btn-hover-white:hover {
+    color: #fff;
+}
+
+.text-clear {
+    color: #afb3bb;
+}
+
+.card {
+    animation: zoomInDown 0.5s linear;
+}
+
+.config-item:hover {
+    background-color: #ffcf29;
+}
+
+.nav-link i {
+    color: #ffcf29;
+}
+
+.config-item:hover .nav-link i {
+    color: #212529;
+}
+
+.nav-link {
+    color: #fff;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.svg-login {
+    animation: move_eye 50s linear infinite alternate;
+}
+
+@keyframes move_eye{
+    from{
+        transform: rotate(30deg);
+    }
+    20%{
+        transform: rotate(-10deg);
+    }
+    40%{
+        transform: rotate(10deg);
+    }
+    60%{
+        transform: rotate(30deg);
+    }
+    80%{
+        transform: rotate(-20deg);
+    }
+    100%{
+        transform: rotate(30deg);
+    }
+}
