@@ -89,7 +89,7 @@ if (!isset($_SESSION)) {
                   <a class="nav-link text-warning mr-4" href="#">Parcerias</a>
                 </li>
                 <li class="nav-item text-uppercase">
-                  <a class="nav-link text-warning mr-4" href="#">Wise Teacher</a>
+                  <a class="nav-link text-warning mr-4" href="compra1.php">TORNE-SE WISER</a>
                 </li>
                 <li class="nav-item text-uppercase">
                   <a class="nav-link text-warning" href="suporte.php">Suporte</a>
