@@ -1,3 +1,17 @@
+<?php
+  include('assets/conexao.php');
+  session_start();
+  if(isset($_SESSION["log_status"]) && $_SESSION["log_status"]==true){
+    $sql=('select * from usuarios where id_usuario = '. $_SESSION["id_user"].';');
+    $resul=mysqli_query($conexao, $sql);
+    $con=mysqli_fetch_array($resul);
+  
+    $sql2=('select * from estudantes where id_estudante ='. $_SESSION["id_user"].';');
+    $resul2=mysqli_query($conexao, $sql);
+    $con2=mysqli_fetch_array($resul2);
+    if($con2['plano']==true){
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -640,5 +654,16 @@
   <br>
   <?php include('rodape.html'); ?>
 </body>
+<?php
+    }else{
+      echo('<script>window.alert("Faça a assinatura do nosso plano")
+			window.location.href = "compra1.php";</script>');
+    }
+		}else{
+			echo('<script>window.alert("Faça o login antes")
+			window.location.href = "login.php";</script>');
+		}
+	
+?>
 
 </html>
