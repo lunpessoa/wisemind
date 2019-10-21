@@ -36,19 +36,20 @@
 			</div>
 		</div>
 	</section>
+
 	<?php
 		if($con['id_privilegio']==2){
 			echo('<div class="container d-flex justify-content-center" data-toggle="modal" data-target="#modalExemplo">
-				<button type="button" class="btn btn-primary ">Criar Sala</button>
-			</div>');
+			<button type="button" class="btn btn-primary">Criar Sala</button>
+		</div>');
 		}
 	?>
 	<section class="container mb-5">
-	<hr>
-	<?php
+		<hr>
+		<?php
 		$sql2=('select * from chat;');
 		$resul2=mysqli_query($conexao, $sql2);
-		while($con=mysqli_fetch_array($resul2) or die (mysqli_error($conexao))){
+		while($con=mysqli_fetch_array($resul2)){
 	
 
 	echo('
@@ -68,10 +69,12 @@
 					</section>
 				</a>
 			</section>
+		</section>
 		');
 		}
 	?>
 	</section>
+
 	<div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
 		aria-hidden="true">
 		<div class="modal-dialog" role="document">
@@ -83,23 +86,23 @@
 					</button>
 				</div>
 				<form action="assets/sala.php" method="POST">
-				<div class="modal-body">
-					
+					<div class="modal-body">
+
 						<div class="form-group">
 							<label for="exampleInputNome1">Nome</label>
 							<input name="nome" type="email" class="form-control" id="exampleInputEmail1"
-								 placeholder="Nome da sala">
+								placeholder="Nome da sala">
 							<small id="emailHelp" class="form-text text-muted">Crie um nome sugestivo</small>
 							<label for="exampleInputNome1">Área</label>
-							<input name="area" type="email" class="form-control" id="exampleInputEmail1"
-								 placeholder="Área do conhecimento">
+							<input name="area" type="text" class="form-control" id="exampleInputEmail1"
+								placeholder="Área do conhecimento">
 						</div>
-					
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-					<button type="submit" class="btn btn-primary" name="criar">Criar sala</button>
-				</div>
+
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+						<button type="submit" class="btn btn-primary" name="criar">Criar sala</button>
+					</div>
 				</form>
 			</div>
 		</div>
