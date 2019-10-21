@@ -82,23 +82,23 @@
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<form action="#" method="POST">
+				<form action="assets/sala.php" method="POST">
 				<div class="modal-body">
 					
 						<div class="form-group">
 							<label for="exampleInputNome1">Nome</label>
-							<input type="email" class="form-control" id="exampleInputEmail1"
+							<input name="nome" type="email" class="form-control" id="exampleInputEmail1"
 								 placeholder="Nome da sala">
 							<small id="emailHelp" class="form-text text-muted">Crie um nome sugestivo</small>
 							<label for="exampleInputNome1">Área</label>
-							<input type="email" class="form-control" id="exampleInputEmail1"
+							<input name="area" type="email" class="form-control" id="exampleInputEmail1"
 								 placeholder="Área do conhecimento">
 						</div>
 					
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-					<button type="submit" class="btn btn-primary">Criar sala</button>
+					<button type="submit" class="btn btn-primary" name="criar">Criar sala</button>
 				</div>
 				</form>
 			</div>
