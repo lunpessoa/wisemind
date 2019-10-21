@@ -15,11 +15,11 @@
                 if($inserir){ 
                     
                     echo('<script>alert("Inserido com sucesso")
-                    window.location.href = "../index.php";</script>');//cadastro com sucesso
+                    window.location.href = "../chats.php";</script>');//cadastro com sucesso
                     
                 }else {
                     echo('<script>alert("erro")
-                    window.location.href = "../cad-estudy.php";</script>');
+                    window.location.href = "../chats.php";</script>');
                     
                 }
 
