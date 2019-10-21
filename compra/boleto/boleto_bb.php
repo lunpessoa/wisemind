@@ -1,6 +1,9 @@
 <?php
-	include('assets/conexao.php');
-	session_start();
+    if (!isset($_SESSION)) {
+        session_start();
+    }
+	include('../../assets/conexao.php');
+	
 	if(isset($_SESSION["log_status"]) && $_SESSION["log_status"]==true){
 	$sql=('select * from usuarios where id_usuario = '. $_SESSION["id_user"].';');
 	$resul=mysqli_query($conexao, $sql);
@@ -19,7 +22,6 @@
 header ('Content-type: text/html; charset=UTF-8');
 header ('Content-type: text/html; charset=ISO-8859-1');
 
-session_start();
 include('../../assets/conexao.php');
 // DADOS DO BOLETO PARA O SEU CLIENTE
 $dias_de_prazo_para_pagamento = 5;
