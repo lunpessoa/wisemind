@@ -96,6 +96,9 @@
 							<input type="email" class="form-control" id="exampleInputEmail1"
 								 placeholder="Nome da sala">
 							<small id="emailHelp" class="form-text text-muted">Crie um nome sugestivo</small>
+							<label for="exampleInputNome1">Área</label>
+							<input type="email" class="form-control" id="exampleInputEmail1"
+								 placeholder="Área do conhecimento">
 						</div>
 					
 				</div>
