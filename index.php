@@ -109,7 +109,7 @@
   <section class="container-fluid p-0">
     <div class="row mr-0 ml-0">
       <div class="col-md-6 col-12 text-left p-5">
-        <h3 class="display-3 ml-5 mt-5"><b><em><i class="fas fa-user-graduate"></i> Estudante</em></b></h3>
+        <h3 class="display-3 mt-5"><b><em><i class="fas fa-user-graduate"></i> Estudante</em></b></h3>
         <p class="text-left h4 mr-5 mt-3">Mussum Ipsum, cacilds vidis litro abertis.
           Interessantiss
           quisso pudia ce receita de
@@ -128,7 +128,7 @@
 
   <section class="container-fluid justify-content-center d-flex align-items-center"
     style="height:200px; background-image: url('img/fundo.png'); background-attachment: fixed;">
-    <h1 class="display-3 text-primary text-uppercase "><b><em><i class="fas fa-cogs"></i> Plataforma WiseMind<em></b>
+    <h1 class="display-3 text-primary text-uppercase "><b><em><i class="fas fa-cogs"></i> Plataforma WiseMind</em></b>
     </h1>
   </section>
 
