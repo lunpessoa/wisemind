@@ -26,7 +26,7 @@
         <section class="card-body"><br>
             <h5 class="card-title">Plano free</h5>
             <p class="card-text">Acesso ao chat para sanar dúvidas e descobrir mais sobre o mercado de trabalho </p>
-            <a href="#" class="btn btn-primary">Continuar com o plano free</a>
+            <a href="index.php" class="btn btn-primary">Continuar com o plano free</a>
         </section>
     </section>
 

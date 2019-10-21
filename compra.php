@@ -63,66 +63,77 @@
 						Para concluir o pagamento, precisamos dos seguintes dados pessoais para efetuarmos a geração do
 						boleto
 
-						<form>
+						<form action="assets/compra-config.php" method="POST" name="form-boleto">
 							<section class="form-row">
 								<section class="form-group col-md-6">
 									<label for="inputnome">Nome</label>
-									<input type="email" class="form-control" id="inputEmail4" placeholder="Nicolas">
+									<input type="text" class="form-control" id="inputEmail4" placeholder="Nicolas" name="nome" required>
 								</section>
 								<section class="form-group col-md-6">
 									<label for="inputsobrenome">Sobrenome</label>
-									<input type="password" class="form-control" id="inputPassword4" placeholder="Silva">
+									<input type="text" class="form-control" placeholder="Silva" name="sobrenome" required>
 								</section>
 							</section>
 							<section class="form-group">
-								<label for="inputAddress">Endereço</label>
-								<input type="text" class="form-control" id="inputAddress" placeholder="R. João Manoel">
+								<label for="inputAddress">Rua</label>
+								<input type="text" class="form-control" id="inputAddress" placeholder="R. João Manoel" name="rua" required>
 							</section>
-							<section class="form-group">
+							<section class="form-row">
+							<section class="form-group col-md-8">
 								<label for="inputAddress2">Complemento</label>
 								<input type="text" class="form-control" id="inputAddress2"
-									placeholder="Apartamento, Casa, Estudio...">
+									placeholder="Apartamento, Casa, Estudio..." name="complemento">
+							</section>
+							<section class="form-group col-md-4">
+									<label for="inputTelefone">CEP</label>
+									<input id="inputTelefone" class="form-control cep" placeholder="07500-000" name="cep"required>
+								</section>
 							</section>
 							<section class="form-row">
 								<section class="form-group col-md-6">
 									<label for="inputCity">Cidade</label>
-									<input type="text" class="form-control" id="inputCity" placeholder="São Paulo">
+									<input type="text" name="cidade" class="form-control" id="inputCity" placeholder="São Paulo" required>
 								</section>
 								<section class="form-group col-md-4">
 									<label for="inputState">Estado</label>
-									<select id="inputState" class="form-control">
-										<option selected>Escolha</option>
-										<option>SP</option>
-									</select>
+									<input type="text" name="estado" class="form-control uf" placeholder="SP" name="estado" required>
 								</section>
 								<section class="form-group col-md-2">
 									<label for="inputNumero">Número</label>
-									<input type="text" class="form-control" id="inputNumero" placeholder="xxxx">
+									<input type="text" name="numero" class="form-control" id="inputNumero" placeholder="142" name="numero" required>
 								</section>
 							</section>
-							<section class="form-row">
-								<section class="form-group col-md-4">
-									<label for="inputRG">RG</label>
-									<input type="number" class="form-control" id="inputRG" placeholder="xx.xxx.xxx-x">
-								</section>
-								<section class="form-group col-md-4">
-									<label for="inputCPF">CPF</label>
-									<input type="number" class="form-control" id="inputCPF"
-										placeholder="xxx.xxx.xxx-xx">
-								</section>
-								<section class="form-group col-md-4">
-									<label for="inputTelefone">Telefone</label>
-									<input id="inputTelefone" class="form-control" placeholder="(xx)xxxxx-xxxx">
-								</section>
-							</section><br>
-							<button type="button" class="btn btn-primary btn-lg btn-block">Gerar Boleto</button>
+								
+							<button type="submit" class="btn btn-primary btn-lg btn-block" name="Enviar">Gerar Boleto</button>
 						</form>
 					</section>
 				</section>
 			</section>
 		</section>
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="node_modules/jquery/dist/jquery.js"></script>
+	<script src="js/cadastro.js"></script>
+	<script src="node_modules/popper.js/dist/umd/popper.js"></script>
+	<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
 </body>
+<script>
+	$(document).ready(function () {
+		$(window).keydown(function (event) {
+			if (event.keyCode == 13) {
+				event.preventDefault();
+				return false;
+			}
+		});
+	});
 
-<script src="js/script.js"></script>
+	$(document).ready(function () {
+		$('.cep').mask('99999-999');
+		$('.cpf').mask('999.999.999-99');
+		$('.phone_with_ddd').mask('(99) 99999-9999');
+		$('.uf').mask('AA');
+	});
+</script>
 
 </html>
