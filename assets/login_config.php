@@ -38,7 +38,7 @@
                     }else if($con['id_privilegio']==3){
                         $_SESSION["adminlog_status"]=true;
                         echo"<script language='javascript' type='text/javascript'>
-                        alert('Bem vindo".$con['Nome']."');window.location
+                        alert('Bem vindo Administrador".$con['Nome']."');window.location
                         .href='../admin/admin.php';</script>";
                     }
             }

@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<title>Login</title>
+	<title>Cadastro</title>
 	<meta charset="utf-8">
 
 	<link rel="stylesheet" href="node_modules/bootstrap/compiler/bootstrap.css">
