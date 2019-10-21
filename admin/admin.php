@@ -32,7 +32,7 @@
                         <h1 class="h1 text-warning"><b>WISE MIND</b></h1>
                     </div>
                     <div class="col-12 text-center">
-                        <h6 class="text-light text-font h5">Boas-vindas <?php echo($con['Nome']) ?></h6>
+                        <h6 class="text-light text-font h5">Boas-vindas <?php echo($con['Nome']); ?></h6>
                     </div>
                 </div>
             </div>
