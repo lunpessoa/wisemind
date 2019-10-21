@@ -47,15 +47,13 @@
 	<section class="container mb-5">
 		<hr>
 		<section class="row mt-3">
-		<?php
+			<?php
 		$sql2=('select * from chat;');
 		$resul2=mysqli_query($conexao, $sql2);
 		while($con=mysqli_fetch_array($resul2)){
 	
 
 	echo('
-		
-		
 			<section class="col-12 col-md-4">
 				<a class="btn" href="#">
 					<section class="card">
@@ -70,9 +68,9 @@
 					</section>
 				</a>
 			</section>
-		
 		');
 		}
+		
 	?>
 		</section>
 	</section>
