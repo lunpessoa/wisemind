@@ -32,11 +32,12 @@
                         <h1 class="h1 text-warning"><b>WISE MIND</b></h1>
                     </div>
                     <div class="col-12 text-center">
-                        <h6 class="text-light text-font h5">Boas-vindas <?php $con['Nome'] ?></h6>
+                        <h6 class="text-light text-font h5">Boas-vindas <?php echo($con['Nome']) ?></h6>
                     </div>
                 </div>
             </div>
-            <div class="card-body border-0 p-0 bg-dark" style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; overflow:hidden;">
+            <div class="card-body border-0 p-0 bg-dark"
+                style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; overflow:hidden;">
                 <div id="itens-nav" class="list-nav w-100">
                     <ul class="nav flex-column text-font-calibri text-center">
                         <li class="nav-item config-item ">
@@ -46,13 +47,13 @@
                         <hr class="w-75 bg-white my-1">
                         <li class="nav-item config-item">
                             <a class="nav-link h5 mb-0 px-3 pt-4" href="suporte.php"><i
-                                    class="fas fa-shield-alt mr-1"></i> <label
+                                    class="fas fa-headset mr-1"></i> <label
                                     class="h5 cursor-pointer">Suporte</label></a>
                         </li>
                         <hr class="w-75 bg-white my-1">
                         <li class="nav-item config-item">
                             <a class="nav-link h5 mb-0 px-3 pt-4" href="ped-pag.php"><i
-                                    class="fas fa-mail-bulk mr-1"></i>
+                                    class="fas fa-credit-card mr-1"></i>
                                 <label class="h5 cursor-pointer">Pagamentos</label></a>
                         </li>
                     </ul>
