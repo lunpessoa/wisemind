@@ -43,16 +43,23 @@
 			</div>');
 		}
 	?>
-
 	<section class="container mb-5">
-		<hr>
+	<hr>
+	<?php
+		$sql2=('select * from chat;');
+		$resul2=mysqli_query($conexao, $sql2);
+		while($con=mysqli_fetch_array($resul2) or die (mysqli_error($conexao))){
+	
+
+	echo('
+		
 		<section class="row mt-3">
 			<section class="col-12 col-md-4">
 				<a class="btn" href="#">
 					<section class="card">
 						<img src="img/slide_amarelo.gif" class="card-img-top" alt="...">
 						<section class="card-body text-center">
-							<h3 class="card-title h3"><b><em>Medicina</em></b></h3>
+							<h3 class="card-title h3"><b><em>'.$con["Area"].'</em></b></h3>
 						</section>
 						<section class="card-footer text-center">
 							<h5 class="float-left text-muted"> Sala 1</h5>
@@ -61,22 +68,9 @@
 					</section>
 				</a>
 			</section>
-			<section class="col-12 col-md-4">
-				<a class="btn" href="#">
-					<section class="card">
-						<img src="img/slide.gif" class="card-img-top" alt="...">
-						<section class="card-body text-center">
-							<h3 class="card-title h3"><b><em>Medicina</em></b></h3>
-						</section>
-						<section class="card-footer text-center">
-							<h5 class="float-left text-muted"> Sala 2</h5>
-							<h5 class="float-right text-muted"> 0/20</h5>
-						</section>
-					</section>
-				</a>
-			</section>
-
-		</section>
+		');
+		}
+	?>
 	</section>
 	<div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
 		aria-hidden="true">
@@ -88,23 +82,23 @@
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<form action="#" method="POST">
+				<form action="assets/sala.php" method="POST">
 				<div class="modal-body">
 					
 						<div class="form-group">
 							<label for="exampleInputNome1">Nome</label>
-							<input type="email" class="form-control" id="exampleInputEmail1"
+							<input name="nome" type="email" class="form-control" id="exampleInputEmail1"
 								 placeholder="Nome da sala">
 							<small id="emailHelp" class="form-text text-muted">Crie um nome sugestivo</small>
 							<label for="exampleInputNome1">Área</label>
-							<input type="email" class="form-control" id="exampleInputEmail1"
+							<input name="area" type="email" class="form-control" id="exampleInputEmail1"
 								 placeholder="Área do conhecimento">
 						</div>
 					
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-					<button type="submit" class="btn btn-primary">Criar sala</button>
+					<button type="submit" class="btn btn-primary" name="criar">Criar sala</button>
 				</div>
 				</form>
 			</div>
