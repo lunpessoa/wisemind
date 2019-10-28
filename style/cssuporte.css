@@ -1,191 +1,76 @@
-@media screen and (max-width:1600px){
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap');
 
-body{
-	margin:0px;
-	overflow-x:hidden;
+body {
+	margin: 0px;
 }
 
-.fundo2{
-	height:500px;
-	background-color:#000;
+.backimage {
+	width: 100%;
+	height: 80%;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+}
+
+.font-icon{
+	font-size:6em;
+}
+
+.wiserelement {
+	animation: float 6s ease-in-out infinite;
+}
+
+.lbl-links{
+	font-family: 'Roboto Condensed', sans-serif;
+	cursor: pointer;
+}
+
+.suporte-form{
+	margin-top:100px;
+	padding-top: 200px;
+	padding-bottom: 100px;
+	background-image: url('../img/suporteinfo.png');
 	background-attachment: fixed;
-	background-size:cover;
-	background-image:url("../img/fundo.jpg");
+	background-position: center;
 }
 
-#fundo1{
-    width:100%;
-    height:500px; 
-	margin-top:0px;
-	margin-left:0px;
-	background-image:url("../img/fundo3.jpg");
+.formulario {
+	background-image: url('../img/wiserimage.png');
+	background-size: cover;
 	background-attachment: fixed;
-	background-color:#f00;
-	background-size:cover;
-	z-index:0;}	
+	background-position: center;
+}
 
-#suporte{
-    width:100%;
-    height:600px; 
-	margin-left:0px;
-	position:relative;
-	background-color:#fff;
-	z-index:0;}	
-	
-#img1{
-    width:125px;
-	height:125px;
-	margin-top:50px;
-	margin-left:250px;
-	background-image:url("../img/palavras.png");
-	position:absolute;
-	transition: 0.1s linear
+.form-control {
+	background-color: rgba(40, 45, 48, 0.75);
+	border-color: #1f1f1f;
+}
+
+.form-control:focus {
+	background-color: rgba(40, 45, 48, 0.75);
+	border-color: #1f1f1f;
+}
+
+.form-control::placeholder {
+	color: #b5b5b5;
+}
+
+.inform-suport{
+	margin-top:10em;
+	padding-top:80px;
+	padding-bottom:80px;
+}
+
+@keyframes float {
+	0% {
+		transform: translatey(20px);
 	}
-	#img1:hover,
-	#img2:hover,
-	#img3:hover,
-	#img4:hover,
-	#img5:hover,
-	#img6:hover,
-	#img7:hover
-	{
-		transform: scale(1.1);
+
+	50% {
+		transform: translatey(40px);
 	}
-#img2{
-    width:125px;
-	height:125px;
-	margin-top:50px;
-	margin-left:550px;
-	background-image:url("../img/din.png");
-	position:absolute;
+
+	100% {
+		transform: translatey(20px);
 	}
-#img3{
-    width:125px;
-	height:125px;
-	margin-top:50px;
-	margin-left:850px;
-	background-image:url("../img/idd.png");
-	position:absolute;
-	}
-#img4{
-    width:125px;
-	height:125px;
-	margin-top:50px;
-	margin-left:1150px;
-	background-image:url("../img/problema.png");
-	position:absolute;
-	}
-#img5{
-    width:125px;
-	height:125px;
-	margin-top:250px;
-	margin-left:400px;
-	background-image:url("../img/errro.png");
-	position:absolute;
-	}
-#img6{
-    width:125px;
-	height:125px;
-	margin-top:250px;
-	margin-left:700px;
-	background-image:url("../img/folha.png");
-	position:absolute;
-	}
-#img7{
-    width:125px;
-	height:125px;
-	margin-top:250px;
-	margin-left:1000px;
-	background-image:url("../img/por.png");
-	position:absolute;
-	}
-	
-#formulario{
-    width:100%;
-    height:750px; 
-	margin-left:0px;
-	position: relative;
-	background-color:#fff;
-	z-index:0;}
-	
-	
-#problema1{
-    width:100%;
-	height:800px; 
-	position: relative;
-	background-color:#F0F3F6;
 }
-	
-#problema2{
-    width:100%;
-    height:800px; 
-	background-color:#fff;
-	position: relative;
-}
-	
-#problema3{
-    width:100%;
-    height:800px; 
-	background-color:#F0F3F6;
-	position: relative;
-}
-#problema4{
-    width:100%;
-    height:800px; 
-	background-color:#fff;
-	position: relative;
-}
-#problema5{
-    width:100%;
-    height:800px; 
-	background-color:#F0F3F6;
-	position: relative;
-}
-
-#problema6{
-    width:100%;
-    height:800px; 
-	background-color:#fff;
-	position: relative;
-}
-#problema7{
-    width:100%;
-    height:800px; 
-	background-color:#F0F3F6;
-	position: relative;
-}
-	
-
-#rodape{
-    width:100%;
-	margin-top:1950px;
-    height:350px; 
-	margin-left:0px;
-	position:absolute;
-	background-color:#f00;
-	z-index:0;}
-
-a:link{
-color:#fbd7a6;
-text-decoration:none;
-}
-a:visited{
-color:#fbd7a6;
-
-}
-::-webkit-scrollbar-track {
-	background-color:#fff;
-}
-::-webkit-scrollbar{
-width:8px;
-
-}
-::-webkit-scrollbar-thumb{
-background:#003f6c;
-}
-
-}
-
-
-
-
