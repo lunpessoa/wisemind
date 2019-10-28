@@ -1,0 +1,27 @@
+	.vantagens {
+		font-family: "century gothic";
+	}
+
+	.formulario {
+		background-image: url('../img/fundo_azul.png');
+		background-size: cover;
+		background-attachment: fixed;
+	}
+
+	.form-control {
+		background-color: rgba(40, 45, 48, 0.75);
+		border-color:#1f1f1f;
+	}
+
+	.form-control:focus{
+		background-color: rgba(40, 45, 48, 0.75);
+		border-color: #1f1f1f;
+	}
+
+	.form-control::placeholder {
+		color:#b5b5b5;
+	}
+
+	.plano{
+		margin-top:100px;
+	}
