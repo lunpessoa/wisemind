@@ -61,6 +61,23 @@ body {
 	padding-bottom:80px;
 }
 
+.button-back{
+	bottom: 50px;
+	right: 20px;
+	z-index: 2;
+	animation: float 4s ease-in-out infinite;
+	cursor: pointer;
+	
+}
+
+.button-back a{
+	width: 60px;
+	height: 60px;
+	border-radius: 100%;
+	font-size:50px;
+	box-shadow: 10px 10px 14px -9px rgba(0,0,0,0.75);
+}
+
 @keyframes float {
 	0% {
 		transform: translatey(20px);

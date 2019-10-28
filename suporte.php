@@ -9,57 +9,61 @@
 </head>
 
 <body id="body">
-	<section class="img-fluid backimage" alt="Responsive image">
+	<nav class="nav position-fixed button-back text-center align-items-center d-flex">
+		<a href="#inicio" class="slide-section text-dark bg-warning"><i class="fas fa-angle-up"></i></a>
+	</nav>
+
+	<section id="inicio" class="img-fluid backimage" alt="Responsive image">
 		<img src="img/wiserhelp.png" class="position-relative wiserelement" alt="">
 	</section>
 
 	<section class="container-fluid mb-5">
 		<div class="row justify-content-center text-center">
 			<div class="col-3 mb-5">
-				<a href="#problema1" class="slide-section text-decoration-none text-dark" data-toggle="tooltip" data-placement="top"
-					title="Palavras imprópias no meu chat">
+				<a href="#problema1" class="slide-section text-decoration-none text-dark" data-toggle="tooltip"
+					data-placement="top" title="Palavras imprópias no meu chat">
 					<i class="fas fa-comment-slash font-icon d-block"></i>
 					<label class="lbl-links">Palavras imprópias</label>
 				</a>
 			</div>
 			<div class="col-3 mb-5">
-				<a href="#problema2" class="slide-section text-decoration-none text-dark" data-toggle="tooltip" data-placement="top"
-					title="Não estou conseguindo efetuar o pagamento">
+				<a href="#problema2" class="slide-section text-decoration-none text-dark" data-toggle="tooltip"
+					data-placement="top" title="Não estou conseguindo efetuar o pagamento">
 					<i class="fas fa-money-bill-wave font-icon d-block"></i>
 					<label class="lbl-links">Pagamento</label>
 				</a>
 			</div>
 			<div class="col-3 mb-5">
-				<a href="#problema3" class="slide-section text-decoration-none text-dark" data-toggle="tooltip" data-placement="top"
-					title="Não consigo modificar as informações do meu perfil">
+				<a href="#problema3" class="slide-section text-decoration-none text-dark" data-toggle="tooltip"
+					data-placement="top" title="Não consigo modificar as informações do meu perfil">
 					<i class="fas fa-user-edit font-icon d-block"></i>
 					<label class="lbl-links">Perfil</label>
 				</a>
 			</div>
 			<div class="col-3 mb-5">
-				<a href="#problema4" class="slide-section text-decoration-none text-dark" data-toggle="tooltip" data-placement="top"
-					title="Meu chat não funciona">
+				<a href="#problema4" class="slide-section text-decoration-none text-dark" data-toggle="tooltip"
+					data-placement="top" title="Meu chat não funciona">
 					<i class="fas fa-comments font-icon d-block"></i>
 					<label class="lbl-links">Chat</label>
 				</a>
 			</div>
 			<div class="col-3 mb-5">
-				<a href="#problema5" class="slide-section text-decoration-none text-dark" data-toggle="tooltip" data-placement="top"
-					title="Não consigo mexer no site">
+				<a href="#problema5" class="slide-section text-decoration-none text-dark" data-toggle="tooltip"
+					data-placement="top" title="Não consigo mexer no site">
 					<i class="fas fa-desktop font-icon d-block"></i>
 					<label class="lbl-links">Funcionamento Site</label>
 				</a>
 			</div>
 			<div class="col-3 mb-5">
-				<a href="#problema6" class="slide-section text-decoration-none text-dark" data-toggle="tooltip" data-placement="top"
-					title="Não consigo cancelar a minha conta">
+				<a href="#problema6" class="slide-section text-decoration-none text-dark" data-toggle="tooltip"
+					data-placement="top" title="Não consigo cancelar a minha conta">
 					<i class="fas fa-user-times font-icon d-block"></i>
 					<label class="lbl-links">Cancelar Conta</label>
 				</a>
 			</div>
 			<div class="col-3 mb-5">
-				<a href="#problema7" class="slide-section text-decoration-none text-dark" data-toggle="tooltip" data-placement="top"
-					title="Dificuldade em achar Profissionais">
+				<a href="#problema7" class="slide-section text-decoration-none text-dark" data-toggle="tooltip"
+					data-placement="top" title="Dificuldade em achar Profissionais">
 					<i class="fas fa-user-tie font-icon d-block"></i>
 					<label class="lbl-links">Encontrar Profissionais</label>
 				</a>
@@ -477,8 +481,8 @@
 	<?php include('rodape.html'); ?>
 </body>
 <script>
-	$(document).ready(function() {
-		$('.slide-section').click(function(e) {
+	$(document).ready(function () {
+		$('.slide-section').click(function (e) {
 			var linkHref = $(this).attr('href');
 
 			$('html, body').animate({
