@@ -144,6 +144,7 @@ body {}
     background-image: url('../img/Estudante.jpg');
     background-attachment: fixed;
     background-size:cover;
+    background-position: center;
 }
 .profissional{
     height: 100%;
@@ -151,6 +152,7 @@ body {}
     background-size: cover; 
     background-attachment: fixed;
     background-repeat: no-repeat;
+    background-position: center;
 }
 .content_student{
     position: relative;
