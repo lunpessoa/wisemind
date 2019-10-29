@@ -77,6 +77,7 @@
 
 	<section class="container-fluid suporte-form">
 		<section class="container">
+		<p class="h3 text-light font-galada text-center pb-3">Não achou a solução? Envie-nos uma mensagem!</p>
 			<form>
 				<div class="form-row">
 					<div class="form-group col-sm-6">

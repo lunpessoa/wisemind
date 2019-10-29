@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap');
-
+@import url('https://fonts.googleapis.com/css?family=Galada|Roboto+Condensed&display=swap');
 body {
 	margin: 0px;
 }
@@ -23,6 +22,12 @@ body {
 .lbl-links{
 	font-family: 'Roboto Condensed', sans-serif;
 	cursor: pointer;
+}
+
+.font-galada{
+	font-family: 'Galada', cursive;
+	font-size: 40px;
+	text-shadow: 6px 4px 3px rgba(0,0,0,0.32);
 }
 
 .suporte-form{
