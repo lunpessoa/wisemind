@@ -13,33 +13,55 @@
     <title>Login</title>
     <meta charset="utf-8">
 
-    <link rel="stylesheet" href="node_modules/bootstrap/compiler/bootstrap.css">
-    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
-    <link rel="stylesheet" href="style/login.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/compiler/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="usersadmin.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
 
 </head>
 
 <body>
-    <h1>Usuarios</h1>
-    <table border=1>
-        <tr>
-            <td>Id</td>
-            <td>Nome</td>
-            <td>Email</td>
-            <td colspan=2>Privilegio</td>
-        </tr>
-        <form action="pesquisar.php" method="get" name="formularioPesq">
-            <input type="text" name="email-pesq" id="pesq" placeholder="Digite um email">
-            <button type="submit" name="Enviar" value="Pesquisar" id="Pesquisar">Pesquisar</button>
-        </form>
-        <?php
+    <nav class="nav position-fixed button-back text-center align-items-center d-flex">
+        <a href="admin.php" class="slide-section text-dark bg-warning"><i class="fas fa-chevron-left"></i></a>
+    </nav>
+    
+    <section class="container-fluid header-title justify-content-center d-flex align-items-end">
+        <div class="info-header text-center w-25">
+            <h1 class="h1 font-lobster">Usuários</h1>
+
+            <form action="pesquisar.php" method="get" name="formularioPesq">
+                <div class="input-group mb-3">
+                    <input type="text" id="form-border-none" class="form-control border-right-0 search-place"
+                        placeholder="Pesquisar" aria-label="Pesquisar" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <span class="input-group-text bg-transparent border-left-0" id="basic-addon2"><i
+                                class="fas fa-search"></i></span>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section class="container">
+
+        <table class="table table-borderless mt-3">
+            <thead>
+                <tr class="text-light">
+                    <th scope="col">Id</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Privilegio</th>
+                    <th scope="col" class="text-center">Excluir</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
 
             $sqlmostrar=('select * from usuarios;');
             $resul=mysqli_query($conexao, $sqlmostrar) or die (mysqli_error($conexao));
             while($con_usu=mysqli_fetch_array($resul) or die (mysqli_error($conexao))){
-                echo('<tr>
-                    <td>'.$con_usu["id_usuario"].' </td>
+                echo('<tr class="text-clear">
+                    <th scope="row">'.$con_usu["id_usuario"].' </th>
                     <td> '.$con_usu["Nome"].' </td>
                     <td> '.$con_usu["Email"].' </td>
                     <td> ');if($con_usu["id_privilegio"]==1){
@@ -50,15 +72,18 @@
                                 echo("Administrador");
                             }
                     echo('</td>');
-                    if($con_usu["id_privilegio"]!=3){
-                        echo('<td><a href="excluir_quest.php?ex='.$con_usu['Nome'].'">apagar</a></td>');
+                    if($con_usu["id_privilegio"]==3){
+                        echo('<td class="justify-content-center d-flex"><a class="btn text-clear disabled" href="excluir_quest.php?ex='.$con_usu['Nome'].'"><i class="fas fa-user-times"></i></a></td>');
+                    } else{
+                        echo('<td class="justify-content-center d-flex"><a class="btn text-clear" href="excluir_quest.php?ex='.$con_usu['Nome'].'"><i class="fas fa-user-times"></i></a></td>');
                     }
                     echo('</tr>');
             }
    
     ?>
-    </table>
-
+            </tbody>
+        </table>
+    </section>
 </body>
 <?php
     }else{

@@ -11,11 +11,11 @@
 <html lang="pt-br">
 
 <head>
-    <title>Login</title>
+    <title>Pesquisar</title>
     <meta charset="utf-8">
 
-    <link rel="stylesheet" href="node_modules/bootstrap/compiler/bootstrap.css">
-    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/compiler/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" href="style/login.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
 
@@ -23,7 +23,7 @@
 
 <body>
     <h1>Usuarios</h1>
-    <table border=1>
+    <table class="table table-hover">
         <tr>
             <td>Id</td>
             <td>Nome</td>
@@ -82,9 +82,9 @@
 <script src="node_modules/popper.js/dist/umd/popper.js"></script>
 <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
 <script>
-    document.getElementById("mostrar-todos").onclick = (e)=>{
+    document.getElementById("mostrar-todos").onclick = (e) => {
         e.preventDefault()
-        window.location.href= "users.php"
+        window.location.href = "users.php"
     }
 </script>
 
