@@ -21,12 +21,18 @@
 </head>
 
 <body>
-    <nav class="nav position-fixed button-back text-center align-items-center d-flex">
-        <a href="admin.php" class="slide-section text-dark bg-warning"><i class="fas fa-chevron-left"></i></a>
-    </nav>
-    
-    <section class="container-fluid header-title justify-content-center d-flex align-items-end">
-        <div class="info-header text-center w-25">
+
+
+    <section class="container-fluid header-title justify-content-center d-flex position-relative">
+
+        <nav class="button-back text-center position-absolute d-flex mt-3">
+
+            <a href="admin.php" class="slide-section text-dark bg-warning"><i class="fas fa-chevron-left"></i></a>
+
+        </nav>
+
+        <div class="text-center w-25 mt-5">
+
             <h1 class="h1 font-lobster">Usuários</h1>
 
             <form action="pesquisar.php" method="get" name="formularioPesq">
@@ -39,7 +45,9 @@
                     </div>
                 </div>
             </form>
+
         </div>
+
     </section>
 
     <section class="container">

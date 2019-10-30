@@ -1,7 +1,8 @@
 body {
-  background-image: url("../img/back3.png");
+  background-image: url("../img/backperfil2.png");
   background-size: cover;
-  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
   font-family: 'Numans', sans-serif;
 }
 

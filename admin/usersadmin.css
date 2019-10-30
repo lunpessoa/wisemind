@@ -3,22 +3,16 @@
 body {
     background-image: url('../img/wiseusers.png');
     background-size: cover;
-    overflow: hidden;
 }
 
 .header-title {
     background-image: url('../img/ondinha.png');
     background-position: center;
+    background-position-y: -400px;
     background-size: cover;
     overflow: hidden;
     position: relative;
-    height: 691px;
-    margin-top: -400px;
-}
-
-.info-header {
-    position: relative;
-    top: -150px;
+    height: 300px;
 }
 
 thead {
