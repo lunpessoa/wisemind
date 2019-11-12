@@ -1,9 +1,10 @@
 body {
-  background-image: url("../img/backperfil2.png");
+  /* background-image: url("../img/backperfil2.png"); */
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
   font-family: 'Numans', sans-serif;
+  background: #161a20;
 }
 
 .card {

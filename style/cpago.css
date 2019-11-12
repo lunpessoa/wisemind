@@ -1,12 +1,59 @@
-.acordtodos .btn-link{
+@import url('https://fonts.googleapis.com/css?family=Galada|Roboto+Condensed&display=swap');
+body {
+    /* background-image: url("../img/backperfil2.png"); */
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    font-family: 'Numans', sans-serif;
+    background: #161a20;
+}
+
+.acordtodos .btn-link {
     width: 100%;
 }
 
-.acordtodos h3{
-    text-align:left;
+.acordtodos h3 {
+    text-align: left;
 }
 
-.acordtodos h3 i{
-    float:right;
+.acordtodos h3 i {
+    float: right;
     margin-top: 3px;
+}
+
+.gradheader {
+    background-color: #26282E;
+}
+
+.config-item button h3{
+    font-family: 'Galada', cursive;
+    font-size: 40px;
+}
+
+.config-item button h3 i {
+    transition: 0.4s linear;
+}
+
+.config-item button {
+    color: #ffcf29;
+    transition: none;
+}
+
+.config-item{
+    transition: 0.2s linear;
+}
+
+.config-item:hover button {
+    color: #212529;
+}
+.config-item:hover button h3 i {
+    transform: rotate(225deg);
+}
+
+.config-item:hover {
+    background-color: #ffcf29;
+}
+
+.config-item:hover{
+    color: #212529;
 }

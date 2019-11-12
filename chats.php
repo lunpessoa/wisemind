@@ -21,7 +21,7 @@
 
 <body>
 
-	<section class="container text-center mb-5" style="margin-top:100px;">
+	<section class="container text-center mb-5" style="margin-top:180px;">
 		<h3 class="display-3 text-primary"><i class="fas fa-comments "></i> <b><em>WiseChat</em></b></h3>
 		<h3 class="h5 text-warning"><em>Faça parte desta comunidade<em></h3>
 	</section>
