@@ -18,6 +18,8 @@
 --
 -- Table structure for table `chat`
 --
+CREATE DATABASE wisemind;
+USE wisemind;
 
 DROP TABLE IF EXISTS `chat`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;

@@ -119,12 +119,10 @@ if (!isset($_SESSION)) {
     <div class="row mr-0 ml-0">
       <div class="col-md-6 col-12 text-left p-5">
         <h3 class="display-3 mt-5"><b><em><i class="fas fa-user-graduate"></i> Estudante</em></b></h3>
-        <p class="text-left h4 mr-5 mt-3">Mussum Ipsum, cacilds vidis litro abertis.
-          Interessantiss
-          quisso pudia ce receita de
-          bolis, mais bolis eu num gostis. Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam
-          vulputate
-          dapibus. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.</p>
+        <p class="text-left h4 mr-5 mt-3">Na plataforma WiseMind o estudante tem a oportunidade de se comunicar com
+          profissionais ja consolidados no
+          mercado de trabalho, descobrir novas profissões, ter acesso a materias de apoio, chances de ingressar no
+          mercado e muito mais de forma rápida e tudo em um único lugar.</p>
       </div>
       <div class="col-md-6 col-12 p-0">
         <div class="student">
@@ -151,12 +149,10 @@ if (!isset($_SESSION)) {
       </div>
       <div class="col-md-6 col-12 text-right p-5">
         <h3 class="display-3 text-dark mr-5 mt-5"><b><em>Profissional <i class="fas fa-user-tie"></i></em></b></h3>
-        <p class="text-right h4 mr-5 mt-3">Mussum Ipsum, cacilds vidis litro abertis.
-          Interessantiss
-          quisso pudia ce receita de
-          bolis, mais bolis eu num gostis. Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam
-          vulputate
-          dapibus. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.</p>
+        <p class="text-right h4 mr-5 mt-3">O profissional é muito valorizado em nossa plataforma, pois é ele o
+          responsável por boa parte das realizações do nosso serviço, além de aumentar o seu horizonte de conhecimento
+          com outros profissionais e com os jovens, o profisional tem a oportunidade e encontrar e ser indicado a vagas
+          de emprego.</p>
       </div>
     </div>
   </section>
@@ -177,16 +173,10 @@ if (!isset($_SESSION)) {
   <section class="container-fluid pb-5"
     style="background-image: url('img/fundo_azul.png'); background-attachment: fixed;">
     <section class="container  d-flex">
-      <p class="h4 text-center text-light mt-5" style="line-height: 50px;">Mussum Ipsum, cacilds vidis litro abertis.
-        Interessantiss quisso pudia ce receita de bolis, mais
-        bolis eu num
-        gostis. Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus. Mais vale um
-        bebadis conhecidiss, que um alcoolatra anonimis. Cevadis im ampola pa arma uma pindureta.
-
-        Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi. Leite de capivaris, leite
-        de
-        mula manquis sem cabeça. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum.
-        Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque, eget.</p>
+      <p class="h4 text-center text-light mt-5" style="line-height: 50px;">A plataforma Wise Mind surgiu a partir da
+        análise de necessidades atuais, existe uma crise que complica a vida de quem quer
+        ingressar no mercado de trabalho, tudo tem que ser levado em conta na escolha da profissão e a Wise Mind foi
+        criada exatamente para ajudar a solucionar essa problemática.</p>
     </section>
   </section>
  

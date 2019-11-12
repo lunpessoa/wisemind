@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster|Palanquin+Dark&display=swap');
+
+body {
+    background-image: url('../img/wiseusers.png');
+    background-size: cover;
+}
+
+.header-title {
+    background-image: url('../img/ondinha.png');
+    background-position: center;
+    background-position-y: -400px;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+    height: 300px;
+}
+
+thead {
+    background-color: rgba(38, 40, 46, 0.8)
+}
+
+tbody {
+    background-color: rgba(47, 49, 56, 0.75)
+}
+
+.text-clear {
+    color: #afb3bb;
+}
+
+.search-place:focus {
+    outline: none;
+    box-shadow: none !important;
+    border: 1px solid #ced4da;
+}
+
+.font-lobster {
+    font-family: 'Lobster', cursive;
+}
+
+.button-back {
+    top: 50px;
+    left: 20px;
+    z-index: 2;
+    animation: float 4s ease-in-out infinite;
+    cursor: pointer;
+}
+
+.button-back a {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    font-size: 40px;
+    box-shadow: 10px 10px 14px -9px rgba(0, 0, 0, 0.75);
+}
+
+@keyframes float {
+    0% {
+        transform: translatex(20px);
+    }
+
+    50% {
+        transform: translatex(40px);
+    }
+
+    100% {
+        transform: translatex(20px);
+    }
+}

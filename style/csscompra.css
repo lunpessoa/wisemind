@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster|Palanquin+Dark&display=swap');
+
+.vantagens {
+	font-family: "century gothic";
+}
+
+.formulario {
+	background-image: url('../img/wiserimage.png');
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center;
+}
+
+.form-control {
+	background-color: rgba(40, 45, 48, 0.75);
+	border-color: #1f1f1f;
+}
+
+.form-control:focus {
+	background-color: rgba(40, 45, 48, 0.75);
+	border-color: #1f1f1f;
+}
+
+.form-control::placeholder {
+	color: #b5b5b5;
+}
+
+.plano {
+	background-image: url('../img/ondinha.png');
+	background-position: center;
+	background-size: cover;
+	overflow: hidden;
+	position: absolute;
+	height: 691px;
+	margin-top: -100px;
+}
+
+.backimage {
+	width: 100%;
+	height: 90%;
+	background-image: url('../img/backwiser.png');
+	background-attachment: fixed;
+	background-position: center;
+}
+
+.wiserelement {
+	top: 50%;
+	transform: translateY(-50%);
+	animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+	0% {
+		transform: translatey(-120px);
+	}
+
+	50% {
+		transform: translatey(-140px);
+	}
+
+	100% {
+		transform: translatey(-120px);
+	}
+}
+
+.font-lobster{
+	font-family: 'Lobster', cursive;
+}
+
+.circle {
+	width: 80px;
+	border-radius: 50%;
+	background-color: #ffcf29;
+	color: #fff;
+	height: 80px;
+	z-index: 2;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.circle i {
+	font-size: 30px;
+}
+
+.how-it-works.row .col-2 {
+	align-self: stretch;
+}
+
+.how-it-works.row .col-2::after {
+	content: "";
+	position: absolute;
+	border-left: 3px solid #ffcf29;
+	z-index: 1;
+}
+
+.how-it-works.row .col-2.bottom::after {
+	height: 50%;
+	left: 50%;
+	top: 50%;
+}
+
+.how-it-works.row .col-2.full::after {
+	height: 100%;
+	left: calc(50% - 3px);
+}
+
+.how-it-works.row .col-2.top::after {
+	height: 50%;
+	left: 50%;
+	top: 0;
+}
+
+
+.timeline div {
+	padding: 0;
+	height: 40px;
+}
+
+.timeline hr {
+	border-top: 3px solid #ffcf29;
+	margin: 0;
+	top: 17px;
+	position: relative;
+}
+
+.timeline .col-2 {
+	display: flex;
+	overflow: hidden;
+}
+
+.timeline .corner {
+	border: 3px solid #ffcf29;
+	width: 100%;
+	position: relative;
+	border-radius: 15px;
+}
+
+.timeline .top-right {
+	left: 50%;
+	top: -50%;
+}
+
+.timeline .left-bottom {
+	left: -50%;
+	top: calc(50% - 3px);
+}
+
+.timeline .top-left {
+	left: -50%;
+	top: -50%;
+}
+
+.timeline .right-bottom {
+	left: 50%;
+	top: calc(50% - 3px);
+}
