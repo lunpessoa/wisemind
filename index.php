@@ -1,8 +1,13 @@
+<?php
+if (!isset($_SESSION)) {
+	session_start();
+}
+?>
 <!doctype html>
 <html lang="pt-br">
 
 <head>
-  <title>Title</title>
+  <title>Home</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,7 +15,10 @@
 
 <body>
 
-  <?php include('menu.php'); ?>
+  <?php include('menu.php');?>
+  
+  
+    
 
   <section id="carouselSite" class="carousel slide" style="z-index: 0" data-ride="carousel">
     <ol class="carousel-indicators">
@@ -50,6 +58,7 @@
       <span class="sr-only">Avançar</span>
     </a>
   </section>
+  
 
   <nav class="nav">
     <ul class="nav lista-area-links">
@@ -104,7 +113,7 @@
       </div>
     </ul>
   </nav>
-
+  
 
   <section class="container-fluid p-0">
     <div class="row mr-0 ml-0">
@@ -170,8 +179,15 @@
         criada exatamente para ajudar a solucionar essa problemática.</p>
     </section>
   </section>
+ 
+
 
   <?php include('rodape.html'); ?>
+  <script src="node_modules/jquery/dist/jquery.js"></script>
+	<script src="js/cadastro.js"></script>
+	<script src="node_modules/popper.js/dist/umd/popper.js"></script>
+	<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
 
 </body>
 
