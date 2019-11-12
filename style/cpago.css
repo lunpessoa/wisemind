@@ -1,10 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Galada|Roboto+Condensed&display=swap');
+
 body {
-    /* background-image: url("../img/backperfil2.png"); */
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    font-family: 'Numans', sans-serif;
     background: #161a20;
 }
 
@@ -25,7 +21,7 @@ body {
     background-color: #26282E;
 }
 
-.config-item button h3{
+.config-item button h3 {
     font-family: 'Galada', cursive;
     font-size: 40px;
 }
@@ -39,13 +35,14 @@ body {
     transition: none;
 }
 
-.config-item{
+.config-item {
     transition: 0.2s linear;
 }
 
 .config-item:hover button {
     color: #212529;
 }
+
 .config-item:hover button h3 i {
     transform: rotate(225deg);
 }
@@ -54,6 +51,23 @@ body {
     background-color: #ffcf29;
 }
 
-.config-item:hover{
+.config-item:hover {
     color: #212529;
+}
+
+.ativado {
+    background-color: #e0b107;
+    color: #212529;
+}
+
+.ativado h3 {
+    color: #212529;
+}
+
+.ativado h3 i {
+    transform: rotate(225deg);
+}
+
+.ativado:hover {
+    background-color: #ffcf29;
 }

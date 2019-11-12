@@ -70,7 +70,7 @@
 				</div>
 			</div>
 			<div class="card-body bg-dark border-0">
-				<form name="cad" action="assets/cadastro.php" method="POST">
+				<form name="cad" action="assets/cadastro.php" method="POST" class="container was-validated" novalidate="" autocomplete="off">
 					<div id="fase1">
 						<div class="row ">
 							<div class="col-6">

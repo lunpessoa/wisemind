@@ -82,31 +82,31 @@
 				<div class="form-row">
 					<div class="form-group col-sm-6">
 						<label for="inputNome" class="text-light lbl-links">Nome</label>
-						<input type="text" class="form-control" id="inputNome" placeholder="José">
+						<input type="text" class="form-control text-light" id="inputNome" placeholder="José">
 					</div>
 					<div class="form-group col-sm-6">
 						<label for="inputSobrenome" class="text-light lbl-links">Sobrenome</label>
-						<input type="text" class="form-control" id="inputSobrenome" placeholder="Magalhães">
+						<input type="text" class="form-control text-light" id="inputSobrenome" placeholder="Magalhães">
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group col-sm-8">
 						<label for="inputEmail" class="text-light lbl-links">E-mail</label>
-						<input type="text" class="form-control" id="inputEmail" placeholder="email@email.com">
+						<input type="text" class="form-control text-light" id="inputEmail" placeholder="email@email.com">
 					</div>
 					<div class="form-group col-sm-2">
 						<label for="inputDDD" class="text-light lbl-links">DDD</label>
-						<input type="text" class="form-control" id="inputDDD" placeholder="DDD">
+						<input type="text" class="form-control text-light" id="inputDDD" placeholder="DDD">
 					</div>
 					<div class="form-group col-sm-2">
 						<label for="inputTelefone" class="text-light lbl-links">Telefone</label>
-						<input type="text" class="form-control" id="inputTelefone" placeholder="99999-9999">
+						<input type="text" class="form-control text-light" id="inputTelefone" placeholder="99999-9999">
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group col-sm-12">
 						<label for="inputDescricao" class="text-light lbl-links">Descrição</label>
-						<textarea class="form-control" id="inputDescricao" rows="5"
+						<textarea class="form-control text-light" id="inputDescricao" rows="5"
 							placeholder="Descrição..."></textarea>
 					</div>
 				</div>

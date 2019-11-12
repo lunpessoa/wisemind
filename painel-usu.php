@@ -26,8 +26,7 @@
 				<div class="card border border-0">
 					<div class="card-header bg-warning pb-0 border-0 d-inline">
 						<div class="img-usu w-50 h-50 float-left mr-3">
-							<img src="img/Luan.jpeg" class="img-fluid rounded-circle">
-							<!-- <button class="btn btn-link alter-image position-absolute"><i class="fas fa-pen"></i> Alterar</button> -->
+							<img src="img/Luan.jpeg" class="img-fluid">
 						</div>
 						<label class="d-flex text-font-calibri h4 font-italic font-weight-bold mt-4"><?php echo($con['Nome']);?></label>
 					</div>
@@ -35,23 +34,23 @@
 						<div id="itens-nav" class="list-nav w-100">
 							<ul class="nav flex-column text-font-calibri">
 								<li class="nav-item config-item">
-									<a class="nav-link h5 mb-0 px-3 pt-4" href="#"><i class="fas fa-user-cog mr-3"></i>
+									<a class="nav-link h5 mb-0 px-3 pt-4" id="botao-conteudo-1" href="#"><i class="fas fa-user-cog mr-3"></i>
 										<label class="h5 cursor-pointer">Informações</label></a>
 								</li>
 								<hr class="w-75 bg-white my-1">
 								<li class="nav-item config-item">
-									<a class="nav-link h5 mb-0 px-3 pt-4" href="#"><i
+									<a class="nav-link h5 mb-0 px-3 pt-4" id="botao-conteudo-2" href="#"><i
 											class="fas fa-shield-alt mr-3"></i> <label
 											class="h5 cursor-pointer">Segurança</label></a>
 								</li>
 								<hr class="w-75 bg-white my-1">
 								<li class="nav-item config-item">
-									<a class="nav-link h5 mb-0 px-3 pt-4" href="#"><i class="fas fa-mail-bulk mr-3"></i>
+									<a class="nav-link h5 mb-0 px-3 pt-4" id="botao-conteudo-3" href="#"><i class="fas fa-mail-bulk mr-3"></i>
 										<label class="h5 cursor-pointer">Endereço</label></a>
 								</li>
 								<hr class="w-75 bg-white my-1">
 								<li class="nav-item config-item">
-									<a class="nav-link h5 mb-0 px-3 pt-4" href="#"><i
+									<a class="nav-link h5 mb-0 px-3 pt-4" id="botao-conteudo-4" href="#"><i
 											class="fas fa-credit-card mr-3"></i> <label class="h5 cursor-pointer">Plano
 											/
 											Pagamento</label></a>
@@ -212,6 +211,28 @@
 
 
 </body>
+<script>
+  
+      var ativar = function(x){
+        for(let y=1;y<=5;y++)
+        if(y==x){
+          var botao = document.getElementById("botao-conteudo-"+x)
+          botao.setAttribute('class', 'nav-link h5 mb-0 px-3 pt-4 ativado')
+        }else{
+          var botao = document.getElementById("botao-conteudo-"+y)
+          botao.setAttribute('class', 'nav-link h5 mb-0 px-3 pt-4')
+        }
+      }
+
+      for(let x=1;x<=5;x++){
+        var link = document.getElementById("botao-conteudo-"+x)
+        link.onclick = (e) => {
+          e.preventDefault()
+          ativar(x)
+        }
+      }
+  
+  </script>
 <?php
 		}else{
 			echo('<script>window.alert("Faça o login antes")

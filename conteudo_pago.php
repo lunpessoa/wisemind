@@ -25,7 +25,7 @@
     <div class="accordion" id="accordionExample">
       <section class="card border border-0 bg-transparent">
         <div class="card-header gradheader config-item p-0" id="headingOne">
-            <button class="btn btn-link text-decoration-none p-4" data-toggle="collapse" data-target="#collapseOne"
+            <button class="btn btn-link text-decoration-none p-4 " id="botao-conteudo-1" data-toggle="collapse" data-target="#collapseOne"
               aria-expanded="true" aria-controls="collapseOne">
               <h3>Medicina <i class="fas fa-plus"></i></h3>
             </button>
@@ -147,7 +147,7 @@
       <section class="card border border-0 bg-transparent">
         <div class="card-header gradheader config-item p-0" id="headingTwo">
           <h5 class="mb-0">
-            <button class="btn btn-link text-decoration-none p-4" data-toggle="collapse" data-target="#collapseTwo"
+            <button class="btn btn-link text-decoration-none p-4" id="botao-conteudo-2" data-toggle="collapse" data-target="#collapseTwo"
               aria-expanded="true" aria-controls="collapseTwo">
               <h3>Direito <i class="fas fa-plus"></i></h3>
             </button>
@@ -269,7 +269,7 @@
       <section class="card border border-0 bg-transparent">
         <div class="card-header gradheader config-item p-0" id="headingThree">
           <h5 class="mb-0">
-            <button class="btn btn-link text-decoration-none p-4" data-toggle="collapse" data-target="#collapseThree"
+            <button class="btn btn-link text-decoration-none p-4" id="botao-conteudo-3" data-toggle="collapse" data-target="#collapseThree"
               aria-expanded="true" aria-controls="collapseThree">
               <h3>Engenharia <i class="fas fa-plus"></i></h3>
             </button>
@@ -391,7 +391,7 @@
       <section class="card border border-0 bg-transparent">
         <div class="card-header gradheader config-item p-0" id="headingFour">
           <h5 class="mb-0">
-            <button class="btn btn-link text-decoration-none p-4" data-toggle="collapse" data-target="#collapseFour"
+            <button class="btn btn-link text-decoration-none p-4" id="botao-conteudo-4" data-toggle="collapse" data-target="#collapseFour"
               aria-expanded="true" aria-controls="collapseThree">
               <h3>Biologia <i class="fas fa-plus"></i></h3>
             </button>
@@ -513,7 +513,7 @@
       <section class="card border border-0 bg-transparent">
         <div class="card-header gradheader config-item p-0" id="headingFive">
           <h5 class="mb-0">
-            <button class="btn btn-link text-decoration-none p-4" data-toggle="collapse" data-target="#collapseFive"
+            <button class="btn btn-link text-decoration-none p-4" id="botao-conteudo-5" data-toggle="collapse" data-target="#collapseFive"
               aria-expanded="true" aria-controls="collapseThree">
               <h3>Psicologia <i class="fas fa-plus"></i></h3>
             </button>
@@ -635,6 +635,28 @@
   </section>
 
   <?php include('rodape.html'); ?>
+  <script>
+  
+      var ativar = function(x){
+        for(let y=1;y<=5;y++)
+        if(y==x){
+          var botao = document.getElementById("botao-conteudo-"+x)
+          botao.setAttribute('class', 'btn btn-link text-decoration-none p-4 ativado')
+        }else{
+          var botao = document.getElementById("botao-conteudo-"+y)
+          botao.setAttribute('class', 'btn btn-link text-decoration-none p-4')
+        }
+      }
+
+      for(let x=1;x<=5;x++){
+        var link = document.getElementById("botao-conteudo-"+x)
+        link.onclick = (e) => {
+          e.preventDefault()
+          ativar(x)
+        }
+      }
+  
+  </script>
 </body>
 <?php
     }else{

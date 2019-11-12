@@ -70,13 +70,13 @@
 				</div>
 			</div>
 			<div class="card-body bg-dark border-0">
-				<form name="cad" action="assets/cadastro.php" method="POST">
+				<form name="cad" action="assets/cadastro.php" method="POST" class="container was-validated" novalidate="" autocomplete="off">
 					<div class="row">
 						<div class="col-6">
 							<label style="color:#b5b5b5; text-dark" class="text-font">Nome</label>
 							<div class="input-group form-group">
 								<input type="text" placeholder="Ex. Joaquim" class="form-control text-light" name="nome"
-									style="background-color:#282d30; border-color:#1f1f1f;" required>
+									style="background-color:#282d30; border-color:#1f1f1f;" required="">
 
 							</div>
 						</div>
