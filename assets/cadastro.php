@@ -5,7 +5,7 @@
         return preg_replace("/[^0-9]/", "", $str); 
     }
     if(isset($_POST['criar'])){
-        
+        session_start();
            
 
         $nome=$_POST['nome'];
@@ -42,9 +42,8 @@
                 $inserir2=mysqli_query($conexao,$sqlinserir2) or die (mysqli_error($conexao));
 
                 if($inserir2){ 
-                    
-                    echo('<script>alert("Inserido com sucesso")
-                    window.location.href = "../index.php";</script>');//cadastro com sucesso
+                    $_SESSION["cadastrado"] = true;
+                    echo('<script>window.location.href = "../index.php";</script>');//cadastro com sucesso
                     
                     
                     }
@@ -54,6 +53,7 @@
                     window.location.href = "../cad-estudy.php";</script>');
                     
                 }
+
 
 
 
@@ -97,6 +97,8 @@
                 $sqlinserir = ('insert into usuarios (Nome, Sobrenome, Data_Nasc, Email, Senha, Cell, Cidade, Rua, Estado, Numero, CEP, Bairro, CPF, id_privilegio) values 
                 ("'.$nome.'", "'.$sobrenome.'", "'.$datanasc.'", "'.$email.'", "'.sha1($senha.$email).'", "'.$celular.'","'.$cidade.'","'.$rua.'","'.$estado.'","'.$num.'","'.$cep.'","'.$bairro.'","'.$cpf.'", 2);');
                 $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));
+
+
                 if($inserir){
                     echo('<script>alert("foi esse")</script>');
                 }
@@ -109,8 +111,8 @@
 
                 if($inserir2){ 
                     
-                    echo('<script>alert("Inserido com sucesso")
-                    window.location.href = "../index.php";</script>');//cadastro com sucesso
+
+                    echo('<script>window.location.href = "../index.php";</script>');//cadastro com sucesso
                     
                     
                     }

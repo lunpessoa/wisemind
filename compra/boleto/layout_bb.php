@@ -649,7 +649,7 @@ do Sacado</b></div></TD></tr></tbody></table>
 			<td class="vencimento2">Vencimento</td>
 		</tr>
 		<tr class="campos">
-			<td class="local_pagto">QUALQUER BANCO AT&Eacute; O VENCIMENTO</td>
+			<td class="local_pagto">QUALQUER BANCO ATÉ O VENCIMENTO</td>
 			<td class="vencimento2"><?php echo $dadosboleto["data_vencimento"]?></td>
 		</tr>
 		</tbody>
@@ -673,7 +673,7 @@ do Sacado</b></div></TD></tr></tbody></table>
 		<tr class="titulos">
 			<td class="data_doc">Data do documento</td>
 			<td class="num_doc2">No. documento</td>
-			<td class="especie_doc">Esp&eacute;cie doc.</td>
+			<td class="especie_doc">Espécie doc.</td>
 			<td class="aceite">Aceite</td>
 			<td class="data_process">Data process.</td>
 			<td class="nosso_numero2">Nosso n&uacute;mero</td>
@@ -694,7 +694,7 @@ do Sacado</b></div></TD></tr></tbody></table>
 		<tr class="titulos">
 			<td class="reservado">Uso do  banco</td>
 			<td class="carteira">Carteira</td>
-			<td class="especie2">Esp�cie</td>
+			<td class="especie2">Espécie</td>
 			<td class="qtd2">Quantidade</td>
 			<td class="xvalor">x Valor</td>
 			<td class="valor_doc2">(=) Valor documento</td>
