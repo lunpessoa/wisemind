@@ -43,8 +43,6 @@
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
 						<label class="h3 text-font-calibri"><b>INFORMAÇÕES</b></label>
-						<button class="btn btn-hover-white ml-auto"><i class="fas fa-pen"></i><b>
-								ATUALIZAR</b></button>
 					</div>
 					<div class="card-body border-0 p-5">
 						<div class="row p-2">
@@ -89,8 +87,6 @@
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
 						<label class="h3 text-font-calibri"><b>DESCRIÇÃO - Estudante</b></label>
-						<button class="btn btn-hover-white ml-auto"><i class="fas fa-pen"></i><b>
-								ATUALIZAR</b></button>
 					</div>
 					<div class="card-body border-0 p-5">
 						<div class="row p-2">
@@ -118,8 +114,6 @@
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
 						<label class="h3 text-font-calibri"><b>SITUAÇÃO - Estudante</b></label>
-						<button class="btn btn-hover-white ml-auto"><i class="fas fa-pen"></i><b>
-								ATUALIZAR</b></button>
 					</div>
 					<div class="card-body border-0 p-5">
 						<div class="row p-2">
@@ -153,8 +147,6 @@
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
 						<label class="h3 text-font-calibri"><b>SITUAÇÃO - Profissional</b></label>
-						<button class="btn btn-hover-white ml-auto"><i class="fas fa-pen"></i><b>
-								ATUALIZAR</b></button>
 					</div>
 					<div class="card-body border-0 p-5">
 						<div class="row p-2">
@@ -177,8 +169,6 @@
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
 						<label class="h3 text-font-calibri"><b>ESPECIALIZAÇÃO - Profissional</b></label>
-						<button class="btn btn-hover-white ml-auto"><i class="fas fa-pen"></i><b>
-								ATUALIZAR</b></button>
 					</div>
 					<div class="card-body border-0 p-5">
 						<div class="row p-2">

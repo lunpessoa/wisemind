@@ -14,11 +14,23 @@ if (!isset($_SESSION)) {
 </head>
 
 <body>
+  <div class="position-fixed" style="z-index:10; right:20px; top:110px;">
+    <div class="toast bg-transparent" role="status" aria-live="polite" aria-atomic="true" data-autohide="false">
+      <div class="toast-header">
+        <img src="img/logo.png" class="rounded mr-2 " alt="...">
+        <strong class="mr-5 text-light">CADASTRO</strong>
+        <small class="text-light">11 mins ago</small>
+        <button type="button" class="btn ml-2 mb-1 toast-btn" data-dismiss="toast" aria-label="Close">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="toast-body toast-green text-light"> <!-- toast-normal - CINZA ; toast-green - VERDE ; toast-red - VERMELHO -->
+        Perfil criado com sucesso!
+      </div>
+    </div>
+  </div>
 
   <?php include('menu.php');?>
-  
-  
-    
 
   <section id="carouselSite" class="carousel slide" style="z-index: 0" data-ride="carousel">
     <ol class="carousel-indicators">
@@ -58,7 +70,7 @@ if (!isset($_SESSION)) {
       <span class="sr-only">Avançar</span>
     </a>
   </section>
-  
+
 
   <nav class="nav">
     <ul class="nav lista-area-links">
@@ -113,7 +125,7 @@ if (!isset($_SESSION)) {
       </div>
     </ul>
   </nav>
-  
+
 
   <section class="container-fluid p-0">
     <div class="row mr-0 ml-0">
@@ -179,16 +191,23 @@ if (!isset($_SESSION)) {
         criada exatamente para ajudar a solucionar essa problemática.</p>
     </section>
   </section>
- 
+
 
 
   <?php include('rodape.html'); ?>
   <script src="node_modules/jquery/dist/jquery.js"></script>
-	<script src="js/cadastro.js"></script>
-	<script src="node_modules/popper.js/dist/umd/popper.js"></script>
-	<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
-	<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+  <script src="js/cadastro.js"></script>
+  <script src="node_modules/popper.js/dist/umd/popper.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
 
 </body>
+<script>
+  $(document).ready(function () {
+    $('.toast').toast('show');
+    // $('#element').toast('hide')
+    // $('#element').toast('dispose')
+  });
+</script>
 
 </html>
