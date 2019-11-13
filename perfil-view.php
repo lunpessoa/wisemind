@@ -24,10 +24,11 @@
 		<div class="row">
 			<div class="col-2 offset-1">
 				<div class="card border border-0">
-					<div class="card-header bg-warning border-0 pl-2 image-card">
+					<div class="card-header bg-warning border-0 pt-3 pb-0">
 						<img class="img-fluid" src="img/Luan.jpeg" alt="">
-						<label class="align-items-center text-font-calibri h3 font-italic font-weight-bold h-100">
-							<p class="">#<?php echo($con['Nome']);?></p>
+						<label
+							class="d-flex justify-content-center text-font-calibri h3 font-italic font-weight-bold mt-3">
+							<p class="p-0">#<?php echo($con['Nome']);?></p>
 						</label>
 					</div>
 				</div>
@@ -41,7 +42,7 @@
 			<div class="col-7 offset-4">
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
-						<label class="h3 text-font-calibri"><b>INFORMAÇÕES PESSOAIS</b></label>
+						<label class="h3 text-font-calibri"><b>INFORMAÇÕES</b></label>
 						<button class="btn btn-hover-white ml-auto"><i class="fas fa-pen"></i><b>
 								ATUALIZAR</b></button>
 					</div>
@@ -64,15 +65,15 @@
 						</div>
 						<div class="row p-2">
 							<div class="col-3">
-								<span class="text-clear">Data de Nascimento</span>
+								<span class="text-clear">Idade</span>
 							</div>
 							<div class="col-9">
-								<span class="h5 text-white"><?php echo($con['Data_Nasc']);?></span>
+								<span class="h5 text-white"></span>
 							</div>
 						</div>
 						<div class="row p-2">
 							<div class="col-3">
-								<span class="text-clear">CPF</span>
+								<span class="text-clear">E-mail</span>
 							</div>
 							<div class="col-9">
 								<span class="h5 text-white"></span>
@@ -166,17 +167,6 @@
 									fundamentauam?</span>
 							</div>
 						</div>
-						<div class="row p-2">
-							<div class="col-3">
-								<span class="text-clear">Certificado</span>
-							</div>
-							<div class="col-9">
-								<span class="h5 text-white">Mah é a porta da esperçamm.
-									Boca
-									sujuam... sem vergonhuamm. Ma quem quer dinheiroam? Ma vai pra lá. O Raul Gil é
-									gayam! ... Maa O Ah Ae! Ih Ih! O Raul Gil é gayamm!</span>
-							</div>
-						</div>
 					</div>
 				</div>
 			</div>
@@ -216,171 +206,6 @@
 				</div>
 			</div>
 		</div>
-
-
-		<div class="row mb-5">
-			<div class="col-7 offset-4">
-				<div class="card border border-0 bg-transparent">
-					<div class="card-header border-bottom-0 text-white p-4 d-flex">
-						<label class="h3 text-font-calibri"><b>NÚMERO DE CONTATO</b></label>
-						<button class="btn btn-hover-white ml-auto"><i class="fas fa-pen"></i><b>
-								ATUALIZAR</b></button>
-					</div>
-					<div class="card-body border-0 p-5">
-						<div class="row p-2">
-							<div class="col-3">
-								<span class="text-clear">Número de celular</span>
-							</div>
-							<div class="col-9">
-								<span class="h5 text-white"><?php echo($con['Cell']);?></span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="row mb-5">
-			<div class="col-7 offset-4">
-				<div class="card border border-0 bg-transparent">
-					<div class="card-header border-bottom-0 text-white p-4 d-flex">
-						<label class="h3 text-font-calibri"><b>SENHA</b></label>
-						<button class="btn btn-hover-white ml-auto"><i class="fas fa-pen"></i><b>
-								ATUALIZAR</b></button>
-					</div>
-					<div class="card-body border-0 p-5">
-						<div class="row p-2">
-							<div class="col-3">
-								<span class="text-clear">Senha</span>
-							</div>
-							<div class="col-9">
-								<span class="h5 text-white">Altere sua senha</span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="row mb-5">
-			<div class="col-7 offset-4">
-				<div class="card border border-0 bg-transparent">
-					<div class="card-header border-bottom-0 text-white p-4 d-flex">
-						<label class="h3 text-font-calibri"><b>REGISTROS</b></label>
-						<button class="btn btn-hover-white ml-auto d-none"><i class="fas fa-pen"></i><b>
-								ATUALIZAR</b></button>
-					</div>
-					<div class="card-body border-0 p-5">
-						<div class="row p-2">
-							<div class="col-2">
-								<span class="text-light" style="font-size:40px"><i
-										class="fas fa-globe-americas"></i></span>
-							</div>
-							<div class="col-5 align-items-center  d-flex">
-								<span class="h5 text-white">Site WiseMind</span>
-							</div>
-							<div class="col-5 align-items-center d-flex">
-								<span class="h5 text-white align-middle">12 de nov de 2019 às 22:09</span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="row mb-5">
-			<div class="col-7 offset-4">
-				<div class="card border border-0 bg-transparent">
-					<div class="card-header border-bottom-0 text-white p-4 d-flex">
-						<label class="h3 text-font-calibri"><b>ENDEREÇO</b></label>
-						<button class="btn btn-hover-white ml-auto"><i class="fas fa-pen"></i><b>
-								ATUALIZAR</b></button>
-					</div>
-					<div class="card-body border-0 p-5">
-						<div class="row p-2">
-							<div class="col-3">
-								<span class="text-clear">Rua</span>
-							</div>
-							<div class="col-9">
-								<span class="h5 text-white"></span>
-							</div>
-						</div>
-						<div class="row p-2">
-							<div class="col-3">
-								<span class="text-clear">Nº</span>
-							</div>
-							<div class="col-9">
-								<span class="h5 text-white"></span>
-							</div>
-						</div>
-						<div class="row p-2">
-							<div class="col-3">
-								<span class="text-clear">CEP</span>
-							</div>
-							<div class="col-9">
-								<span class="h5 text-white"></span>
-							</div>
-						</div>
-						<div class="row p-2">
-							<div class="col-3">
-								<span class="text-clear">Bairro</span>
-							</div>
-							<div class="col-9">
-								<span class="h5 text-white"></span>
-							</div>
-						</div>
-						<div class="row p-2">
-							<div class="col-3">
-								<span class="text-clear">Cidade</span>
-							</div>
-							<div class="col-9">
-								<span class="h5 text-white"></span>
-							</div>
-						</div>
-						<div class="row p-2">
-							<div class="col-3">
-								<span class="text-clear">Estado</span>
-							</div>
-							<div class="col-9">
-								<span class="h5 text-white"></span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="row mb-5">
-			<div class="col-7 offset-4">
-				<div class="card border border-0 bg-transparent">
-					<div class="card-header border-bottom-0 text-white p-4 d-flex">
-						<label class="h3 text-font-calibri"><b>STATUS</b></label>
-						<button class="btn btn-hover-white ml-auto d-none"><i class="fas fa-pen"></i><b>
-								ATUALIZAR</b></button>
-					</div>
-					<div class="card-body border-0 p-5">
-						<div class="row p-2">
-							<div class="col-3">
-								<span class="text-clear">Plano</span>
-							</div>
-							<div class="col-9">
-								<span class="h5 text-white">Free</span>
-							</div>
-						</div>
-						<div class="row p-2">
-							<div class="col-3">
-								<span class="text-clear">Status do pagamento</span>
-							</div>
-							<div class="col-9">
-								<span class="h5 text-white"><i class="fas fa-check mr-2"></i> <i
-										class="fas fa-times mr-2"></i> Não confirmado</span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
 
 	</div>
 
