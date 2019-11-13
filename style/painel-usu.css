@@ -45,8 +45,63 @@ body {
   animation: zoomInDown 0.5s linear;
 }
 
+.img-usu {
+  position: relative;
+  margin-left: -50px;
+  margin-top: -30px;
+  margin-bottom: -10px;
+}
+
+.config-item:hover {
+  background-color: #ffcf29;
+}
+
+.nav-link i {
+  color: #ffcf29;
+}
+
+.config-item:hover .nav-link i {
+  color: #212529;
+}
+
+.nav-link {
+  color: #fff;
+}
+
 .cursor-pointer {
   cursor: pointer;
+}
+
+.image-card{
+  overflow: hidden;
+}
+
+.btn-perfil-img{
+  height: 100px;
+  width: 100px;  
+}
+
+.lnd-alter{
+  transition: 0.2s linear;
+  opacity: 0;
+}
+
+.btn-perfil-img img{
+  transition: 0.1s linear;
+}
+
+.btn-perfil-img:hover img{
+  filter: blur(1px);
+  filter: brightness(40%);
+}
+.btn-perfil-img:hover .lnd-alter{
+  transform: translateY(-65px);
+  opacity: 1;
+}
+
+.btn-perfil-img:focus {
+  outline: none;
+  box-shadow:none !important;
 }
 
 /* Opção Ativado */
