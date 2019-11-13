@@ -27,7 +27,8 @@
 					<div class="card-header bg-warning border-0 pl-2 image-card">
 						<button class="btn position-relative p-0 mr-3 btn-perfil-img overflow-hidden" href="#">
 							<img class="img-fluid" src="img/Luan.jpeg" alt="">
-							<label class="lnd-alter position-relative text-light text-font-calibri h3"><i class="fas fa-pen" style="cursor:pointer;"></i></label>
+							<label class="lnd-alter position-relative text-light text-font-calibri h3"><i
+									class="fas fa-pen" style="cursor:pointer;"></i></label>
 						</button>
 						<label class="align-items-center text-font-calibri h3 font-italic font-weight-bold h-100">
 							<p class="">#<?php echo($con['Nome']);?></p>
@@ -74,9 +75,72 @@
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
 						<label class="h3 text-font-calibri"><b>INFORMAÇÕES PESSOAIS</b></label>
-						<button class="btn btn-hover-white ml-auto"><i class="fas fa-pen"></i><b> ATUALIZAR</b></button>
+						<button class="btn btn-hover-white ml-auto" id="atualizar-1"><i class="fas fa-pen"></i><b>
+								ATUALIZAR</b></button>
 					</div>
-					<div class="card-body border-0 p-5">
+
+					<!--sumir- alterar-->
+					<div class="card-body border-0 p-5 d-none" id="informacoes-alter">
+						<form name="cad" action="assets/alterar.php" method="POST" class="container was-validated"
+							novalidate="" autocomplete="off">
+							<div class="row p-2">
+								<div class="col-3">
+									<span class="text-clear">Nome</span>
+								</div>
+								<div class="col-9">
+									<div class="input-group form-group w-50">
+										<input type="text" class="form-control text-light" name="email"
+											style="background-color:#282d30; border-color:#1f1f1f;"
+											placeholder="<?php echo($con['Nome']);?>"
+											value="<?php echo($con['Nome']);?>" required>
+									</div>
+								</div>
+							</div>
+							<div class="row p-2">
+								<div class="col-3">
+									<span class="text-clear">Sobrenome</span>
+								</div>
+								<div class="col-9">
+									<div class="input-group form-group w-50">
+										<input type="text" class="form-control text-light" name="email"
+											style="background-color:#282d30; border-color:#1f1f1f;"
+											placeholder="<?php echo($con['Sobrenome']);?>"
+											value="<?php echo($con['Sobrenome']);?>" required>
+									</div>
+								</div>
+							</div>
+							<div class="row p-2">
+								<div class="col-3">
+									<span class="text-clear">Data de Nascimento</span>
+								</div>
+								<div class="col-9">
+									<div class="input-group form-group w-50">
+										<input type="date" class="form-control text-light" name="email"
+											style="background-color:#282d30; border-color:#1f1f1f;"
+											placeholder="<?php echo($con['Data_Nasc']);?>"
+											value="<?php echo($con['Data_Nasc']);?>" required>
+									</div>
+								</div>
+							</div>
+							<div class="row p-2">
+								<div class="col-3">
+									<span class="text-clear">CPF</span>
+								</div>
+								<div class="col-9">
+									<div class="input-group form-group w-50">
+										<input type="text" class="form-control text-light" name="email"
+											style="background-color:#282d30; border-color:#1f1f1f;"
+											placeholder="<?php if($con['CPF']==0){echo("Adicionar");}else{echo($con['CPF']);}?>"
+											value="<?php echo($con['CPF']);?>"
+											<?php if($con['CPF']!=0){echo("required");}?>>
+									</div>
+								</div>
+							</div>
+
+							<button type="submit" class="btn btn-warning">Atualizar</button>
+						</form>
+					</div>
+					<div class="card-body border-0 p-5 " id="informacoes">
 						<div class="row p-2">
 							<div class="col-3">
 								<span class="text-clear">Nome</span>
@@ -216,6 +280,16 @@
 
 
 </body>
+<script>
+	var atualizar = document.getElementById("atualizar-1")
+
+	atualizar.onclick = ()=>{
+		atualizar.setAttribute('class','d-none')
+		document.getElementById("informacoes").setAttribute('class', 'card-body border-0 p-5 d-none')
+		document.getElementById("informacoes-alter").setAttribute('class', 'card-body border-0 p-5')
+	}
+
+</script>
 <script>
 	var ativar = function (x) {
 		for (let y = 1; y <= 5; y++)
