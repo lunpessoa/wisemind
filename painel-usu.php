@@ -24,17 +24,21 @@
 		<div class="row">
 			<div class="col-2 offset-1">
 				<div class="card border border-0">
-					<div class="card-header bg-warning pb-0 border-0 d-inline">
-						<div class="img-usu w-50 h-50 float-left mr-3">
-							<img src="img/Luan.jpeg" class="img-fluid">
-						</div>
-						<label class="d-flex text-font-calibri h4 font-italic font-weight-bold mt-4"><?php echo($con['Nome']);?></label>
+					<div class="card-header bg-warning border-0 pl-2 image-card">
+						<button class="btn position-relative p-0 mr-3 btn-perfil-img overflow-hidden" href="#">
+							<img class="img-fluid" src="img/Luan.jpeg" alt="">
+							<label class="lnd-alter position-relative text-light text-font-calibri h3"><i class="fas fa-pen" style="cursor:pointer;"></i></label>
+						</button>
+						<label class="align-items-center text-font-calibri h3 font-italic font-weight-bold h-100">
+							<p class="">#<?php echo($con['Nome']);?></p>
+						</label>
 					</div>
 					<div class="card-body border-0 p-0" style="background-color:#26282E;">
 						<div id="itens-nav" class="list-nav w-100">
 							<ul class="nav flex-column text-font-calibri">
 								<li class="nav-item config-item">
-									<a class="nav-link h5 mb-0 px-3 pt-4" id="botao-conteudo-1" href="#"><i class="fas fa-user-cog mr-3"></i>
+									<a class="nav-link h5 mb-0 px-3 pt-4" id="botao-conteudo-1" href="#"><i
+											class="fas fa-user-cog mr-3"></i>
 										<label class="h5 cursor-pointer">Informações</label></a>
 								</li>
 								<hr class="w-75 bg-white my-1">
@@ -45,7 +49,8 @@
 								</li>
 								<hr class="w-75 bg-white my-1">
 								<li class="nav-item config-item">
-									<a class="nav-link h5 mb-0 px-3 pt-4" id="botao-conteudo-3" href="#"><i class="fas fa-mail-bulk mr-3"></i>
+									<a class="nav-link h5 mb-0 px-3 pt-4" id="botao-conteudo-3" href="#"><i
+											class="fas fa-mail-bulk mr-3"></i>
 										<label class="h5 cursor-pointer">Endereço</label></a>
 								</li>
 								<hr class="w-75 bg-white my-1">
@@ -212,27 +217,25 @@
 
 </body>
 <script>
-  
-      var ativar = function(x){
-        for(let y=1;y<=5;y++)
-        if(y==x){
-          var botao = document.getElementById("botao-conteudo-"+x)
-          botao.setAttribute('class', 'nav-link h5 mb-0 px-3 pt-4 ativado')
-        }else{
-          var botao = document.getElementById("botao-conteudo-"+y)
-          botao.setAttribute('class', 'nav-link h5 mb-0 px-3 pt-4')
-        }
-      }
+	var ativar = function (x) {
+		for (let y = 1; y <= 5; y++)
+			if (y == x) {
+				var botao = document.getElementById("botao-conteudo-" + x)
+				botao.setAttribute('class', 'nav-link h5 mb-0 px-3 pt-4 ativado')
+			} else {
+				var botao = document.getElementById("botao-conteudo-" + y)
+				botao.setAttribute('class', 'nav-link h5 mb-0 px-3 pt-4')
+			}
+	}
 
-      for(let x=1;x<=5;x++){
-        var link = document.getElementById("botao-conteudo-"+x)
-        link.onclick = (e) => {
-          e.preventDefault()
-          ativar(x)
-        }
-      }
-  
-  </script>
+	for (let x = 1; x <= 5; x++) {
+		var link = document.getElementById("botao-conteudo-" + x)
+		link.onclick = (e) => {
+			e.preventDefault()
+			ativar(x)
+		}
+	}
+</script>
 <?php
 		}else{
 			echo('<script>window.alert("Faça o login antes")
