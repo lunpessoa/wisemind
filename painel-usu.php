@@ -2,9 +2,18 @@
 	include('assets/conexao.php');
 	session_start();
 	if(isset($_SESSION["log_status"]) && $_SESSION["log_status"]==true){
-	$sql=('select * from usuarios where id_usuario = '. $_SESSION["id_user"].';');
-	$resul=mysqli_query($conexao, $sql);
-    $con=mysqli_fetch_array($resul);
+		$sql=('select * from usuarios where id_usuario = '. $_SESSION["id_user"].';');
+		$resul=mysqli_query($conexao, $sql);
+		$con=mysqli_fetch_array($resul);
+	if($con['id_privilegio']==1){
+		$sql2=('select * from estudantes where id_estudante = '. $_SESSION["id_user"].';');
+		$resul2=mysqli_query($conexao, $sql2);
+		$est=mysqli_fetch_array($resul2);
+	}else if($con['id_privilegio']==2){
+		$sql2=('select * from profissional where id_profissional = '. $_SESSION["id_user"].';');
+		$resul2=mysqli_query($conexao, $sql2);
+		$est=mysqli_fetch_array($resul2);
+	}
 ?>
 
 <!DOCTYPE html>
@@ -81,7 +90,7 @@
 					</div>
 
 					<!--sumir- alterar-->
-					<div class="card-body border-0 p-5 d-none" id="informacoes-alter">
+					<div class="card-body border-0 p-5 d-none" id="informacoes-alter-1">
 						<form name="cad" action="assets/alterar.php" method="POST" class="container was-validated"
 							novalidate="" autocomplete="off">
 							<div class="row p-2">
@@ -90,10 +99,10 @@
 								</div>
 								<div class="col-9">
 									<div class="input-group form-group w-50">
-										<input type="text" class="form-control text-light" name="email"
+										<input type="text" class="form-control text-light" 
 											style="background-color:#282d30; border-color:#1f1f1f;"
 											placeholder="<?php echo($con['Nome']);?>"
-											value="<?php echo($con['Nome']);?>" required>
+											value="<?php echo($con['Nome']);?>"name="nome" required>
 									</div>
 								</div>
 							</div>
@@ -103,10 +112,10 @@
 								</div>
 								<div class="col-9">
 									<div class="input-group form-group w-50">
-										<input type="text" class="form-control text-light" name="email"
+										<input type="text" class="form-control text-light" 
 											style="background-color:#282d30; border-color:#1f1f1f;"
 											placeholder="<?php echo($con['Sobrenome']);?>"
-											value="<?php echo($con['Sobrenome']);?>" required>
+											value="<?php echo($con['Sobrenome']);?>" name="sobrenome" required>
 									</div>
 								</div>
 							</div>
@@ -116,10 +125,10 @@
 								</div>
 								<div class="col-9">
 									<div class="input-group form-group w-50">
-										<input type="date" class="form-control text-light" name="email"
+										<input type="date" class="form-control text-light"
 											style="background-color:#282d30; border-color:#1f1f1f;"
 											placeholder="<?php echo($con['Data_Nasc']);?>"
-											value="<?php echo($con['Data_Nasc']);?>" required>
+											value="<?php echo($con['Data_Nasc']);?>" name="data" required>
 									</div>
 								</div>
 							</div>
@@ -129,19 +138,19 @@
 								</div>
 								<div class="col-9">
 									<div class="input-group form-group w-50">
-										<input type="text" class="form-control text-light" name="email"
+										<input type="text" class="form-control text-light" 
 											style="background-color:#282d30; border-color:#1f1f1f;"
 											placeholder="<?php if($con['CPF']==0){echo("Adicionar");}else{echo($con['CPF']);}?>"
 											value="<?php echo($con['CPF']);?>"
-											<?php if($con['CPF']!=0){echo("required");}?>>
+											<?php if($con['CPF']!=0){echo("required");}?> name="cpf">
 									</div>
 								</div>
 							</div>
 
-							<button type="submit" class="btn btn-warning">Atualizar</button>
+							<button type="submit" class="btn btn-warning" name="Enviar" value="Enviar">Atualizar</button>
 						</form>
 					</div>
-					<div class="card-body border-0 p-5 " id="informacoes">
+					<div class="card-body border-0 p-5 " id="informacoes-1">
 						<div class="row p-2">
 							<div class="col-3">
 								<span class="text-clear">Nome</span>
@@ -171,7 +180,7 @@
 								<span class="text-clear">CPF</span>
 							</div>
 							<div class="col-9">
-								<span class="h5 text-white"></span>
+								<span class="h5 text-white"><?php if($con['CPF']==0){echo("Adicionar");}else{echo($con['CPF']);}?></span>
 							</div>
 						</div>
 					</div>
@@ -179,52 +188,110 @@
 			</div>
 		</div>
 
+		<?php 
+		if($con['id_privilegio']==1){
+			
+		?>
 		<div class="row mb-5">
 			<div class="col-7 offset-4">
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
-						<label class="h3 text-font-calibri"><b>DESCRIÇÃO - Estudante</b></label>
-						<button class="btn btn-hover-white ml-auto"><i class="fas fa-pen"></i><b>
+						<label class="h3 text-font-calibri"><b>DESCRIÇÃO</b></label>
+						<button class="btn btn-hover-white ml-auto" id="atualizar-2"><i class="fas fa-pen"></i><b>
 								ATUALIZAR</b></button>
 					</div>
-					<div class="card-body border-0 p-5">
+					<div class="card-body border-0 p-5 d-none" id="informacoes-alter-2">
+						<form name="cad" action="assets/alterar.php" method="POST" class="container was-validated"
+							novalidate="" autocomplete="off">
+							<div class="row p-2">
+								<div class="col-3">
+									<span class="text-clear">Descrição</span>
+								</div>
+								<div class="col-9">
+									<div class="input-group form-group w-50">
+										<input type="text" class="form-control text-light" 
+											style="background-color:#282d30; border-color:#1f1f1f;"
+											placeholder="<?php if($est['Situacao']!=0){echo("Adicionar");}else{echo($est['Situacao']);}?>"
+											value="<?php echo($est['Situacao']);?>"name="descricao" <?php if($est['Situacao']!=0){echo("required");}?>>
+									</div>
+								</div>
+							</div>
+							
+
+							<button type="submit" class="btn btn-warning" name="Enviar" value="Enviar">Atualizar</button>
+						</form>
+					</div>
+					<div class="card-body border-0 p-5" id="informacoes-2">
 						<div class="row p-2">
 							<div class="col-3">
 								<span class="text-clear">Descrição</span>
 							</div>
 							<div class="col-9">
-								<span class="h5 text-white">Silvio Santos Ipsum wellintaaammmmmmmmm. Eu não queria
-									perguntar isso publicamenteam, ma vou perguntar. Carla, você tem o ensino
-									fundamentauam? Você veio da caravana de ondeammm? É dinheiro ou não é? Ma você,
-									topa
-									ou no topamm. Mah ooooee vem pra cá. Vem pra cá. Mah é a porta da esperçamm.
-									Boca
-									sujuam... sem vergonhuamm. Ma quem quer dinheiroam? Ma vai pra lá. O Raul Gil é
-									gayam! ... Maa O Ah Ae! Ih Ih! O Raul Gil é gayamm!</span>
+								<span class="h5 text-white"><?php if($est['Situacao']!=0){echo("Adicionar");}else{echo($est['Situacao']);}?></span>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		<?php
+		}
+		?>
 
+		<?php 
+			if($con['id_privilegio']==1){
+		?>
 		<div class="row mb-5">
 			<div class="col-7 offset-4">
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
 						<label class="h3 text-font-calibri"><b>SITUAÇÃO - Estudante</b></label>
-						<button class="btn btn-hover-white ml-auto"><i class="fas fa-pen"></i><b>
+						<button class="btn btn-hover-white ml-auto" id="atualizar-3"><i class="fas fa-pen"></i><b>
 								ATUALIZAR</b></button>
 					</div>
-					<div class="card-body border-0 p-5">
+
+					<div class="card-body border-0 p-5 d-none" id="informacoes-alter-3">
+						<form name="cad" action="assets/alterar.php" method="POST" class="container was-validated"
+							novalidate="" autocomplete="off">
+							<div class="row p-2">
+								<div class="col-3">
+									<span class="text-clear">Tendencia de área</span>
+								</div>
+								<div class="col-9">
+									<div class="input-group form-group w-50">
+										<input type="text" class="form-control text-light" 
+											style="background-color:#282d30; border-color:#1f1f1f;"
+											placeholder="<?php if($est['Tendencia_de_area']==0){echo("Adicionar");}else{echo($est['Tendencia_de_area']);}?>"
+											value="<?php echo($est['Tendencia_de_area']);?>"name="descricao" <?php if($est['Tendencia_de_area']!=0){echo("required");}?>>
+									</div>
+								</div>
+							</div>
+
+							<div class="row p-2">
+								<div class="col-3">
+									<span class="text-clear">Skills</span>
+								</div>
+								<div class="col-9">
+									<div class="input-group form-group w-50" >
+										<input type="text" class="form-control text-light" 
+											style="background-color:#282d30; border-color:#1f1f1f;"
+											placeholder="<?php if($est['Skills']==0){echo("Adicionar");}else{echo($est['Skills']);}?>"
+											value="<?php echo($est['Skills']);?>"name="descricao" <?php if($est['Skills']!=0){echo("required");}?>>
+									</div>
+								</div>
+							</div>
+							
+
+							<button type="submit" class="btn btn-warning" name="Enviar" value="Enviar">Atualizar</button>
+						</form>
+					</div>
+					<div class="card-body border-0 p-5" id="informacoes-3">
 						<div class="row p-2">
 							<div class="col-3">
 								<span class="text-clear">Tendencia de área</span>
 							</div>
 							<div class="col-9">
-								<span class="h5 text-white">Silvio Santos Ipsum wellintaaammmmmmmmm. Eu não queria
-									perguntar isso publicamenteam, ma vou perguntar. Carla, você tem o ensino
-									fundamentauam?</span>
+								<span class="h5 text-white"><?php if($est['Tendencia_de_area']==0){echo("Adicionar");}else{echo($est['Tendencia_de_area']);}?></span>
 							</div>
 						</div>
 						<div class="row p-2">
@@ -232,10 +299,7 @@
 								<span class="text-clear">Skills</span>
 							</div>
 							<div class="col-9">
-								<span class="h5 text-white">Mah é a porta da esperçamm.
-									Boca
-									sujuam... sem vergonhuamm. Ma quem quer dinheiroam? Ma vai pra lá. O Raul Gil é
-									gayam! ... Maa O Ah Ae! Ih Ih! O Raul Gil é gayamm!</span>
+								<span class="h5 text-white"><?php if($est['Skills']==0){echo("Adicionar");}else{echo($est['Skills']);}?></span>
 							</div>
 						</div>
 					</div>
@@ -243,6 +307,13 @@
 			</div>
 		</div>
 
+		<?php
+			}
+		?>
+
+		<?php 
+			if($con['id_privilegio']==2){	
+		?>
 		<div class="row mb-5">
 			<div class="col-7 offset-4">
 				<div class="card border border-0 bg-transparent">
@@ -277,7 +348,8 @@
 				</div>
 			</div>
 		</div>
-
+		
+		
 		<div class="row mb-5">
 			<div class="col-7 offset-4">
 				<div class="card border border-0 bg-transparent">
@@ -312,17 +384,40 @@
 				</div>
 			</div>
 		</div>
-
+		<?php
+			}
+		?>
 
 		<div class="row mb-5">
 			<div class="col-7 offset-4">
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
-						<label class="h3 text-font-calibri"><b>NÚMERO DE CONTATO</b></label>
-						<button class="btn btn-hover-white ml-auto"><i class="fas fa-pen"></i><b>
+						<label class="h3 text-font-calibri" ><b>NÚMERO DE CONTATO</b></label>
+						<button class="btn btn-hover-white ml-auto" id="atualizar-4"><i class="fas fa-pen"></i><b>
 								ATUALIZAR</b></button>
 					</div>
-					<div class="card-body border-0 p-5">
+					<div class="card-body border-0 p-5 d-none" id="informacoes-alter-4">
+						<form name="cad" action="assets/alterar.php" method="POST" class="container was-validated"
+							novalidate="" autocomplete="off">
+							<div class="row p-2">
+								<div class="col-3">
+									<span class="text-clear">Número de celular</span>
+								</div>
+								<div class="col-9">
+									<div class="input-group form-group w-50">
+										<input type="text" class="form-control text-light" 
+											style="background-color:#282d30; border-color:#1f1f1f;"
+											placeholder="<?php echo($con['Cell']);?>"
+											value="<?php echo($con['Cell']);?>"name="celular" required>
+									</div>
+								</div>
+							</div>
+							
+
+							<button type="submit" class="btn btn-warning" name="Enviar" value="Enviar">Atualizar</button>
+						</form>
+					</div>
+					<div class="card-body border-0 p-5" id="informacoes-4">
 						<div class="row p-2">
 							<div class="col-3">
 								<span class="text-clear">Número de celular</span>
@@ -389,16 +484,111 @@
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
 						<label class="h3 text-font-calibri"><b>ENDEREÇO</b></label>
-						<button class="btn btn-hover-white ml-auto"><i class="fas fa-pen"></i><b>
+						<button class="btn btn-hover-white ml-auto" id="atualizar-5"><i class="fas fa-pen"></i><b>
 								ATUALIZAR</b></button>
 					</div>
-					<div class="card-body border-0 p-5">
+
+
+					<div class="card-body border-0 p-5 d-none" id="informacoes-alter-5">
+						<form name="cad" action="assets/alterar.php" method="POST" class="container was-validated"
+							novalidate="" autocomplete="off">
+							<div class="row p-2">
+								<div class="col-3">
+									<span class="text-clear">Rua</span>
+								</div>
+								<div class="col-9">
+									<div class="input-group form-group w-50">
+										<input type="text" class="form-control text-light" 
+											style="background-color:#282d30; border-color:#1f1f1f;"
+											placeholder="<?php if($con['Rua']==0){echo("Adicionar");}else{echo($con['Rua']);}?>"
+											value="<?php echo($con['Rua']);?>"name="rua" <?php if($con['Rua']!=0){echo("required");}?>>
+									</div>
+								</div>
+							</div>
+
+							<div class="row p-2">
+								<div class="col-3">
+									<span class="text-clear">Numero</span>
+								</div>
+								<div class="col-9">
+									<div class="input-group form-group w-50">
+										<input type="text" class="form-control text-light" 
+											style="background-color:#282d30; border-color:#1f1f1f;"
+											placeholder="<?php if($con['Numero']==0){echo("Adicionar");}else{echo($con['Numero']);}?>"
+											value="<?php echo($con['Numero']);?>"name="numero" <?php if($con['Numero']!=0){echo("required");}?>>
+									</div>
+								</div>
+							</div>
+
+							<div class="row p-2">
+								<div class="col-3">
+									<span class="text-clear">CEP</span>
+								</div>
+								<div class="col-9">
+									<div class="input-group form-group w-50">
+										<input type="text" class="form-control text-light" 
+											style="background-color:#282d30; border-color:#1f1f1f;"
+											placeholder="<?php if($con['CEP']==0){echo("Adicionar");}else{echo($con['CEP']);}?>"
+											value="<?php echo($con['CEP']);?>"name="CEP" <?php if($con['CEP']!=0){echo("required");}?>>
+									</div>
+								</div>
+							</div>
+
+							<div class="row p-2">
+								<div class="col-3">
+									<span class="text-clear">Bairro</span>
+								</div>
+								<div class="col-9">
+									<div class="input-group form-group w-50">
+										<input type="text" class="form-control text-light" 
+											style="background-color:#282d30; border-color:#1f1f1f;"
+											placeholder="<?php if($con['Bairro']==0){echo("Adicionar");}else{echo($con['Bairro']);}?>"
+											value="<?php echo($con['Bairro']);?>"name="Bairro" <?php if($con['Bairro']!=0){echo("required");}?>>
+									</div>
+								</div>
+							</div>
+
+							<div class="row p-2">
+								<div class="col-3">
+									<span class="text-clear">Cidade</span>
+								</div>
+								<div class="col-9">
+									<div class="input-group form-group w-50">
+										<input type="text" class="form-control text-light" 
+											style="background-color:#282d30; border-color:#1f1f1f;"
+											placeholder="<?php if($con['Cidade']==0){echo("Adicionar");}else{echo($con['Cidade']);}?>"
+											value="<?php echo($con['Cidade']);?>"name="Cidade" <?php if($con['Cidade']!=0){echo("required");}?>>
+									</div>
+								</div>
+							</div>
+
+							<div class="row p-2">
+								<div class="col-3">
+									<span class="text-clear">Estado</span>
+								</div>
+								<div class="col-9">
+									<div class="input-group form-group w-50">
+										<input type="text" class="form-control text-light" 
+											style="background-color:#282d30; border-color:#1f1f1f;"
+											placeholder="<?php if($con['Estado']==0){echo("Adicionar");}else{echo($con['Estado']);}?>"
+											value="<?php echo($con['Estado']);?>"name="Estado" <?php if($con['Estado']!=0){echo("required");}?>>
+									</div>
+								</div>
+							</div>
+							
+
+							<button type="submit" class="btn btn-warning" name="Enviar" value="Enviar">Atualizar</button>
+						</form>
+					</div>
+
+
+					<div class="card-body border-0 p-5" id="informacoes-5">
 						<div class="row p-2">
 							<div class="col-3">
 								<span class="text-clear">Rua</span>
 							</div>
 							<div class="col-9">
-								<span class="h5 text-white"></span>
+								<span class="h5 text-white"><?php if($con['Rua']==0){echo("Adicionar");}else{echo($con['Rua']);}?></span>
 							</div>
 						</div>
 						<div class="row p-2">
@@ -406,7 +596,7 @@
 								<span class="text-clear">Nº</span>
 							</div>
 							<div class="col-9">
-								<span class="h5 text-white"></span>
+								<span class="h5 text-white"><?php if($con['Numero']==0){echo("Adicionar");}else{echo($con['Numero']);}?></span>
 							</div>
 						</div>
 						<div class="row p-2">
@@ -414,7 +604,7 @@
 								<span class="text-clear">CEP</span>
 							</div>
 							<div class="col-9">
-								<span class="h5 text-white"></span>
+								<span class="h5 text-white"><?php if($con['CEP']==0){echo("Adicionar");}else{echo($con['CEP']);}?></span>
 							</div>
 						</div>
 						<div class="row p-2">
@@ -422,7 +612,7 @@
 								<span class="text-clear">Bairro</span>
 							</div>
 							<div class="col-9">
-								<span class="h5 text-white"></span>
+								<span class="h5 text-white"><?php if($con['Bairro']==0){echo("Adicionar");}else{echo($con['Bairro']);}?></span>
 							</div>
 						</div>
 						<div class="row p-2">
@@ -430,7 +620,7 @@
 								<span class="text-clear">Cidade</span>
 							</div>
 							<div class="col-9">
-								<span class="h5 text-white"></span>
+								<span class="h5 text-white"><?php if($con['Cidade']==0){echo("Adicionar");}else{echo($con['Cidade']);}?></span>
 							</div>
 						</div>
 						<div class="row p-2">
@@ -438,14 +628,17 @@
 								<span class="text-clear">Estado</span>
 							</div>
 							<div class="col-9">
-								<span class="h5 text-white"></span>
+								<span class="h5 text-white"><?php if($con['Estado']==0){echo("Adicionar");}else{echo($con['Estado']);}?></span>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-
+		
+		<?php
+			if($con['id_privilegio']==1){
+		?>
 		<div class="row mb-5">
 			<div class="col-7 offset-4">
 				<div class="card border border-0 bg-transparent">
@@ -475,6 +668,9 @@
 				</div>
 			</div>
 		</div>
+		<?php
+			}
+		?>
 
 
 	</div>
@@ -533,12 +729,23 @@
 
 </body>
 <script>
-	var atualizar = document.getElementById("atualizar-1")
+	
+	var atualizar = function(a){
+		for (let k = 1; k <= 5; k++)
+			if (k == a) {
+				document.getElementById("atualizar-" + a).setAttribute('class','d-none')
+				document.getElementById("informacoes-" + a).setAttribute('class', 'card-body border-0 p-5 d-none')
+				document.getElementById("informacoes-alter-" + a).setAttribute('class', 'card-body border-0 p-5')
+			}
+	}
 
-	atualizar.onclick = ()=>{
-		atualizar.setAttribute('class','d-none')
-		document.getElementById("informacoes").setAttribute('class', 'card-body border-0 p-5 d-none')
-		document.getElementById("informacoes-alter").setAttribute('class', 'card-body border-0 p-5')
+
+	for (let a = 1; a <= 5; a++) {
+		var link_alter = document.getElementById("atualizar-" + a)
+		link_alter.onclick = (e) => {
+			e.preventDefault()
+			atualizar(a)
+		}
 	}
 
 </script>
