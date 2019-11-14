@@ -97,7 +97,7 @@
 								id="avatar">
 							<label class="custom-file-label" for="avatar">Choose file</label>
 						</div>
-						
+
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
@@ -280,7 +280,7 @@
 			<div class="col-7 offset-4">
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
-						<label class="h3 text-font-calibri"><b>SITUAÇÃO - Estudante</b></label>
+						<label class="h3 text-font-calibri"><b>SITUAÇÃO</b></label>
 						<button class="btn btn-hover-white ml-auto" id="atualizar-3"><i class="fas fa-pen"></i><b>
 								ATUALIZAR</b></button>
 					</div>
@@ -295,10 +295,15 @@
 								<div class="col-9">
 									<div class="input-group form-group w-50">
 										<input type="text" class="form-control text-light"
-											style="background-color:#282d30; border-color:#1f1f1f;"
-											placeholder="<?php if($est['Tendencia_de_area']==0){echo("Adicionar");}else{echo($est['Tendencia_de_area']);}?>"
-											value="<?php echo($est['Tendencia_de_area']);?>" name="descricao"
-											<?php if($est['Tendencia_de_area']!=0){echo("required");}?>>
+											style="background-color:#282d30; border-color:#1f1f1f;" placeholder="
+											<?php
+											if($est['Tendencia_de_area']!=null){
+												echo($est['Tendencia_de_area']);
+												
+											}else{
+												echo("Adicionar");
+											}?>" value="<?php echo($est['Tendencia_de_area']);?>" name="tendencia"
+											<?php if($est['Tendencia_de_area']!=null){echo("required");}?>>
 									</div>
 								</div>
 							</div>
@@ -312,14 +317,14 @@
 										<input type="text" class="form-control text-light"
 											style="background-color:#282d30; border-color:#1f1f1f;"
 											placeholder="<?php if($est['Skills']==0){echo("Adicionar");}else{echo($est['Skills']);}?>"
-											value="<?php echo($est['Skills']);?>" name="descricao"
+											value="<?php echo($est['Skills']);?>" name="skill"
 											<?php if($est['Skills']!=0){echo("required");}?>>
 									</div>
 								</div>
 							</div>
 
 
-							<button type="submit" class="btn btn-warning" name="Enviar"
+							<button type="submit" class="btn btn-warning" name="Enviar-3"
 								value="Enviar">Atualizar</button>
 						</form>
 					</div>
@@ -330,7 +335,7 @@
 							</div>
 							<div class="col-9">
 								<span
-									class="h5 text-white"><?php if($est['Tendencia_de_area']==0){echo("Adicionar");}else{echo($est['Tendencia_de_area']);}?></span>
+									class="h5 text-white"><?php if($est['Tendencia_de_area']==null){echo("Adicionar");}else{echo($est['Tendencia_de_area']);}?></span>
 							</div>
 						</div>
 						<div class="row p-2">
@@ -339,7 +344,7 @@
 							</div>
 							<div class="col-9">
 								<span
-									class="h5 text-white"><?php if($est['Skills']==0){echo("Adicionar");}else{echo($est['Skills']);}?></span>
+									class="h5 text-white"><?php if($est['Skills']==null){echo("Adicionar");}else{echo($est['Skills']);}?></span>
 							</div>
 						</div>
 					</div>
@@ -454,7 +459,7 @@
 							</div>
 
 
-							<button type="submit" class="btn btn-warning" name="Enviar"
+							<button type="submit" class="btn btn-warning" name="Enviar-4"
 								value="Enviar">Atualizar</button>
 						</form>
 					</div>
@@ -477,10 +482,59 @@
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
 						<label class="h3 text-font-calibri"><b>SENHA</b></label>
-						<button class="btn btn-hover-white ml-auto"><i class="fas fa-pen"></i><b>
+						<button class="btn btn-hover-white ml-auto" id="atualizar-6"><i class="fas fa-pen"></i><b>
 								ATUALIZAR</b></button>
 					</div>
-					<div class="card-body border-0 p-5">
+					<div class="card-body border-0 p-5 d-none" id="informacoes-alter-6">
+						<form name="cad" action="assets/alterar.php" method="POST" class="container was-validated"
+							novalidate="" autocomplete="off">
+							<div class="row p-2">
+								<div class="col-3">
+									<span class="text-clear">Senha atual</span>
+								</div>
+								<div class="col-9">
+									<div class="input-group form-group w-50">
+										<input type="password" class="form-control text-light"
+											style="background-color:#282d30; border-color:#1f1f1f;" placeholder="Senha atual"
+											name="senha" required>
+									</div>
+								</div>
+							</div>
+
+							<div class="row p-2">
+								<div class="col-3">
+									<span class="text-clear">Nova senha</span>
+								</div>
+								<div class="col-9">
+									<div class="input-group form-group w-50">
+										<input type="password" class="form-control text-light"
+											style="background-color:#282d30; border-color:#1f1f1f;"
+											placeholder="Senha nova" name="senha-nova" required>
+									</div>
+								</div>
+							</div>
+
+							<div class="row p-2">
+								<div class="col-3">
+									<span class="text-clear">Confirmar nova senha</span>
+								</div>
+								<div class="col-9">
+									<div class="input-group form-group w-50">
+										<input type="password" class="form-control text-light"
+											style="background-color:#282d30; border-color:#1f1f1f;"
+											placeholder="Senha nova" name="confirm-senha" required>
+									</div>
+								</div>
+							</div>
+
+
+							<button type="submit" class="btn btn-warning" name="Enviar-6"
+								value="Enviar">Atualizar</button>
+							<button type="submit" class="btn btn-primary"  id="Fechar-6"
+								value="Enviar">Fechar</button>
+						</form>
+					</div>
+					<div class="card-body border-0 p-5" id="informacoes-6">
 						<div class="row p-2">
 							<div class="col-3">
 								<span class="text-clear">Senha</span>
@@ -541,9 +595,9 @@
 									<div class="input-group form-group w-50">
 										<input type="text" class="form-control text-light"
 											style="background-color:#282d30; border-color:#1f1f1f;"
-											placeholder="<?php if($con['Rua']==0){echo("Adicionar");}else{echo($con['Rua']);}?>"
+											placeholder="<?php if($con['Rua']==null){echo("Adicionar");}else{echo($con['Rua']);}?>"
 											value="<?php echo($con['Rua']);?>" name="rua"
-											<?php if($con['Rua']!=0){echo("required");}?>>
+											<?php if($con['Rua']!=null){echo("required");}?>>
 									</div>
 								</div>
 							</div>
@@ -556,9 +610,9 @@
 									<div class="input-group form-group w-50">
 										<input type="text" class="form-control text-light"
 											style="background-color:#282d30; border-color:#1f1f1f;"
-											placeholder="<?php if($con['Numero']==0){echo("Adicionar");}else{echo($con['Numero']);}?>"
+											placeholder="<?php if($con['Numero']==null){echo("Adicionar");}else{echo($con['Numero']);}?>"
 											value="<?php echo($con['Numero']);?>" name="numero"
-											<?php if($con['Numero']!=0){echo("required");}?>>
+											<?php if($con['Numero']!=null){echo("required");}?>>
 									</div>
 								</div>
 							</div>
@@ -571,9 +625,9 @@
 									<div class="input-group form-group w-50">
 										<input type="text" class="form-control text-light"
 											style="background-color:#282d30; border-color:#1f1f1f;"
-											placeholder="<?php if($con['CEP']==0){echo("Adicionar");}else{echo($con['CEP']);}?>"
+											placeholder="<?php if($con['CEP']==null){echo("Adicionar");}else{echo($con['CEP']);}?>"
 											value="<?php echo($con['CEP']);?>" name="CEP"
-											<?php if($con['CEP']!=0){echo("required");}?>>
+											<?php if($con['CEP']!=null){echo("required");}?>>
 									</div>
 								</div>
 							</div>
@@ -586,9 +640,9 @@
 									<div class="input-group form-group w-50">
 										<input type="text" class="form-control text-light"
 											style="background-color:#282d30; border-color:#1f1f1f;"
-											placeholder="<?php if($con['Bairro']==0){echo("Adicionar");}else{echo($con['Bairro']);}?>"
+											placeholder="<?php if($con['Bairro']==null){echo("Adicionar");}else{echo($con['Bairro']);}?>"
 											value="<?php echo($con['Bairro']);?>" name="Bairro"
-											<?php if($con['Bairro']!=0){echo("required");}?>>
+											<?php if($con['Bairro']!=null){echo("required");}?>>
 									</div>
 								</div>
 							</div>
@@ -601,9 +655,9 @@
 									<div class="input-group form-group w-50">
 										<input type="text" class="form-control text-light"
 											style="background-color:#282d30; border-color:#1f1f1f;"
-											placeholder="<?php if($con['Cidade']==0){echo("Adicionar");}else{echo($con['Cidade']);}?>"
+											placeholder="<?php if($con['Cidade']==null){echo("Adicionar");}else{echo($con['Cidade']);}?>"
 											value="<?php echo($con['Cidade']);?>" name="Cidade"
-											<?php if($con['Cidade']!=0){echo("required");}?>>
+											<?php if($con['Cidade']!=null){echo("required");}?>>
 									</div>
 								</div>
 							</div>
@@ -616,15 +670,15 @@
 									<div class="input-group form-group w-50">
 										<input type="text" class="form-control text-light"
 											style="background-color:#282d30; border-color:#1f1f1f;"
-											placeholder="<?php if($con['Estado']==0){echo("Adicionar");}else{echo($con['Estado']);}?>"
+											placeholder="<?php if($con['Estado']==null){echo("Adicionar");}else{echo($con['Estado']);}?>"
 											value="<?php echo($con['Estado']);?>" name="Estado"
-											<?php if($con['Estado']!=0){echo("required");}?>>
+											<?php if($con['Estado']!=null){echo("required");}?>>
 									</div>
 								</div>
 							</div>
 
 
-							<button type="submit" class="btn btn-warning" name="Enviar"
+							<button type="submit" class="btn btn-warning" name="Enviar-5"
 								value="Enviar">Atualizar</button>
 						</form>
 					</div>
@@ -637,7 +691,7 @@
 							</div>
 							<div class="col-9">
 								<span
-									class="h5 text-white"><?php if($con['Rua']==0){echo("Adicionar");}else{echo($con['Rua']);}?></span>
+									class="h5 text-white"><?php if($con['Rua']==null){echo("Adicionar");}else{echo($con['Rua']);}?></span>
 							</div>
 						</div>
 						<div class="row p-2">
@@ -646,7 +700,7 @@
 							</div>
 							<div class="col-9">
 								<span
-									class="h5 text-white"><?php if($con['Numero']==0){echo("Adicionar");}else{echo($con['Numero']);}?></span>
+									class="h5 text-white"><?php if($con['Numero']==null){echo("Adicionar");}else{echo($con['Numero']);}?></span>
 							</div>
 						</div>
 						<div class="row p-2">
@@ -655,7 +709,7 @@
 							</div>
 							<div class="col-9">
 								<span
-									class="h5 text-white"><?php if($con['CEP']==0){echo("Adicionar");}else{echo($con['CEP']);}?></span>
+									class="h5 text-white"><?php if($con['CEP']==null){echo("Adicionar");}else{echo($con['CEP']);}?></span>
 							</div>
 						</div>
 						<div class="row p-2">
@@ -664,7 +718,7 @@
 							</div>
 							<div class="col-9">
 								<span
-									class="h5 text-white"><?php if($con['Bairro']==0){echo("Adicionar");}else{echo($con['Bairro']);}?></span>
+									class="h5 text-white"><?php if($con['Bairro']==null){echo("Adicionar");}else{echo($con['Bairro']);}?></span>
 							</div>
 						</div>
 						<div class="row p-2">
@@ -673,7 +727,7 @@
 							</div>
 							<div class="col-9">
 								<span
-									class="h5 text-white"><?php if($con['Cidade']==0){echo("Adicionar");}else{echo($con['Cidade']);}?></span>
+									class="h5 text-white"><?php if($con['Cidade']==null){echo("Adicionar");}else{echo($con['Cidade']);}?></span>
 							</div>
 						</div>
 						<div class="row p-2">
@@ -682,7 +736,7 @@
 							</div>
 							<div class="col-9">
 								<span
-									class="h5 text-white"><?php if($con['Estado']==0){echo("Adicionar");}else{echo($con['Estado']);}?></span>
+									class="h5 text-white"><?php if($con['Estado']==null){echo("Adicionar");}else{echo($con['Estado']);}?></span>
 							</div>
 						</div>
 					</div>
@@ -784,8 +838,16 @@
 
 </body>
 <script>
+
+
+			document.getElementById("Fechar-6").onclick = (e) => {
+			e.preventDefault()
+			document.getElementById("atualizar-6").setAttribute('class', 'btn btn-hover-white ml-auto')
+			document.getElementById("informacoes-6").setAttribute('class', 'card-body border-0 p-5 ')
+			document.getElementById("informacoes-alter-6").setAttribute('class', 'card-body border-0 p-5 d-none')
+	}
 	var atualizar = function (a) {
-		for (let k = 1; k <= 5; k++)
+		for (let k = 1; k <= 6; k++)
 			if (k == a) {
 				document.getElementById("atualizar-" + a).setAttribute('class', 'd-none')
 				document.getElementById("informacoes-" + a).setAttribute('class', 'card-body border-0 p-5 d-none')
@@ -794,7 +856,7 @@
 	}
 
 
-	for (let a = 1; a <= 5; a++) {
+	for (let a = 1; a <= 6; a++) {
 		var link_alter = document.getElementById("atualizar-" + a)
 		link_alter.onclick = (e) => {
 			e.preventDefault()
