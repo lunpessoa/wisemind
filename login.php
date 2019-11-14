@@ -1,3 +1,8 @@
+<?php
+if (!isset($_SESSION)) {
+	session_start();
+}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -13,6 +18,7 @@
 </head>
 
 <body style="height:100vh; width:100vw; overflow:hidden;">
+
 	<section id="logo" style="z-index:1;">
 		<section class="svgLogo">
 			<svg class="logoWiseMind" version="1.1" width="300px" height="300px" viewBox="0 0 4000 4000"
@@ -104,7 +110,9 @@
 	<script src="js/javinha.js"></script>
 	<script src="node_modules/popper.js/dist/umd/popper.js"></script>
 	<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
-	<?php if( $_SESSION["senha-usuario"]==true){ 
+	
+</body>
+<?php if( $_SESSION["senha-usuario"]==true){ 
 	include('toast.php');
 	echo("<script src='assets/toast.js'></script>
 	<script>erroLog()</script>");
@@ -113,7 +121,6 @@
 	}
 
 	?>
-</body>
 
 	
 

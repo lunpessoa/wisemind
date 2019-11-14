@@ -1,6 +1,6 @@
 <?php
     include('conexao.php');
-
+    session_start();
     if(isset($_POST['Entrar'])){
 
         $email=$_POST['email'];
@@ -26,7 +26,7 @@
                     window.location.href='../login.php';</script>";
                     die();
                 }else{
-                    session_start();
+                    
                     $_SESSION["id_user"]=$con['id_usuario'];
                     if($con['id_privilegio']==1 || $con['id_privilegio']==2){
                         $_SESSION["log_status"]=true;
