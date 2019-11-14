@@ -36,7 +36,7 @@
 					<div class="card-header bg-warning border-0 pl-2 image-card">
 						<button class="btn position-relative p-0 mr-3 btn-perfil-img overflow-hidden"
 							data-toggle='modal' data-target='#modalExemplo' href="#">
-							<img class="img-fluid" src="<?php echo($con['perfil_img']); ?>" alt="">
+							<img src="<?php echo($con['perfil_img']); ?>" alt="">
 							<label class="lnd-alter position-relative text-light text-font-calibri h3"><i
 									class="fas fa-pen" style="cursor:pointer;"></i></label>
 						</button>
@@ -95,7 +95,7 @@
 						<div class="custom-file">
 							<input type="file" class="custom-file-input" accept="image/png, image/jpeg" name="avatar"
 								id="avatar">
-							<label class="custom-file-label" for="avatar">Choose file</label>
+							<label class="custom-file-label" for="avatar">Escolha o arquivo..</label>
 						</div>
 						
 					</div>
