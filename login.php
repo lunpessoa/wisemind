@@ -51,7 +51,7 @@
 					<polygon class="fil3" points="257,631 254,652 173,652 129,457 141,402 " />
 					<polygon class="fil0" points="210,27 48,27 189,643 325,643 " />
 				</g>
-			</svg>	
+			</svg>
 		</section>
 	</section>
 
@@ -104,6 +104,17 @@
 	<script src="js/javinha.js"></script>
 	<script src="node_modules/popper.js/dist/umd/popper.js"></script>
 	<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+	<?php if( $_SESSION["senha-usuario"]==true){ 
+	include('toast.php');
+	echo("<script src='assets/toast.js'></script>
+	<script>erroLog()</script>");
+
+	$_SESSION["senha-usuario"]=false;
+	}
+
+	?>
 </body>
+
+	
 
 </html>
