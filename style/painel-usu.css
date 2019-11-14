@@ -104,6 +104,10 @@ body {
   box-shadow:none !important;
 }
 
+.custom-file-input ~ .custom-file-label::after {
+  content: "Elegir";
+}
+
 /* Opção Ativado */
 
 .ativado {

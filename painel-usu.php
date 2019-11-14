@@ -91,11 +91,13 @@
 				</div>
 				<form action="assets/alterar.php" method="POST" enctype="multipart/form-data">
 					<div class="modal-body">
+
 						<div class="custom-file">
-							<input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
+							<input type="file" class="custom-file-input" accept="image/png, image/jpeg" name="avatar"
+								id="avatar">
+							<label class="custom-file-label" for="avatar">Choose file</label>
 						</div>
-
-
+						
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
@@ -819,6 +821,13 @@
 			ativar(x)
 		}
 	}
+</script>
+<script>
+	// Add the following code if you want the name of the file appear on select
+	$(".custom-file-input").on("change", function () {
+		var fileName = $(this).val().split("\\").pop();
+		$(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+	});
 </script>
 <?php
 		}else{
