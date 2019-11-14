@@ -104,7 +104,7 @@
 							<div class="col-6">
 								<label class="text-font" style="color:#b5b5b5;">Celular</label>
 								<div class="input-group form-group">
-									<input id="celular" type="text" placeholder="(11) 94973-2918"
+									<input id="celular" type="text" placeholder="(11) 99999-9999"
 										class="form-control phone_with_ddd text-light"
 										style="background-color:#282d30; border-color:#1f1f1f;" name="celular" required>
 								</div>
@@ -116,7 +116,7 @@
 							<div class="col-4">
 								<label style="color:#b5b5b5; text-dark" class="text-font">UF</label>
 								<div class="input-group form-group">
-									<input id="estado-camp" type="text" placeholder="SP" class="form-control uf text-light"
+									<input id="estado-camp" type="text" placeholder="XX" class="form-control uf text-light"
 										style="background-color:#282d30; border-color:#1f1f1f;" name="estado" required>
 								</div>
 							</div>
@@ -139,7 +139,7 @@
 							<div class="col-4" id="numero">
 								<label class="text-font" style="color:#b5b5b5;">N°</label>
 								<div class="input-group form-group">
-									<input id="numero-camp" type="text" placeholder="227" class="form-control text-light"
+									<input id="numero-camp" type="text" placeholder="XXX" class="form-control text-light"
 										style="background-color:#282d30; border-color:#1f1f1f;" name="numero" required>
 								</div>
 							</div>
@@ -157,14 +157,14 @@
 							<div class="col-6">
 								<label class="text-font" style="color:#b5b5b5;">CEP</label>
 								<div class="input-group form-group">
-									<input id="cep-camp" type="text" placeholder="07459-000" class="form-control cep text-light"
+									<input id="cep-camp" type="text" placeholder="00000-000" class="form-control cep text-light"
 										style="background-color:#282d30; border-color:#1f1f1f;" name="cep" required>
 								</div>
 							</div>
 							<div class="col-6">
 								<label class="text-font" style="color:#b5b5b5;">CPF</label>
 								<div class="input-group form-group">
-									<input id="cpf-camp" type="text" placeholder="230.391.188-10" class="form-control cpf text-light"
+									<input id="cpf-camp" type="text" placeholder="000.000.000-00" class="form-control cpf text-light"
 										style="background-color:#282d30; border-color:#1f1f1f;" name="cpf" required>
 								</div>
 							</div>

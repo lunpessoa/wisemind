@@ -99,7 +99,7 @@
 						<div class="col-6">
 							<label class="text-font" style="color:#b5b5b5;">Celular</label>
 							<div class="input-group form-group">
-								<input type="text" placeholder="(11) 94973-2918"
+								<input type="text" placeholder="(00) 99999-9999"
 									class="form-control phone_with_ddd text-light" name="celular"
 									style="background-color:#282d30; border-color:#1f1f1f;" required>
 							</div>

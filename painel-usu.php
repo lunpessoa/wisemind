@@ -530,7 +530,7 @@
 
 							<button type="submit" class="btn btn-warning" name="Enviar-6"
 								value="Enviar">Atualizar</button>
-							<button type="submit" class="btn btn-primary"  id="Fechar-6"
+							<button type="submit" class="btn btn-dark"  id="Fechar-6"
 								value="Enviar">Fechar</button>
 						</form>
 					</div>
