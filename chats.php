@@ -20,10 +20,17 @@
 </head>
 
 <body>
+	<section class="img-fluid backimage text-center" alt="Responsive image">
+		<img src='img/wiserenjoychat.png' class="position-relative wiserelement" alt="">
+	</section>
 
-	<section class="container text-center mb-5" style="margin-top:180px;">
-		<h3 class="display-3 text-primary"><i class="fas fa-comments "></i> <b><em>WiseChat</em></b></h3>
-		<h3 class="h5 text-warning"><em>Faça parte desta comunidade<em></h3>
+	<section class="w-100 position-absolute overflow-hidden" style="margin-top:-130px">
+		<img src="img/ondinha3.png">
+	</section>
+
+	<section class="container text-center mb-5" style="margin-top:100px;">
+		<h3 class="display-3"><i class="fas fa-comments "></i> <b><em>WiseChat</em></b></h3>
+		<h3 class="h5"><em>Faça parte desta comunidade<em></h3>
 	</section>
 
 	<section class="container d-flex justify-content-center">
@@ -39,14 +46,14 @@
 
 	<?php
 		if($con['id_privilegio']==2){
-			echo('<div class="container d-flex justify-content-center" data-toggle="modal" data-target="#modalExemplo">
-			<button type="button" class="btn btn-primary">Criar Sala</button>
+			echo('<div class="container d-flex justify-content-center">
+			<button type="button" data-toggle="modal" data-target="#modalExemplo" class="btn btn-warning mb-5">Criar Sala</button>
 		</div>');
 		}
 	?>
 	<section class="container mb-5">
 		<hr>
-		<section class="row mt-3">
+		<section class="row mt-5">
 			<?php
 		$sql2=('select * from chat;');
 		$resul2=mysqli_query($conexao, $sql2);
