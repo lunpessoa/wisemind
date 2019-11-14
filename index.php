@@ -15,8 +15,8 @@ if (!isset($_SESSION)) {
 
 <body>
   <div class="position-fixed" style="z-index:10; right:20px; top:110px;">
-    <div class="toast bg-transparent" role="status" aria-live="polite" aria-atomic="true" data-autohide="false">
-      <div class="toast-header">
+    <div class="toast bg-transparent" role="status" aria-live="polite" aria-atomic="true" data-autohide="false" id="toast">
+      <div class="toast-header" >
         <img src="img/logo.png" class="rounded mr-2 " alt="...">
         <strong class="mr-5 text-light">CADASTRO</strong>
         <small class="text-light">11 mins ago</small>
@@ -24,9 +24,7 @@ if (!isset($_SESSION)) {
           <i class="fas fa-times"></i>
         </button>
       </div>
-      <div class="toast-body toast-green text-light"> <!-- toast-normal - CINZA ; toast-green - VERDE ; toast-red - VERMELHO -->
-        Perfil criado com sucesso!
-      </div>
+      
     </div>
   </div>
 
@@ -202,12 +200,26 @@ if (!isset($_SESSION)) {
   <script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
 
 </body>
-<script>
+<?php if( $_SESSION["cadastrado"]==true){ 
+  echo("<script>
   $(document).ready(function () {
     $('.toast').toast('show');
     // $('#element').toast('hide')
     // $('#element').toast('dispose')
+    var mae = document.getElementById('toast')
+    var div = document.createElement('div')
+    div.setAttribute('class','toast-body toast-green text-light')
+    var text = document.createTextNode('Perfil criado com sucesso!')
+    div.appendChild(text)
+    mae.appendChild(div)
+
   });
-</script>
+</script>");
+
+$_SESSION["cadastrado"]=false;
+}
+
+?>
+
 
 </html>
