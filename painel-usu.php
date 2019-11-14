@@ -31,7 +31,7 @@
 <body>
 	<div class="container-fluid position-fixed" style="margin-top:130px">
 		<div class="row">
-			<div class="col-2 offset-1">
+			<div class="col-3 ml-5">
 				<div class="card border border-0">
 					<div class="card-header bg-warning border-0 pl-2 image-card">
 						<button class="btn position-relative p-0 mr-3 btn-perfil-img overflow-hidden"
