@@ -16,10 +16,16 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Current Database: `wisemind`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `wisemind` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+USE `wisemind`;
+
+--
 -- Table structure for table `chat`
 --
-CREATE DATABASE wisemind;
-USE wisemind;
 
 DROP TABLE IF EXISTS `chat`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -151,6 +157,7 @@ CREATE TABLE `estudantes` (
 
 LOCK TABLES `estudantes` WRITE;
 /*!40000 ALTER TABLE `estudantes` DISABLE KEYS */;
+INSERT INTO `estudantes` VALUES (4,'Estudando',NULL,NULL,NULL,NULL,1);
 /*!40000 ALTER TABLE `estudantes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -282,6 +289,7 @@ CREATE TABLE `usuarios` (
   `Email` varchar(150) NOT NULL,
   `Senha` varchar(40) NOT NULL,
   `Cell` varchar(12) NOT NULL,
+  `perfil_img` varchar(64) NOT NULL,
   `Cidade` varchar(60) DEFAULT NULL,
   `Rua` varchar(100) DEFAULT NULL,
   `Estado` varchar(2) DEFAULT NULL,
@@ -293,7 +301,7 @@ CREATE TABLE `usuarios` (
   PRIMARY KEY (`id_usuario`),
   UNIQUE KEY `id_usuario` (`id_usuario`),
   KEY `privilegio` (`id_privilegio`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -302,7 +310,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'Luan','Pessoa','2002-02-10','luan@gmail.com','5629a37edd0faffb55ed645dd205d548ca1d3d79','11996412897',NULL,NULL,NULL,NULL,NULL,NULL,NULL,3),(2,'Iago','Pastori','1993-10-06','iago123@gmail.com','63dc0d1bbe35c5c9c93f6763e464d437f65d4cc9','11 999994444',NULL,NULL,NULL,NULL,NULL,NULL,NULL,1),(3,'Luan','Pessoa','2002-02-10','luan2@gmail.com','4bc70743717959d7df4045f6b5f39f16e489b62b','11996412897','Santa Isabel','Av Prefeito JoÃ£o Pires Filho','SP',122,'07500000','13 de Maio','51034539833',2);
+INSERT INTO `usuarios` VALUES (1,'Luan','Pessoa','2002-02-10','luan@gmail.com','5629a37edd0faffb55ed645dd205d548ca1d3d79','11996412897','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,3),(2,'Iago','Pastori','1993-10-06','iago123@gmail.com','63dc0d1bbe35c5c9c93f6763e464d437f65d4cc9','11 999994444','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,1),(3,'Luan','Pessoa','2002-02-10','luan2@gmail.com','4bc70743717959d7df4045f6b5f39f16e489b62b','11996412897','','Santa Isabel','Av Prefeito JoÃ£o Pires Filho','SP',122,'07500000','13 de Maio','51034539833',2),(4,'Luan','Pessoa','2002-02-10','joana123@gmail.com','d36c05a31b0d027c7eb61204257b44da5003fe47','11111111111','img/perfil/4.png',NULL,NULL,NULL,NULL,NULL,NULL,'51034539833',1);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -345,4 +353,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-10-21  1:51:09
+-- Dump completed on 2019-11-13 21:22:01
