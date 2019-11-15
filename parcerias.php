@@ -22,7 +22,7 @@
 <body>
 	<section class="container mb-5" style="margin-top:150px">
 	
-		<section class="container d-flex justify-content-center">
+		<!-- <section class="container d-flex justify-content-center">
 			<div class="input-group mb-3 w-50">
 				<input type="text" id="form-border-none" class="form-control border-right-0 search-place"
 					placeholder="Pesquisar" aria-label="Pesquisar" aria-describedby="basic-addon2">
@@ -31,7 +31,7 @@
 							class="fas fa-search"></i></span>
 				</div>
 			</div>
-		</section>
+		</section> -->
 
 		<hr>
 

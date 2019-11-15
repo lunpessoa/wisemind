@@ -28,26 +28,15 @@
 		<img src="img/ondinha3.png">
 	</section>
 
-	<section class="container text-center mb-5" style="margin-top:100px;">
+	<section class="container text-center mb-4" style="margin-top:100px;">
 		<h3 class="display-3"><i class="fas fa-comments "></i> <b><em>WiseChat</em></b></h3>
 		<h3 class="h5"><em>Faça parte desta comunidade<em></h3>
-	</section>
-
-	<section class="container d-flex justify-content-center">
-		<div class="input-group mb-3 w-50">
-			<input type="text" id="form-border-none" class="form-control border-right-0 search-place"
-				placeholder="Pesquisar" aria-label="Pesquisar" aria-describedby="basic-addon2">
-			<div class="input-group-append">
-				<span class="input-group-text bg-transparent border-left-0" id="basic-addon2"><i
-						class="fas fa-search"></i></span>
-			</div>
-		</div>
 	</section>
 
 	<?php
 		if($con['id_privilegio']==2){
 			echo('<div class="container d-flex justify-content-center">
-			<button type="button" data-toggle="modal" data-target="#modalExemplo" class="btn btn-warning mb-5">Criar Sala</button>
+			<button type="button" data-toggle="modal" data-target="#modalExemplo" class="btn btn-warning">Criar Sala</button>
 		</div>');
 		}
 	?>
