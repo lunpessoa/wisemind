@@ -1,4 +1,4 @@
-body {}
+@import url('https://fonts.googleapis.com/css?family=Lobster|Roboto+Condensed&display=swap');
 
 .text-warning:hover {
     color: none;
@@ -12,8 +12,22 @@ body {}
     box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.5);
 }
 
+.icon-info{
+    font-size:120px; 
+    opacity:0.5; 
+    z-index:-1
+}
+
 .areas-slide {
     margin-top: 50px;
+}
+
+.font-lobster {
+    font-family: 'Lobster', cursive;
+}
+
+.font-roboto{
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 .areasLinks {
@@ -29,12 +43,34 @@ body {}
 
 .iconsArea {
     font-size: 35px;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }
 
 .lista-area-links {
     width: 100%;
     background-color: #000;
     height: 80px;
+}
+
+.sobre-back{
+    background-image: url('../img/fundo_azul.png');
+    background-attachment: fixed;
+    background-position: center;
+    padding-top: 80px;
+    padding-bottom: 100px;
+    margin-top:50px;
+    margin-bottom:200px;
+}
+
+.plataform-back{
+    height:200px;
+    background-image: url('../img/fundo.png');
+    background-attachment: fixed;
+    margin-top:100px;
 }
 
 /* JQUERY Menu */
@@ -179,4 +215,3 @@ body {}
     background: #fff;
     clip-path: polygon(1100% 100%, 100% 101%, 75% 101%, 55% 0%, 100% 0%);
 }
-
