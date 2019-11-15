@@ -100,6 +100,7 @@
 			</div>
 		</div>
 	</section>
+	<?php include('rodape.html'); ?>
 
 </body>
 
