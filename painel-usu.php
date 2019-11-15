@@ -520,8 +520,8 @@
 												<td><input type="text" class="form-control text-light w-75"
 														style="background-color:#282d30; border-color:#1f1f1f;" 
 														placeholder="'.$con_prof["Profissao"].'"
-														value="'.$con_prof["Area"].'"
-														name="area'.$con_prof["id_espc"].'" required></td>
+														value="'.$con_prof["Profissao"].'"
+														name="profissao'.$con_prof["id_espc"].'" required></td>
 											</tr>');
 									}
 								?>
@@ -529,9 +529,9 @@
 							</table>
 
 
-							<button type="submit" class="btn btn-warning" name="Enviar-6"
+							<button type="submit" class="btn btn-warning" name="Enviar-8"
 								value="Enviar">Atualizar</button>
-							<button type="submit" class="btn btn-dark" id="Fechar-6" value="Enviar">Fechar</button>
+							<button type="submit" class="btn btn-dark" id="Fechar-8" value="Enviar">Fechar</button>
 						</form>
 						<?php
 							}

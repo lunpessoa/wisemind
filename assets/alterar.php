@@ -242,6 +242,38 @@
              }
         }
 
+        if(isset($_POST['Enviar-8'])){
+            $sqlmostrar=('select * from especializacao where id_prof = "'.$_SESSION["id_user"].'";');
+            $resul3=mysqli_query($conexao, $sqlmostrar);
+			while($con_prof=mysqli_fetch_array($resul3)){
+                $area[$con_prof['id_espc']]=$_POST['area'.$con_prof['id_espc']];
+                $profissao[$con_prof['id_espc']]=$_POST['profissao'.$con_prof['id_espc']];						
+            }
+
+            $sqlmostrar=('select * from especializacao where id_prof = "'.$_SESSION["id_user"].'";');
+            $resul3=mysqli_query($conexao, $sqlmostrar);
+            while($con_prof=mysqli_fetch_array($resul3)){
+                $sqlinserir = ('update especializacao set Area = "'.$area[$con_prof['id_espc']].'"
+                where id_espc = '.$con_prof['id_espc'].';');
+                $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));
+                $sqlinserir = ('update especializacao set Profissao = "'.$profissao[$con_prof['id_espc']].'"
+                where id_espc = '.$con_prof['id_espc'].';');
+                $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));						
+            }
+                    $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));
+
+                    if($inserir){ 
+                        $_SESSION["alterado"]=true;
+                        echo('<script>window.location.href = "../painel-usu.php";</script>');
+                        
+                    }else{
+                        $_SESSION["erroAlterado"]=true;
+                        echo('<script>window.location.href = "../painel-usu.php";</script>');
+                    }
+
+
+        }
+
 
         //Adicionar profissao
         if(isset($_POST['adicionar-prof'])){
