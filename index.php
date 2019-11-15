@@ -188,6 +188,15 @@ if (!isset($_SESSION)) {
   <script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
 
 </body>
+
+<?php
+if (!isset($_SESSION["cadastrado"])) {
+	$_SESSION["cadastrado"]=false;
+}
+if (!isset( $_SESSION["logado"])) {
+	$_SESSION["logado"]=false;
+}
+?>
 <?php if( $_SESSION["cadastrado"]==true){ 
   include('toast.php');
   echo("<script src='assets/toast.js'></script>
