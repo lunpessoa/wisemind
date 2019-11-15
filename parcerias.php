@@ -31,9 +31,9 @@
 								<img src="img/ibm.jpg" class="card-img" alt="...">
 							</div>
 							<div class="col-md-8">
-								<div class="card-body">
-									<h5 class="card-title">IBM</h5>
-									<p class="card-text mt-5">This is a wider card with supporting text below as a natural
+								<div class="card-body justify-content-start d-flex">
+									<h5 class="card-title h4 d-block">International Business Machines Corporation </h5>
+									<p class="card-text mt-5 d-block">This is a wider card with supporting text below as a natural
 										lead-in to additional content. This content is a little bit longer.</p>
 								</div>
 							</div>

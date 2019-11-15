@@ -470,7 +470,8 @@
 									<div class="modal-footer">
 										<button type="button" class="btn btn-secondary"
 											data-dismiss="modal">Fechar</button>
-										<button type="submit" class="btn btn-primary" name="adicionar-prof">Adicionar</button>
+										<button type="submit" class="btn btn-primary"
+											name="adicionar-prof">Adicionar</button>
 									</div>
 								</form>
 							</div>
@@ -532,12 +533,12 @@
 						<?php
 							}
 						?>
-						<button class="btn btn-warning"
-								data-toggle="modal" data-target="#modalProfissao" href="#">
-									Adicionar
-						</button>
+						<div class="row justify-content-end d-flex">
+							<button class="btn btn-warning" data-toggle="modal" data-target="#modalProfissao" href="#">
+								Adicionar
+							</button>
+						</div>
 					</div>
-
 					<div class="card-body border-0 p-5" id="informacoes-8">
 						<?php
 							if($cont==0){
