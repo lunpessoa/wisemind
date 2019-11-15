@@ -290,7 +290,7 @@
 							novalidate="" autocomplete="off">
 							<div class="row p-2">
 								<div class="col-3">
-									<span class="text-clear">Tendencia de área</span>
+									<span class="text-clear">Tendência de área</span>
 								</div>
 								<div class="col-9">
 									<div class="input-group form-group w-50">
@@ -363,7 +363,7 @@
 			<div class="col-7 offset-4">
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
-						<label class="h3 text-font-calibri" ><b>SITUAÇÃO</b></label>
+						<label class="h3 text-font-calibri"><b>SITUAÇÃO</b></label>
 						<button class="btn btn-hover-white ml-auto" id="atualizar-7"><i class="fas fa-pen"></i><b>
 								ATUALIZAR</b></button>
 					</div>
@@ -443,23 +443,87 @@
 						<button class="btn btn-hover-white ml-auto" id="atualizar-8"><i class="fas fa-pen"></i><b>
 								ATUALIZAR</b></button>
 					</div>
+
+					<div class="card-body border-0 p-5 d-none" id="informacoes-alter-8">
+						<form name="cad" action="assets/alterar.php" method="POST" class="container was-validated"
+							novalidate="" autocomplete="off">
+							<div class="row p-2">
+								<div class="col-3">
+									<span class="text-clear">Senha atual</span>
+								</div>
+								<div class="col-9">
+									<div class="input-group form-group w-50">
+										<input type="password" class="form-control text-light"
+											style="background-color:#282d30; border-color:#1f1f1f;"
+											placeholder="Senha atual" name="senha" required>
+									</div>
+								</div>
+							</div>
+
+							<div class="row p-2">
+								<div class="col-3">
+									<span class="text-clear">Nova senha</span>
+								</div>
+								<div class="col-9">
+									<div class="input-group form-group w-50">
+										<input type="password" class="form-control text-light"
+											style="background-color:#282d30; border-color:#1f1f1f;"
+											placeholder="Senha nova" name="senha-nova" required>
+									</div>
+								</div>
+							</div>
+
+							<div class="row p-2">
+								<div class="col-3">
+									<span class="text-clear">Confirmar nova senha</span>
+								</div>
+								<div class="col-9">
+									<div class="input-group form-group w-50">
+										<input type="password" class="form-control text-light"
+											style="background-color:#282d30; border-color:#1f1f1f;"
+											placeholder="Senha nova" name="confirm-senha" required>
+									</div>
+								</div>
+							</div>
+
+
+							<button type="submit" class="btn btn-warning" name="Enviar-6"
+								value="Enviar">Atualizar</button>
+							<button type="submit" class="btn btn-dark" id="Fechar-6" value="Enviar">Fechar</button>
+						</form>
+					</div>
+
 					<div class="card-body border-0 p-5" id="informacoes-8">
-						<div class="row p-2">
-							<div class="col-3">
-								<span class="text-clear">Experiência</span>
-							</div>
-							<div class="col-9">
-								<span class="h5 text-white"><?php echo($est['experiencia']); ?></span>
-							</div>
-						</div>
-						<div class="row p-2">
-							<div class="col-3">
-								<span class="text-clear">Certificado</span>
-							</div>
-							<div class="col-9">
-								<span class="h5 text-white"><?php echo($est['certificado']); ?></span>
-							</div>
-						</div>
+						<table class="table table-dark">
+							<thead>
+								<tr>
+									<th scope="col">#</th>
+									<th scope="col">Primeiro</th>
+									<th scope="col">Último</th>
+									<th scope="col">Nickname</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">1</th>
+									<td>Mark</td>
+									<td>Otto</td>
+									<td>@mdo</td>
+								</tr>
+								<tr>
+									<th scope="row">2</th>
+									<td>Jacob</td>
+									<td>Thornton</td>
+									<td>@fat</td>
+								</tr>
+								<tr>
+									<th scope="row">3</th>
+									<td>Larry</td>
+									<td>the Bird</td>
+									<td>@twitter</td>
+								</tr>
+							</tbody>
+						</table>
 					</div>
 				</div>
 			</div>
@@ -530,8 +594,8 @@
 								<div class="col-9">
 									<div class="input-group form-group w-50">
 										<input type="password" class="form-control text-light"
-											style="background-color:#282d30; border-color:#1f1f1f;" placeholder="Senha atual"
-											name="senha" required>
+											style="background-color:#282d30; border-color:#1f1f1f;"
+											placeholder="Senha atual" name="senha" required>
 									</div>
 								</div>
 							</div>
@@ -565,8 +629,7 @@
 
 							<button type="submit" class="btn btn-warning" name="Enviar-6"
 								value="Enviar">Atualizar</button>
-							<button type="submit" class="btn btn-dark"  id="Fechar-6"
-								value="Enviar">Fechar</button>
+							<button type="submit" class="btn btn-dark" id="Fechar-6" value="Enviar">Fechar</button>
 						</form>
 					</div>
 					<div class="card-body border-0 p-5" id="informacoes-6">
@@ -873,13 +936,11 @@
 
 </body>
 <script>
-
-
-			document.getElementById("Fechar-6").onclick = (e) => {
-			e.preventDefault()
-			document.getElementById("atualizar-6").setAttribute('class', 'btn btn-hover-white ml-auto')
-			document.getElementById("informacoes-6").setAttribute('class', 'card-body border-0 p-5 ')
-			document.getElementById("informacoes-alter-6").setAttribute('class', 'card-body border-0 p-5 d-none')
+	document.getElementById("Fechar-6").onclick = (e) => {
+		e.preventDefault()
+		document.getElementById("atualizar-6").setAttribute('class', 'btn btn-hover-white ml-auto')
+		document.getElementById("informacoes-6").setAttribute('class', 'card-body border-0 p-5 ')
+		document.getElementById("informacoes-alter-6").setAttribute('class', 'card-body border-0 p-5 d-none')
 	}
 	var atualizar = function (a) {
 		for (let k = 1; k <= 8; k++)
@@ -893,10 +954,12 @@
 
 	for (let a = 1; a <= 8; a++) {
 		var link_alter = document.getElementById("atualizar-" + a)
-		if(link_alter!=null){link_alter.onclick = (e) => {
-			e.preventDefault()
-			atualizar(a)
-		}}
+		if (link_alter != null) {
+			link_alter.onclick = (e) => {
+				e.preventDefault()
+				atualizar(a)
+			}
+		}
 	}
 </script>
 <script>
@@ -913,10 +976,12 @@
 
 	for (let x = 1; x <= 5; x++) {
 		var link = document.getElementById("botao-conteudo-" + x)
-		if(link!=null){link.onclick = (e) => {
-			e.preventDefault()
-			ativar(x)
-		}}
+		if (link != null) {
+			link.onclick = (e) => {
+				e.preventDefault()
+				ativar(x)
+			}
+		}
 	}
 </script>
 <script>
