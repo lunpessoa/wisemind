@@ -443,26 +443,21 @@
 						<button class="btn btn-hover-white ml-auto" id="atualizar-8"><i class="fas fa-pen"></i><b>
 								ATUALIZAR</b></button>
 					</div>
-					<div class="card-body border-0 p-5">
+					<div class="card-body border-0 p-5" id="informacoes-8">
 						<div class="row p-2">
 							<div class="col-3">
-								<span class="text-clear">Área</span>
+								<span class="text-clear">Experiência</span>
 							</div>
 							<div class="col-9">
-								<span class="h5 text-white">Silvio Santos Ipsum wellintaaammmmmmmmm. Eu não queria
-									perguntar isso publicamenteam, ma vou perguntar. Carla, você tem o ensino
-									fundamentauam?</span>
+								<span class="h5 text-white"><?php echo($est['experiencia']); ?></span>
 							</div>
 						</div>
 						<div class="row p-2">
 							<div class="col-3">
-								<span class="text-clear">Profissão</span>
+								<span class="text-clear">Certificado</span>
 							</div>
 							<div class="col-9">
-								<span class="h5 text-white">Mah é a porta da esperçamm.
-									Boca
-									sujuam... sem vergonhuamm. Ma quem quer dinheiroam? Ma vai pra lá. O Raul Gil é
-									gayam! ... Maa O Ah Ae! Ih Ih! O Raul Gil é gayamm!</span>
+								<span class="h5 text-white"><?php echo($est['certificado']); ?></span>
 							</div>
 						</div>
 					</div>

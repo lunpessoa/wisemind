@@ -104,7 +104,7 @@
                 $resul=mysqli_query($conexao, $sql);
                 $con=mysqli_fetch_array($resul);
 
-                $sqlinserir2 = ('insert into profissional (id_profissional, experiencia, certificado, id_especial) values('.$con['id_usuario'].',"'.$exp.'","'.$cert.'",32);');
+                $sqlinserir2 = ('insert into profissional (id_profissional, experiencia, certificado) values('.$con['id_usuario'].',"'.$exp.'","'.$cert.'");');
                 $inserir2=mysqli_query($conexao,$sqlinserir2) or die (mysqli_error($conexao));
 
                 if($inserir2){ 
