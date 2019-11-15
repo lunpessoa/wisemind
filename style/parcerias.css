@@ -1,0 +1,42 @@
+.card{
+    transition: 0.1s linear;
+}
+
+.card:hover{
+    transform: scale(1.1);
+}
+
+.search-place:focus {
+    outline: none;
+    box-shadow:none !important;
+    border:1px solid #ced4da;
+  }
+
+  .backimage {
+	width: 100%;
+	height: 100vh;
+	background-image: url('../img/backimage.png');
+	background-attachment: fixed;
+	background-position: center;
+}
+
+.wiserelement {
+	top: 50%;
+	transform: translateY(-50%);
+	animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+	0% {
+		transform: translatey(-120px);
+	}
+
+	50% {
+		transform: translatey(-140px);
+	}
+
+	100% {
+		transform: translatey(-120px);
+	}
+}
+  

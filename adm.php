@@ -7,11 +7,6 @@
 	<?php include('menu.php'); ?>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
 	<link rel="stylesheet" type="text/css" href="style/areas.css">
-	<style>
-		.menu-color {
-			background-color: #b6151d;
-		}
-	</style>
 </head>
 
 <body>

@@ -19,7 +19,7 @@ if (!isset($_SESSION)) {
   </head>
   <body>
 
-    <nav class="navbar navbar-light menu-color">
+    <nav class="navbar navbar-light bg-warning">
         <section class="ml-auto" id="botoes-entrada">
           <?php
             if(isset($_SESSION["log_status"]) && $_SESSION["log_status"]==true){
