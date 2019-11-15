@@ -15,7 +15,7 @@
 		<div class="row justify-content-center d-flex shadow" style="height:200px; background-color:#f35b07">
 			<section class="justify-content-center align-items-center d-flex icon-page"
 				style="background-color:#f35b07">
-				<i class="fas far fa-newspaper iconsArea text-white mt-5" style="font-size:60px"></i>
+				<i class="fas far fa-newspaper area-icon text-white mt-5" style="font-size:60px"></i>
 			</section>
 		</div>
 

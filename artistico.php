@@ -8,11 +8,7 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
 	<link rel="stylesheet" type="text/css" href="style/areas.css">
 </head>
-<style>
-	.menu-color {
-		background-color: #fb762b;
-	}
-</style>
+
 
 <body>
 	<section class="container-fluid w-100 position-relative main-image"

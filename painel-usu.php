@@ -494,7 +494,7 @@
 					</div>
 
 					<div class="card-body border-0 p-5" id="informacoes-8">
-						<table class="table table-dark">
+						<table class="table table-borderless text-light">
 							<thead>
 								<tr>
 									<th scope="col">#</th>
