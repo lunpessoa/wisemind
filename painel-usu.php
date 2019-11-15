@@ -444,63 +444,116 @@
 								ATUALIZAR</b></button>
 					</div>
 
+					<div class="modal fade" id="modalProfissao" tabindex="-1" role="dialog"
+						aria-labelledby="exampleModalLabel" aria-hidden="true">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="exampleModalLabel">Adicionar profissão</h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<form action="assets/sala.php" method="POST">
+									<div class="modal-body">
+
+										<div class="form-group">
+											<label for="exampleInputNome1">Área</label>
+											<input name="area" type="text" class="form-control" id="exampleInputEmail1"
+												placeholder="Área da profissão" rquired>
+											<label for="exampleInputNome1">Profissão</label>
+											<input name="area" type="text" class="form-control" id="exampleInputEmail1"
+												placeholder="Profissão">
+										</div>
+
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary"
+											data-dismiss="modal">Fechar</button>
+										<button type="submit" class="btn btn-primary" name="adicionar-prof">Adicionar</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+
 					<div class="card-body border-0 p-5 d-none" id="informacoes-alter-8">
+						<?php
+						$sql_pesq=('select * from especializacao where id_prof = "'.$_SESSION["id_user"].'";');
+						$sql_pesq_query = mysqli_query($conexao, $sql_pesq) or die (mysqli_error($conexao));
+						$resul_pesq = mysqli_fetch_array($sql_pesq_query);
+						$cont = mysqli_num_rows( $sql_pesq_query);
+			
+						if($cont==0){
+							echo('<div class="row p-2">
+								<div class="col-9">
+									<span class="h5 text-white">Adicionar</span>
+								</div>
+							</div>');
+						}else{
+					?>
 						<form name="cad" action="assets/alterar.php" method="POST" class="container was-validated"
 							novalidate="" autocomplete="off">
-							<div class="row p-2">
-								<div class="col-3">
-									<span class="text-clear">Senha atual</span>
-								</div>
-								<div class="col-9">
-									<div class="input-group form-group w-50">
-										<input type="password" class="form-control text-light"
-											style="background-color:#282d30; border-color:#1f1f1f;"
-											placeholder="Senha atual" name="senha" required>
-									</div>
-								</div>
-							</div>
 
-							<div class="row p-2">
-								<div class="col-3">
-									<span class="text-clear">Nova senha</span>
-								</div>
-								<div class="col-9">
-									<div class="input-group form-group w-50">
-										<input type="password" class="form-control text-light"
-											style="background-color:#282d30; border-color:#1f1f1f;"
-											placeholder="Senha nova" name="senha-nova" required>
-									</div>
-								</div>
-							</div>
-
-							<div class="row p-2">
-								<div class="col-3">
-									<span class="text-clear">Confirmar nova senha</span>
-								</div>
-								<div class="col-9">
-									<div class="input-group form-group w-50">
-										<input type="password" class="form-control text-light"
-											style="background-color:#282d30; border-color:#1f1f1f;"
-											placeholder="Senha nova" name="confirm-senha" required>
-									</div>
-								</div>
-							</div>
+							<table class="table table-borderless text-light w-50">
+								<thead>
+									<tr>
+										<th scope="col">Área</th>
+										<th scope="col">Profissão</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><input type="text" class="form-control text-light w-75"
+												style="background-color:#282d30; border-color:#1f1f1f;" name="cpf"></td>
+										<td><input type="text" class="form-control text-light w-75"
+												style="background-color:#282d30; border-color:#1f1f1f;" name="cpf"></td>
+									</tr>
+									<tr>
+										<td><input type="text" class="form-control text-light w-75"
+												style="background-color:#282d30; border-color:#1f1f1f;" name="cpf"></td>
+										<td><input type="text" class="form-control text-light w-75"
+												style="background-color:#282d30; border-color:#1f1f1f;" name="cpf"></td>
+									</tr>
+									<tr>
+										<td><input type="text" class="form-control text-light w-75"
+												style="background-color:#282d30; border-color:#1f1f1f;" name="cpf"></td>
+										<td><input type="text" class="form-control text-light w-75"
+												style="background-color:#282d30; border-color:#1f1f1f;" name="cpf"></td>
+									</tr>
+								</tbody>
+							</table>
 
 
 							<button type="submit" class="btn btn-warning" name="Enviar-6"
 								value="Enviar">Atualizar</button>
 							<button type="submit" class="btn btn-dark" id="Fechar-6" value="Enviar">Fechar</button>
 						</form>
+						<?php
+							}
+						?>
+						<button class="btn btn-warning"
+								data-toggle="modal" data-target="#modalProfissao" href="#">
+									Adicionar
+						</button>
 					</div>
 
 					<div class="card-body border-0 p-5" id="informacoes-8">
-						<table class="table table-dark">
+						<?php
+							if($cont==0){
+								echo('<div class="row p-2">
+									<div class="col-9">
+										<span class="h5 text-white">Adicionar</span>
+									</div>
+								</div>');
+							}else{
+						?>
+						<table class="table table-borderless text-light">
 							<thead>
 								<tr>
 									<th scope="col">#</th>
-									<th scope="col">Primeiro</th>
-									<th scope="col">Último</th>
-									<th scope="col">Nickname</th>
+									<th scope="col">Área</th>
+									<th scope="col">Profissão</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -508,22 +561,22 @@
 									<th scope="row">1</th>
 									<td>Mark</td>
 									<td>Otto</td>
-									<td>@mdo</td>
 								</tr>
 								<tr>
 									<th scope="row">2</th>
 									<td>Jacob</td>
 									<td>Thornton</td>
-									<td>@fat</td>
 								</tr>
 								<tr>
 									<th scope="row">3</th>
 									<td>Larry</td>
 									<td>the Bird</td>
-									<td>@twitter</td>
 								</tr>
 							</tbody>
 						</table>
+						<?php
+							}
+						?>
 					</div>
 				</div>
 			</div>
