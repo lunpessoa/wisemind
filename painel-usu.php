@@ -470,10 +470,10 @@
 
 										<div class="form-group">
 											<label for="exampleInputNome1">Área</label>
-											<input name="area" type="text" class="form-control" id="exampleInputEmail1"
+											<input name="area" type="text" class="form-control" id="area"
 												placeholder="Área da profissão" required>
 											<label for="exampleInputNome1">Profissão</label>
-											<input name="profissao" type="text" class="form-control" id="exampleInputEmail1"
+											<input name="profissao" type="text" class="form-control" id="profissao"
 												placeholder="Profissão" required>
 										</div>
 
