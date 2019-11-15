@@ -94,7 +94,7 @@
                         </li>
                         <hr class="w-75 bg-white my-1">
                         <li class="nav-item config-item">
-                            <a class="nav-link h5 mb-0 px-3 pt-4" href="ped-pag.php"><i
+                            <a class="nav-link h5 mb-0 px-3 pt-4" href="pagamentos.php"><i
                                     class="fas fa-credit-card mr-1"></i>
                                 <label class="h5 cursor-pointer">Pagamentos</label></a>
                         </li>
