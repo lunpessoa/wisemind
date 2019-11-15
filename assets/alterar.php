@@ -242,6 +242,27 @@
              }
         }
 
+
+        //Adicionar profissao
+        if(isset($_POST['adicionar-prof'])){
+            $area = $_POST['area'];
+            $profissao = $_POST['profissao'];
+            
+            $sqlinserir = ('insert into especializacao (Area, Profissao, id_prof) values ("'.$area.'", "'.$profissao.'", '.$_SESSION['id_user'].');');
+                    $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));
+
+                    if($inserir){ 
+                        $_SESSION["alterado"]=true;
+                        echo('<script>window.location.href = "../painel-usu.php";</script>');
+                        
+                    }else{
+                        $_SESSION["erroAlterado"]=true;
+                        echo('<script>window.location.href = "../painel-usu.php";</script>');
+                    }
+
+
+        }
+
         //Alterar iamgem usuario
         if(isset($_FILES['avatar'])){
 

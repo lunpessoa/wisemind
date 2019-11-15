@@ -454,16 +454,17 @@
 										<span aria-hidden="true">&times;</span>
 									</button>
 								</div>
-								<form action="assets/sala.php" method="POST">
+								<form action="assets/alterar.php" method="POST" class="container was-validated"
+							novalidate="" autocomplete="off">
 									<div class="modal-body">
 
 										<div class="form-group">
 											<label for="exampleInputNome1">Área</label>
 											<input name="area" type="text" class="form-control" id="exampleInputEmail1"
-												placeholder="Área da profissão" rquired>
+												placeholder="Área da profissão" required>
 											<label for="exampleInputNome1">Profissão</label>
-											<input name="area" type="text" class="form-control" id="exampleInputEmail1"
-												placeholder="Profissão">
+											<input name="profissao" type="text" class="form-control" id="exampleInputEmail1"
+												placeholder="Profissão" required>
 										</div>
 
 									</div>
@@ -495,6 +496,7 @@
 					?>
 						<form name="cad" action="assets/alterar.php" method="POST" class="container was-validated"
 							novalidate="" autocomplete="off">
+							
 
 							<table class="table table-borderless text-light w-50">
 								<thead>
@@ -504,24 +506,25 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td><input type="text" class="form-control text-light w-75"
-												style="background-color:#282d30; border-color:#1f1f1f;" name="cpf"></td>
-										<td><input type="text" class="form-control text-light w-75"
-												style="background-color:#282d30; border-color:#1f1f1f;" name="cpf"></td>
-									</tr>
-									<tr>
-										<td><input type="text" class="form-control text-light w-75"
-												style="background-color:#282d30; border-color:#1f1f1f;" name="cpf"></td>
-										<td><input type="text" class="form-control text-light w-75"
-												style="background-color:#282d30; border-color:#1f1f1f;" name="cpf"></td>
-									</tr>
-									<tr>
-										<td><input type="text" class="form-control text-light w-75"
-												style="background-color:#282d30; border-color:#1f1f1f;" name="cpf"></td>
-										<td><input type="text" class="form-control text-light w-75"
-												style="background-color:#282d30; border-color:#1f1f1f;" name="cpf"></td>
-									</tr>
+								<?php
+									$sqlmostrar=('select * from especializacao where id_prof = "'.$_SESSION["id_user"].'";');
+									$resul3=mysqli_query($conexao, $sqlmostrar);
+									while($con_prof=mysqli_fetch_array($resul3)){
+										echo('
+											<tr>
+												<td><input type="text" class="form-control text-light w-75"
+														style="background-color:#282d30; border-color:#1f1f1f;"
+														value="'.$con_prof["Area"].'"
+														placeholder="'.$con_prof["Area"].'"
+														name="area'.$con_prof["id_espc"].'" required></td>
+												<td><input type="text" class="form-control text-light w-75"
+														style="background-color:#282d30; border-color:#1f1f1f;" 
+														placeholder="'.$con_prof["Profissao"].'"
+														value="'.$con_prof["Area"].'"
+														name="area'.$con_prof["id_espc"].'" required></td>
+											</tr>');
+									}
+								?>
 								</tbody>
 							</table>
 
@@ -557,18 +560,17 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td>Mark</td>
-									<td>Otto</td>
-								</tr>
-								<tr>
-									<td>Jacob</td>
-									<td>Thornton</td>
-								</tr>
-								<tr>
-									<td>Larry</td>
-									<td>the Bird</td>
-								</tr>
+							<?php
+								$sqlmostrar=('select * from especializacao where id_prof = "'.$_SESSION["id_user"].'";');
+								$resul3=mysqli_query($conexao, $sqlmostrar);
+								while($con_prof=mysqli_fetch_array($resul3)){
+									echo('
+										<tr>
+											<td>'.$con_prof["Area"].'</td>
+											<td>'.$con_prof["Profissao"].'</td>
+											</tr>');
+									}
+								?>
 							</tbody>
 						</table>
 						<?php
