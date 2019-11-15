@@ -112,7 +112,15 @@ if (!isset($_SESSION)) {
 	<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
 	
 </body>
-<?php if( $_SESSION["senha-usuario"]==true){ 
+<?php
+if (!isset($_SESSION["senha-usuario"])) {
+	$_SESSION["senha-usuario"]=false;
+}
+
+?>
+<?php
+
+if( $_SESSION["senha-usuario"]==true){ 
 	include('toast.php');
 	echo("<script src='assets/toast.js'></script>
 	<script>erroLog()</script>");
@@ -120,7 +128,7 @@ if (!isset($_SESSION)) {
 	$_SESSION["senha-usuario"]=false;
 	}
 
-	?>
+?>
 
 	
 

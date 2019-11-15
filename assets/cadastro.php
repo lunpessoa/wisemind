@@ -27,7 +27,8 @@
         $con=mysqli_fetch_array($resul);
 
         if($email== $con['Email']){
-            echo('<script>alert("email ja cadastrado")</script>');
+            $_SESSION["email"] = true;
+            echo('<script>window.location.href = "../cad-estudy.php";</script>');
         } else if($senha==$confirme){
 
                
@@ -49,8 +50,8 @@
                     }
 
                 }else {
-                    echo('<script>alert("senhas diferentes")
-                    window.location.href = "../cad-estudy.php";</script>');
+                    $_SESSION["senhas"] = true;
+                    echo('<script>window.location.href = "../cad-estudy.php";</script>');
                     
                 }
 

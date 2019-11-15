@@ -1,3 +1,8 @@
+<?php
+if (!isset($_SESSION)) {
+	session_start();
+}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -70,7 +75,8 @@
 				</div>
 			</div>
 			<div class="card-body bg-dark border-0">
-				<form name="cad" action="assets/cadastro.php" method="POST" class="container was-validated" novalidate="" autocomplete="off">
+				<form name="cad" action="assets/cadastro.php" method="POST" class="container was-validated"
+					novalidate="" autocomplete="off">
 					<div class="row">
 						<div class="col-6">
 							<label style="color:#b5b5b5; text-dark" class="text-font">Nome</label>
@@ -83,8 +89,8 @@
 						<div class="col-6">
 							<label class="text-font" style="color:#b5b5b5;">Sobrenome</label>
 							<div class="input-group form-group">
-								<input type="text" placeholder="Ex. Souza" class="form-control text-light" name="sobrenome"
-									style="background-color:#282d30; border-color:#1f1f1f;" required>
+								<input type="text" placeholder="Ex. Souza" class="form-control text-light"
+									name="sobrenome" style="background-color:#282d30; border-color:#1f1f1f;" required>
 							</div>
 						</div>
 					</div>
@@ -92,8 +98,8 @@
 						<div class="col-6">
 							<label style="color:#b5b5b5; text-dark" class="text-font">Data de Nascimento</label>
 							<div class="input-group form-group">
-								<input type="text" placeholder="10/02/1979" class="form-control date text-light" name="datanasc"
-									style="background-color:#282d30; border-color:#1f1f1f;" required>
+								<input type="text" placeholder="10/02/1979" class="form-control date text-light"
+									name="datanasc" style="background-color:#282d30; border-color:#1f1f1f;" required>
 							</div>
 						</div>
 						<div class="col-6">
@@ -152,7 +158,23 @@
 	<script src="js/javinha.js"></script>
 	<script src="node_modules/popper.js/dist/umd/popper.js"></script>
 	<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
-	<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>       
+	<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+
+	<?php
+	if (!isset($_SESSION["email"])) {
+		$_SESSION["email"]=false;
+	}
+
+?>
+<?php if( $_SESSION["email"]==true){ 
+	include('toast.php');
+	echo("<script src='assets/toast.js'></script>
+	<script>email();</script>");
+
+	$_SESSION["email"]=false;
+	}
+
+?>
 </body>
 <script>
 	$(document).ready(function () {
@@ -160,5 +182,23 @@
 		$('.phone_with_ddd').mask('(99) 99999-9999');
 	});
 </script>
+<?php
+	if (!isset($_SESSION["senhas"])) {
+		$_SESSION["senhas"]=false;
+	}
+
+?>
+<?php if( $_SESSION["senhas"]==true){ 
+	include('toast.php');
+	echo("<script src='assets/toast.js'></script>
+	<script>senhas()</script>");
+
+	$_SESSION["senhas"]=false;
+	}
+
+?>
+
+
+
 
 </html>

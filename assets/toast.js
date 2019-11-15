@@ -19,11 +19,30 @@ var criado = function(){
     })
 }
 
-var senhas = function(){
+var email = function(){
     $(document).ready(function () {
         $('.toast').toast('show');
         // $('#element').toast('hide')
         // $('#element').toast('dispose')
+        var header = document.getElementById("header")
+        var strong = document.createElement('strong')
+        strong.setAttribute('class','mr-5 text-light')
+        var cabecalho = document.createTextNode('CADASTRO')
+        strong.appendChild(cabecalho)
+        header.appendChild(strong)
+        var mae = document.getElementById('toast')
+        var div = document.createElement('div')
+        div.setAttribute('class','toast-body toast-green text-light')
+        var text = document.createTextNode('Perfil criado com sucesso!')
+        div.appendChild(text)
+        mae.appendChild(div)
+
+    })
+}
+
+var senhas = function(){
+    $(document).ready(function () {
+        $('.toast').toast('show');
         var header = document.getElementById("header")
         var strong = document.createElement('strong')
         strong.setAttribute('class','mr-5 text-light')
@@ -43,8 +62,6 @@ var senhas = function(){
 var logado = function(){
     $(document).ready(function () {
         $('.toast').toast('show');
-        // $('#element').toast('hide')
-        // $('#element').toast('dispose')
         var header = document.getElementById("header")
         var strong = document.createElement('strong')
         strong.setAttribute('class','mr-5 text-light')
@@ -64,8 +81,6 @@ var logado = function(){
 var erroLog = function(){
     $(document).ready(function () {
         $('.toast').toast('show');
-        // $('#element').toast('hide')
-        // $('#element').toast('dispose')
         var header = document.getElementById("header")
         var strong = document.createElement('strong')
         strong.setAttribute('class','mr-5 text-light')
@@ -85,8 +100,6 @@ var erroLog = function(){
 var alterado = function(){
     $(document).ready(function () {
         $('.toast').toast('show');
-        // $('#element').toast('hide')
-        // $('#element').toast('dispose')
         var header = document.getElementById("header")
         var strong = document.createElement('strong')
         strong.setAttribute('class','mr-5 text-light')
