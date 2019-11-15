@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster|Roboto+Condensed&display=swap');
 
+.menu-color{
+    background-color: #ffcf29;
+}
+
 .text-warning:hover {
     color: none;
     color: #fff;

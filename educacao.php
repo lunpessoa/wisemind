@@ -15,7 +15,7 @@
 		<div class="row justify-content-center d-flex shadow" style="height:200px; background-color:#a8d12d">
 			<section class="justify-content-center align-items-center d-flex icon-page"
 				style="background-color:#a8d12d">
-				<i class="fas fa-chalkboard-teacher iconsArea text-white mt-5" style="font-size:60px"></i>
+				<i class="fas fa-chalkboard-teacher area-icon text-white mt-5" style="font-size:60px"></i>
 			</section>
 		</div>
 		<div class="col-6 offset-6 text-white p-5 justify-content-center d-flex">

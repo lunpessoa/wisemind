@@ -15,7 +15,7 @@
 		<div class="row justify-content-center d-flex shadow" style="height:200px; background-color:#4aaf75">
 			<section class="justify-content-center align-items-center d-flex icon-page"
 				style="background-color:#4aaf75">
-				<i class="fas fa-pencil-ruler iconsArea text-white mt-5" style="font-size:60px"></i>
+				<i class="fas fa-pencil-ruler area-icon text-white mt-5" style="font-size:60px"></i>
 			</section>
 		</div>
 

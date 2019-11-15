@@ -8,6 +8,11 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
 	<link rel="stylesheet" type="text/css" href="style/areas.css">
 </head>
+<style>
+	.menu-color {
+		background-color: #fb762b;
+	}
+</style>
 
 <body>
 	<section class="container-fluid w-100 position-relative main-image"
@@ -15,7 +20,7 @@
 		<div class="row justify-content-center d-flex shadow" style="height:200px; background-color:#fb762b">
 			<section class="justify-content-center align-items-center d-flex icon-page"
 				style="background-color:#fb762b">
-				<i class="fas fa-paint-brush iconsArea text-white mt-5" style="font-size:60px"></i>
+				<i class="fas fa-paint-brush area-icon text-white mt-5" style="font-size:60px"></i>
 			</section>
 		</div>
 
@@ -85,7 +90,7 @@
 		</div>
 
 		<div class="row py-5" style="background-color:#ffc19e">
-		<div class="col-6 p-0 justify-content-center d-flex">
+			<div class="col-6 p-0 justify-content-center d-flex">
 				<div class="w-75 overflow-hidden zoom">
 					<img class="img-fluid" alt="zoom" src="img/areas/artistico/cenicas.jpg">
 				</div>

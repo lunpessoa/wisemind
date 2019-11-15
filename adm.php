@@ -7,6 +7,11 @@
 	<?php include('menu.php'); ?>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
 	<link rel="stylesheet" type="text/css" href="style/areas.css">
+	<style>
+		.menu-color {
+			background-color: #b6151d;
+		}
+	</style>
 </head>
 
 <body>
@@ -15,7 +20,7 @@
 		<div class="row justify-content-center d-flex shadow" style="height:200px; background-color:#b6151d">
 			<section class="justify-content-center align-items-center d-flex icon-page"
 				style="background-color:#b6151d">
-				<i class="fas fa-pencil-alt iconsArea text-white mt-5" style="font-size:60px"></i>
+				<i class="fas fa-pencil-alt area-icon text-white mt-5" style="font-size:60px"></i>
 			</section>
 		</div>
 
@@ -101,7 +106,7 @@
 		</div>
 	</section>
 	<?php include('rodape.html'); ?>
-	
+
 </body>
 
 </html>
