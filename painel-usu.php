@@ -48,26 +48,26 @@
 						<div id="itens-nav" class="list-nav w-100">
 							<ul class="nav flex-column text-font-calibri">
 								<li class="nav-item config-item">
-									<a class="nav-link h5 mb-0 px-3 pt-4" id="botao-conteudo-1" href="#"><i
-											class="fas fa-user-cog mr-3"></i>
+									<a class="btn nav-link h5 pt-4 mb-0 w-100 text-left rounded-0 btn-outline" id="botao-conteudo-1" href="#"><i
+											class="fas fa-user-cog mr-3 h5"></i>
 										<label class="h5 cursor-pointer">Informações</label></a>
 								</li>
 								<hr class="w-75 bg-white my-1">
 								<li class="nav-item config-item">
-									<a class="nav-link h5 mb-0 px-3 pt-4" id="botao-conteudo-2" href="#"><i
-											class="fas fa-shield-alt mr-3"></i> <label
-											class="h5 cursor-pointer">Segurança</label></a>
+									<button class="btn nav-link h5 pt-4 mb-0 w-100 text-left rounded-0 btn-outline" id="botao-conteudo-2" href="#"><i
+											class="fas fa-shield-alt mr-3 h5"></i> <label
+											class="h5 cursor-pointer">Segurança</label></button>
 								</li>
 								<hr class="w-75 bg-white my-1">
 								<li class="nav-item config-item">
-									<a class="nav-link h5 mb-0 px-3 pt-4" id="botao-conteudo-3" href="#"><i
-											class="fas fa-mail-bulk mr-3"></i>
+									<a class="btn nav-link h5 pt-4 mb-0 w-100 text-left rounded-0 btn-outline" id="botao-conteudo-3" href="#"><i
+											class="fas fa-mail-bulk mr-3 h5"></i>
 										<label class="h5 cursor-pointer">Endereço</label></a>
 								</li>
 								<hr class="w-75 bg-white my-1">
 								<li class="nav-item config-item">
-									<a class="nav-link h5 mb-0 px-3 pt-4" id="botao-conteudo-4" href="#"><i
-											class="fas fa-credit-card mr-3"></i> <label class="h5 cursor-pointer">Plano
+									<a class="btn nav-link h5 pt-4 mb-0 w-100 text-left rounded-0 btn-outline" id="botao-conteudo-4" href="#"><i
+											class="fas fa-credit-card mr-3 h5"></i> <label class="h5 cursor-pointer">Plano
 											/
 											Pagamento</label></a>
 								</li>
@@ -1019,10 +1019,10 @@
 		for (let y = 1; y <= 5; y++)
 			if (y == x) {
 				var botao = document.getElementById("botao-conteudo-" + x)
-				botao.setAttribute('class', 'nav-link h5 mb-0 px-3 pt-4 ativado')
+				botao.setAttribute('class', 'btn nav-link h5 pt-4 mb-0 w-100 text-left rounded-0 btn-outline ativado')
 			} else {
 				var botao = document.getElementById("botao-conteudo-" + y)
-				botao.setAttribute('class', 'nav-link h5 mb-0 px-3 pt-4')
+				botao.setAttribute('class', 'btn nav-link h5 pt-4 mb-0 w-100 text-left rounded-0 btn-outline')
 			}
 	}
 
