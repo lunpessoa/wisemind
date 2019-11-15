@@ -160,7 +160,15 @@ if (!isset($_SESSION)) {
 	<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
 	<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
 
-	<?php
+
+</body>
+<script>
+	$(document).ready(function () {
+		$('.date').mask('99/99/9999');
+		$('.phone_with_ddd').mask('(99) 99999-9999');
+	});
+</script>
+<?php
 	if (!isset($_SESSION["email"])) {
 		$_SESSION["email"]=false;
 	}
@@ -175,13 +183,6 @@ if (!isset($_SESSION)) {
 	}
 
 ?>
-</body>
-<script>
-	$(document).ready(function () {
-		$('.date').mask('99/99/9999');
-		$('.phone_with_ddd').mask('(99) 99999-9999');
-	});
-</script>
 <?php
 	if (!isset($_SESSION["senhas"])) {
 		$_SESSION["senhas"]=false;

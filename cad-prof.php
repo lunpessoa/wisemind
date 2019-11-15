@@ -1,3 +1,8 @@
+<?php
+if (!isset($_SESSION)) {
+	session_start();
+}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -282,5 +287,35 @@
 		$('.uf').mask('AA');
 	});
 </script>
+<?php
+	if (!isset($_SESSION["email"])) {
+		$_SESSION["email"]=false;
+	}
+
+?>
+<?php if( $_SESSION["email"]==true){ 
+	include('toast.php');
+	echo("<script src='assets/toast.js'></script>
+	<script>email();</script>");
+
+	$_SESSION["email"]=false;
+	}
+
+?>
+<?php
+	if (!isset($_SESSION["senhas"])) {
+		$_SESSION["senhas"]=false;
+	}
+
+?>
+<?php if( $_SESSION["senhas"]==true){ 
+	include('toast.php');
+	echo("<script src='assets/toast.js'></script>
+	<script>senhas()</script>");
+
+	$_SESSION["senhas"]=false;
+	}
+
+?>
 
 </html>

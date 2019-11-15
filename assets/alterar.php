@@ -30,14 +30,17 @@
                             $sqlinserir = ('update usuarios set CPF = "'.$cpf.'" where id_usuario = '.$_SESSION['id_user'].';');
                             $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));
                             if($sqlinserir){
+                                $_SESSION["alterado"]=true;
                                 echo('<script>window.location.href = "../painel-usu.php";</script>');
                             }
                         }else{
+                            $_SESSION["erroAlterado"]=true;
                             echo('<script>window.location.href = "../painel-usu.php";</script>');
                         }
                         
                     }else{
-                        echo("Não foi");
+                        $_SESSION["erroAlterado"]=true;
+                        echo('<script>window.location.href = "../painel-usu.php";</script>');
                     }
 
 
@@ -49,11 +52,12 @@
                     $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));
 
                     if($inserir){ 
-                        
-                            echo('<script>window.location.href = "../painel-usu.php";</script>');
+                        $_SESSION["alterado"]=true;
+                        echo('<script>window.location.href = "../painel-usu.php";</script>');
                         
                     }else{
-                        echo("Não foi");
+                        $_SESSION["erroAlterado"]=true;
+                        echo('<script>window.location.href = "../painel-usu.php";</script>');
                     }
 
 
@@ -70,9 +74,9 @@
                 $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));
 
                     if($inserir){ 
-                        
+                        $_SESSION["alterado"]=true;
                     }else{
-                        echo("Não foi");
+                        $_SESSION["erroAlterado"]=true;
                     }
             }
 
@@ -82,9 +86,9 @@
                 $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));
 
                     if($inserir){ 
-                        
+                        $_SESSION["alterado"]=true;
                     }else{
-                        echo("Não foi");
+                        $_SESSION["erroAlterado"]=true;
                     }
             }
 
@@ -101,11 +105,12 @@
                     $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));
 
                     if($inserir){ 
-                        
+                            $_SESSION["alterado"]=true;
                             echo('<script>window.location.href = "../painel-usu.php";</script>');
                         
                     }else{
-                        echo("Não foi");
+                        $_SESSION["erroAlterado"]=true;
+                        echo('<script>window.location.href = "../painel-usu.php";</script>');
                     }
 
 
@@ -127,9 +132,9 @@
                 $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));
 
                     if($inserir){ 
-                        
+                        $_SESSION["alterado"]=true;
                     }else{
-                        echo("Não foi");
+                        $_SESSION["erroAlterado"]=true;
                     }
             }
 
@@ -140,9 +145,9 @@
                 $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));
 
                     if($inserir){ 
-                        
+                        $_SESSION["alterado"]=true;
                     }else{
-                        echo("Não foi");
+                        $_SESSION["erroAlterado"]=true;
                     }
             }
 
@@ -153,9 +158,9 @@
                 $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));
 
                     if($inserir){ 
-                        
+                        $_SESSION["alterado"]=true;
                     }else{
-                        echo("Não foi");
+                        $_SESSION["erroAlterado"]=true;
                     }
             }
 
@@ -166,9 +171,9 @@
                 $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));
 
                     if($inserir){ 
-                        
+                        $_SESSION["alterado"]=true;
                     }else{
-                        echo("Não foi");
+                        $_SESSION["erroAlterado"]=true;
                     }
             }
 
@@ -179,9 +184,9 @@
                 $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));
 
                     if($inserir){ 
-                        
+                        $_SESSION["alterado"]=true;
                     }else{
-                        echo("Não foi");
+                        $_SESSION["erroAlterado"]=true;
                     }
             }
 
@@ -192,9 +197,9 @@
                 $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));
 
                     if($inserir){ 
-                        
+                        $_SESSION["alterado"]=true;
                     }else{
-                        echo("Não foi");
+                        $_SESSION["erroAlterado"]=true;
                     }
             }
 
@@ -220,15 +225,19 @@
 
 
                     if($inserir){
+                        $_SESSION["alterado"]=true;
+                        echo('<script>window.location.href = "../painel-usu.php";</script>');
+                    }else{
+                        $_SESSION["erroAlterado"]=true;
                         echo('<script>window.location.href = "../painel-usu.php";</script>');
                     }
                 
                 }else{
-                    echo('<script>alert("senha diferentes")</script>');
+                    $_SESSION["senhas-difer"]=true;
                     echo('<script>window.location.href = "../painel-usu.php";</script>');
                 }
              }else{
-                echo('<script>alert("senha não confere")</script>');
+                $_SESSION["senhas-difer"]=true;
                 echo('<script>window.location.href = "../painel-usu.php";</script>');
              }
         }
@@ -250,16 +259,17 @@
                     $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));
 
                     if($inserir){ 
-                        
+                            $_SESSION["alterado"]=true;
                             echo('<script>window.location.href = "../painel-usu.php";</script>');
                         
                     }else{
-                        echo("Não foi");
+                        $_SESSION["erroAlterado"]=true;
+                        echo('<script>window.location.href = "../painel-usu.php";</script>');
                     }
         }
     }else{
-        echo('<script>window.alert("Faça o login antes")
-        window.location.href = "login.php";</script>');
+        $_SESSION["facaLog"]=true;
+        echo('window.location.href = "login.php";</script>');
     }
 
 

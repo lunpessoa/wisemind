@@ -893,11 +893,59 @@
 </script>
 <?php
 		}else{
-			echo('<script>window.alert("Faça o login antes")
-			window.location.href = "login.php";</script>');
+			$_SESSION["facaLog"]=true;
+        	echo('<script>window.location.href = "login.php";</script>');
 		}
 
 ?>
+<?php
+	if (!isset($_SESSION["alterado"])) {
+		$_SESSION["alterado"]=false;
+	}
+
+?>
+<?php if( $_SESSION["alterado"]==true){ 
+	include('toast.php');
+	echo("<script src='assets/toast.js'></script>
+	<script>alterado();</script>");
+
+	$_SESSION["alterado"]=false;
+	}
+
+?>
+<?php
+	if(!isset($_SESSION["erroAlterado"])) {
+		$_SESSION["erroAlterado"]=false;
+	}
+
+?>
+<?php if($_SESSION["erroAlterado"]==true){ 
+	include('toast.php');
+	echo("<script src='assets/toast.js'></script>
+	<script>erroAlterado();</script>");
+
+	$_SESSION["erroAlterado"]=false;
+	}
+
+	
+?>
+
+<?php
+	if (!isset( $_SESSION["senhas-difer"])) {
+		$_SESSION["senhas-difer"]=false;
+	}
+
+?>
+<?php if($_SESSION["senhas-difer"]==true){ 
+	include('toast.php');
+	echo("<script src='assets/toast.js'></script>
+	<script>senhas();</script>");
+
+	$_SESSION["senhas-difer"]=false;
+	}
+
+?>
+
 
 
 </html>

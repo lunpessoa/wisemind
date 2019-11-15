@@ -174,10 +174,25 @@
 </script>
 <?php
 		}else{
-			echo('<script>window.alert("Faça o login antes")
-			window.location.href = "login.php";</script>');
+			$_SESSION["facaLog"]=true;
+        	echo('<script>window.location.href = "login.php";</script>');
 		}
 	
+?>
+<?php
+	if (!isset( $_SESSION["assinatura"])) {
+		$_SESSION["assinatura"]=false;
+	}
+
+?>
+<?php if($_SESSION["assinatura"]==true){ 
+	include('toast.php');
+	echo("<script src='assets/toast.js'></script>
+	<script>assinatura();</script>");
+
+	$_SESSION["assinatura"]=false;
+	}
+
 ?>
 
 </html>

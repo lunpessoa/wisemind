@@ -130,6 +130,24 @@ if( $_SESSION["senha-usuario"]==true){
 
 ?>
 
+<?php
+if (!isset($_SESSION["facaLog"])) {
+	$_SESSION["facaLog"]=false;
+}
+
+?>
+<?php
+
+if( $_SESSION["facaLog"]==true){ 
+	include('toast.php');
+	echo("<script src='assets/toast.js'></script>
+	<script>facaLog()</script>");
+
+	$_SESSION["facaLog"]=false;
+	}
+
+?>
+
 	
 
 </html>

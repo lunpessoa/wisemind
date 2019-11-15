@@ -1,11 +1,12 @@
 <?php
     include('conexao.php');
+    session_start();
     //funcao limpar caracteres nao numericos 
     function limpar_texto($str){ 
         return preg_replace("/[^0-9]/", "", $str); 
     }
     if(isset($_POST['criar'])){
-        session_start();
+        
            
 
         $nome=$_POST['nome'];
@@ -91,18 +92,14 @@
         $resul=mysqli_query($conexao, $sql);
         $con=mysqli_fetch_array($resul);
         if($email== $con['Email']){
-            echo('<script>alert("email ja cadastrado")</script>');
+            $_SESSION["email"] = true;
+            echo('<script>window.location.href = "../cad-prof.php";</script>');
         } else if($senha==$confirme){
 
                
                 $sqlinserir = ('insert into usuarios (Nome, Sobrenome, Data_Nasc, Email, Senha, Cell, Cidade, Rua, Estado, Numero, CEP, Bairro, CPF, id_privilegio, perfil_img) values 
                 ("'.$nome.'", "'.$sobrenome.'", "'.$datanasc.'", "'.$email.'", "'.sha1($senha.$email).'", "'.$celular.'","'.$cidade.'","'.$rua.'","'.$estado.'","'.$num.'","'.$cep.'","'.$bairro.'","'.$cpf.'", 2, "img/perfil/sem-foto.png);');
                 $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));
-
-
-                if($inserir){
-                    echo('<script>alert("foi esse")</script>');
-                }
                 $sql=('select * from usuarios where Email = "'.$email.'";');
                 $resul=mysqli_query($conexao, $sql);
                 $con=mysqli_fetch_array($resul);
@@ -112,7 +109,7 @@
 
                 if($inserir2){ 
                     
-
+                    $_SESSION["cadastrado"] = true;
                     echo('<script>window.location.href = "../index.php";</script>');//cadastro com sucesso
                     
                     
@@ -120,8 +117,8 @@
             
 
                 }else {
-                    echo('<script>alert("senhas diferentes")
-                    window.location.href = "../cad-prof.php";</script>');
+                    $_SESSION["senhas"] = true;
+                    echo('<script>window.location.href = "../cad-prof.php";</script>');
                     
                 }
 

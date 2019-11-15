@@ -660,12 +660,12 @@
 </body>
 <?php
     }else{
-      echo('<script>window.alert("Faça a assinatura do nosso plano")
-			window.location.href = "compra1.php";</script>');
+      $_SESSION["assinatura"]=true;
+      echo('<script>window.location.href = "compra1.php";</script>');
     }
 		}else{
-			echo('<script>window.alert("Faça o login antes")
-			window.location.href = "login.php";</script>');
+			$_SESSION["facaLog"]=true;
+      echo('<script>window.location.href = "login.php";</script>');
 		}
 	
 ?>

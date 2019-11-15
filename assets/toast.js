@@ -19,6 +19,27 @@ var criado = function(){
     })
 }
 
+var facaLog = function(){
+    $(document).ready(function () {
+        $('.toast').toast('show');
+        // $('#element').toast('hide')
+        // $('#element').toast('dispose')
+        var header = document.getElementById("header")
+        var strong = document.createElement('strong')
+        strong.setAttribute('class','mr-5 text-light')
+        var cabecalho = document.createTextNode('CADASTRO')
+        strong.appendChild(cabecalho)
+        header.appendChild(strong)
+        var mae = document.getElementById('toast')
+        var div = document.createElement('div')
+        div.setAttribute('class','toast-body toast-red text-light')
+        var text = document.createTextNode('Faça login antes!')
+        div.appendChild(text)
+        mae.appendChild(div)
+
+    })
+}
+
 var email = function(){
     $(document).ready(function () {
         $('.toast').toast('show');
@@ -32,8 +53,8 @@ var email = function(){
         header.appendChild(strong)
         var mae = document.getElementById('toast')
         var div = document.createElement('div')
-        div.setAttribute('class','toast-body toast-green text-light')
-        var text = document.createTextNode('Perfil criado com sucesso!')
+        div.setAttribute('class','toast-body toast-red text-light')
+        var text = document.createTextNode('Email já cadastrado!')
         div.appendChild(text)
         mae.appendChild(div)
 
@@ -110,6 +131,44 @@ var alterado = function(){
         var div = document.createElement('div')
         div.setAttribute('class','toast-body toast-green text-light')
         var text = document.createTextNode('alterado com suceso!')
+        div.appendChild(text)
+        mae.appendChild(div)
+
+    })
+}
+
+var erroAlterado = function(){
+    $(document).ready(function () {
+        $('.toast').toast('show');
+        var header = document.getElementById("header")
+        var strong = document.createElement('strong')
+        strong.setAttribute('class','mr-5 text-light')
+        var cabecalho = document.createTextNode('LOGIN')
+        strong.appendChild(cabecalho)
+        header.appendChild(strong)
+        var mae = document.getElementById('toast')
+        var div = document.createElement('div')
+        div.setAttribute('class','toast-body toast-red text-light')
+        var text = document.createTextNode('Erro ao alterar!')
+        div.appendChild(text)
+        mae.appendChild(div)
+
+    })
+}
+
+var assinatura = function(){
+    $(document).ready(function () {
+        $('.toast').toast('show');
+        var header = document.getElementById("header")
+        var strong = document.createElement('strong')
+        strong.setAttribute('class','mr-5 text-light')
+        var cabecalho = document.createTextNode('LOGIN')
+        strong.appendChild(cabecalho)
+        header.appendChild(strong)
+        var mae = document.getElementById('toast')
+        var div = document.createElement('div')
+        div.setAttribute('class','toast-body toast-red text-light')
+        var text = document.createTextNode('Faça a assinatura do nosso plano!')
         div.appendChild(text)
         mae.appendChild(div)
 
