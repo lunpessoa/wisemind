@@ -98,7 +98,7 @@
 
                
                 $sqlinserir = ('insert into usuarios (Nome, Sobrenome, Data_Nasc, Email, Senha, Cell, Cidade, Rua, Estado, Numero, CEP, Bairro, CPF, id_privilegio, perfil_img) values 
-                ("'.$nome.'", "'.$sobrenome.'", "'.$datanasc.'", "'.$email.'", "'.sha1($senha.$email).'", "'.$celular.'","'.$cidade.'","'.$rua.'","'.$estado.'","'.$num.'","'.$cep.'","'.$bairro.'","'.$cpf.'", 2, "img/perfil/sem-foto.png);');
+                ("'.$nome.'", "'.$sobrenome.'", "'.$datanasc.'", "'.$email.'", "'.sha1($senha.$email).'", "'.$celular.'","'.$cidade.'","'.$rua.'","'.$estado.'","'.$num.'","'.$cep.'","'.$bairro.'","'.$cpf.'", 2, "img/perfil/sem-foto.png");');
                 $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));
                 $sql=('select * from usuarios where Email = "'.$email.'";');
                 $resul=mysqli_query($conexao, $sql);

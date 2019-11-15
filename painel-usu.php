@@ -316,9 +316,9 @@
 									<div class="input-group form-group w-50">
 										<input type="text" class="form-control text-light"
 											style="background-color:#282d30; border-color:#1f1f1f;"
-											placeholder="<?php if($est['Skills']==0){echo("Adicionar");}else{echo($est['Skills']);}?>"
+											placeholder="<?php if($est['Skills']==null){echo("Adicionar");}else{echo($est['Skills']);}?>"
 											value="<?php echo($est['Skills']);?>" name="skill"
-											<?php if($est['Skills']!=0){echo("required");}?>>
+											<?php if($est['Skills']!=null){echo("required");}?>>
 									</div>
 								</div>
 							</div>
@@ -363,19 +363,62 @@
 			<div class="col-7 offset-4">
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
-						<label class="h3 text-font-calibri"><b>SITUAÇÃO - Profissional</b></label>
-						<button class="btn btn-hover-white ml-auto"><i class="fas fa-pen"></i><b>
+						<label class="h3 text-font-calibri" ><b>SITUAÇÃO</b></label>
+						<button class="btn btn-hover-white ml-auto" id="atualizar-7"><i class="fas fa-pen"></i><b>
 								ATUALIZAR</b></button>
 					</div>
-					<div class="card-body border-0 p-5">
+
+					<div class="card-body border-0 p-5 d-none" id="informacoes-alter-7">
+						<form name="cad" action="assets/alterar.php" method="POST" class="container was-validated"
+							novalidate="" autocomplete="off">
+							<div class="row p-2">
+								<div class="col-3">
+									<span class="text-clear">Experiência</span>
+								</div>
+								<div class="col-9">
+									<div class="input-group form-group w-50">
+										<input type="text" class="form-control text-light"
+											style="background-color:#282d30; border-color:#1f1f1f;" placeholder="
+											<?php
+											if($est['experiencia']!=null){
+												echo($est['experiencia']);
+												
+											}else{
+												echo("Adicionar");
+											}?>" value="<?php echo($est['experiencia']);?>" name="experiencia"
+											<?php if($est['experiencia']!=null){echo("required");}?>>
+									</div>
+								</div>
+							</div>
+
+							<div class="row p-2">
+								<div class="col-3">
+									<span class="text-clear">Certificado</span>
+								</div>
+								<div class="col-9">
+									<div class="input-group form-group w-50">
+										<input type="text" class="form-control text-light"
+											style="background-color:#282d30; border-color:#1f1f1f;"
+											placeholder="<?php if($est['certificado']==null){echo("Adicionar");}else{echo($est['certificado']);}?>"
+											value="<?php echo($est['certificado']);?>" name="certificado"
+											<?php if($est['certificado']!=0){echo("required");}?>>
+									</div>
+								</div>
+							</div>
+
+
+							<button type="submit" class="btn btn-warning" name="Enviar-3"
+								value="Enviar">Atualizar</button>
+						</form>
+					</div>
+
+					<div class="card-body border-0 p-5" id="informacoes-7">
 						<div class="row p-2">
 							<div class="col-3">
 								<span class="text-clear">Experiência</span>
 							</div>
 							<div class="col-9">
-								<span class="h5 text-white">Silvio Santos Ipsum wellintaaammmmmmmmm. Eu não queria
-									perguntar isso publicamenteam, ma vou perguntar. Carla, você tem o ensino
-									fundamentauam?</span>
+								<span class="h5 text-white"><?php echo($est['experiencia']); ?></span>
 							</div>
 						</div>
 						<div class="row p-2">
@@ -383,10 +426,7 @@
 								<span class="text-clear">Certificado</span>
 							</div>
 							<div class="col-9">
-								<span class="h5 text-white">Mah é a porta da esperçamm.
-									Boca
-									sujuam... sem vergonhuamm. Ma quem quer dinheiroam? Ma vai pra lá. O Raul Gil é
-									gayam! ... Maa O Ah Ae! Ih Ih! O Raul Gil é gayamm!</span>
+								<span class="h5 text-white"><?php echo($est['certificado']); ?></span>
 							</div>
 						</div>
 					</div>
@@ -400,7 +440,7 @@
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
 						<label class="h3 text-font-calibri"><b>ESPECIALIZAÇÃO - Profissional</b></label>
-						<button class="btn btn-hover-white ml-auto"><i class="fas fa-pen"></i><b>
+						<button class="btn btn-hover-white ml-auto" id="atualizar-8"><i class="fas fa-pen"></i><b>
 								ATUALIZAR</b></button>
 					</div>
 					<div class="card-body border-0 p-5">
@@ -847,7 +887,7 @@
 			document.getElementById("informacoes-alter-6").setAttribute('class', 'card-body border-0 p-5 d-none')
 	}
 	var atualizar = function (a) {
-		for (let k = 1; k <= 6; k++)
+		for (let k = 1; k <= 8; k++)
 			if (k == a) {
 				document.getElementById("atualizar-" + a).setAttribute('class', 'd-none')
 				document.getElementById("informacoes-" + a).setAttribute('class', 'card-body border-0 p-5 d-none')
@@ -856,12 +896,12 @@
 	}
 
 
-	for (let a = 1; a <= 6; a++) {
+	for (let a = 1; a <= 8; a++) {
 		var link_alter = document.getElementById("atualizar-" + a)
-		link_alter.onclick = (e) => {
+		if(link_alter!=null){link_alter.onclick = (e) => {
 			e.preventDefault()
 			atualizar(a)
-		}
+		}}
 	}
 </script>
 <script>
@@ -878,10 +918,10 @@
 
 	for (let x = 1; x <= 5; x++) {
 		var link = document.getElementById("botao-conteudo-" + x)
-		link.onclick = (e) => {
+		if(link!=null){link.onclick = (e) => {
 			e.preventDefault()
 			ativar(x)
-		}
+		}}
 	}
 </script>
 <script>
