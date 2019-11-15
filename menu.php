@@ -86,7 +86,7 @@ if (!isset($_SESSION)) {
             <section class="col-lg-5">
               <ul class="navbar-nav">
                 <li class="nav-item text-uppercase">
-                  <a class="nav-link text-warning mr-4" href="#">Parcerias</a>
+                  <a class="nav-link text-warning mr-4" href="parcerias.php">Parcerias</a>
                 </li>
                 <li class="nav-item text-uppercase">
                   <a class="nav-link text-warning mr-4" href="compra1.php">TORNE-SE WISER</a>
