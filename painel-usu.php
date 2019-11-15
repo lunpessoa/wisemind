@@ -439,7 +439,7 @@
 			<div class="col-7 offset-4">
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
-						<label class="h3 text-font-calibri"><b>ESPECIALIZAÇÃO - Profissional</b></label>
+						<label class="h3 text-font-calibri"><b>ESPECIALIZAÇÃO</b></label>
 						<button class="btn btn-hover-white ml-auto" id="atualizar-8"><i class="fas fa-pen"></i><b>
 								ATUALIZAR</b></button>
 					</div>
