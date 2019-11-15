@@ -234,7 +234,7 @@
 		if($con['id_privilegio']==1){
 			
 		?>
-		<div class="row mb-5 " id="informacao-1">
+		<div class="row mb-5 " id="informacao-1-1">
 			<div class="col-7 offset-4">
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
@@ -286,7 +286,7 @@
 		<?php 
 			if($con['id_privilegio']==1){
 		?>
-		<div class="row mb-5" id="informacao-1">
+		<div class="row mb-5" id="informacao-1-2">
 			<div class="col-7 offset-4">
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
@@ -369,7 +369,7 @@
 		<?php 
 			if($con['id_privilegio']==2){	
 		?>
-		<div class="row mb-5" id="informacao-2">
+		<div class="row mb-5" id="informacao-2-1">
 			<div class="col-7 offset-4">
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
@@ -445,7 +445,7 @@
 		</div>
 
 
-		<div class="row mb-5" id="informacao-2">
+		<div class="row mb-5" id="informacao-2-2">
 			<div class="col-7 offset-4">
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
@@ -594,7 +594,7 @@
 			}
 		?>
 
-		<div class="row mb-5 d-none" id="seguranca">
+		<div class="row mb-5 d-none" id="seguranca-1">
 			<div class="col-7 offset-4">
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
@@ -638,7 +638,7 @@
 			</div>
 		</div>
 
-		<div class="row mb-5 d-none" id="seguranca">
+		<div class="row mb-5 d-none" id="seguranca-2">
 			<div class="col-7 offset-4">
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
@@ -708,7 +708,7 @@
 			</div>
 		</div>
 
-		<div class="row mb-5" id="informacao">
+		<div class="row mb-5" id="informacao-reg">
 			<div class="col-7 offset-4">
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
