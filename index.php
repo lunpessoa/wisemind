@@ -65,46 +65,46 @@ if (!isset($_SESSION)) {
           <div class="col-md-6 col-12 p-0 d-inline-flex" style="background-color:#fac215">
             <li class="nav-item areasLinks" data-toggle="tooltip" data-placement="top"
               title="Administração, Economia e Negócios" style="background-color:#b6151d">
-              <a class="nav-link light-red p-0" href="#"><i class="fas fa-pencil-alt iconsArea"
+              <a class="nav-link light-red p-0" href="adm.php"><i class="fas fa-pencil-alt iconsArea"
                   style="color:#fff"></i></a>
             </li>
             <li class="nav-item areasLinks" data-toggle="tooltip" data-placement="top" title="Ciências Sociais"
               style="background-color:#d21b3a">
-              <a class="nav-link light-red" href="#"><i class="fas fa-brain iconsArea" style="color:#fff"></i></a>
+              <a class="nav-link light-red" href="sociais.php"><i class="fas fa-brain iconsArea" style="color:#fff"></i></a>
             </li>
             <li class="nav-item areasLinks" data-toggle="tooltip" data-placement="top" title="Comunicação e Mídia"
               style="background-color:#f35b07">
-              <a class="nav-link" href="#"><i class="far fa-newspaper iconsArea" style="color:#fff"></i></a>
+              <a class="nav-link" href="comunicacao.php"><i class="far fa-newspaper iconsArea" style="color:#fff"></i></a>
             </li>
             <li class="nav-item areasLinks" data-toggle="tooltip" data-placement="top" title="Design e Arte"
               style="background-color:#fb762b">
-              <a class="nav-link" href="#"><i class="fas fa-paint-brush iconsArea" style="color:#fff"></i></a>
+              <a class="nav-link" href="artistico.php"><i class="fas fa-paint-brush iconsArea" style="color:#fff"></i></a>
             </li>
             <li class="nav-item areasLinks" data-toggle="tooltip" data-placement="top" title="Direito"
               style="background-color:#fac215">
-              <a class="nav-link" href="#"><i class="fas fa-balance-scale iconsArea" style="color:#fff"></i></a>
+              <a class="nav-link" href="direito.php"><i class="fas fa-balance-scale iconsArea" style="color:#fff"></i></a>
             </li>
           </div>
           <div class="col-md-6 col-12 p-0 d-inline-flex">
             <li class="nav-item areasLinks" data-toggle="tooltip" data-placement="top" title="Educação"
               style="background-color:#a8d12d">
-              <a class="nav-link" href="#"><i class="fas fa-chalkboard-teacher iconsArea" style="color:#fff"></i></a>
+              <a class="nav-link" href="educacao.php"><i class="fas fa-chalkboard-teacher iconsArea" style="color:#fff"></i></a>
             </li>
             <li class="nav-item areasLinks" data-toggle="tooltip" data-placement="top" title="Engenharia e Arquitetura"
               style="background-color:#4aaf75">
-              <a class="nav-link" href="#"><i class="fas fa-pencil-ruler iconsArea" style="color:#fff"></i></a>
+              <a class="nav-link" href="engenharia.php"><i class="fas fa-pencil-ruler iconsArea" style="color:#fff"></i></a>
             </li>
             <li class="nav-item areasLinks" data-toggle="tooltip" data-placement="top" title="Informação e Tecnologia"
               style="background-color:#268cb4">
-              <a class="nav-link" href="#"><i class="fas fa-laptop-code iconsArea" style="color:#fff"></i></a>
+              <a class="nav-link" href="info.php"><i class="fas fa-laptop-code iconsArea" style="color:#fff"></i></a>
             </li>
             <li class="nav-item areasLinks" data-toggle="tooltip" data-placement="top" title="Saúde"
               style="background-color:#1469bc">
-              <a class="nav-link" href="#"><i class="fas fa-heartbeat iconsArea" style="color:#fff"></i></a>
+              <a class="nav-link" href="saude.php"><i class="fas fa-heartbeat iconsArea" style="color:#fff"></i></a>
             </li>
             <li class="nav-item areasLinks" data-toggle="tooltip" data-placement="top" title="Turismo e Gastronomia"
               style="background-color:#831168">
-              <a class="nav-link p-0" href="#"><i class="fas fa-utensils iconsArea" style="color:#fff"></i></a>
+              <a class="nav-link p-0" href="turismo.php"><i class="fas fa-utensils iconsArea" style="color:#fff"></i></a>
             </li>
           </div>
         </div>
