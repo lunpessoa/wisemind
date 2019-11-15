@@ -16,6 +16,11 @@ body {
   font-family: "Open Sans Bold";
 }
 
+.btn-outline:focus {
+	outline: none;
+	box-shadow: none !important;
+}
+
 .btn-hover-white {
   color: #ffcf29;
 }
@@ -55,7 +60,7 @@ body {
   color: #ffcf29;
 }
 
-.config-item:hover .nav-link i {
+.config-item:hover .nav-link i{
   color: #212529;
 }
 
