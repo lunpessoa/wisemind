@@ -48,29 +48,39 @@
 						<div id="itens-nav" class="list-nav w-100">
 							<ul class="nav flex-column text-font-calibri">
 								<li class="nav-item config-item">
-									<a class="btn nav-link h5 pt-4 mb-0 w-100 text-left rounded-0 btn-outline" id="botao-conteudo-1" href="#"><i
-											class="fas fa-user-cog mr-3 h5"></i>
-										<label class="h5 cursor-pointer">Informações</label></a>
+									<button class="btn nav-link h5 pt-4 mb-0 w-100 text-left rounded-0 btn-outline" id="botao-conteudo-1" href="#"
+									id="btn-informacoes"><i
+											class="fas fa-user-cog mr-3 h5" ></i>
+										<label class="h5 cursor-pointer">Informações</label></button>
 								</li>
 								<hr class="w-75 bg-white my-1">
 								<li class="nav-item config-item">
-									<button class="btn nav-link h5 pt-4 mb-0 w-100 text-left rounded-0 btn-outline" id="botao-conteudo-2" href="#"><i
+									<button class="btn nav-link h5 pt-4 mb-0 w-100 text-left rounded-0 btn-outline" id="botao-conteudo-2" href="#"
+									id="btn-seguranca"><i
 											class="fas fa-shield-alt mr-3 h5"></i> <label
 											class="h5 cursor-pointer">Segurança</label></button>
 								</li>
 								<hr class="w-75 bg-white my-1">
 								<li class="nav-item config-item">
-									<a class="btn nav-link h5 pt-4 mb-0 w-100 text-left rounded-0 btn-outline" id="botao-conteudo-3" href="#"><i
+									<button class="btn nav-link h5 pt-4 mb-0 w-100 text-left rounded-0 btn-outline" id="botao-conteudo-3" href="#"
+									id="btn-endereco"><i
 											class="fas fa-mail-bulk mr-3 h5"></i>
-										<label class="h5 cursor-pointer">Endereço</label></a>
+										<label class="h5 cursor-pointer">Endereço</label></button>
 								</li>
+								<?php 
+									if($con['id_privilegio']==1){	
+								?>
 								<hr class="w-75 bg-white my-1">
 								<li class="nav-item config-item">
-									<a class="btn nav-link h5 pt-4 mb-0 w-100 text-left rounded-0 btn-outline" id="botao-conteudo-4" href="#"><i
+									<button class="btn nav-link h5 pt-4 mb-0 w-100 text-left rounded-0 btn-outline" id="botao-conteudo-4" href="#"
+									id="btn-plano"><i
 											class="fas fa-credit-card mr-3 h5"></i> <label class="h5 cursor-pointer">Plano
 											/
-											Pagamento</label></a>
+											Pagamento</label></button>
 								</li>
+								<?php
+									}
+								?>
 							</ul>
 						</div>
 					</div>
@@ -110,7 +120,7 @@
 
 
 	<div class="container-fluid" style="margin-top:130px">
-		<div class="row mb-5">
+		<div class="row mb-5" id="informacao">
 			<div class="col-7 offset-4">
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
@@ -224,7 +234,7 @@
 		if($con['id_privilegio']==1){
 			
 		?>
-		<div class="row mb-5">
+		<div class="row mb-5 " id="informacao-1">
 			<div class="col-7 offset-4">
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
@@ -276,7 +286,7 @@
 		<?php 
 			if($con['id_privilegio']==1){
 		?>
-		<div class="row mb-5">
+		<div class="row mb-5" id="informacao-1">
 			<div class="col-7 offset-4">
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
@@ -359,7 +369,7 @@
 		<?php 
 			if($con['id_privilegio']==2){	
 		?>
-		<div class="row mb-5">
+		<div class="row mb-5" id="informacao-2">
 			<div class="col-7 offset-4">
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
@@ -435,7 +445,7 @@
 		</div>
 
 
-		<div class="row mb-5">
+		<div class="row mb-5" id="informacao-2">
 			<div class="col-7 offset-4">
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
@@ -455,7 +465,7 @@
 									</button>
 								</div>
 								<form action="assets/alterar.php" method="POST" class="container was-validated"
-							novalidate="" autocomplete="off">
+								novalidate="" autocomplete="off">
 									<div class="modal-body">
 
 										<div class="form-group">
@@ -584,7 +594,7 @@
 			}
 		?>
 
-		<div class="row mb-5">
+		<div class="row mb-5 d-none" id="seguranca">
 			<div class="col-7 offset-4">
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
@@ -628,7 +638,7 @@
 			</div>
 		</div>
 
-		<div class="row mb-5">
+		<div class="row mb-5 d-none" id="seguranca">
 			<div class="col-7 offset-4">
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
@@ -698,7 +708,7 @@
 			</div>
 		</div>
 
-		<div class="row mb-5">
+		<div class="row mb-5" id="informacao">
 			<div class="col-7 offset-4">
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
@@ -724,7 +734,7 @@
 			</div>
 		</div>
 
-		<div class="row mb-5">
+		<div class="row mb-5" id="endereco">
 			<div class="col-7 offset-4">
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
@@ -897,7 +907,7 @@
 		<?php
 			if($con['id_privilegio']==1){
 		?>
-		<div class="row mb-5">
+		<div class="row mb-5 d-none" id="plano">
 			<div class="col-7 offset-4">
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
@@ -987,6 +997,15 @@
 
 
 </body>
+<script src='assets/painel-usu.js'></script>
+<?php
+	if($con['id_privilegio']==1){
+		echo("<script>estudante();</script>");
+	}
+	if($con['id_privilegio']==2){
+		echo("<script>profissional();</script>");
+	}
+?>
 <script>
 	document.getElementById("Fechar-6").onclick = (e) => {
 		e.preventDefault()
