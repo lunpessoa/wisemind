@@ -10,7 +10,7 @@
 <html lang="pt-br">
 
 <head>
-    <title>Login</title>
+    <title>Admin Usuarios</title>
     <meta charset="utf-8">
 
     <link rel="stylesheet" href="../node_modules/bootstrap/compiler/bootstrap.css">
@@ -23,28 +23,26 @@
 <body>
 
 
-    <section class="container-fluid header-title justify-content-center d-flex position-relative">
-
-        <nav class="button-back text-center position-absolute d-flex mt-3">
-
-            <a href="admin.php" class="slide-section text-dark bg-warning"><i class="fas fa-chevron-left"></i></a>
-
+    <section class="container-fluid header-title d-flex align-items-end">
+        <nav class="button-back">
+            <a href="admin.php" class="btn p-0 text-dark bg-warning"><i class="fas fa-chevron-left"></i></a>
         </nav>
 
-        <div class="text-center w-25 mt-5">
+        <div class="w-100 d-flex justify-content-center position-absolute" style="margin-top:-150px">
+            <div class="w-25 text-center">
+                <h1 class="h1 font-lobster">Usuários</h1>
 
-            <h1 class="h1 font-lobster">Usuários</h1>
-
-            <form action="pesquisar.php" method="get" name="formularioPesq">
-                <div class="input-group mb-3">
-                    <input type="text" id="form-border-none" class="form-control border-right-0 search-place"
-                        placeholder="Pesquisar" aria-label="Pesquisar" aria-describedby="basic-addon2">
-                    <div class="input-group-append">
-                        <span class="input-group-text bg-transparent border-left-0" id="basic-addon2"><i
-                                class="fas fa-search"></i></span>
+                <form action="pesquisar.php" method="get" name="formularioPesq">
+                    <div class="input-group mb-3">
+                        <input type="text" id="form-border-none" class="form-control border-right-0 search-place"
+                            placeholder="Pesquisar" aria-label="Pesquisar" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <span class="input-group-text bg-transparent border-left-0" id="basic-addon2"><i
+                                    class="fas fa-search"></i></span>
+                        </div>
                     </div>
-                </div>
-            </form>
+                </form>
+            </div>
 
         </div>
 
@@ -64,31 +62,42 @@
             </thead>
             <tbody>
                 <?php
-
-            $sqlmostrar=('select * from usuarios;');
-            $resul=mysqli_query($conexao, $sqlmostrar) or die (mysqli_error($conexao));
-            while($con_usu=mysqli_fetch_array($resul) or die (mysqli_error($conexao))){
-                echo('<tr class="text-clear">
-                    <th scope="row">'.$con_usu["id_usuario"].' </th>
-                    <td> '.$con_usu["Nome"].' </td>
-                    <td> '.$con_usu["Email"].' </td>
-                    <td> ');if($con_usu["id_privilegio"]==1){
-                                echo("Usuario");
-                            }else if($con_usu["id_privilegio"]==2){
-                                echo("Profissional");
-                            }else if($con_usu["id_privilegio"]==3){
-                                echo("Administrador");
+                    $sqlmostrar=('select * from usuarios;');
+                    $resul=mysqli_query($conexao, $sqlmostrar) or die (mysqli_error($conexao));
+                    while($con_usu=mysqli_fetch_array($resul) or die (mysqli_error($conexao))){
+                        echo('<tr class="text-clear">
+                            <th scope="row">'.$con_usu["id_usuario"].' </th>
+                            <td> '.$con_usu["Nome"].' </td>
+                            <td> '.$con_usu["Email"].' </td>
+                            <td> ');if($con_usu["id_privilegio"]==1){
+                                        echo("Usuario");
+                                    }else if($con_usu["id_privilegio"]==2){
+                                        echo("Profissional");
+                                    }else if($con_usu["id_privilegio"]==3){
+                                        echo("Administrador");
+                                    }
+                            echo('</td>');
+                            if($con_usu["id_privilegio"]==3){
+                                echo('<td class="justify-content-center d-flex"><a class="btn text-clear disabled" href="users.php?ex='.$con_usu['id_usuario'].'"><i class="fas fa-user-times"></i></a></td>');
+                            } else{
+                                echo('<td class="justify-content-center d-flex"><a class="btn text-clear" href="users.php?ex='.$con_usu['id_usuario'].'"><i class="fas fa-user-times"></i></a></td>');
                             }
-                    echo('</td>');
-                    if($con_usu["id_privilegio"]==3){
-                        echo('<td class="justify-content-center d-flex"><a class="btn text-clear disabled" href="excluir_quest.php?ex='.$con_usu['Nome'].'"><i class="fas fa-user-times"></i></a></td>');
-                    } else{
-                        echo('<td class="justify-content-center d-flex"><a class="btn text-clear" href="excluir_quest.php?ex='.$con_usu['Nome'].'"><i class="fas fa-user-times"></i></a></td>');
-                    }
-                    echo('</tr>');
-            }
-   
-    ?>
+                            echo('</tr>');
+
+                    if(isset($_GET["ex"])){
+                        $ex=$_GET["ex"];
+                        $sql_ex=('delete from usuarios where id_usuario='.$ex.';');
+                        if($con_usu["id_privilegio"]==1){
+                            $sql_ex2=('delete from estudantes where id_estudante='.$ex.';');
+                        }else{
+                            $sql_ex2=('delete from profissional where id_profissional='.$ex.';');
+                        }
+                        $mostrar_sql=mysqli_query($conexao, $sql_ex);    
+                        $mostrar_sql2=mysqli_query($conexao, $sql_ex2);   
+                        header('Location: users.php');  
+                    }   
+                }          
+                ?>
             </tbody>
         </table>
     </section>

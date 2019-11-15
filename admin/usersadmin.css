@@ -8,11 +8,11 @@ body {
 .header-title {
     background-image: url('../img/ondinha.png');
     background-position: center;
-    background-position-y: -400px;
     background-size: cover;
     overflow: hidden;
     position: relative;
-    height: 300px;
+    height: 691px;
+    margin-top: -350px;
 }
 
 thead {
@@ -38,8 +38,6 @@ tbody {
 }
 
 .button-back {
-    top: 50px;
-    left: 20px;
     z-index: 2;
     animation: float 4s ease-in-out infinite;
     cursor: pointer;
@@ -48,8 +46,10 @@ tbody {
 .button-back a {
     width: 60px;
     height: 60px;
-    border-radius: 100%;
+    border-radius:100%;
     font-size: 40px;
+    position: relative;
+    top: -200px;
     box-shadow: 10px 10px 14px -9px rgba(0, 0, 0, 0.75);
 }
 
