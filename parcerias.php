@@ -37,7 +37,7 @@
 
 		<section class="row mt-5">
 			<section class="col-12">
-				<a class="btn" href="#">
+				<a class="btn" href="vagas.php">
 					<div class="card mb-3 w-100">
 						<div class="row">
 							<div class="col-md-4">
@@ -65,7 +65,7 @@
 
 		<section class="row mt-5">
 			<section class="col-12">
-				<a class="btn" href="#">
+				<a class="btn" href="vagas.php">
 					<div class="card mb-3 w-100">
 						<div class="row">
 							<div class="col-md-4">

@@ -21,72 +21,51 @@
 
 <body>
 	<section class="container mb-5" style="margin-top:150px">
-	
-		<section class="container d-flex justify-content-center">
-			<div class="input-group mb-3 w-50">
-				<input type="text" id="form-border-none" class="form-control border-right-0 search-place"
-					placeholder="Pesquisar" aria-label="Pesquisar" aria-describedby="basic-addon2">
-				<div class="input-group-append">
-					<span class="input-group-text bg-transparent border-left-0" id="basic-addon2"><i
-							class="fas fa-search"></i></span>
-				</div>
-			</div>
-		</section>
-
 		<hr>
 
-		<section class="row mt-5">
-			<section class="col-12">
-				<a class="btn" href="#">
-					<div class="card mb-3 w-100">
-						<div class="row">
-							<div class="col-md-4">
-								<img src="img/ibm.jpg" class="card-img" alt="...">
-							</div>
-							<div class="col-md-8">
-								<div class="card-body text-left">
-									<h5 class="card-title h4 mt-4 font-italic">International Business Machines
-										Corporation </h5>
-									<p class="card-text mt-4">This is a wider card with supporting text below as a
-										natural
-										lead-in to additional content. This content is a little bit longer.</p>
-									<button class="btn p-0 d-block text-primary"
-										href="https://www.ibm.com/br-pt">www.ibm.com/br-pt</button>
-									<label
-										class="w-100 text-right cursor-pointer text-dark font-roboto font-weight-bold">Verificar
-										Vagas</label>
-								</div>
-							</div>
-						</div>
+		<section class="row">
+			<section class="col-6 mt-5">
+				<div class="card">
+					<h5 class="card-header">VAGA</h5>
+					<div class="card-body text-center">
+						<h5 class="card-title">TRABALHO</h5>
+						<p class="card-text">DESCRIÇÃO</p>
+						<a href="#" class="btn btn-primary">Enviar</a>
 					</div>
-				</a>
+				</div>
 			</section>
-		</section>
 
-		<section class="row mt-5">
-			<section class="col-12">
-				<a class="btn" href="#">
-					<div class="card mb-3 w-100">
-						<div class="row">
-							<div class="col-md-4">
-								<img src="img/patricia.png" class="card-img" alt="...">
-							</div>
-							<div class="col-md-8">
-								<div class="card-body text-left">
-									<h5 class="card-title h4 mt-4 font-italic">Buffet Patrícia Festas </h5>
-									<p class="card-text mt-4">This is a wider card with supporting text below as a
-										natural
-										lead-in to additional content. This content is a little bit longer.</p>
-									<button class="btn p-0 d-block text-primary"
-										href="https://www.facebook.com/BuffetPatriciaFestas/">www.facebook.com/BuffetPatriciaFestas/</button>
-									<label
-										class="w-100 text-right cursor-pointer text-dark font-roboto font-weight-bold">Verificar
-										Vagas</label>
-								</div>
-							</div>
-						</div>
+			<section class="col-6 mt-5">
+				<div class="card">
+					<h5 class="card-header">VAGA</h5>
+					<div class="card-body text-center">
+						<h5 class="card-title">TRABALHO</h5>
+						<p class="card-text">DESCRIÇÃO</p>
+						<a href="#" class="btn btn-primary">Enviar</a>
 					</div>
-				</a>
+				</div>
+			</section>
+
+			<section class="col-6 mt-5">
+				<div class="card">
+					<h5 class="card-header">VAGA</h5>
+					<div class="card-body text-center">
+						<h5 class="card-title">TRABALHO</h5>
+						<p class="card-text">DESCRIÇÃO</p>
+						<a href="#" class="btn btn-primary">Enviar</a>
+					</div>
+				</div>
+			</section>
+
+			<section class="col-6 mt-5">
+				<div class="card">
+					<h5 class="card-header">VAGA</h5>
+					<div class="card-body text-center">
+						<h5 class="card-title">TRABALHO</h5>
+						<p class="card-text">DESCRIÇÃO</p>
+						<a href="#" class="btn btn-primary">Enviar</a>
+					</div>
+				</div>
 			</section>
 		</section>
 	</section>
