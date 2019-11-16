@@ -9,6 +9,8 @@
 	<link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
 	<link rel="stylesheet" href="style/login.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+	<link rel="icon" href="img/logo.png" type="image/x-icon"/>
+  	<link rel="shortcut icon" href="img/logo.png" type="image/x-icon"/>
 
 </head>
 

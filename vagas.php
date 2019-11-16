@@ -11,9 +11,8 @@
 <html>
 
 <head>
+	<title>Vagas</title>
 	<?php include('menu.php'); ?>
-
-	<title>Página de chats</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="style/parcerias.css">
 

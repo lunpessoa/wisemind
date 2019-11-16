@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
 	<title><?php echo $dadosboleto["identificacao"]; ?></title>
 	<meta charset="UTF-8">

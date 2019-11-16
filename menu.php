@@ -6,7 +6,7 @@ if (!isset($_SESSION)) {
 <!doctype html>
 <html lang="pt-br">
   <head>
-    <title>Title</title>
+    <title>WiseMind</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,6 +16,8 @@ if (!isset($_SESSION)) {
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <link rel="icon" href="img/logo.png" type="image/x-icon"/>
+  	<link rel="shortcut icon" href="img/logo.png" type="image/x-icon"/>
   </head>
   <body>
 

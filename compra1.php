@@ -10,9 +10,8 @@
 <html>
 
 <head>
+	<title> Torne-se Wiser </title>
 	<?php include('menu.php');?>
-
-	<title> Wise Mind </title>
 	<link rel="shortcut icon" href="img/ico.png" />
 	<link rel="stylesheet" type="text/css" href="style/csscompra.css" />
 	<meta charset="UTF-8">

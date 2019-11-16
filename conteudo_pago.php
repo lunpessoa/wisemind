@@ -14,7 +14,7 @@
 <head>
   <?php include('menu.php'); ?>
 
-  <title>Conteúdo Pago</title>
+  <title>Conteúdo</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="style/cpago.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">

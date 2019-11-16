@@ -7,10 +7,12 @@ if (!isset($_SESSION)) {
 <html lang="pt-br">
 
 <head>
-  <title>Home</title>
+  <title>WiseMind</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" href="img/logo.png" type="image/x-icon"/>
+  <link rel="shortcut icon" href="img/logo.png" type="image/x-icon"/>
 </head>
 
 <body>
