@@ -35,7 +35,7 @@
                 <form action="pesquisar.php" method="get" name="formularioPesq">
                     <div class="input-group mb-3">
                         <input type="text" id="form-border-none" class="form-control border-right-0 search-place"
-                            placeholder="Digite email do usuarios" aria-label="Pesquisar" aria-describedby="basic-addon2">
+                            placeholder="Digite email do usuarios" name="email-pesq" aria-label="Pesquisar" aria-describedby="basic-addon2">
                         <div class="input-group-append">
                             <button type="submit" class="btn btn-primary" name="Enviar"><i class="fas fa-search"></i></button>
                         </div>

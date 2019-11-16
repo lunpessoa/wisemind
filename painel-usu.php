@@ -48,21 +48,21 @@
 						<div id="itens-nav" class="list-nav w-100">
 							<ul class="nav flex-column text-font-calibri">
 								<li class="nav-item config-item">
-									<button class="btn nav-link h5 pt-4 mb-0 w-100 text-left rounded-0 btn-outline" id="btn-informacao" href="#"
+									<button class="btn nav-link h5 pt-4 mb-0 w-100 text-left rounded-0 btn-outline"  id="botao-conteudo-1" href="#"
 									id="btn-informacoes"><i
 											class="fas fa-user-cog mr-3 h5" ></i>
 										<label class="h5 cursor-pointer">Informações</label></button>
 								</li>
 								<hr class="w-75 bg-white my-1">
 								<li class="nav-item config-item">
-									<button class="btn nav-link h5 pt-4 mb-0 w-100 text-left rounded-0 btn-outline" id="btn-seguranca" href="#"
+									<button class="btn nav-link h5 pt-4 mb-0 w-100 text-left rounded-0 btn-outline"  id="botao-conteudo-2" href="#"
 									id="btn-seguranca"><i
 											class="fas fa-shield-alt mr-3 h5"></i> <label
 											class="h5 cursor-pointer">Segurança</label></button>
 								</li>
 								<hr class="w-75 bg-white my-1">
 								<li class="nav-item config-item">
-									<button class="btn nav-link h5 pt-4 mb-0 w-100 text-left rounded-0 btn-outline" id="btn-endereco" href="#"
+									<button class="btn nav-link h5 pt-4 mb-0 w-100 text-left rounded-0 btn-outline"  id="botao-conteudo-3" href="#"
 									id="btn-endereco"><i
 											class="fas fa-mail-bulk mr-3 h5"></i>
 										<label class="h5 cursor-pointer">Endereço</label></button>
@@ -72,7 +72,7 @@
 								?>
 								<hr class="w-75 bg-white my-1">
 								<li class="nav-item config-item">
-									<button class="btn nav-link h5 pt-4 mb-0 w-100 text-left rounded-0 btn-outline" id="btn-PLANO" href="#"
+									<button class="btn nav-link h5 pt-4 mb-0 w-100 text-left rounded-0 btn-outline"  id="botao-conteudo-4" href="#"
 									id="btn-plano"><i
 											class="fas fa-credit-card mr-3 h5"></i> <label class="h5 cursor-pointer">Plano
 											/

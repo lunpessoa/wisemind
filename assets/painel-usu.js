@@ -1,10 +1,10 @@
-var informacao = document.getElementById("btn-informacao")
-var seguranca = document.getElementById("btn-seguranca")
-var endereco = document.getElementById("btn-endereco")
+var informacao = document.getElementById("botao-conteudo-1")
+var seguranca = document.getElementById("botao-conteudo-2")
+var endereco = document.getElementById("botao-conteudo-3")
 
 var estudante = function () {
 
-    var plano = document.getElementById("btn-plano")
+    var plano = document.getElementById("botao-conteudo-4")
         informacao.onclick = (e) => {
             e.preventDefault()
             document.getElementById("informacao").setAttribute('class', 'row mb-5')
