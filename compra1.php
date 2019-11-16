@@ -83,7 +83,6 @@
 		<section class="container">
 			<section class="row justify-content-center mb-2">
 				<section class="col-md-12">
-
 					<label class="h5 my-3 font-italic pt-5">Para concluir o pagamento, precisamos dos seguintes
 						dados
 						pessoais para efetuarmos a geração do
@@ -91,18 +90,6 @@
 				</section>
 			</section>
 			<form action="assets/compra-config.php" method="POST" name="form-boleto" autocomplete="off">
-				<section class="form-row">
-					<section class="form-group col-md-6">
-						<label for="inputnome">Nome</label>
-						<input type="text" class="form-control text-light" id="inputEmail4" placeholder="Nicolas"
-							name="nome" required>
-					</section>
-					<section class="form-group col-md-6">
-						<label for="inputsobrenome">Sobrenome</label>
-						<input type="text" class="form-control text-light" placeholder="Silva" name="sobrenome"
-							required>
-					</section>
-				</section>
 				<section class="form-group">
 					<label for="inputAddress">Rua</label>
 					<input type="text" class="form-control text-light" id="inputAddress" placeholder="R. João Manoel"
