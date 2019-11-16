@@ -5,6 +5,10 @@
         $sql=('select * from usuarios where id_usuario = '. $_SESSION["id_user"].';');
         $resul=mysqli_query($conexao, $sql);
         $con=mysqli_fetch_array($resul);
+
+        $sql_pedido=('select * from pedido where id_estuda='.$_SESSION["id_user"].';');
+        $resul_pedido=mysqli_query($conexao, $sql_pedido);
+        $ped=mysqli_fetch_array($resul_pedido);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -80,7 +84,7 @@
                     if(isset($_GET["val"])){
                         $val=$_GET["val"];
                         $sql_val=('update estudantes set Plano=true where id_estudante='.$val.';');
-                        $sql_del=('delete from estudantes where id_estuda='.$val.';');
+                        $sql_del=('delete from pedido where id_estuda='.$val.';');
                         $mostrar_sql=mysqli_query($conexao, $sql_val);    
                         $mostrar_sql=mysqli_query($conexao, $sql_del);    
                         header('Location: pagamentos.php');  

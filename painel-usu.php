@@ -48,19 +48,22 @@
 						<div id="itens-nav" class="list-nav w-100">
 							<ul class="nav flex-column text-font-calibri">
 								<li class="nav-item config-item">
-									<button class="btn nav-link h5 pt-4 mb-0 w-100 text-left rounded-0 btn-outline" name="btn-informacao"  id="botao-conteudo-1" href="#"><i
-											class="fas fa-user-cog mr-3 h5" ></i>
+									<button class="btn nav-link h5 pt-4 mb-0 w-100 text-left rounded-0 btn-outline"
+										name="btn-informacao" id="botao-conteudo-1" href="#"><i
+											class="fas fa-user-cog mr-3 h5"></i>
 										<label class="h5 cursor-pointer">Informações</label></button>
 								</li>
 								<hr class="w-75 bg-white my-1">
 								<li class="nav-item config-item">
-									<button class="btn nav-link h5 pt-4 mb-0 w-100 text-left rounded-0 btn-outline" name="btn-seguranca" id="botao-conteudo-2" href="#"><i
+									<button class="btn nav-link h5 pt-4 mb-0 w-100 text-left rounded-0 btn-outline"
+										name="btn-seguranca" id="botao-conteudo-2" href="#"><i
 											class="fas fa-shield-alt mr-3 h5"></i> <label
 											class="h5 cursor-pointer">Segurança</label></button>
 								</li>
 								<hr class="w-75 bg-white my-1">
 								<li class="nav-item config-item">
-									<button class="btn nav-link h5 pt-4 mb-0 w-100 text-left rounded-0 btn-outline" name="btn-endereco" id="botao-conteudo-3" href="#"><i
+									<button class="btn nav-link h5 pt-4 mb-0 w-100 text-left rounded-0 btn-outline"
+										name="btn-endereco" id="botao-conteudo-3" href="#"><i
 											class="fas fa-mail-bulk mr-3 h5"></i>
 										<label class="h5 cursor-pointer">Endereço</label></button>
 								</li>
@@ -69,8 +72,10 @@
 								?>
 								<hr class="w-75 bg-white my-1">
 								<li class="nav-item config-item">
-									<button class="btn nav-link h5 pt-4 mb-0 w-100 text-left rounded-0 btn-outline " name="btn-informacao"  id="botao-conteudo-4" href="#"><i
-											class="fas fa-credit-card mr-3 h5"></i> <label class="h5 cursor-pointer">Plano
+									<button class="btn nav-link h5 pt-4 mb-0 w-100 text-left rounded-0 btn-outline "
+										name="btn-informacao" id="botao-conteudo-4" href="#"><i
+											class="fas fa-credit-card mr-3 h5"></i> <label
+											class="h5 cursor-pointer">Plano
 											/
 											Pagamento</label></button>
 								</li>
@@ -461,7 +466,7 @@
 									</button>
 								</div>
 								<form action="assets/alterar.php" method="POST" class="container was-validated"
-								novalidate="" autocomplete="off">
+									novalidate="" autocomplete="off">
 									<div class="modal-body">
 
 										<div class="form-group">
@@ -502,7 +507,7 @@
 					?>
 						<form name="cad" action="assets/alterar.php" method="POST" class="container was-validated"
 							novalidate="" autocomplete="off">
-							
+
 
 							<table class="table table-borderless text-light w-50">
 								<thead>
@@ -512,7 +517,7 @@
 									</tr>
 								</thead>
 								<tbody>
-								<?php
+									<?php
 									$sqlmostrar=('select * from especializacao where id_prof = "'.$_SESSION["id_user"].'";');
 									$resul3=mysqli_query($conexao, $sqlmostrar);
 									while($con_prof=mysqli_fetch_array($resul3)){
@@ -566,7 +571,7 @@
 								</tr>
 							</thead>
 							<tbody>
-							<?php
+								<?php
 								$sqlmostrar=('select * from especializacao where id_prof = "'.$_SESSION["id_user"].'";');
 								$resul3=mysqli_query($conexao, $sqlmostrar);
 								while($con_prof=mysqli_fetch_array($resul3)){
@@ -917,7 +922,15 @@
 								<span class="text-clear">Plano</span>
 							</div>
 							<div class="col-9">
-								<span class="h5 text-white">Free</span>
+								<span class="h5 text-white">
+								<?php
+									if($est['Plano']==true){
+										echo("WISER");
+									}else{
+										echo("FREE");
+									}
+								?>
+								</span>
 							</div>
 						</div>
 						<div class="row p-2">
@@ -925,8 +938,15 @@
 								<span class="text-clear">Status do pagamento</span>
 							</div>
 							<div class="col-9">
-								<span class="h5 text-white"><i class="fas fa-check mr-2"></i> <i
-										class="fas fa-times mr-2"></i> Não confirmado</span>
+								<span class="h5 text-white">
+								<?php
+									if($est['Plano']==true){
+										echo("<i class='fas fa-check mr-2'></i> Confirmado");
+									}else{
+										echo("<i class='fas fa-times mr-2'></i> Não confirmado");
+									}
+								?> 
+								</span>
 							</div>
 						</div>
 					</div>
@@ -939,7 +959,7 @@
 
 
 	</div>
-	
+
 </body>
 <script src='assets/painel-usu.js'></script>
 <?php
