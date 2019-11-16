@@ -6,9 +6,16 @@
         $resul=mysqli_query($conexao, $sql);
         $con=mysqli_fetch_array($resul);
 
-        $sql_pedido=('select * from pedido where id_estuda='.$_SESSION["id_user"].';');
+        $date = date("Y-m-d");
+        $sql_pedido=('select * from pedido;');
         $resul_pedido=mysqli_query($conexao, $sql_pedido);
-        $ped=mysqli_fetch_array($resul_pedido);
+        while($ped=mysqli_fetch_array($resul_pedido)){
+            if($date==$ped["Data_Validade"]){
+                $sql_apagar = ('delete from pedido where id_pedido='.$ped['id_pedido'].';');
+                $sql_del = mysqli_query($conexao, $sql_apagar);
+            }
+        }
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
