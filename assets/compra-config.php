@@ -30,7 +30,7 @@
 
         echo($data_venc.'<br>');
         echo($data.'<br>');
-        
+    
         $sqlinserir = ('insert into pedido (Data_Compra, Data_Validade, Renovacao, id_estuda, id_plano) values
          ("'.$data.'", "'.$data_venc.'", "N",'.$_SESSION["id_user"].', 1);');
         $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));

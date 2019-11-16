@@ -20,13 +20,10 @@
 </head>
 <body>
 <?php
-header ('Content-type: text/html; charset=UTF-8');
-header ('Content-type: text/html; charset=ISO-8859-1');
-
 include('../../assets/conexao.php');
 // DADOS DO BOLETO PARA O SEU CLIENTE
 $dias_de_prazo_para_pagamento = 5;
-$taxa_boleto = 2.95;
+$taxa_boleto = 0;
 $data_venc = date("d/m/Y", time() + ($dias_de_prazo_para_pagamento * 86400));  // Prazo de X dias OU informe data: "13/04/2006"; 
 $valor_cobrado = $_SESSION['valor']; // Valor - REGRA: Sem pontos na milhar e tanto faz com "." ou "," ou com 1 ou 2 ou sem casa decimal
 $valor_cobrado = str_replace(",", ".",$valor_cobrado);
