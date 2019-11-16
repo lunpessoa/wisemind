@@ -122,6 +122,45 @@ var senhas = function(){
     })
 }
 
+var erroApaga = function(){
+    $(document).ready(function () {
+        $('.toast').toast('show');
+        var header = document.getElementById("header")
+        var strong = document.createElement('strong')
+        strong.setAttribute('class','mr-5 text-light')
+        var cabecalho = document.createTextNode('SENHAS')
+        strong.appendChild(cabecalho)
+        header.appendChild(strong)
+        var mae = document.getElementById('toast')
+        var div = document.createElement('div')
+        div.setAttribute('class','toast-body toast-red text-light')
+        var text = document.createTextNode('Erro ao apagar usuario')
+        div.appendChild(text)
+        mae.appendChild(div)
+
+    })
+}
+
+var apaga = function(){
+    $(document).ready(function () {
+        $('.toast').toast('show');
+        var header = document.getElementById("header")
+        var strong = document.createElement('strong')
+        strong.setAttribute('class','mr-5 text-light')
+        var cabecalho = document.createTextNode('SENHAS')
+        strong.appendChild(cabecalho)
+        header.appendChild(strong)
+        var mae = document.getElementById('toast')
+        var div = document.createElement('div')
+        div.setAttribute('class','toast-body toast-red text-light')
+        var text = document.createTextNode('Apagado com sucesso')
+        div.appendChild(text)
+        mae.appendChild(div)
+
+    })
+}
+
+
 var logado = function(){
     $(document).ready(function () {
         $('.toast').toast('show');

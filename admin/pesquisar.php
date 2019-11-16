@@ -74,7 +74,16 @@
                             $sql_ex2=('delete from profissional where id_profissional='.$ex.';');
                         }
                         $mostrar_sql=mysqli_query($conexao, $sql_ex);    
-                        $mostrar_sql2=mysqli_query($conexao, $sql_ex2);   
+                        $mostrar_sql2=mysqli_query($conexao, $sql_ex2);
+                        if($mostrar_sql){
+                            if($mostrar_sql2){
+                                $_SESSION["adminApaga"]=true;
+                                header('Location: users.php');
+                            }else{
+                                $_SESSION["erroApaga"]=true;
+                                header('Location: users.php'); 
+                            }
+                        }
                         header('Location: users.php');  
                     }   
 
