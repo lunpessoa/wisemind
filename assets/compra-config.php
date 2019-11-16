@@ -1,4 +1,5 @@
 <?php
+    date_default_timezone_set('America/Sao_Paulo');
     session_start();
     include('../assets/conexao.php');
     if(isset($_POST["Enviar"])){
@@ -35,6 +36,7 @@
         $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));
 
         if($inserir){
+            $_SESSION['pedido']=true;
             header("Location: ../compra/boleto/boleto_bb.php");
         }
     }

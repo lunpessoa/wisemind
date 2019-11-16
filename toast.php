@@ -30,7 +30,6 @@
         <div class="toast-header" >
             <img src="img/logo.png" class="rounded mr-2 " alt="...">
             <div id="header"></div>
-            <small class="text-light">11 mins ago</small>
             <button type="button" class="btn ml-2 mb-1 toast-btn" data-dismiss="toast" aria-label="Close">
                 <i class="fas fa-times"></i>
             </button>
