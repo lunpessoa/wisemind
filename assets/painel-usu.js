@@ -97,7 +97,6 @@ var profissional = function () {
         document.getElementById("informacao-reg").setAttribute('class', 'row mb-5 d-none')
         document.getElementById("seguranca-1").setAttribute('class', 'row mb-5')
         document.getElementById("seguranca-2").setAttribute('class', 'row mb-5')
-        document.getElementById("plano").setAttribute('class', 'row mb-5 d-none ')
         document.getElementById("endereco").setAttribute('class', 'row mb-5 d-none')
         informacao.setAttribute('class', 'btn nav-link h5 pt-4 mb-0 w-100 text-left rounded-0 btn-outline')
         endereco.setAttribute('class', 'btn nav-link h5 pt-4 mb-0 w-100 text-left rounded-0 btn-outline')
