@@ -47,8 +47,8 @@
 			/* *** CABECALHO *** */
 
 			#instr_header {
-				background: url('imagens/logo.JPEG') no-repeat top left;
-				padding-left: 160px;
+				background: url('imgs/logo.png') no-repeat top left;
+				padding-left: 180px;
 				height: 65px;
 			}
 
