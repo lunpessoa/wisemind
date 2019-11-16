@@ -8,8 +8,11 @@ var estudante = function () {
         informacao.onclick = (e) => {
             e.preventDefault()
             document.getElementById("informacao").setAttribute('class', 'row mb-5')
-            document.getElementById("informacao-1").setAttribute('class', 'row mb-5')
-            document.getElementById("seguranca").setAttribute('class', 'row mb-5 d-none')
+            document.getElementById("informacao-1-1").setAttribute('class', 'row mb-5')
+            document.getElementById("informacao-1-2").setAttribute('class', 'row mb-5')
+            document.getElementById("informacao-reg").setAttribute('class', 'row mb-5')
+            document.getElementById("seguranca-1").setAttribute('class', 'row mb-5 d-none')
+            document.getElementById("seguranca-2").setAttribute('class', 'row mb-5 d-none')
             document.getElementById("plano").setAttribute('class', 'row mb-5 d-none')
             document.getElementById("endereco").setAttribute('class', 'row mb-5 d-none')
     }
@@ -17,8 +20,11 @@ var estudante = function () {
     seguranca.onclick = (e) => {
         e.preventDefault()
         document.getElementById("informacao").setAttribute('class', 'row mb-5 d-none')
-        document.getElementById("informacao-1").setAttribute('class', 'row mb-5 d-none')
-        document.getElementById("seguranca").setAttribute('class', 'row mb-5 ')
+        document.getElementById("informacao-1-1").setAttribute('class', 'row mb-5 d-none')
+        document.getElementById("informacao-1-2").setAttribute('class', 'row mb-5 d-none')
+        document.getElementById("informacao-reg").setAttribute('class', 'row mb-5 d-none')
+        document.getElementById("seguranca-1").setAttribute('class', 'row mb-5')
+        document.getElementById("seguranca-2").setAttribute('class', 'row mb-5')
         document.getElementById("plano").setAttribute('class', 'row mb-5 d-none ')
         document.getElementById("endereco").setAttribute('class', 'row mb-5 d-none')
     }
@@ -26,8 +32,11 @@ var estudante = function () {
     endereco.onclick = (e) => {
         e.preventDefault()
         document.getElementById("informacao").setAttribute('class', 'row mb-5 d-none')
-        document.getElementById("informacao-1").setAttribute('class', 'row mb-5 d-none')
-        document.getElementById("seguranca").setAttribute('class', 'row mb-5 d-none')
+        document.getElementById("informacao-1-1").setAttribute('class', 'row mb-5 d-none')
+        document.getElementById("informacao-1-2").setAttribute('class', 'row mb-5 d-none')
+        document.getElementById("informacao-reg").setAttribute('class', 'row mb-5 d-none')
+        document.getElementById("seguranca-1").setAttribute('class', 'row mb-5 d-none')
+        document.getElementById("seguranca-2").setAttribute('class', 'row mb-5 d-none')
         document.getElementById("plano").setAttribute('class', 'row mb-5 d-none ')
         document.getElementById("endereco").setAttribute('class', 'row mb-5')
     }
@@ -35,8 +44,11 @@ var estudante = function () {
     plano.onclick = (e) => {
         e.preventDefault()
         document.getElementById("informacao").setAttribute('class', 'row mb-5 d-none')
-        document.getElementById("informacao-1").setAttribute('class', 'row mb-5 d-none')
-        document.getElementById("seguranca").setAttribute('class', 'row mb-5 d-none')
+        document.getElementById("informacao-1-1").setAttribute('class', 'row mb-5 d-none')
+        document.getElementById("informacao-1-2").setAttribute('class', 'row mb-5 d-none')
+        document.getElementById("informacao-reg").setAttribute('class', 'row mb-5 d-none')
+        document.getElementById("seguranca-1").setAttribute('class', 'row mb-5')
+        document.getElementById("seguranca-2").setAttribute('class', 'row mb-5')
         document.getElementById("plano").setAttribute('class', 'row mb-5 ')
         document.getElementById("endereco").setAttribute('class', 'row mb-5 d-none')
     }
@@ -49,24 +61,34 @@ var profissional = function () {
     informacao.onclick = (e) => {
         e.preventDefault()
         document.getElementById("informacao").setAttribute('class', 'row mb-5')
-        document.getElementById("informacao-2").setAttribute('class', 'row mb-5')
-        document.getElementById("seguranca").setAttribute('class', 'row mb-5 d-none')
-        document.getElementById("endereco").setAttribute('class', 'row mb-5 d-none')
+            document.getElementById("informacao-2-1").setAttribute('class', 'row mb-5')
+            document.getElementById("informacao-2-2").setAttribute('class', 'row mb-5')
+            document.getElementById("informacao-reg").setAttribute('class', 'row mb-5')
+            document.getElementById("seguranca-1").setAttribute('class', 'row mb-5 d-none')
+            document.getElementById("seguranca-2").setAttribute('class', 'row mb-5 d-none')
+            document.getElementById("endereco").setAttribute('class', 'row mb-5 d-none')
     }
 
     seguranca.onclick = (e) => {
         e.preventDefault()
         document.getElementById("informacao").setAttribute('class', 'row mb-5 d-none')
-        document.getElementById("informacao-2").setAttribute('class', 'row mb-5 d-none')
-        document.getElementById("seguranca").setAttribute('class', 'row mb-5 ')
+        document.getElementById("informacao-2-1").setAttribute('class', 'row mb-5 d-none')
+        document.getElementById("informacao-2-2").setAttribute('class', 'row mb-5 d-none')
+        document.getElementById("informacao-reg").setAttribute('class', 'row mb-5 d-none')
+        document.getElementById("seguranca-1").setAttribute('class', 'row mb-5')
+        document.getElementById("seguranca-2").setAttribute('class', 'row mb-5')
+        document.getElementById("plano").setAttribute('class', 'row mb-5 d-none ')
         document.getElementById("endereco").setAttribute('class', 'row mb-5 d-none')
     }
 
     endereco.onclick = (e) => {
         e.preventDefault()
         document.getElementById("informacao").setAttribute('class', 'row mb-5 d-none')
-        document.getElementById("informacao-2").setAttribute('class', 'row mb-5 d-none')
-        document.getElementById("seguranca").setAttribute('class', 'row mb-5 d-none')
+        document.getElementById("informacao-2-1").setAttribute('class', 'row mb-5 d-none')
+        document.getElementById("informacao-2-2").setAttribute('class', 'row mb-5 d-none')
+        document.getElementById("informacao-reg").setAttribute('class', 'row mb-5 d-none')
+        document.getElementById("seguranca-1").setAttribute('class', 'row mb-5 d-none')
+        document.getElementById("seguranca-2").setAttribute('class', 'row mb-5 d-none')
         document.getElementById("endereco").setAttribute('class', 'row mb-5')
     }
 
