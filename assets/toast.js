@@ -40,6 +40,27 @@ var facaLog = function(){
     })
 }
 
+var admin = function(nome){
+    $(document).ready(function () {
+        $('.toast').toast('show');
+        // $('#element').toast('hide')
+        // $('#element').toast('dispose')
+        var header = document.getElementById("header")
+        var strong = document.createElement('strong')
+        strong.setAttribute('class','mr-5 text-light')
+        var cabecalho = document.createTextNode('LOGIN')
+        strong.appendChild(cabecalho)
+        header.appendChild(strong)
+        var mae = document.getElementById('toast')
+        var div = document.createElement('div')
+        div.setAttribute('class','toast-body toast-green text-light')
+        var text = document.createTextNode(`Bem vindo, ${nome}!`)
+        div.appendChild(text)
+        mae.appendChild(div)
+
+    })
+}
+
 var pedido = function(){
     $(document).ready(function () {
         $('.toast').toast('show');

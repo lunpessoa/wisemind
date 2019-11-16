@@ -22,6 +22,45 @@
 </head>
 
 <body>
+    <style>
+        .toast-header {
+            background-color: rgba(38, 40, 46, 0.8)
+        }
+
+        .toast-green {
+            background-color: rgba(40, 167, 69, 0.7)
+        }
+
+        .toast-red {
+            background-color: rgba(220, 53, 69, 0.7)
+        }
+
+        .toast-normal {
+            background-color: rgba(94, 94, 94, 0.7)
+        }
+
+        .toast-btn {
+            float: right;
+            font-size: 1rem;
+            font-weight: 700;
+            line-height: 1;
+            color: #fff;
+            opacity: 0.8;
+        }
+    </style>
+    <div class="position-fixed" style="z-index:10; right:20px; top:110px;">
+        <div class="toast bg-transparent" role="status" aria-live="polite" aria-atomic="true" data-autohide="false"
+            id="toast">
+            <div class="toast-header">
+                <img src="../img/logo.png" class="rounded mr-2 " alt="...">
+                <div id="header"></div>
+                <button type="button" class="btn ml-2 mb-1 toast-btn" data-dismiss="toast" aria-label="Close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+        </div>
+    </div>
     <section id="logo" style="z-index:1;">
         <section class="svgLogo">
             <svg class="logoWiseMind" version="1.1" width="300px" height="300px" viewBox="0 0 4000 4000"
@@ -63,7 +102,7 @@
             </svg>
         </section>
     </section>
-    
+
     <?php include('../teste.svg'); ?>
 
     <div class="container d-flex align-items-center" style="height: 100vh;">
@@ -98,6 +137,12 @@
                                     class="fas fa-credit-card mr-1"></i>
                                 <label class="h5 cursor-pointer">Pagamentos</label></a>
                         </li>
+                        <hr class="w-75 bg-white my-1">
+                        <li class="nav-item config-item">
+                            <a class="nav-link h5 mb-0 px-3 pt-4" href="../assets/destroy-log.php"><i
+                                    class="fas fa-credit-card mr-1"></i>
+                                <label class="h5 cursor-pointer">Sair</label></a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -106,15 +151,31 @@
 </body>
 <?php
    }else{
-        echo('<script>window.alert("Voce não esta logado como admin")
-        window.location.href = "../login.php";</script>');
+    $_SESSION["facaLog"]=true;
+    echo('<script>window.location.href = "../login.php";</script>');
    }
 ?>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="node_modules/jquery/dist/jquery.js"></script>
-<script src="js/javinha.js"></script>
-<script src="node_modules/popper.js/dist/umd/popper.js"></script>
-<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+<script src="../node_modules/jquery/dist/jquery.js"></script>
+<script src="../js/javinha.js"></script>
+<script src="../node_modules/popper.js/dist/umd/popper.js"></script>
+<script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+<?php
+	if (!isset( $_SESSION["admin"])) {
+		$_SESSION["admin"]=false;
+	}
+
+?>
+<?php if($_SESSION["admin"]==true){ 
+	
+	echo("<script src='../assets/toast.js'></script>
+	<script>admin('".$con['Nome']."');</script>");
+
+	$_SESSION["admin"]=false;
+	}
+
+?>
+
 
 </html>
