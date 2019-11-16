@@ -1,4 +1,5 @@
 <?php
+    date_default_timezone_set('America/Sao_Paulo');
     if (!isset($_SESSION)) {
         session_start();
     }
@@ -116,12 +117,30 @@ $dadosboleto["cedente"] = "WiseMind - Educacional";
 include("funcoes_bb.php"); 
 include("layout_bb.php");
 ?>
-    
+    <script src="../../node_modules/jquery/dist/jquery.js"></script>
+	<script src="../../node_modules/popper.js/dist/umd/popper.js"></script>
+	<script src="../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+
 </body>
 <?php
+	if (!isset($_SESSION["pedido"])) {
+		$_SESSION["pedido"]=false;
+	}
+
+?>
+<?php if( $_SESSION["pedido"]==true){ 
+	echo("<script src='../../assets/toast.js'></script>
+	<script>pedido();</script>");
+
+	$_SESSION["pedido"]=false;
+	}
+
+?>
+<?php
 		}else{
-			echo('<script>window.alert("Faça o login antes")
-			window.location.href = "../../login.php";</script>');
+            $_SESSION["facaLog"]=true;
+			echo('<script>window.location.href = "../../login.php";</script>');
 		}
 	
 ?>
