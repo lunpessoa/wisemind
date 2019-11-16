@@ -60,9 +60,21 @@
                             }
                     echo('</td>');
                     if($resul_pesq["id_privilegio"]!=3){
-                        echo('<td><a href="excluir_quest.php?ex='.$resul_pesq['Nome'].'">apagar</a></td>');
+                        echo('<td><a href="pesquisar.php?ex='.$resul_pesq['id_usuario'].'">apagar</a></td>');
                     }
                     echo('</tr>');
+                    if(isset($_GET["ex"])){
+                        $ex=$_GET["ex"];
+                        $sql_ex=('delete from usuarios where id_usuario='.$ex.';');
+                        if($con_usu["id_privilegio"]==1){
+                            $sql_ex2=('delete from estudantes where id_estudante='.$ex.';');
+                        }else{
+                            $sql_ex2=('delete from profissional where id_profissional='.$ex.';');
+                        }
+                        $mostrar_sql=mysqli_query($conexao, $sql_ex);    
+                        $mostrar_sql2=mysqli_query($conexao, $sql_ex2);   
+                        header('Location: users.php');  
+                    }   
 
             }
         }
@@ -72,15 +84,15 @@
 </body>
 <?php
     }else{
-            echo('<script>window.alert("Voce não esta logado como admin")
-            window.location.href = "../login.php";</script>');
+            $_SESSION["facaLog"]=true;
+            echo('<script>window.location.href = "../login.php";</script>');
     }
     ?>
 
-<script src="node_modules/jquery/dist/jquery.js"></script>
-<script src="js/javinha.js"></script>
-<script src="node_modules/popper.js/dist/umd/popper.js"></script>
-<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+<script src="../node_modules/jquery/dist/jquery.js"></script>
+<script src="../js/javinha.js"></script>
+<script src="../node_modules/popper.js/dist/umd/popper.js"></script>
+<script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
 <script>
     document.getElementById("mostrar-todos").onclick = (e) => {
         e.preventDefault()

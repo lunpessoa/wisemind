@@ -91,8 +91,8 @@
 </body>
 <?php
     }else{
-            echo('<script>window.alert("Voce não esta logado como admin")
-            window.location.href = "../login.php";</script>');
+        $_SESSION["facaLog"]=true;
+        echo('<script>window.location.href = "../login.php";</script>');
     }
     ?>
 
