@@ -94,7 +94,21 @@
                             $sql_ex2=('delete from profissional where id_profissional='.$ex.';');
                         }
                         $mostrar_sql=mysqli_query($conexao, $sql_ex);    
-                        $mostrar_sql2=mysqli_query($conexao, $sql_ex2);   
+                        $mostrar_sql2=mysqli_query($conexao, $sql_ex2);
+                        if($mostrar_sql){
+                            if($mostrar_sql2){
+                                include('toast-admin.php');
+                                echo("<script>window.location.href = 'users.php';</script>
+                                <script src='../assets/toast.js'></script>
+	                            <script>apaga();</script>");
+                                header('Location: users.php');
+                            }else{
+                                include('toast-admin.php');
+                                echo("<script>window.location.href = 'users.php';</script>
+                                <script src='../assets/toast.js'></script>
+	                            <script>erroApaga();</script>");
+                            }
+                        }
                         header('Location: users.php');  
                     }   
                 }          
