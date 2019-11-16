@@ -48,22 +48,19 @@
 						<div id="itens-nav" class="list-nav w-100">
 							<ul class="nav flex-column text-font-calibri">
 								<li class="nav-item config-item">
-									<button class="btn nav-link h5 pt-4 mb-0 w-100 text-left rounded-0 btn-outline"  id="botao-conteudo-1" href="#"
-									id="btn-informacoes"><i
+									<button class="btn nav-link h5 pt-4 mb-0 w-100 text-left rounded-0 btn-outline" name="btn-informacao"  id="botao-conteudo-1" href="#"><i
 											class="fas fa-user-cog mr-3 h5" ></i>
 										<label class="h5 cursor-pointer">Informações</label></button>
 								</li>
 								<hr class="w-75 bg-white my-1">
 								<li class="nav-item config-item">
-									<button class="btn nav-link h5 pt-4 mb-0 w-100 text-left rounded-0 btn-outline"  id="botao-conteudo-2" href="#"
-									id="btn-seguranca"><i
+									<button class="btn nav-link h5 pt-4 mb-0 w-100 text-left rounded-0 btn-outline" name="btn-seguranca" id="botao-conteudo-2" href="#"><i
 											class="fas fa-shield-alt mr-3 h5"></i> <label
 											class="h5 cursor-pointer">Segurança</label></button>
 								</li>
 								<hr class="w-75 bg-white my-1">
 								<li class="nav-item config-item">
-									<button class="btn nav-link h5 pt-4 mb-0 w-100 text-left rounded-0 btn-outline"  id="botao-conteudo-3" href="#"
-									id="btn-endereco"><i
+									<button class="btn nav-link h5 pt-4 mb-0 w-100 text-left rounded-0 btn-outline" name="btn-endereco" id="botao-conteudo-3" href="#"><i
 											class="fas fa-mail-bulk mr-3 h5"></i>
 										<label class="h5 cursor-pointer">Endereço</label></button>
 								</li>
@@ -72,8 +69,7 @@
 								?>
 								<hr class="w-75 bg-white my-1">
 								<li class="nav-item config-item">
-									<button class="btn nav-link h5 pt-4 mb-0 w-100 text-left rounded-0 btn-outline"  id="botao-conteudo-4" href="#"
-									id="btn-plano"><i
+									<button class="btn nav-link h5 pt-4 mb-0 w-100 text-left rounded-0 btn-outline " name="btn-informacao"  id="botao-conteudo-4" href="#"><i
 											class="fas fa-credit-card mr-3 h5"></i> <label class="h5 cursor-pointer">Plano
 											/
 											Pagamento</label></button>
@@ -982,6 +978,7 @@
 	}
 </script>
 <script>
+	/*
 	var ativar = function (x) {
 		for (let y = 1; y <= 5; y++)
 			if (y == x) {
@@ -1005,7 +1002,7 @@
 				ativar(x)
 			}
 		}
-	}
+	}*/
 </script>
 <script>
 	// Add the following code if you want the name of the file appear on select
