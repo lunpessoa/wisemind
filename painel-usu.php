@@ -943,59 +943,7 @@
 
 
 	</div>
-
-	<!--
-	<div class="container d-flex align-items-center justify-content-center" style="height: 170vh;">
-		<div class="card border border-0 bg-transparent" style="border-radius: 10px;">
-			<div class="card-header border-bottom-0 bg-dark" style="border-top-left-radius: 10px; border-top-right-radius: 10px;">
-				<div class="row">
-					<div class="col-12 text-center">
-						<h1 class="h1 text-warning"><b>Perfil</b></h1>
-					</div>
-				</div>
-			</div>
-			<div class="card-body bg-dark border-0">
-
-				<div class="row mb-5">
-					<div class="col-12 d-flex justify-content-center">
-						<div class="ft-perfil">
-							<img src="img/foto-perfil.jpg" class="img-fluid">
-						</div>
-					</div>
-
-				</div>
-				<form>
-					<div class="container d-flex justify-content-start">
-						<div class="col-6 input-group form-group">
-							<label style="color:#b5b5b5;" class="text-font">Nome</label>
-							<input type="text" class="form-control text-light" style="background-color:#282d30; width:100%; border-color:#1f1f1f;">
-						</div>
-						<div class="col-6 input-group form-group">
-							<label class="text-font" style="color:#b5b5b5;">Sobrenome</label>
-							<input type="password" class="form-control text-light" style="background-color:#282d30; width:100%; border-color:#1f1f1f;">
-						</div>
-					</div>
-					<label class="text-font" style="color:#b5b5b5;">Email</label>
-					<div class="col-11 input-group form-group">
-						<input type="password" class="form-control text-light" style="background-color:#282d30; border-color:#1f1f1f;">
-					</div>
-					<label class="text-font" style="color:#b5b5b5;">Endereço</label>
-					<div class="input-group form-group">
-						<input type="password" class="form-control text-light" style="background-color:#282d30; border-color:#1f1f1f;">
-					</div>
-					<label class="text-font" style="color:#b5b5b5;">CPF</label>
-					<div class="input-group form-group">
-						<input type="password" class="form-control text-light" style="background-color:#282d30; border-color:#1f1f1f;">
-					</div>
-				</form>
-			</div>
-			<div class="card-footer bg-dark border-top-0 text-center text-font">
-			</div>
-		</div>
-	</div>
-	-->
-
-
+	
 </body>
 <script src='assets/painel-usu.js'></script>
 <?php
