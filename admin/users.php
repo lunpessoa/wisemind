@@ -14,11 +14,10 @@
     <meta charset="utf-8">
 
     <link rel="stylesheet" href="../node_modules/bootstrap/compiler/bootstrap.css">
-    <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" href="usersadmin.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
-    <link rel="icon" href="../img/logo.png" type="image/x-icon"/>
-    <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon"/>
+    <link rel="icon" href="../img/logo.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon" />
 
 </head>
 
@@ -34,17 +33,18 @@
             <div class="w-25 text-center">
                 <h1 class="h1 font-lobster">Usuários</h1>
 
-                <form action="pesquisar.php" method="get" name="formularioPesq">
+                <form>
                     <div class="input-group mb-3">
-                        <input type="text" id="form-border-none" class="form-control border-right-0 search-place"
-                            placeholder="Digite email do usuarios" name="email-pesq" aria-label="Pesquisar" aria-describedby="basic-addon2">
+                        <input type="text" id="busca" class="cpf form-control border-right-0 search-place"
+                            placeholder="Pesquisar E-mail" aria-describedby="basic-addon2">
                         <div class="input-group-append">
-                            <button type="submit" class="btn btn-primary" name="Enviar"><i class="fas fa-search"></i></button>
+                            <span class="input-group-text bg-transparent border-left-0" id="basic-addon2"><i
+                                    class="fas fa-search"></i></span>
                         </div>
                     </div>
                 </form>
-            </div>
 
+            </div>
         </div>
 
     </section>
@@ -116,18 +116,33 @@
             </tbody>
         </table>
     </section>
+
 </body>
 <?php
-    }else{
-        $_SESSION["facaLog"]=true;
-        echo('<script>window.location.href = "../login.php";</script>');
-    }
+        }else{
+            $_SESSION["facaLog"]=true;
+            echo('<script>window.location.href = "../login.php";</script>');
+        }
     ?>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="../node_modules/jquery/dist/jquery.js"></script>
+<script src="../js/javinha.js"></script>
+<script src="../node_modules/popper.js/dist/umd/popper.js"></script>
+<script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+<script>
+    $("#busca").keyup(function () {
+        var busca = $("#busca").val();
+        alert(busca);
+    });
 
-<script src="node_modules/jquery/dist/jquery.js"></script>
-<script src="js/javinha.js"></script>
-<script src="node_modules/popper.js/dist/umd/popper.js"></script>
-<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
-
+    $(document).ready(function () {
+        $('.date').mask('99/99/9999');
+        $('.cep').mask('99999-999');
+        $('.cpf').mask('999.999.999-99');
+        $('.phone_with_ddd').mask('(99) 99999-9999');
+        $('.uf').mask('AA');
+    });
+</script>
 
 </html>

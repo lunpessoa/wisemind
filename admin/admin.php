@@ -18,13 +18,13 @@
     <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
     <link rel="stylesheet" href="admin.css">
-    <link rel="icon" href="../img/logo.png" type="image/x-icon"/>
-    <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon"/>
+    <link rel="icon" href="../img/logo.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon" />
 
 </head>
 
 <body>
-    
+
     <section id="logo" style="z-index:1;">
         <section class="svgLogo">
             <svg class="logoWiseMind" version="1.1" width="300px" height="300px" viewBox="0 0 4000 4000"
@@ -103,9 +103,10 @@
                         </li>
                         <hr class="w-75 bg-white my-1">
                         <li class="nav-item config-item">
-                            <a class="nav-link h5 mb-0 px-3 pt-4" href="../assets/destroy-log.php"><i
-                                    class="fas fa-credit-card mr-1"></i>
-                                <label class="h5 cursor-pointer">Sair</label></a>
+                            <a class="nav-link h5 mb-0 px-3 pt-4" href="../assets/destroy-log.php">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <label class="h5 cursor-pointer">Sair</label>
+                            </a>
                         </li>
                     </ul>
                 </div>

@@ -45,7 +45,7 @@
             <div class="w-25 text-center">
                 <h1 class="h1 font-lobster">Pagamentos</h1>
 
-                <form action="pesquisar.php" method="get" name="formularioPesq">
+                <form action="#" method="get" name="formularioPesq">
                     <div class="input-group mb-3">
                         <input type="text" id="form-border-none" class="form-control border-right-0 search-place"
                             placeholder="Pesquisar" aria-label="Pesquisar" aria-describedby="basic-addon2">
