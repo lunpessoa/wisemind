@@ -78,7 +78,7 @@
                     if(isset($_GET["val"])){
                         $val=$_GET["val"];
                         $sql_val=('update estudantes set Plano=true where id_estudante='.$val.';');
-                        $sql_del=('delete from pedido where id_estuda='.$val.';');
+                        $sql_del=('delete from estudantes where id_estuda='.$val.';');
                         $mostrar_sql=mysqli_query($conexao, $sql_val);    
                         $mostrar_sql=mysqli_query($conexao, $sql_del);    
                         header('Location: pagamentos.php');  

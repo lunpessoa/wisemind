@@ -28,8 +28,8 @@
         $data_venc = date("Y-m-d", time() + ($dias_de_prazo * 86400));
         $data = date("Y-m-d");
         
-        //$sql_inserir=('insert into pedido(Data_Compra, Data_Validade, Renovacao, id_estuda, id_plano) values('.$data.', '.$data_venc.', "N",'.$_SESSION['id_user'].', 1;');
-        //mysqli_query($conexao, $sql_inserir) or die (mysqli_error($conexao));
+        //$sql_inserir=('insert into pedido(Data_Compra, Data_Validade, Renovacao, id_estuda, id_plano) values("'.$data.'", "'.$data_venc.'", "N",'.$_SESSION['id_user'].', 1;');
+        //$sql_query=mysqli_query($conexao, $sql_inserir) or die (mysqli_error($conexao));
 
         header("Location: ../compra/boleto/boleto_bb.php");
     }
