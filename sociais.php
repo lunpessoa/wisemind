@@ -1,7 +1,7 @@
 <html>
 
 <head>
-	<title> Ciências sociais </title>
+	<title> Ciências Sociais </title>
 	<meta charset="utf-8">
 	<meta name="language" content="pt-br">
 	<?php include('menu.php'); ?>

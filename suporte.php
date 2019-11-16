@@ -1,11 +1,12 @@
 <html>
 
 <head>
+	<title> Suporte </title>
 	<?php include('menu.php'); ?>
 	<link rel="shortcut icon" href="img/ico.png" />
 	<link rel="stylesheet" type="text/css" href="style/cssuporte.css" />
 	<meta charset="UTF-8">
-	<title> Wise Mind </title>
+	
 </head>
 
 <body id="body">

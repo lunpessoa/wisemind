@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+<link rel="icon" href="../../img/logo.png" type="image/x-icon"/>
+<link rel="shortcut icon" href="../../img/logo.png" type="image/x-icon"/>
 
 <head>
 	<title><?php echo $dadosboleto["identificacao"]; ?></title>

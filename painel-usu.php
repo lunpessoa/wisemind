@@ -20,7 +20,7 @@
 <html>
 
 <head>
-	<title>Painel Usuário</title>
+	<title>Perfil</title>
 	<?php include('menu.php'); ?>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="style/painel-usu.css">
