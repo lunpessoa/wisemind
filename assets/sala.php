@@ -9,12 +9,12 @@
         $data = array_reverse($data);
         $data = implode ('-', $data);
         
-                $sqlinserir = ('insert into chat(area,num_participantes,data_criacao) values ("'.$nome.'",0,"'.$data.'")');
+                $sqlinserir = ('insert into chat(nome,area,num_participantes,data_criacao) values ("'.$nome.'","'.$area.'",0,"'.$data.'");');
                 $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));
 
                 if($inserir){ 
-                    
-                    echo('<script>alert("Inserido com sucesso")
+                    $_
+                    echo('<script>
                     window.location.href = "../chats.php";</script>');//cadastro com sucesso
                     
                 }else {

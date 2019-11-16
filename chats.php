@@ -54,10 +54,10 @@
 					<section class="card">
 						<img src="img/slide_amarelo.gif" class="card-img-top" alt="...">
 						<section class="card-body text-center">
-							<h3 class="card-title h3"><b><em>'.$con["Area"].'</em></b></h3>
+							<h3 class="card-title h3"><b><em>'.$con["nome"].'</em></b></h3>
 						</section>
 						<section class="card-footer text-center">
-							<h5 class="float-left text-muted"> Sala 1</h5>
+							<h5 class="float-left text-muted">'.$con["Area"].'</h5>
 							<h5 class="float-right text-muted"> 0/20</h5>
 						</section>
 					</section>
@@ -105,7 +105,6 @@
 
 	<?php include('rodape.html'); ?>
 	<script src="node_modules/jquery/dist/jquery.js"></script>
-	<script src="js/cadastro.js"></script>
 	<script src="node_modules/popper.js/dist/umd/popper.js"></script>
 	<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
 	<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
