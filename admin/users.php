@@ -35,10 +35,9 @@
                 <form action="pesquisar.php" method="get" name="formularioPesq">
                     <div class="input-group mb-3">
                         <input type="text" id="form-border-none" class="form-control border-right-0 search-place"
-                            placeholder="Pesquisar" aria-label="Pesquisar" aria-describedby="basic-addon2">
+                            placeholder="Digite email do usuarios" aria-label="Pesquisar" aria-describedby="basic-addon2">
                         <div class="input-group-append">
-                            <span class="input-group-text bg-transparent border-left-0" id="basic-addon2"><i
-                                    class="fas fa-search"></i></span>
+                            <button type="submit" class="btn btn-primary" name="Enviar"><i class="fas fa-search"></i></button>
                         </div>
                     </div>
                 </form>
@@ -104,8 +103,8 @@
 </body>
 <?php
     }else{
-            echo('<script>window.alert("Voce não esta logado como admin")
-            window.location.href = "../login.php";</script>');
+        $_SESSION["facaLog"]=true;
+        echo('<script>window.location.href = "../login.php";</script>');
     }
     ?>
 

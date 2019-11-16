@@ -151,8 +151,8 @@
 </body>
 <?php
    }else{
-    $_SESSION["facaLog"]=true;
-    echo('<script>window.location.href = "../login.php";</script>');
+        $_SESSION["facaLog"]=true;
+        echo('<script>window.location.href = "../login.php";</script>');
    }
 ?>
 <!-- Optional JavaScript -->
