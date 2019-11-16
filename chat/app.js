@@ -1,4 +1,3 @@
-
 /*var express = require('express');
 var app = express();
 var path = require('path');
@@ -22,6 +21,7 @@ const path = require('path')
 const app = express()
 const server = require('http').createServer(app)
 const io = require('socket.io')(server)
+var mysql = require('mysql')
 
 //Caminhos
 /*app.use(express.static(path.join(__dirname, 'public')))
@@ -30,6 +30,23 @@ app.engine('html', require('ejs').renderFile)
 app.set('view engine', 'html')*/
 
 //Desativado para uso do php na pagina
+// Importa o módulo
+
+
+ 
+
+// Dados do banco de Dados
+var connection = mysql.createConnection(
+{
+host : 'localhost',
+user : 'root',
+password : '',
+database : 'wisemind',
+}
+);
+
+// Estabelece a conexão
+connection.connect();
 
 app.use('/', (req, res) => {
     res.send('index.html')
@@ -43,7 +60,22 @@ var users = []
 
 //Conexão Socket
 io.on('connection', socket => {
-    
+
+        // Substitua pelo seu comando
+        var queryString = 'SELECT * FROM usuarios where id_usuario=1';
+
+        // Executa o comando SQL
+        connection.query(queryString, function(err, usuario, fields) {
+        if (err) throw err;''
+
+        // Faz o laço para retornar os dados
+        for (var i in usuario) {
+        console.log('Retorno: ', usuario[i].Nome);
+        }
+        });
+
+        // Fecha conexão
+
 
     //Recebendo dados usuario
     socket.on('sala', data => {
@@ -53,7 +85,9 @@ io.on('connection', socket => {
         socket.join(sala);
         console.log(sala)
         console.log(data.nome_usuario)
-        users.push(socket.id)
+        if(users.indexOf(socket.id) === -1){
+            users.push(socket.id)
+        }
         console.log(users)
         console.log(users.length)
         socket.broadcast.to(sala).emit('usersList', users)

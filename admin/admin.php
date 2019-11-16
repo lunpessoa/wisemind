@@ -103,8 +103,8 @@
                         </li>
                         <hr class="w-75 bg-white my-1">
                         <li class="nav-item config-item">
-                            <a class="nav-link h5 mb-0 px-3 pt-4" href="../assets/destroy-log.php"><i
-                                    class="fas fa-credit-card mr-1"></i>
+                            <a class="nav-link h5 mb-0 px-3 pt-4" href="../assets/destroy-log.php">
+                            <i class="fas fa-times-circle"></i>
                                 <label class="h5 cursor-pointer">Sair</label></a>
                         </li>
                     </ul>
