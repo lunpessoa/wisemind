@@ -121,7 +121,7 @@ CREATE TABLE `especializacao` (
   `id_prof` int(11) NOT NULL,
   PRIMARY KEY (`id_espc`),
   KEY `fk_EspecProf` (`id_prof`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -130,6 +130,7 @@ CREATE TABLE `especializacao` (
 
 LOCK TABLES `especializacao` WRITE;
 /*!40000 ALTER TABLE `especializacao` DISABLE KEYS */;
+INSERT INTO `especializacao` VALUES (1,'EducaÃ§Ã£o','Pedagogo',3),(2,'CiÃªncias','QuÃ­mico',3),(3,'Pedro','Fildelis',3);
 /*!40000 ALTER TABLE `especializacao` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -160,7 +161,7 @@ CREATE TABLE `estudantes` (
 
 LOCK TABLES `estudantes` WRITE;
 /*!40000 ALTER TABLE `estudantes` DISABLE KEYS */;
-INSERT INTO `estudantes` VALUES (4,'Estudando',NULL,NULL,NULL,NULL,1);
+INSERT INTO `estudantes` VALUES (4,'Estudando',NULL,NULL,NULL,NULL,1),(5,'Estudando',NULL,NULL,NULL,NULL,0);
 /*!40000 ALTER TABLE `estudantes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -199,17 +200,13 @@ CREATE TABLE `pedido` (
   `Data_Compra` date NOT NULL,
   `Data_Validade` date NOT NULL,
   `Renovacao` enum('S','N') NOT NULL,
-  `Descricao` varchar(255) NOT NULL,
-  `Tipo_Pagamento` varchar(60) NOT NULL,
-  `Desconto` varchar(100) DEFAULT NULL,
-  `Bandeira` varchar(30) DEFAULT NULL,
   `id_estuda` int(11) NOT NULL,
   `id_plano` int(11) NOT NULL,
   PRIMARY KEY (`id_pedido`),
   UNIQUE KEY `id_pedido` (`id_pedido`),
   KEY `pedido` (`id_estuda`),
   KEY `plano` (`id_plano`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -234,7 +231,7 @@ CREATE TABLE `planos` (
   `Preco` float NOT NULL,
   PRIMARY KEY (`id_plano`),
   UNIQUE KEY `id_plano` (`id_plano`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -243,6 +240,7 @@ CREATE TABLE `planos` (
 
 LOCK TABLES `planos` WRITE;
 /*!40000 ALTER TABLE `planos` DISABLE KEYS */;
+INSERT INTO `planos` VALUES (1,'Wiser',39.9);
 /*!40000 ALTER TABLE `planos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -302,7 +300,7 @@ CREATE TABLE `usuarios` (
   PRIMARY KEY (`id_usuario`),
   UNIQUE KEY `id_usuario` (`id_usuario`),
   KEY `privilegio` (`id_privilegio`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -311,7 +309,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'Luan','Pessoa','2002-02-10','luan@gmail.com','5629a37edd0faffb55ed645dd205d548ca1d3d79','11996412897','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,3),(2,'Iago','Pastori','1993-10-06','iago123@gmail.com','63dc0d1bbe35c5c9c93f6763e464d437f65d4cc9','11 999994444','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,1),(3,'Pedro','Pessoa','2002-02-10','luan2@gmail.com','4bc70743717959d7df4045f6b5f39f16e489b62b','11996412897','img/perfil/3jpeg','Santa Isabel','Av Prefeito JoÃ£o Pires Filho','SP',122,'07500000','13 de Maio','51034539833',2),(4,'Luan','Pessoa','2002-02-10','joana123@gmail.com','d36c05a31b0d027c7eb61204257b44da5003fe47','11111111111','img/perfil/4.png',NULL,NULL,NULL,NULL,NULL,NULL,'51034539833',1);
+INSERT INTO `usuarios` VALUES (1,'Luan','Pessoa','2002-02-10','luan@gmail.com','5629a37edd0faffb55ed645dd205d548ca1d3d79','11996412897','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,3),(2,'Iago','Pastori','1993-10-06','iago123@gmail.com','63dc0d1bbe35c5c9c93f6763e464d437f65d4cc9','11 999994444','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,1),(3,'Luan','Pessoa','2002-02-10','luan2@gmail.com','4bc70743717959d7df4045f6b5f39f16e489b62b','11996412897','img/perfil/3.jpg','Santa Isabel','Av Prefeito JoÃ£o Pires Filho','SP',122,'07500000','13 de Maio','51034539833',2),(4,'Luan','Pessoa','2002-02-10','joana123@gmail.com','d36c05a31b0d027c7eb61204257b44da5003fe47','11111111111','img/perfil/4.png',NULL,NULL,NULL,NULL,NULL,NULL,'51034539833',1),(5,'Douglas','Kurtz','1111-11-11','doug@gmail.com','1784bb260b45cc1c5675a253a144bae73e4b1682','11111111111','img/perfil/sem-foto.png',NULL,NULL,NULL,NULL,NULL,NULL,NULL,1);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -354,4 +352,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-11-15  2:55:05
+-- Dump completed on 2019-11-15 21:31:23
