@@ -56,11 +56,12 @@
 			<?php
 		$sql2=('select * from chat;');
 		$resul2=mysqli_query($conexao, $sql2);
+		$num_salas = mysqli_num_rows($resul2);
 		while($con=mysqli_fetch_array($resul2)){
 	
 
 	echo('
-			<section class="col-12 col-md-4">
+			<section class="col-12 col-md-4" id="sala'.$con["id_Chat"].'">
 				<a class="btn" href="#">
 					<section class="card">
 						<img src="img/slide_amarelo.gif" class="card-img-top" alt="...">
@@ -69,7 +70,7 @@
 						</section>
 						<section class="card-footer text-center">
 							<h5 class="float-left text-muted">'.$con["Area"].'</h5>
-							<h5 class="float-right text-muted"> 0/20</h5>
+							<h5 class="float-right text-muted"> '.$con["Num_Participantes"].'/20</h5>
 						</section>
 					</section>
 				</a>
@@ -120,6 +121,21 @@
 	<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
 	<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
 </body>
+<?php
+	echo(
+		'<script>
+			for (let x = 1; x <= '.$num_salas.'; x++) {
+				var link = document.getElementById("sala" + x)
+				if (link != null) {
+					link.onclick = (e) => {
+						e.preventDefault()
+						window.location.href = "assets/redmin_sala.php?sala=" + x
+					}
+				}
+			}
+		</script>');
+
+?>
 <script>
 	$(document).ready(function () {
 		$(window).keydown(function (event) {

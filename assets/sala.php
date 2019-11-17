@@ -1,5 +1,8 @@
 <?php
     include('conexao.php');
+    if (!isset($_SESSION)) {
+        session_start();
+    }
 
     if(isset($_POST['criar'])){
         $nome=$_POST['nome'];
@@ -9,11 +12,10 @@
         $data = array_reverse($data);
         $data = implode ('-', $data);
         
-                $sqlinserir = ('insert into chat(nome,area,num_participantes,data_criacao) values ("'.$nome.'","'.$area.'",0,"'.$data.'");');
+                $sqlinserir = ('insert into chat(nome,area,num_participantes,data_criacao, id_profissional) values ("'.$nome.'","'.$area.'",0,"'.$data.'", '.$_SESSION["id_user"].');');
                 $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));
 
                 if($inserir){ 
-                    $_
                     echo('<script>
                     window.location.href = "../chats.php";</script>');//cadastro com sucesso
                     

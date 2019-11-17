@@ -193,7 +193,6 @@ if (!isset($_SESSION)) {
 
   <?php include('rodape.html'); ?>
   <script src="node_modules/jquery/dist/jquery.js"></script>
-  <script src="js/cadastro.js"></script>
   <script src="node_modules/popper.js/dist/umd/popper.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
   <script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>

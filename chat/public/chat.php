@@ -5,6 +5,11 @@
 	$sql=('select * from usuarios where id_usuario = '. $_SESSION["id_user"].';');
 	$resul=mysqli_query($conexao, $sql);
     $con=mysqli_fetch_array($resul);
+
+    //pegar sala
+    $sql_sala=('select * from chat where id_Chat = '. $_SESSION['sala'].';');
+	$resul_sala=mysqli_query($conexao, $sql_sala);
+    $con_sala=mysqli_fetch_array($resul_sala);
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -26,7 +31,7 @@
     <section class="bg-dark container-fluid fundo">
         <section class="topo">
             <section class="user d-flex float-left align-items-center">
-                <div class="image-user rounded-circle bg-light ml-5"></div>
+                <div class="image-user rounded-circle bg-light ml-5"><img  class="image-user" src="../../<?php echo($con['perfil_img']); ?>" alt=""></div>
                 <label class="user-name ml-3 mt-3 text-light font-weight-bold font-italic"><?php echo($con['Nome']);?><br><label
                         class="situacao font-weight-bold font-italic">#Online</label> </label>
                 <a class="sair-btn text-decoration-none float-right text-danger" href="" id="sair"><i
@@ -135,12 +140,13 @@
     echo("<script>
         var id_usuario = ".$con['id_usuario']."
         var nome_usuario = '".$con['Nome']."'
+        var sala = ".$con_sala['id_Chat']."
     </script>");    
 ?>
 <script>
     var socket = io.connect("http://localhost:3001");
     //var socket = io(); //conexão
-    var sala = 'Medicina' //sala
+     //sala
     
     const campoMessagem = document.getElementById('msg')
     
