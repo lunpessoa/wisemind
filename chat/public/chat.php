@@ -31,7 +31,7 @@
     <section class="bg-dark container-fluid fundo">
         <section class="topo">
             <section class="user d-flex float-left align-items-center">
-                <div class="image-user rounded-circle bg-light ml-5"><img  class="image-user" src="../../<?php echo($con['perfil_img']); ?>" alt=""></div>
+                <div class="image-user rounded-circle bg-light ml-5" style='background-image: url("../../<?php echo($con['perfil_img']); ?>")'> </div>
                 <label class="user-name ml-3 mt-3 text-light font-weight-bold font-italic"><?php echo($con['Nome']);?><br><label
                         class="situacao font-weight-bold font-italic">#Online</label> </label>
                 <a class="sair-btn text-decoration-none float-right text-danger" href="" id="sair"><i
