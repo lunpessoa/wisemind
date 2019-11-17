@@ -97,7 +97,7 @@
                 <div class="buttons d-flex justify-content-center">
                     <a class="btn" style="color: #fff; cursor: default;" href="">
                         <i class="fas fa-user-friends"></i>
-                        <label class="font-weight-bold font-italic mb-0" style="cursor: default;">04/20</label>
+                        <label class="font-weight-bold font-italic mb-0" style="cursor: default;"><label id="campo_num">01</label>/20</label>
                     </a>
                 </div>
             </section>
@@ -263,6 +263,11 @@
         return now
     }
 
+    function numUsers(num){
+        var campoNum = document.getElementById('campo_num')
+        campoNum.innerHTML = num;
+    }
+
 
 
     document.getElementById("sair").onclick = (e) => {
@@ -270,6 +275,12 @@
         socket.emit('leaveUser', sala)
         window.location.href = '../../index.php'
     }
+
+    //numero
+    socket.on('usersNum', function (data) {
+        //userList(data)
+        numUsers(data)
+    })
 
 
     //Recebendo mensagens
@@ -280,13 +291,7 @@
     })
 
     //Recebendo usuarios
-    socket.on('user', function (data) {
-        userList(data)
-    })
-
-    //receber usuarios conectados
-    socket.on('usersList', (users) => {
-        alert('ta funcionando')
+    socket.on('usersList', function (data) {
     })
 
     //Enviando mensagens

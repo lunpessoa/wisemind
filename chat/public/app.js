@@ -56,10 +56,9 @@ app.use('/', (req, res) => {
 let sala = ''
 let messages = []
 var users = []
-var id_user
+var user_total = []
+var id_user 
 var users_sala = []
-
-var num_sala = []
 
 
 
@@ -99,14 +98,16 @@ io.on('connection', socket => {
             users.push(id_user)
         }
         //total
+        if(user_total.indexOf(data.id_usuario) === -1){
+            user_total.push(id_user)
+        } 
+
         users_sala = users.filter((item)=>{
             var splitSala = item.split("-")
             return splitSala[1]==String(sala)
         })
 
-        num_sala[sala] = users_sala.length
-
-        console.log('usuarios por sala ='+num_sala[sala])
+        console.log('usuarios por sala ='+users_sala.length)
 
         var queryChatUpdate = 'UPDATE chat SET Num_Participantes = '+ users_sala.length +' where id_Chat = '+sala+';';
         connection.query(queryChatUpdate, function (err, result) {
@@ -115,7 +116,7 @@ io.on('connection', socket => {
           });
 
         console.log('tamanho user: '+users.length)
-        io.to(sala).emit('usersNum', num_sala[sala])
+        io.to(sala).emit('usersNum', users_sala)
         socket.broadcast.to(sala).emit('usersList', users_sala)
     })
 
@@ -145,28 +146,8 @@ io.on('connection', socket => {
 
     socket.on('disconnect', ()=>{
 
-        num_sala[sala] = num_sala[sala]-1
-
-        if(users.indexOf(id_user) !== -1){
-            users.splice(users.indexOf(id_user), 1)
-        }
-        console.log("sobrou: "+users.length)
-        console.log("sobrou-sala: "+num_sala[sala])
-
-        var queryChatUpdate = 'UPDATE chat SET Num_Participantes = '+ num_sala[sala] +' where id_Chat = '+sala+';';
-            connection.query(queryChatUpdate, function (err, result) {
-            if (err) throw err;
-                console.log(result.affectedRows + " record(s) updated");
-            });
-
-        /*if(users_sala.length == 0){
-            var queryChatUpdate = 'UPDATE chat SET Num_Participantes = '+ 0 +' where id_Chat = '+sala+';';
-            connection.query(queryChatUpdate, function (err, result) {
-            if (err) throw err;
-                console.log(result.affectedRows + " record(s) updated");
-            });
+        
             //users.splice(2, 1);
-
             if(users_sala.indexOf(id_user) !== -1){
                 users_sala.splice(users_sala.indexOf(id_user), 1)
             }
@@ -176,26 +157,17 @@ io.on('connection', socket => {
             }
             console.log("sobrou: "+users.length)
             console.log("sobrou-usu: "+users_sala.length)
-
-        }else{
-            //users.splice(2, 1);
-            if(users_sala.indexOf(id_user) !== -1){
-                users_sala.splice(users_sala.indexOf(id_user), 1)
-            }
-            console.log("sobrou-sala: "+users_sala.length)
-            if(users.indexOf(id_user) !== -1){
-                users.splice(users.indexOf(id_user), 1)
-            }
-            console.log("sobrou-total: "+users_sala.length)
             var queryChatUpdate = 'UPDATE chat SET Num_Participantes = '+ users_sala.length +' where id_Chat = '+sala+';';
             connection.query(queryChatUpdate, function (err, result) {
             if (err) throw err;
                 console.log(result.affectedRows + " record(s) updated");
             });
-        }*/
+          
+
         
         
-          io.to(sala).emit('usersNum', num_sala[sala])
+        
+          io.to(sala).emit('usersNum', users_sala)
           socket.broadcast.to(sala).emit('usersList', users_sala)
         
     })
