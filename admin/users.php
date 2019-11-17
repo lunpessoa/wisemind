@@ -12,7 +12,6 @@
 <head>
     <title>Admin-Usuarios</title>
     <meta charset="utf-8">
-
     <link rel="stylesheet" href="../node_modules/bootstrap/compiler/bootstrap.css">
     <link rel="stylesheet" href="usersadmin.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
@@ -22,8 +21,6 @@
 </head>
 
 <body>
-
-
     <section class="container-fluid header-title d-flex align-items-end">
         <nav class="button-back">
             <a href="admin.php" class="btn p-0 text-dark bg-warning"><i class="fas fa-chevron-left"></i></a>
@@ -35,7 +32,7 @@
 
                 <form>
                     <div class="input-group mb-3">
-                        <input type="text" id="busca" class="cpf form-control border-right-0 search-place"
+                        <input type="text" id="busca" class="phone_with_ddd form-control border-right-0 search-place"
                             placeholder="Pesquisar E-mail" aria-describedby="basic-addon2">
                         <div class="input-group-append">
                             <span class="input-group-text bg-transparent border-left-0" id="basic-addon2"><i
@@ -61,11 +58,11 @@
                     <th scope="col" class="text-center">Excluir</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="result">
                 <?php
                     $sqlmostrar=('select * from usuarios;');
                     $resul=mysqli_query($conexao, $sqlmostrar) or die (mysqli_error($conexao));
-                    while($con_usu=mysqli_fetch_array($resul) or die (mysqli_error($conexao))){
+                    while($con_usu=mysqli_fetch_array($resul)){
                         echo('<tr class="text-clear">
                             <th scope="row">'.$con_usu["id_usuario"].' </th>
                             <td> '.$con_usu["Nome"].' </td>
@@ -117,30 +114,25 @@
         </table>
     </section>
 
+    <!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="../node_modules/jquery/dist/jquery.js"></script>
+	<script src="../node_modules/popper.js/dist/umd/popper.js"></script>
+	<script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
 </body>
 <?php
-        }else{
-            $_SESSION["facaLog"]=true;
-            echo('<script>window.location.href = "../login.php";</script>');
-        }
-    ?>
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="../node_modules/jquery/dist/jquery.js"></script>
-<script src="../node_modules/popper.js/dist/umd/popper.js"></script>
-<script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    }else{
+        $_SESSION["facaLog"]=true;
+        echo('<script>window.location.href = "../login.php";</script>');
+    }
+?>
 <script>
     $("#busca").keyup(function () {
         var busca = $("#busca").val();
-        alert(busca);
-    });
-
-    $(document).ready(function () {
-        $('.date').mask('99/99/9999');
-        $('.cep').mask('99999-999');
-        $('.cpf').mask('999.999.999-99');
-        $('.phone_with_ddd').mask('(99) 99999-9999');
-        $('.uf').mask('AA');
+        $.post('../assets/pesquisar.php', {busca: busca},function(data){
+            $("#result").html(data);
+        });
     });
 </script>
 

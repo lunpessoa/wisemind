@@ -28,8 +28,8 @@
     <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" href="usersadmin.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
-    <link rel="icon" href="../img/logo.png" type="image/x-icon"/>
-    <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon"/>
+    <link rel="icon" href="../img/logo.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon" />
 
 </head>
 
@@ -47,8 +47,8 @@
 
                 <form action="#" method="get" name="formularioPesq">
                     <div class="input-group mb-3">
-                        <input type="text" id="form-border-none" class="form-control border-right-0 search-place"
-                            placeholder="Pesquisar" aria-label="Pesquisar" aria-describedby="basic-addon2">
+                        <input type="text" id="busca" class="form-control border-right-0 search-place"
+                            placeholder="Pesquisar Email" aria-label="Pesquisar" aria-describedby="basic-addon2">
                         <div class="input-group-append">
                             <span class="input-group-text bg-transparent border-left-0" id="basic-addon2"><i
                                     class="fas fa-search"></i></span>
@@ -68,51 +68,58 @@
                 <tr class="text-light">
                     <th scope="col">Código Pedido</th>
                     <th scope="col">Id Usuário</th>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Sobrenome</th>
+                    <th scope="col">Email</th>
                     <th scope="col">Data_Compra</th>
                     <th scope="col" class="text-center">Validar</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="result">
                 <?php
                     $sqlmostrar=('select * from usuarios U, estudantes E, pedido P where U.id_usuario=id_estudante and E.id_estudante=P.id_estuda;');
                     $resul=mysqli_query($conexao, $sqlmostrar) or die (mysqli_error($conexao));
-                    while($con_usu=mysqli_fetch_array($resul) or die (mysqli_error($conexao))){
+                    while($con_usu=mysqli_fetch_array($resul)){
                         echo('<tr class="text-clear">
                             <th scope="row">'.$con_usu["id_pedido"].' </th>
                             <th scope="row">'.$con_usu["id_usuario"].' </th>
-                            <td> '.$con_usu["Nome"].' </td>
-                            <td> '.$con_usu["Sobrenome"].' </td>
+                            <td> '.$con_usu["Email"].' </td>
                             <td> '.$con_usu['Data_Compra'].' </td>');
                             echo('<td class="justify-content-center d-flex"><a class="btn text-clear" href="pagamentos.php?val='.$con_usu['id_usuario'].'"><i class="fas fa-check-square h5"></i></a></td>');
                             echo('</tr>');
 
-                    if(isset($_GET["val"])){
-                        $val=$_GET["val"];
-                        $sql_val=('update estudantes set Plano=true where id_estudante='.$val.';');
-                        $sql_del=('delete from pedido where id_estuda='.$val.';');
-                        $mostrar_sql=mysqli_query($conexao, $sql_val);    
-                        $mostrar_sql=mysqli_query($conexao, $sql_del);    
-                        header('Location: pagamentos.php');  
-                    }   
-                }          
+                        if(isset($_GET["val"])){
+                            $val=$_GET["val"];
+                            $sql_val=('update estudantes set Plano=true where id_estudante='.$val.';');
+                            $sql_del=('delete from pedido where id_estuda='.$val.';');
+                            $mostrar_sql=mysqli_query($conexao, $sql_val);    
+                            $mostrar_sql=mysqli_query($conexao, $sql_del);    
+                            header('Location: pagamentos.php');  
+                        }   
+                    }          
                 ?>
             </tbody>
         </table>
     </section>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/popper.js/dist/umd/popper.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
 </body>
 <?php
     }else{
         $_SESSION["facaLog"]=true;
         echo('<script>window.location.href = "../login.php";</script>');
     }
-    ?>
-
-<script src="node_modules/jquery/dist/jquery.js"></script>
-<script src="js/javinha.js"></script>
-<script src="node_modules/popper.js/dist/umd/popper.js"></script>
-<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+?>
+<script>
+    $("#busca").keyup(function () {
+        var busca = $("#busca").val();
+        $.post('../assets/pesquisar.php', {pag: busca}, function (data) {
+            $("#result").html(data);
+        });
+    });
+</script>
 
 
 </html>
