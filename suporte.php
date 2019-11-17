@@ -6,7 +6,7 @@
 	<link rel="shortcut icon" href="img/ico.png" />
 	<link rel="stylesheet" type="text/css" href="style/cssuporte.css" />
 	<meta charset="UTF-8">
-	
+
 </head>
 
 <body id="body">
@@ -76,9 +76,9 @@
 		<img src="img/ondinha2.png">
 	</section>
 
-	<section class="container-fluid suporte-form">
+	<section id="formulario" class="container-fluid suporte-form">
 		<section class="container">
-		<p class="h3 text-light font-galada text-center pb-3">Não achou a solução? Envie-nos uma mensagem!</p>
+			<p class="h3 text-light font-galada text-center pb-3">Não achou a solução? Envie-nos uma mensagem!</p>
 			<form>
 				<div class="form-row">
 					<div class="form-group col-sm-6">
@@ -93,7 +93,8 @@
 				<div class="form-row">
 					<div class="form-group col-sm-8">
 						<label for="inputEmail" class="text-light lbl-links">E-mail</label>
-						<input type="text" class="form-control text-light" id="inputEmail" placeholder="email@email.com">
+						<input type="text" class="form-control text-light" id="inputEmail"
+							placeholder="email@email.com">
 					</div>
 					<div class="form-group col-sm-2">
 						<label for="inputDDD" class="text-light lbl-links">DDD</label>
@@ -138,36 +139,24 @@
 					</label>
 				</div>
 				<div class="col-8 text-justify">
-					<h4>Se você paga pelo Plano Wiser, mas não consegue usar seus recursos, experimente o seguinte:</h4>
+					<h4>Se alguém enviou alguma palavra imprópria, ou houve alguma ofensa em alguma sala, experimente o
+						seguinte:</h4>
 
-					<h5><b>Saia e entre novamente na sua conta</b></h5>
-					De vez em quando, é preciso forçar a sincronização entre as informações do seu dispositivo e do
-					nosso
-					sistema de contas.
+					<h5><b>Tire um print e mande nós</b></h5>
+					Salve uma imagem ou tire um print do ocorrido e envie para o e-mail de suporte,
+					suporte@wisemind.com.
 					<br> <br>
-					<h5><b>Confira o status da sua assinatura</b></h5>
-					Acesse a sua página de assinatura e verifique se a sua assinatura Wiser ainda está ativa.
+					<h5><b>Informe o ocorrido ao profissional responsável pela sala</b></h5>
+					Informe o ocorrido ao profissional para que ele tome as devidas providencias
 					<br><br>
-					<h5><b>Verifique o status do seu pagamento</b></h5>
-					Se ele aparecer como pendente no seu extrato bancário, talvez não tenha sido efetuado com sucesso.
-					<br>Para saber mais, confira este artigo sobre solução de problemas com pagamentos.
+					<h5><b>Denuncie o usuário que utilizou palavras impróprias.</b></h5>
+					Denuncie o usuário à nossa plataforma para que possamos entrar em contato, e realizar o que for
+					necessário.
+					<br>Utilize do botão de denuncia ao clicar no perfil do usuario selecionado.
 					<br><br>
-					A cobrança pendente é parte do processo de autorização do seu banco ou da sua operadora de cartão de
-					crédito.s Quando você agenda um pagamento, é feita uma autorização temporária do valor. No entanto,
-					se a
-					transação não for concluída, nenhum valor será debitado da sua conta e a cobrança desaparecerá. O
-					tempo
-					que esse processo leva pode variar dependendo do seu banco ou da sua operadora de cartão de crédito.
-					Para mais informações, entre em contato diretamente com o seu banco ou sua operadora de cartão de
-					crédito.
-					<br><br>
-					<h5><b>Verifique se o Premium não está associado a outra conta</b></h5>
-					Talvez você esteja conectado à conta errada. É possível criar mais de uma conta no Spotify, cada uma
-					com
-					seu próprio login, assinatura, informações e músicas salvas.
-					<br>
-					Ainda não funciona?
-					<a href="#formulario" class="scrollSuave">clique aqui</a> para nos informar sobre possíveis falhas
+					<b><em>Ainda não funciona?</em></b>
+					<a href="#formulario" class="slide-section">clique aqui</a> <em>para nos informar sobre possíveis
+						falhas</em>
 					no
 					serviço.
 				</div>
@@ -182,36 +171,29 @@
 		<div class="container p-5">
 			<div class="row">
 				<div class="col-8 text-justify">
-					<h4>Se você paga pelo Plano Wiser, mas não consegue usar seus recursos, experimente o seguinte:</h4>
+					<h4>Se você deseja se tornar um Wiser, mas não está conseguindo efetuar o pagamento, experimente o
+						seguinte:</h4>
 
-					<h5><b>Saia e entre novamente na sua conta</b></h5>
-					De vez em quando, é preciso forçar a sincronização entre as informações do seu dispositivo e do
-					nosso
-					sistema de contas.
+					<h5><b>Recarregue a página</b></h5>
+					De vez em quando, é preciso recarregar a pagina para sincronização entre as informações do seu
+					dispositivo e do
+					nosso sistema.
 					<br> <br>
-					<h5><b>Confira o status da sua assinatura</b></h5>
-					Acesse a sua página de assinatura e verifique se a sua assinatura Wiser ainda está ativa.
+					<h5><b>Tente novamente realizar o pagamento na sua forma principal;</b></h5>
+					Acesse a sua página de assinatura e tente realizar a compra, se não resolver, espere alguns minutos
+					e tente novamente.
 					<br><br>
-					<h5><b>Verifique o status do seu pagamento</b></h5>
-					Se ele aparecer como pendente no seu extrato bancário, talvez não tenha sido efetuado com sucesso.
-					<br>Para saber mais, confira este artigo sobre solução de problemas com pagamentos.
+					<h5><b>Atualize as informações de cobrança da sua forma de pagamento atual</b></h5>
+					Atualize as suas informações na página de perfil, verifique as informações e preencha as que estão
+					faltando.
 					<br><br>
-					A cobrança pendente é parte do processo de autorização do seu banco ou da sua operadora de cartão de
-					crédito.s Quando você agenda um pagamento, é feita uma autorização temporária do valor. No entanto,
-					se a
-					transação não for concluída, nenhum valor será debitado da sua conta e a cobrança desaparecerá. O
-					tempo
-					que esse processo leva pode variar dependendo do seu banco ou da sua operadora de cartão de crédito.
-					Para mais informações, entre em contato diretamente com o seu banco ou sua operadora de cartão de
-					crédito.
+					<h5><b>Se o problema persistir relate o erro no e-mail suporte@wisemind.com</b></h5>
+					Talvez seja necessário o intermédio de nossos serviços. Utilize do formulário para entrar em contato
+					e relatar seu problema.
 					<br><br>
-					<h5><b>Verifique se o Premium não está associado a outra conta</b></h5>
-					Talvez você esteja conectado à conta errada. É possível criar mais de uma conta no Spotify, cada uma
-					com
-					seu próprio login, assinatura, informações e músicas salvas.
-					<br>
-					Ainda não funciona?
-					<a href="#formulario" class="scrollSuave">clique aqui</a> para nos informar sobre possíveis falhas
+					<b><em>Ainda não funciona?</em></b>
+					<a href="#formulario" class="slide-section">clique aqui</a> <em>para nos informar sobre possíveis
+						falhas</em>
 					no
 					serviço.
 				</div>
@@ -239,36 +221,30 @@
 					</label>
 				</div>
 				<div class="col-8 text-justify">
-					<h4>Se você paga pelo Plano Wiser, mas não consegue usar seus recursos, experimente o seguinte:</h4>
+					<h4>Se você está tentando alterar as informações do seu perfil, mas não consegue usar seus recursos,
+						experimente o seguinte:</h4>
 
-					<h5><b>Saia e entre novamente na sua conta</b></h5>
-					De vez em quando, é preciso forçar a sincronização entre as informações do seu dispositivo e do
-					nosso
-					sistema de contas.
-					<br> <br>
-					<h5><b>Confira o status da sua assinatura</b></h5>
-					Acesse a sua página de assinatura e verifique se a sua assinatura Wiser ainda está ativa.
+					<h5><b>Recarregue a página</b></h5>
+					De vez em quando, é preciso recarregar a pagina para sincronização entre as informações do seu
+					dispositivo e do
+					nosso sistema.
 					<br><br>
-					<h5><b>Verifique o status do seu pagamento</b></h5>
-					Se ele aparecer como pendente no seu extrato bancário, talvez não tenha sido efetuado com sucesso.
-					<br>Para saber mais, confira este artigo sobre solução de problemas com pagamentos.
+					<h5><b>Desconecte-se de sua conta e reconecte-se novamente</b></h5>
+					É preciso recarregar as informações da pagina para sincronização entre as informações do perfil.
 					<br><br>
-					A cobrança pendente é parte do processo de autorização do seu banco ou da sua operadora de cartão de
-					crédito.s Quando você agenda um pagamento, é feita uma autorização temporária do valor. No entanto,
-					se a
-					transação não for concluída, nenhum valor será debitado da sua conta e a cobrança desaparecerá. O
-					tempo
-					que esse processo leva pode variar dependendo do seu banco ou da sua operadora de cartão de crédito.
-					Para mais informações, entre em contato diretamente com o seu banco ou sua operadora de cartão de
-					crédito.
+					<h5><b>Apague seu histórico de navegação</b></h5>
+					Apagar o histórico pode ser uma boa solução, os cookies armazenados serão zerados podendo atualizar
+					as informações.
+					<br><br>Para apagar o histórico de navegação entre em Configurações - Histórico (CTRL+H) - Limpar
+					dados de navegação.
 					<br><br>
-					<h5><b>Verifique se o Premium não está associado a outra conta</b></h5>
-					Talvez você esteja conectado à conta errada. É possível criar mais de uma conta no Spotify, cada uma
-					com
-					seu próprio login, assinatura, informações e músicas salvas.
-					<br>
-					Ainda não funciona?
-					<a href="#formulario" class="scrollSuave">clique aqui</a> para nos informar sobre possíveis falhas
+					<h5><b>Se o problema persistir relate o erro no e-mail suporte@wisemind.com</b></h5>
+					Talvez seja necessário o intermédio de nossos serviços. Utilize do formulário para entrar em contato
+					e relatar seu problema.
+					<br><br>
+					<b><em>Ainda não funciona?</em></b>
+					<a href="#formulario" class="slide-section">clique aqui</a> <em>para nos informar sobre possíveis
+						falhas</em>
 					no
 					serviço.
 				</div>
@@ -284,36 +260,34 @@
 		<div class="container p-5">
 			<div class="row">
 				<div class="col-8 text-justify">
-					<h4>Se você paga pelo Plano Wiser, mas não consegue usar seus recursos, experimente o seguinte:</h4>
+					<h4>Se você está tentando entrar em alguma sala, mas não está conseguindo, experimente o seguinte:
+					</h4>
 
-					<h5><b>Saia e entre novamente na sua conta</b></h5>
-					De vez em quando, é preciso forçar a sincronização entre as informações do seu dispositivo e do
-					nosso
-					sistema de contas.
-					<br> <br>
-					<h5><b>Confira o status da sua assinatura</b></h5>
-					Acesse a sua página de assinatura e verifique se a sua assinatura Wiser ainda está ativa.
+					<h5><b>Recarregue a página</b></h5>
+					De vez em quando, é preciso recarregar a pagina para sincronização entre as informações do seu
+					dispositivo e do
+					nosso sistema.
+					<br><br>
+					<h5><b>Desconecte-se de sua conta e reconecte-se novamente</b></h5>
+					É preciso recarregar as informações da pagina para sincronização entre as informações do perfil.
 					<br><br>
 					<h5><b>Verifique o status do seu pagamento</b></h5>
-					Se ele aparecer como pendente no seu extrato bancário, talvez não tenha sido efetuado com sucesso.
-					<br>Para saber mais, confira este artigo sobre solução de problemas com pagamentos.
-					<br><br>
-					A cobrança pendente é parte do processo de autorização do seu banco ou da sua operadora de cartão de
-					crédito.s Quando você agenda um pagamento, é feita uma autorização temporária do valor. No entanto,
-					se a
-					transação não for concluída, nenhum valor será debitado da sua conta e a cobrança desaparecerá. O
-					tempo
-					que esse processo leva pode variar dependendo do seu banco ou da sua operadora de cartão de crédito.
-					Para mais informações, entre em contato diretamente com o seu banco ou sua operadora de cartão de
-					crédito.
-					<br><br>
-					<h5><b>Verifique se o Premium não está associado a outra conta</b></h5>
-					Talvez você esteja conectado à conta errada. É possível criar mais de uma conta no Spotify, cada uma
-					com
-					seu próprio login, assinatura, informações e músicas salvas.
-					<br>
-					Ainda não funciona?
-					<a href="#formulario" class="scrollSuave">clique aqui</a> para nos informar sobre possíveis falhas
+					<ul>
+						<li>Clique no botão de configuração (botão dos três tracinhos no canto superior direito) na
+							barra de ferramentas do navegador;</li>
+						<li>Selecione Ferramentas;</li>
+						<li>Selecione Limpar dados de navegação;</li>
+						<li>o Na caixa de diálogo exibida, marque as caixas de seleção dos tipos de informações que
+							deseja
+							remover;</li>
+						<li>o Use o menu na parte superior para selecionar a quantidade de dados que deseja excluir.
+							Selecione o
+							início do tempo para excluir tudo;</li>
+						<li>Clique em Limpar dados de navegação.</li>
+					</ul>
+					<b><em>Ainda não funciona?</em></b>
+					<a href="#formulario" class="slide-section">clique aqui</a> <em>para nos informar sobre possíveis
+						falhas</em>
 					no
 					serviço.
 				</div>
@@ -343,34 +317,31 @@
 				<div class="col-8 text-justify">
 					<h4>Se você paga pelo Plano Wiser, mas não consegue usar seus recursos, experimente o seguinte:</h4>
 
-					<h5><b>Saia e entre novamente na sua conta</b></h5>
-					De vez em quando, é preciso forçar a sincronização entre as informações do seu dispositivo e do
-					nosso
-					sistema de contas.
-					<br> <br>
-					<h5><b>Confira o status da sua assinatura</b></h5>
-					Acesse a sua página de assinatura e verifique se a sua assinatura Wiser ainda está ativa.
+					<h5><b>Recarregue a página</b></h5>
+					De vez em quando, é preciso recarregar a pagina para sincronização entre as informações do seu
+					dispositivo e do
+					nosso sistema.
 					<br><br>
-					<h5><b>Verifique o status do seu pagamento</b></h5>
-					Se ele aparecer como pendente no seu extrato bancário, talvez não tenha sido efetuado com sucesso.
-					<br>Para saber mais, confira este artigo sobre solução de problemas com pagamentos.
+					<h5><b>Verifique seu provedor de internet</b></h5>
+					A conexão com nossos servições pode estar sendo bloqueada por terceiros, entre em contato com o
+					provedor da sua rede para verificar a situação
 					<br><br>
-					A cobrança pendente é parte do processo de autorização do seu banco ou da sua operadora de cartão de
-					crédito.s Quando você agenda um pagamento, é feita uma autorização temporária do valor. No entanto,
-					se a
-					transação não for concluída, nenhum valor será debitado da sua conta e a cobrança desaparecerá. O
-					tempo
-					que esse processo leva pode variar dependendo do seu banco ou da sua operadora de cartão de crédito.
-					Para mais informações, entre em contato diretamente com o seu banco ou sua operadora de cartão de
-					crédito.
+					<h5><b>Apague seu histórico de navegação</b></h5>
+					Apagar o histórico pode ser uma boa solução, os cookies armazenados serão zerados podendo atualizar
+					as informações.
+					<br><br>Para apagar o histórico de navegação entre em Configurações - Histórico (CTRL+H) - Limpar
+					dados de navegação.
 					<br><br>
-					<h5><b>Verifique se o Premium não está associado a outra conta</b></h5>
-					Talvez você esteja conectado à conta errada. É possível criar mais de uma conta no Spotify, cada uma
-					com
-					seu próprio login, assinatura, informações e músicas salvas.
-					<br>
-					Ainda não funciona?
-					<a href="#formulario" class="scrollSuave">clique aqui</a> para nos informar sobre possíveis falhas
+					<h5><b>Feche e abra o navegador em que o site está aberto.</b></h5>
+					Talvez o navegador esteje com problemas. Feche-o e tente entrar no site novamente.
+					<br><br>
+					<h5><b>Se o problema persistir relate o erro no e-mail suporte@wisemind.com</b></h5>
+					Talvez seja necessário o intermédio de nossos serviços. Utilize do formulário para entrar em contato
+					e relatar seu problema.
+					<br><br>
+					<b><em>Ainda não funciona?</em></b>
+					<a href="#formulario" class="slide-section">clique aqui</a> <em>para nos informar sobre possíveis
+						falhas</em>
 					no
 					serviço.
 				</div>
@@ -410,12 +381,14 @@
 					crédito.
 					<br><br>
 					<h5><b>Verifique se o Premium não está associado a outra conta</b></h5>
-					Talvez você esteja conectado à conta errada. É possível criar mais de uma conta no Spotify, cada uma
+					Talvez você esteja conectado à conta errada. É possível criar mais de uma conta na plataforma
+					WiseMind, cada uma
 					com
-					seu próprio login, assinatura, informações e músicas salvas.
-					<br>
-					Ainda não funciona?
-					<a href="#formulario" class="scrollSuave">clique aqui</a> para nos informar sobre possíveis falhas
+					seu próprio login, assinatura e informações salvas.
+					<br><br>
+					<b><em>Ainda não funciona?</em></b>
+					<a href="#formulario" class="slide-section">clique aqui</a> <em>para nos informar sobre possíveis
+						falhas</em>
 					no
 					serviço.
 				</div>
@@ -445,36 +418,23 @@
 				<div class="col-8 text-justify">
 					<h4>Se você paga pelo Plano Wiser, mas não consegue usar seus recursos, experimente o seguinte:</h4>
 
-					<h5><b>Saia e entre novamente na sua conta</b></h5>
-					De vez em quando, é preciso forçar a sincronização entre as informações do seu dispositivo e do
-					nosso
-					sistema de contas.
-					<br> <br>
-					<h5><b>Confira o status da sua assinatura</b></h5>
-					Acesse a sua página de assinatura e verifique se a sua assinatura Wiser ainda está ativa.
-					<br><br>
-					<h5><b>Verifique o status do seu pagamento</b></h5>
-					Se ele aparecer como pendente no seu extrato bancário, talvez não tenha sido efetuado com sucesso.
-					<br>Para saber mais, confira este artigo sobre solução de problemas com pagamentos.
-					<br><br>
-					A cobrança pendente é parte do processo de autorização do seu banco ou da sua operadora de cartão de
-					crédito.s Quando você agenda um pagamento, é feita uma autorização temporária do valor. No entanto,
-					se a
-					transação não for concluída, nenhum valor será debitado da sua conta e a cobrança desaparecerá. O
-					tempo
-					que esse processo leva pode variar dependendo do seu banco ou da sua operadora de cartão de crédito.
-					Para mais informações, entre em contato diretamente com o seu banco ou sua operadora de cartão de
-					crédito.
-					<br><br>
-					<h5><b>Verifique se o Premium não está associado a outra conta</b></h5>
-					Talvez você esteja conectado à conta errada. É possível criar mais de uma conta no Spotify, cada uma
-					com
-					seu próprio login, assinatura, informações e músicas salvas.
-					<br>
-					Ainda não funciona?
-					<a href="#formulario" class="scrollSuave">clique aqui</a> para nos informar sobre possíveis falhas
-					no
-					serviço.
+					<h5><b>Verifique os chats disponíveis de cada profissão</b></h5>
+					Acesse a pagina dos <a href="chats.php">chats<a> e verifique as profissões e areas que estejam sendo
+							discutidas.
+							<br> <br>
+							<h5><b>Informe-nos sobre o ocorrido</b></h5>
+							Se não houver encontrado nenhum profissonal da área desejada, envie-nos um e-mail
+							(suporte@wisemind.com ) falando da área e profissão para que possamos inseri-la se possível.
+							<br><br>
+							<h5><b>Utilize do formulário acima</b></h5>
+							Vá até o ínicio da pagina suporte e utilize do formulário disponivel, informe-nos sobre os problemas e faltas.
+							<br><br>
+							<b><em>Ainda não funciona?</em></b>
+							<a href="#formulario" class="slide-section">clique aqui</a> <em>para nos informar sobre
+								possíveis
+								falhas</em>
+							no
+							serviço.
 				</div>
 			</div>
 		</div>

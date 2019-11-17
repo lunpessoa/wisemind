@@ -46,9 +46,7 @@
 								<div class="card-body text-left">
 									<h5 class="card-title h4 mt-4 font-italic">International Business Machines
 										Corporation </h5>
-									<p class="card-text mt-4">This is a wider card with supporting text below as a
-										natural
-										lead-in to additional content. This content is a little bit longer.</p>
+									<p class="card-text mt-4">A empresa IBM está voltada totalmente a área da tecnologia. International Business Machines Corporation é uma empresa Americana, fundada por Charles Ranlett Flint no século XIX. Os problemas nos inspiram a consertar as coisas. Transformá-las. Melhorá-las. Eles nos desafiam a resolver o insolúvel.</p>
 									<button class="btn p-0 d-block text-primary"
 										href="https://www.ibm.com/br-pt">www.ibm.com/br-pt</button>
 									<label
@@ -73,9 +71,7 @@
 							<div class="col-md-8">
 								<div class="card-body text-left">
 									<h5 class="card-title h4 mt-4 font-italic">Buffet Patrícia Festas </h5>
-									<p class="card-text mt-4">This is a wider card with supporting text below as a
-										natural
-										lead-in to additional content. This content is a little bit longer.</p>
+									<p class="card-text mt-4"> Empresa Patrícia Festas tem como objetivo sperar as expectativas dos clientes em todos os momentos, antecipando as suas necessidades e atingindo grau máximo de satisfação,para assim estabelecer a sua fidelização, valorizando a marca e as pessoas.</p>
 									<button class="btn p-0 d-block text-primary"
 										href="https://www.facebook.com/BuffetPatriciaFestas/">www.facebook.com/BuffetPatriciaFestas/</button>
 									<label
