@@ -80,13 +80,12 @@ io.on('connection', socket => {
     //Recebendo dados usuario
     socket.on('sala', data => {
         sala = data.sala
-        socket.id = data.id_usuario
         console.log(socket.id)
         socket.join(sala);
-        console.log(sala)
+        console.log('sala: '+sala)
         console.log(data.nome_usuario)
-        if(users.indexOf(socket.id) === -1){
-            users.push(socket.id)
+        if(users.indexOf(data.id_usuario) === -1){
+            users.push(data.id_usuario)
         }
         console.log(users)
         console.log(users.length)
