@@ -67,22 +67,6 @@
                                     class="users-situacao font-weight-bold font-italic">#Online</label> </label>
                         </a>
                     </li>
-                    <li class="list-user">
-                        <a href="#" class="users text-decoration-none">
-                            <div class="class-users rounded-circle bg-light ml-5"
-                                style="background-image: url('img/antonio.jpg');"></div>
-                            <label class="user-name ml-3 mt-3 h6 font-weight-bold font-italic">Antonio_Conselheiro
-                                <br><label class="users-situacao font-weight-bold font-italic">#Online</label></label>
-                        </a>
-                    </li>
-                    <li class="list-user">
-                        <a href="#" class="users text-decoration-none">
-                            <div class="class-users rounded-circle bg-light ml-5"
-                                style="background-image: url('img/jorge.jpg');"></div>
-                            <label class="user-name ml-3 mt-3 h6 font-weight-bold font-italic">Jorge_MegaFire <br><label
-                                    class="users-situacao font-weight-bold font-italic">#Online</label></label>
-                        </a>
-                    </li>
                 </ul>
                 <div class="buttons d-flex justify-content-center">
                     <a class="btn" style="color: #fff; cursor: default;" href=""><i class="fas fa-user-friends"></i>
