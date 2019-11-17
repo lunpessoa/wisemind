@@ -68,7 +68,7 @@
                             <td> '.$con_usu["Nome"].' </td>
                             <td> '.$con_usu["Email"].' </td>
                             <td> ');if($con_usu["id_privilegio"]==1){
-                                        echo("Usuario");
+                                        echo("Estudante");
                                     }else if($con_usu["id_privilegio"]==2){
                                         echo("Profissional");
                                     }else if($con_usu["id_privilegio"]==3){

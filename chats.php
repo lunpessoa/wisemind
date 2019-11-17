@@ -4,7 +4,7 @@
 	if(isset($_SESSION["log_status"]) && $_SESSION["log_status"]==true){
 	$sql=('select * from usuarios where id_usuario = '. $_SESSION["id_user"].';');
 	$resul=mysqli_query($conexao, $sql);
-    $con=mysqli_fetch_array($resul);
+	$con=mysqli_fetch_array($resul);
 ?>
 
 <!DOCTYPE html>
@@ -58,15 +58,18 @@
 		$resul2=mysqli_query($conexao, $sql2);
 		$num_salas = mysqli_num_rows($resul2);
 		while($con=mysqli_fetch_array($resul2)){
-	
+			$sql3=('select Nome, Sobrenome from usuarios where id_usuario = '.$con['id_profissional'].' ;');
+			$resul3=mysqli_query($conexao, $sql3);
+			$con2=mysqli_fetch_array($resul3);
 
 	echo('
 			<section class="col-12 col-md-4" id="sala'.$con["id_Chat"].'">
 				<a class="btn" href="#">
 					<section class="card">
 						<img src="img/slide_amarelo.gif" class="card-img-top" alt="...">
-						<section class="card-body text-center">
+						<section class="card-body text-center pb-2">
 							<h3 class="card-title h3"><b><em>'.$con["nome"].'</em></b></h3>
+							<h3 class="text-left h5 mt-4 text-primary mb-0"><em>Prof. '.$con2["Nome"].' '.$con2["Sobrenome"].'</em></h3>
 						</section>
 						<section class="card-footer text-center">
 							<h5 class="float-left text-muted">'.$con["Area"].'</h5>

@@ -5,6 +5,10 @@
 		$sql=('select * from usuarios where id_usuario = '. $_SESSION["id_user"].';');
 		$resul=mysqli_query($conexao, $sql);
 		$con=mysqli_fetch_array($resul);
+
+		$datanasc = explode("-",$con['Data_Nasc']);
+		$datanasc = array_reverse($datanasc);
+		$datanasc = implode ('/', $datanasc);
 	if($con['id_privilegio']==1){
 		$sql2=('select * from estudantes where id_estudante = '. $_SESSION["id_user"].';');
 		$resul2=mysqli_query($conexao, $sql2);
@@ -166,7 +170,7 @@
 								</div>
 								<div class="col-9">
 									<div class="input-group form-group w-50">
-										<input type="date" class="form-control text-light"
+										<input type="text" class="form-control text-light"
 											style="background-color:#282d30; border-color:#1f1f1f;"
 											placeholder="<?php echo($con['Data_Nasc']);?>"
 											value="<?php echo($con['Data_Nasc']);?>" name="data" required>
@@ -214,7 +218,7 @@
 								<span class="text-clear">Data de Nascimento</span>
 							</div>
 							<div class="col-9">
-								<span class="h5 text-white"><?php echo($con['Data_Nasc']);?></span>
+								<span class="h5 text-white"><?php echo($datanasc);?></span>
 							</div>
 						</div>
 						<div class="row p-2">
@@ -727,7 +731,24 @@
 								<span class="h5 text-white">Site WiseMind</span>
 							</div>
 							<div class="col-5 align-items-center d-flex">
-								<span class="h5 text-white align-middle">12 de nov de 2019 às 22:09</span>
+								<span class="h5 text-white align-middle">
+									<?php
+										function multiexplode ($delimiters,$string) {
+											$ready = str_replace($delimiters, $delimiters[0], $string);
+											$launch = explode($delimiters[0], $ready);
+											return  $launch;
+										}
+
+										setlocale( LC_ALL , 'pt_BR' );
+										date_default_timezone_set( "America/Sao_Paulo" );
+
+										$sql_register= ('select ultimo_login from date_login where id_usu = '.$_SESSION['id_user'].';');
+										$ultimo_date = mysqli_query($conexao, $sql_register);
+										$register = mysqli_fetch_array($ultimo_date);
+										$exploded = multiexplode(array(" ","-",":"),$register['ultimo_login']);
+										echo($exploded[2].' de '.ucfirst(strftime( "%h" , mktime($exploded[1]))) .' de '.$exploded[0].' às '.$exploded[3].':'.$exploded[4]);
+									?>
+								</span>
 							</div>
 						</div>
 					</div>
@@ -923,7 +944,7 @@
 							</div>
 							<div class="col-9">
 								<span class="h5 text-white">
-								<?php
+									<?php
 									if($est['Plano']==true){
 										echo("WISER");
 									}else{
@@ -939,13 +960,13 @@
 							</div>
 							<div class="col-9">
 								<span class="h5 text-white">
-								<?php
+									<?php
 									if($est['Plano']==true){
 										echo("<i class='fas fa-check mr-2'></i> Confirmado");
 									}else{
 										echo("<i class='fas fa-times mr-2'></i> Não confirmado");
 									}
-								?> 
+								?>
 								</span>
 							</div>
 						</div>

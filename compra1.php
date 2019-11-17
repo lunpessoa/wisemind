@@ -166,12 +166,12 @@
 	
 ?>
 <?php
-	if (!isset( $_SESSION["assinatura"])) {
+	if (!isset($_SESSION["assinatura"])) {
 		$_SESSION["assinatura"]=false;
 	}
 
 ?>
-<?php if($_SESSION["assinatura"]==true){ 
+<?php  if($_SESSION["assinatura"]==true){ 
 	include('toast.php');
 	echo("<script src='assets/toast.js'></script>
 	<script>assinatura();</script>");
