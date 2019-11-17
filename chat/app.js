@@ -56,6 +56,8 @@ app.use('/', (req, res) => {
 let sala = ''
 let messages = []
 var users = []
+var id_user = 0;
+
 
 
 //Conexão Socket
@@ -70,16 +72,14 @@ io.on('connection', socket => {
 
         // Faz o laço para retornar os dados
         for (var i in usuario) {
-        console.log('Retorno: ', usuario[i].Nome);
+        console.log('Usuario logado: ', usuario[i].Nome);
         }
         });
-
-        // Fecha conexão
-
 
     //Recebendo dados usuario
     socket.on('sala', data => {
         sala = data.sala
+        id_user = data.id_usuario
         console.log(socket.id)
         socket.join(sala);
         console.log('sala: '+sala)
@@ -88,6 +88,24 @@ io.on('connection', socket => {
             users.push(data.id_usuario)
         }
         console.log(users)
+
+        // segunda query
+        var queryStringChat = 'SELECT * FROM chat where id_Chat='+sala;
+
+        // Executa o comando SQL
+        connection.query(queryStringChat, function(err, chat, fields) {
+        if (err) throw err;''
+
+        // Faz o laço para retornar os dados
+        for (var i in chat) {
+            var queryChatUpdate = 'UPDATE chat SET Num_Participantes = '+ (chat[i].Num_Participantes+1)+' where id_Chat = '+sala+';';
+            connection.query(queryChatUpdate, function (err, result) {
+                if (err) throw err;
+                console.log(result.affectedRows + " record(s) updated");
+              });
+        }
+        });
+
         console.log(users.length)
         socket.broadcast.to(sala).emit('usersList', users)
     })
@@ -117,6 +135,29 @@ io.on('connection', socket => {
     })
 
     socket.on('disconnect', ()=>{
+
+        users.splice(2, 1);
+        if(users.indexOf(id_user) !== -1){
+            users.splice(users.indexOf(id_user), 1)
+        }
+
+        // terceira query
+        var queryStringChat = 'SELECT * FROM chat where id_Chat='+sala+';';
+
+        // Executa o comando SQL
+        connection.query(queryStringChat, function(err, chat, fields) {
+        if (err) throw err;''
+
+        // Faz o laço para retornar os dados
+        for (var i in chat) {
+            var queryChatUpdate = 'UPDATE chat SET Num_Participantes = '+ (chat[i].Num_Participantes-1)+' where id_Chat = '+sala+';';
+            connection.query(queryChatUpdate, function (err, result) {
+                if (err) throw err;
+                console.log(result.affectedRows + " record(s) updated");
+              });
+        }
+        });
+
         
     })
 })
