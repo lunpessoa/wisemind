@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.26, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.24, for Win64 (x86_64)
 --
 -- Host: localhost    Database: wisemind
 -- ------------------------------------------------------
--- Server version	5.7.26
+-- Server version	5.7.24
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -32,11 +32,14 @@ DROP TABLE IF EXISTS `chat`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `chat` (
   `id_Chat` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(64) DEFAULT NULL,
   `Area` varchar(30) NOT NULL,
   `Num_Participantes` int(11) NOT NULL,
   `Data_Criacao` date NOT NULL,
-  PRIMARY KEY (`id_Chat`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+  `id_profissional` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id_Chat`),
+  KEY `id_profissional` (`id_profissional`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -45,7 +48,7 @@ CREATE TABLE `chat` (
 
 LOCK TABLES `chat` WRITE;
 /*!40000 ALTER TABLE `chat` DISABLE KEYS */;
-INSERT INTO `chat` VALUES (1,'Peniz',0,'2019-11-15');
+INSERT INTO `chat` VALUES (1,'Luan da aula para ensino MÃ©dio','Festa',0,'2019-11-16',8),(2,'eita','eita nois',0,'2019-11-16',8),(3,'Jorge ta dando bote','Cristino',0,'2019-11-16',8);
 /*!40000 ALTER TABLE `chat` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -121,7 +124,7 @@ CREATE TABLE `especializacao` (
   `id_prof` int(11) NOT NULL,
   PRIMARY KEY (`id_espc`),
   KEY `fk_EspecProf` (`id_prof`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -130,7 +133,6 @@ CREATE TABLE `especializacao` (
 
 LOCK TABLES `especializacao` WRITE;
 /*!40000 ALTER TABLE `especializacao` DISABLE KEYS */;
-INSERT INTO `especializacao` VALUES (1,'EducaÃ§Ã£o','Pedagogo',3),(2,'CiÃªncias','QuÃ­mico',3),(3,'Pedro','Fildelis',3);
 /*!40000 ALTER TABLE `especializacao` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -161,7 +163,7 @@ CREATE TABLE `estudantes` (
 
 LOCK TABLES `estudantes` WRITE;
 /*!40000 ALTER TABLE `estudantes` DISABLE KEYS */;
-INSERT INTO `estudantes` VALUES (4,'Estudando',NULL,NULL,NULL,NULL,1),(5,'Estudando',NULL,NULL,NULL,NULL,0);
+INSERT INTO `estudantes` VALUES (7,'Estudando',NULL,NULL,NULL,NULL,0),(9,'Estudando',NULL,NULL,NULL,NULL,0);
 /*!40000 ALTER TABLE `estudantes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -215,6 +217,7 @@ CREATE TABLE `pedido` (
 
 LOCK TABLES `pedido` WRITE;
 /*!40000 ALTER TABLE `pedido` DISABLE KEYS */;
+INSERT INTO `pedido` VALUES (1,'2019-11-15','2019-11-20','N',2,1);
 /*!40000 ALTER TABLE `pedido` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -269,7 +272,7 @@ CREATE TABLE `profissional` (
 
 LOCK TABLES `profissional` WRITE;
 /*!40000 ALTER TABLE `profissional` DISABLE KEYS */;
-INSERT INTO `profissional` VALUES (3,'dÃ¡ a bunda','NADA',NULL,NULL);
+INSERT INTO `profissional` VALUES (1,'123','123',NULL,NULL),(8,'123','123',NULL,NULL);
 /*!40000 ALTER TABLE `profissional` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -300,7 +303,7 @@ CREATE TABLE `usuarios` (
   PRIMARY KEY (`id_usuario`),
   UNIQUE KEY `id_usuario` (`id_usuario`),
   KEY `privilegio` (`id_privilegio`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -309,7 +312,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'Luan','Pessoa','2002-02-10','luan@gmail.com','5629a37edd0faffb55ed645dd205d548ca1d3d79','11996412897','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,3),(2,'Iago','Pastori','1993-10-06','iago123@gmail.com','63dc0d1bbe35c5c9c93f6763e464d437f65d4cc9','11 999994444','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,1),(3,'Luan','Pessoa','2002-02-10','luan2@gmail.com','4bc70743717959d7df4045f6b5f39f16e489b62b','11996412897','img/perfil/3.jpg','Santa Isabel','Av Prefeito JoÃ£o Pires Filho','SP',122,'07500000','13 de Maio','51034539833',2),(4,'Luan','Pessoa','2002-02-10','joana123@gmail.com','d36c05a31b0d027c7eb61204257b44da5003fe47','11111111111','img/perfil/4.png',NULL,NULL,NULL,NULL,NULL,NULL,'51034539833',1),(5,'Douglas','Kurtz','1111-11-11','doug@gmail.com','1784bb260b45cc1c5675a253a144bae73e4b1682','11111111111','img/perfil/sem-foto.png',NULL,NULL,NULL,NULL,NULL,NULL,NULL,1);
+INSERT INTO `usuarios` VALUES (1,'Antonio','Souza','2002-05-17','123','601f1889667efaebb33b8c12572835da3f027f78','11111111111','img/perfil/sem-foto.png','Santa Isabel','Rual Leste','SP',142,'07500000','Vila Gumercindo','47779274829',3),(9,'SELMA MARIA','GOMES','2000-05-17','159','454c7bda62ab8f9b4ff994d78058bb0316495361','11111111111','img/perfil/sem-foto.png',NULL,NULL,NULL,NULL,NULL,NULL,NULL,1),(8,'Jacques','Rousseau','1750-05-17','789','1a2bf0adea0f4b41ed9f7a02d31fa535d5743f3e','11111111111','img/perfil/sem-foto.png','Santa Isabel','Rua pescoÃ§o','SP',1500,'07500000','FranÃ§a','11111111111',2),(7,'111','111','2000-11-11','111','3d4f2bf07dc1be38b20cd6e46949a1071f9d0e3d','11111111111','img/perfil/sem-foto.png',NULL,NULL,NULL,NULL,NULL,NULL,NULL,1);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -352,4 +355,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-11-15 21:31:23
+-- Dump completed on 2019-11-16 22:42:26
