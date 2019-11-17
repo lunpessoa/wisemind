@@ -315,8 +315,8 @@
 </script>
 <?php
 		}else{
-			echo('<script>window.alert("Faça o login antes")
-			window.location.href = "../../login.php";</script>');
+			$_SESSION["facaLog"]=true;
+            echo('<script>window.location.href = "../../login.php";</script>');;
 		}
 	
 ?>
