@@ -16,8 +16,13 @@
                 $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));
 
                 if($inserir){ 
-                    echo('<script>
-                    window.location.href = "../chats.php";</script>');//cadastro com sucesso
+                    $sql=('select * from chat where id_profissional = '.$_SESSION["id_user"].';');
+                    $resul=mysqli_query($conexao, $sql);
+                    $con=mysqli_fetch_array($resul);
+                    if($resul){
+                        $_SESSION['sala'] = $sala;
+                        header("Location: ../chat/public/chat.php");
+                    } //cadastro com sucesso
                     
                 }else {
                     echo('<script>alert("erro")
