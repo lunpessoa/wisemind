@@ -5,6 +5,10 @@
         $sql=('select * from usuarios where id_usuario = '. $_SESSION["id_user"].';');
         $resul=mysqli_query($conexao, $sql);
         $con=mysqli_fetch_array($resul);
+
+        function limpar_texto($str){ 
+            return preg_replace("/[^0-9]/", "", $str); 
+        }
         if($con['id_privilegio']==1){
             $sql2=('select * from estudantes where id_estudante = '. $_SESSION["id_user"].';');
             $resul2=mysqli_query($conexao, $sql2);
@@ -20,8 +24,14 @@
             $sobrenome=$_POST['sobrenome'];
             $data=$_POST['data'];
             $cpf=$_POST['cpf'];
+
+            $datanasc = explode("/",$data);
+		    $datanasc = array_reverse($datanasc);
+            $datanasc = implode ('-', $datanasc);
             
-            $sqlinserir = ('update usuarios set Nome = "'.$nome.'",Sobrenome ="'.$sobrenome.'", Data_Nasc = "'.$data.'" where id_usuario = '.$_SESSION['id_user'].';');
+            $cpf = limpar_texto($cpf);
+            
+            $sqlinserir = ('update usuarios set Nome = "'.$nome.'",Sobrenome ="'.$sobrenome.'", Data_Nasc = "'.$datanasc.'" where id_usuario = '.$_SESSION['id_user'].';');
                     $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));
 
                     if($inserir){ 
@@ -100,6 +110,7 @@
 
         if(isset($_POST['Enviar-4'])){
             $celular = $_POST['celular'];
+            $celular = limpar_texto($celular);
             
                     $sqlinserir = ('update usuarios set Cell = "'.$celular.'" where id_usuario = '.$_SESSION['id_user'].';');
                     $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));
@@ -123,6 +134,8 @@
             $Bairro = $_POST['Bairro'];
             $Cidade = $_POST['Cidade'];
             $Estado = $_POST['Estado'];
+
+            $CEP = limpar_texto($CEP);
             
             
             if($rua!=null){

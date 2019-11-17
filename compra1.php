@@ -14,6 +14,7 @@
 	<?php include('menu.php');?>
 	<link rel="shortcut icon" href="img/ico.png" />
 	<link rel="stylesheet" type="text/css" href="style/csscompra.css" />
+	<link rel="stylesheet" href="node_modules//dist/css/bootstrap-select.css">
 	<meta charset="UTF-8">
 </head>
 
@@ -114,8 +115,35 @@
 					</section>
 					<section class="form-group col-md-4">
 						<label for="inputState">Estado</label>
-						<input type="text" name="estado" class="form-control text-light uf" placeholder="SP"
-							name="estado" required>
+						<select id="uf" name="estado" class="form-control text-light selectpicker" required>
+							<option value="AC">Acre</option>
+							<option value="AL">Alagoas</option>
+							<option value="AP">Amapá</option>
+							<option value="AM">Amazonas</option>
+							<option value="BA">Bahia</option>
+							<option value="CE">Ceará</option>
+							<option value="DF">Distrito Federal</option>
+							<option value="ES">Espírito Santo</option>
+							<option value="GO">Goiás</option>
+							<option value="MA">Maranhão</option>
+							<option value="MT">Mato Grosso</option>
+							<option value="MS">Mato Grosso do Sul</option>
+							<option value="MG">Minas Gerais</option>
+							<option value="PA">Pará</option>
+							<option value="PB">Paraíba</option>
+							<option value="PR">Paraná</option>
+							<option value="PE">Pernambuco</option>
+							<option value="PI">Piauí</option>
+							<option value="RJ">Rio de Janeiro</option>
+							<option value="RN">Rio Grande do Norte</option>
+							<option value="RS">Rio Grande do Sul</option>
+							<option value="RO">Rondônia</option>
+							<option value="RR">Roraima</option>
+							<option value="SC">Santa Catarina</option>
+							<option value="SP">São Paulo</option>
+							<option value="SE">Sergipe</option>
+							<option value="TO">Tocantins</option>
+						</select>
 					</section>
 					<section class="form-group col-md-2">
 						<label for="inputNumero">Número</label>
@@ -139,7 +167,8 @@
 	<script src="js/cadastro.js"></script>
 	<script src="node_modules/popper.js/dist/umd/popper.js"></script>
 	<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
-	<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+	<script src="../dist/js/bootstrap-select.js"></script>
+
 </body>
 <script>
 	$(document).ready(function () {
@@ -166,12 +195,12 @@
 	
 ?>
 <?php
-	if (!isset( $_SESSION["assinatura"])) {
+	if (!isset($_SESSION["assinatura"])) {
 		$_SESSION["assinatura"]=false;
 	}
 
 ?>
-<?php if($_SESSION["assinatura"]==true){ 
+<?php  if($_SESSION["assinatura"]==true){ 
 	include('toast.php');
 	echo("<script src='assets/toast.js'></script>
 	<script>assinatura();</script>");

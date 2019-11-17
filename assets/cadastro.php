@@ -1,6 +1,8 @@
 <?php
     include('conexao.php');
     session_start();
+    setlocale( LC_ALL , 'pt_BR' );
+	date_default_timezone_set('America/Bahia');
     //funcao limpar caracteres nao numericos 
     function limpar_texto($str){ 
         return preg_replace("/[^0-9]/", "", $str); 
@@ -40,10 +42,13 @@
                 $resul=mysqli_query($conexao, $sql);
                 $con=mysqli_fetch_array($resul);
 
-                $sqlinserir2 = ('insert into estudantes (id_estudante, situacao, plano) values('.$con['id_usuario'].',"Estudando",false);');
+                $sqlinserir2 = ('insert into date_login (pri_login, ultimo_login, id_usu) values("'.date('Y-m-d').'", "'.date('Y-m-d H:i:s', time()).'", '.$con['id_usuario'].');');
                 $inserir2=mysqli_query($conexao,$sqlinserir2) or die (mysqli_error($conexao));
 
-                if($inserir2){ 
+                $sqlinserir3 = ('insert into estudantes (id_estudante, situacao, plano) values('.$con['id_usuario'].',"Estudando",false);');
+                $inserir3=mysqli_query($conexao,$sqlinserir3) or die (mysqli_error($conexao));
+
+                if($inserir3){ 
                     $_SESSION["cadastrado"] = true;
                     echo('<script>window.location.href = "../index.php";</script>');//cadastro com sucesso
                     
@@ -104,10 +109,13 @@
                 $resul=mysqli_query($conexao, $sql);
                 $con=mysqli_fetch_array($resul);
 
-                $sqlinserir2 = ('insert into profissional (id_profissional, experiencia, certificado) values('.$con['id_usuario'].',"'.$exp.'","'.$cert.'");');
+                $sqlinserir2 = ('insert into date_login (pri_login, ultimo_login, id_usu) values("'.date('Y-m-d').'", "'.date('Y-m-d H:i:s', time()).'", '.$con['id_usuario'].');');
                 $inserir2=mysqli_query($conexao,$sqlinserir2) or die (mysqli_error($conexao));
 
-                if($inserir2){ 
+                $sqlinserir3 = ('insert into profissional (id_profissional, experiencia, certificado) values('.$con['id_usuario'].',"'.$exp.'","'.$cert.'");');
+                $inserir3=mysqli_query($conexao,$sqlinserir3) or die (mysqli_error($conexao));
+
+                if($inserir3){ 
                     
                     $_SESSION["cadastrado"] = true;
                     echo('<script>window.location.href = "../index.php";</script>');//cadastro com sucesso

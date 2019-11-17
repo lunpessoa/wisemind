@@ -2,10 +2,14 @@
   include('assets/conexao.php');
   session_start();
   if(isset($_SESSION["log_status"]) && $_SESSION["log_status"]==true){
-    $sql2=('select * from estudantes where id_estudante ='. $_SESSION["id_user"].';');
+    $sql2=('select Plano from estudantes where id_estudante ='. $_SESSION["id_user"].';');
     $resul2=mysqli_query($conexao, $sql2);
     $con2=mysqli_fetch_array($resul2);
-    if($con2['Plano']==true){
+
+    $sql3=('select id_privilegio from usuarios where id_usuario ='. $_SESSION["id_user"].';');
+    $resul3=mysqli_query($conexao, $sql3);
+    $con3=mysqli_fetch_array($resul3);
+    if($con2['Plano']==true || $con3['id_privilegio']==2 || $con3['id_privilegio']==3){
 ?>
 
 <!DOCTYPE html>

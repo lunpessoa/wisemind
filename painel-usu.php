@@ -5,6 +5,26 @@
 		$sql=('select * from usuarios where id_usuario = '. $_SESSION["id_user"].';');
 		$resul=mysqli_query($conexao, $sql);
 		$con=mysqli_fetch_array($resul);
+
+		function multiexplode ($delimiters,$string) {
+			$ready = str_replace($delimiters, $delimiters[0], $string);
+			$launch = explode($delimiters[0], $ready);
+			return  $launch;
+		}
+
+		$datanasc = explode("-",$con['Data_Nasc']);
+		$datanasc = array_reverse($datanasc);
+		$datanasc = implode ('/', $datanasc);
+
+		$cpf_test = str_split($con['CPF'], 3);
+		$cpf = $cpf_test[0].'.'.$cpf_test[1].'.'.$cpf_test[2].'-'.$cpf_test[3];
+		
+		$c = str_split($con['Cell'], 1);
+		$cell = '('.$c[0].$c[1].') '.$c[2].$c[3].$c[4].$c[5].$c[6].'-'.$c[7].$c[8].$c[9].$c[10];
+
+		$cep_text = str_split($con['CEP'], 5);
+		$cep = $cep_text[0].'-'.$cep_text[1];
+
 	if($con['id_privilegio']==1){
 		$sql2=('select * from estudantes where id_estudante = '. $_SESSION["id_user"].';');
 		$resul2=mysqli_query($conexao, $sql2);
@@ -166,10 +186,10 @@
 								</div>
 								<div class="col-9">
 									<div class="input-group form-group w-50">
-										<input type="date" class="form-control text-light"
+										<input type="text" class="date form-control text-light"
 											style="background-color:#282d30; border-color:#1f1f1f;"
-											placeholder="<?php echo($con['Data_Nasc']);?>"
-											value="<?php echo($con['Data_Nasc']);?>" name="data" required>
+											placeholder="<?php echo($datanasc);?>"
+											value="<?php echo($datanasc);?>" name="data" required>
 									</div>
 								</div>
 							</div>
@@ -179,7 +199,7 @@
 								</div>
 								<div class="col-9">
 									<div class="input-group form-group w-50">
-										<input type="text" class="form-control text-light"
+										<input type="text" class="cpf form-control text-light"
 											style="background-color:#282d30; border-color:#1f1f1f;"
 											placeholder="<?php if($con['CPF']==0){echo("Adicionar");}else{echo($con['CPF']);}?>"
 											value="<?php echo($con['CPF']);?>"
@@ -214,7 +234,7 @@
 								<span class="text-clear">Data de Nascimento</span>
 							</div>
 							<div class="col-9">
-								<span class="h5 text-white"><?php echo($con['Data_Nasc']);?></span>
+								<span class="h5 text-white"><?php echo $datanasc ?></span>
 							</div>
 						</div>
 						<div class="row p-2">
@@ -223,7 +243,7 @@
 							</div>
 							<div class="col-9">
 								<span
-									class="h5 text-white"><?php if($con['CPF']==0){echo("Adicionar");}else{echo($con['CPF']);}?></span>
+									class="h5 text-white"><?php if($con['CPF']==0){echo("Adicionar");}else{echo($cpf);}?></span>
 							</div>
 						</div>
 					</div>
@@ -612,7 +632,7 @@
 								</div>
 								<div class="col-9">
 									<div class="input-group form-group w-50">
-										<input type="text" class="form-control text-light"
+										<input type="text" class="phone_with_ddd form-control text-light"
 											style="background-color:#282d30; border-color:#1f1f1f;"
 											placeholder="<?php echo($con['Cell']);?>"
 											value="<?php echo($con['Cell']);?>" name="celular" required>
@@ -631,7 +651,7 @@
 								<span class="text-clear">Número de celular</span>
 							</div>
 							<div class="col-9">
-								<span class="h5 text-white"><?php echo($con['Cell']);?></span>
+								<span class="h5 text-white"><?php echo($cell);?></span>
 							</div>
 						</div>
 					</div>
@@ -727,7 +747,18 @@
 								<span class="h5 text-white">Site WiseMind</span>
 							</div>
 							<div class="col-5 align-items-center d-flex">
-								<span class="h5 text-white align-middle">12 de nov de 2019 às 22:09</span>
+								<span class="h5 text-white align-middle">
+									<?php
+										setlocale( LC_ALL , 'pt_BR' );
+										date_default_timezone_set( "America/Sao_Paulo" );
+
+										$sql_register= ('select ultimo_login from date_login where id_usu = '.$_SESSION['id_user'].';');
+										$ultimo_date = mysqli_query($conexao, $sql_register);
+										$register = mysqli_fetch_array($ultimo_date);
+										$exploded = multiexplode(array(" ","-",":"),$register['ultimo_login']);
+										echo($exploded[2].' de '.ucfirst(strftime( "%h" , mktime($exploded[1]))) .' de '.$exploded[0].' às '.$exploded[3].':'.$exploded[4]);
+									?>
+								</span>
 							</div>
 						</div>
 					</div>
@@ -784,7 +815,7 @@
 								</div>
 								<div class="col-9">
 									<div class="input-group form-group w-50">
-										<input type="text" class="form-control text-light"
+										<input type="text" class="cep form-control text-light"
 											style="background-color:#282d30; border-color:#1f1f1f;"
 											placeholder="<?php if($con['CEP']==null){echo("Adicionar");}else{echo($con['CEP']);}?>"
 											value="<?php echo($con['CEP']);?>" name="CEP"
@@ -870,7 +901,7 @@
 							</div>
 							<div class="col-9">
 								<span
-									class="h5 text-white"><?php if($con['CEP']==null){echo("Adicionar");}else{echo($con['CEP']);}?></span>
+									class="h5 text-white"><?php if($con['CEP']==null){echo("Adicionar");}else{echo($cep);}?></span>
 							</div>
 						</div>
 						<div class="row p-2">
@@ -923,7 +954,7 @@
 							</div>
 							<div class="col-9">
 								<span class="h5 text-white">
-								<?php
+									<?php
 									if($est['Plano']==true){
 										echo("WISER");
 									}else{
@@ -939,13 +970,13 @@
 							</div>
 							<div class="col-9">
 								<span class="h5 text-white">
-								<?php
+									<?php
 									if($est['Plano']==true){
 										echo("<i class='fas fa-check mr-2'></i> Confirmado");
 									}else{
 										echo("<i class='fas fa-times mr-2'></i> Não confirmado");
 									}
-								?> 
+								?>
 								</span>
 							</div>
 						</div>
@@ -961,7 +992,14 @@
 	</div>
 
 </body>
-<script src='assets/painel-usu.js'></script>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="node_modules/jquery/dist/jquery.js"></script>
+	<script src='assets/painel-usu.js'></script>
+	<script src="node_modules/popper.js/dist/umd/popper.js"></script>
+	<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
 <?php
 	if($con['id_privilegio']==1){
 		echo("<script>estudante();</script>");
@@ -1029,6 +1067,14 @@
 	$(".custom-file-input").on("change", function () {
 		var fileName = $(this).val().split("\\").pop();
 		$(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+	});
+
+	$(document).ready(function () {
+		$('.date').mask('99/99/9999');
+		$('.cep').mask('99999-999');
+		$('.cpf').mask('999.999.999-99');
+		$('.phone_with_ddd').mask('(99) 99999-9999');
+		$('.uf').mask('AA');
 	});
 </script>
 <?php
