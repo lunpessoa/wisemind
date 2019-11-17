@@ -30,29 +30,33 @@
 <body class="align-items-center d-flex">
     <section class="bg-dark container-fluid fundo">
         <section class="topo">
-            <section class="user d-flex float-left align-items-center">
-                <div class="image-user rounded-circle bg-light ml-5" style='background-image: url("../../<?php echo($con['perfil_img']); ?>")'> </div>
-                <label class="user-name ml-3 mt-3 text-light font-weight-bold font-italic"><?php echo($con['Nome']);?><br><label
-                        class="situacao font-weight-bold font-italic">#Online</label> </label>
-                <a class="sair-btn text-decoration-none float-right text-danger" href="" id="sair"><i
-                        class="fas fa-sign-out-alt"></i></a>
-            </section>
-            <section class="info-class position-relative float-left bg-dark float-right">
-                <label class="chat-name ml-5 mt-2 text-light font-weight-bold font-italic float-left">Sala:
-                    Biologia<br><label class="area-chat font-weight-bold font-italic">Área: Biológicas</label> </label>
 
-
-                <div class="profissional float-right mt-2">
-                    <label
-                        class="user-name mr-3 mt-3 text-warning font-weight-bold font-italic text-right">Eduardo_Saul<br>
-
-                        <label class="situacao font-weight-bold font-italic">#Online</label>
-
-                    </label>
-                    <div class="image-user rounded-circle bg-light" style="background-image: url('img/saul.jpg');">
-                    </div>
-
+            <section class="user d-flex float-left align-items-center p-3">
+                <div class="position-relative p-0 ml-2 mr-3 image-thumb">
+                    <img class="img-user" src="../../<?php echo($con['perfil_img']); ?>" alt="">
+                    <div class="status-perfil"></div>
                 </div>
+                <label
+                    class="user-name ml-1 mt-3 text-light font-weight-bold font-italic"><?php echo($con['Nome']);?><br>
+                    <label class="situacao font-weight-bold font-italic">#Online</label>
+                </label>
+            </section>
+
+            <section class="info-class position-relative bg-dark float-right p-3">
+                <div class="row">
+                    <div class="col-6">
+                        <label class="ml-3 chat-name text-light font-weight-bold font-italic mb-0">Sala:
+                            Biologia</label><br>
+                        <label class="ml-3 area-chat font-weight-bold font-italic">Área: Biológicas</label>
+                    </div>
+                    <div class="col-6 justify-content-end align-items-center d-flex">
+                        <a class="sair-btn text-decoration-none text-danger mr-3" href="" id="sair">
+                            <i class="fas fa-sign-out-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+
 
             </section>
         </section>
@@ -61,34 +65,40 @@
                 <ul class="pt-3 pl-0">
                     <li class="list-user">
                         <a href="#" class="users text-decoration-none">
-                            <div class="class-users rounded-circle bg-light ml-5"
-                                style="background-image: url('img/lima.jpg');"></div>
+                            <div class="position-relative p-0 ml-5 class-users">
+                                <img class="class-img" src="img/lima.jpg" alt="">
+                                <div class="status"></div>
+                            </div>
                             <label class="user-name ml-3 mt-3 h6 font-weight-bold font-italic">Lima_Barreto <br><label
                                     class="users-situacao font-weight-bold font-italic">#Online</label> </label>
                         </a>
                     </li>
                     <li class="list-user">
                         <a href="#" class="users text-decoration-none">
-                            <div class="class-users rounded-circle bg-light ml-5"
-                                style="background-image: url('img/antonio.jpg');"></div>
+                            <div class="position-relative p-0 ml-5 class-users">
+                                <img class="class-img" src="img/antonio.jpg" alt="">
+                                <div class="status"></div>
+                            </div>
                             <label class="user-name ml-3 mt-3 h6 font-weight-bold font-italic">Antonio_Conselheiro
                                 <br><label class="users-situacao font-weight-bold font-italic">#Online</label></label>
                         </a>
                     </li>
                     <li class="list-user">
                         <a href="#" class="users text-decoration-none">
-                            <div class="class-users rounded-circle bg-light ml-5"
-                                style="background-image: url('img/jorge.jpg');"></div>
+                            <div class="position-relative p-0 ml-5 class-users">
+                                <img class="class-img" src="img/jorge.jpg" alt="">
+                                <div class="status"></div>
+                            </div>
                             <label class="user-name ml-3 mt-3 h6 font-weight-bold font-italic">Jorge_MegaFire <br><label
                                     class="users-situacao font-weight-bold font-italic">#Online</label></label>
                         </a>
                     </li>
                 </ul>
                 <div class="buttons d-flex justify-content-center">
-                    <a class="btn" style="color: #fff; cursor: default;" href=""><i class="fas fa-user-friends"></i>
-                        <label class="font-weight-bold font-italic mb-0" style="cursor: default;"> 04/20</label></a>
-                    <a class="btn text-light" href=""><i class="fas fa-ban"></i> <label
-                            class="font-weight-bold font-italic mb-0" style="cursor:pointer;"> Ocupado</label></a>
+                    <a class="btn" style="color: #fff; cursor: default;" href="">
+                        <i class="fas fa-user-friends"></i>
+                        <label class="font-weight-bold font-italic mb-0" style="cursor: default;">04/20</label>
+                    </a>
                 </div>
             </section>
             <section class="content-chat float-right">
@@ -146,18 +156,18 @@
 <script>
     var socket = io.connect("http://localhost:3001");
     //var socket = io(); //conexão
-     //sala
-    
+    //sala
+
     const campoMessagem = document.getElementById('msg')
-    
+
 
     //Enviando a sala para o servidor - posteriormente outros dados 
     var funSala = function (salaObject) {
         var salaObject = {
-        id_usuario,
-        nome_usuario,
-        sala
-    }
+            id_usuario,
+            nome_usuario,
+            sala
+        }
         socket.emit('sala', salaObject)
     }
     funSala(sala)
@@ -258,9 +268,9 @@
     document.getElementById("sair").onclick = (e) => {
         e.preventDefault()
         socket.emit('leaveUser', sala)
-        window.location.href='../../index.php'
+        window.location.href = '../../index.php'
     }
-    
+
 
     //Recebendo mensagens
     socket.on('receiveMessage', function (message) {
@@ -275,7 +285,7 @@
     })
 
     //receber usuarios conectados
-    socket.on('usersList', (users)=>{
+    socket.on('usersList', (users) => {
         alert('ta funcionando')
     })
 
