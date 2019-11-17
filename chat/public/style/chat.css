@@ -175,7 +175,6 @@ main {
 .image-user {
     height: 65px;
     width: 65px;
-    background-image: url('../img/Luan.jpeg');
     background-size: cover;
     position: relative;
 }
