@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.24, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.26, for Win64 (x86_64)
 --
 -- Host: localhost    Database: wisemind
 -- ------------------------------------------------------
--- Server version	5.7.24
+-- Server version	5.7.26
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -39,7 +39,7 @@ CREATE TABLE `chat` (
   `id_profissional` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_Chat`),
   KEY `id_profissional` (`id_profissional`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -48,7 +48,7 @@ CREATE TABLE `chat` (
 
 LOCK TABLES `chat` WRITE;
 /*!40000 ALTER TABLE `chat` DISABLE KEYS */;
-INSERT INTO `chat` VALUES (1,'Luan da aula para ensino MÃ©dio','Festa',0,'2019-11-16',8),(2,'eita','eita nois',0,'2019-11-16',8),(3,'Jorge ta dando bote','Cristino',0,'2019-11-16',8);
+INSERT INTO `chat` VALUES (1,'InglÃªs','Linguagens',0,'2019-11-17',3);
 /*!40000 ALTER TABLE `chat` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -61,7 +61,7 @@ DROP TABLE IF EXISTS `date_login`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `date_login` (
   `pri_login` date NOT NULL,
-  `ultimo_login` date NOT NULL,
+  `ultimo_login` timestamp NOT NULL,
   `id_usu` int(11) NOT NULL,
   PRIMARY KEY (`id_usu`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -73,6 +73,7 @@ CREATE TABLE `date_login` (
 
 LOCK TABLES `date_login` WRITE;
 /*!40000 ALTER TABLE `date_login` DISABLE KEYS */;
+INSERT INTO `date_login` VALUES ('2019-11-17','2019-11-17 08:27:52',1),('2019-11-17','2019-11-17 06:31:57',2),('2019-11-17','2019-11-17 08:27:44',3),('2019-11-17','2019-11-17 07:46:16',4);
 /*!40000 ALTER TABLE `date_login` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -124,7 +125,7 @@ CREATE TABLE `especializacao` (
   `id_prof` int(11) NOT NULL,
   PRIMARY KEY (`id_espc`),
   KEY `fk_EspecProf` (`id_prof`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -133,6 +134,7 @@ CREATE TABLE `especializacao` (
 
 LOCK TABLES `especializacao` WRITE;
 /*!40000 ALTER TABLE `especializacao` DISABLE KEYS */;
+INSERT INTO `especializacao` VALUES (1,'EducaÃ§Ã£o','Pedagogo',3),(2,'CiÃªncias','QuÃ­mico',3),(3,'Pedro','Fildelis',3);
 /*!40000 ALTER TABLE `especializacao` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -163,7 +165,7 @@ CREATE TABLE `estudantes` (
 
 LOCK TABLES `estudantes` WRITE;
 /*!40000 ALTER TABLE `estudantes` DISABLE KEYS */;
-INSERT INTO `estudantes` VALUES (7,'Estudando',NULL,NULL,NULL,NULL,0),(9,'Estudando',NULL,NULL,NULL,NULL,0);
+INSERT INTO `estudantes` VALUES (1,'Estudando',NULL,NULL,NULL,NULL,0),(2,'Estudando',NULL,NULL,NULL,NULL,0),(4,'Estudando',NULL,NULL,NULL,NULL,1);
 /*!40000 ALTER TABLE `estudantes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -208,7 +210,7 @@ CREATE TABLE `pedido` (
   UNIQUE KEY `id_pedido` (`id_pedido`),
   KEY `pedido` (`id_estuda`),
   KEY `plano` (`id_plano`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -217,7 +219,6 @@ CREATE TABLE `pedido` (
 
 LOCK TABLES `pedido` WRITE;
 /*!40000 ALTER TABLE `pedido` DISABLE KEYS */;
-INSERT INTO `pedido` VALUES (1,'2019-11-15','2019-11-20','N',2,1);
 /*!40000 ALTER TABLE `pedido` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -272,7 +273,7 @@ CREATE TABLE `profissional` (
 
 LOCK TABLES `profissional` WRITE;
 /*!40000 ALTER TABLE `profissional` DISABLE KEYS */;
-INSERT INTO `profissional` VALUES (1,'123','123',NULL,NULL),(8,'123','123',NULL,NULL);
+INSERT INTO `profissional` VALUES (3,'Sla','Sla',NULL,NULL);
 /*!40000 ALTER TABLE `profissional` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -303,7 +304,7 @@ CREATE TABLE `usuarios` (
   PRIMARY KEY (`id_usuario`),
   UNIQUE KEY `id_usuario` (`id_usuario`),
   KEY `privilegio` (`id_privilegio`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -312,7 +313,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'Antonio','Souza','2002-05-17','123','601f1889667efaebb33b8c12572835da3f027f78','11111111111','img/perfil/sem-foto.png','Santa Isabel','Rual Leste','SP',142,'07500000','Vila Gumercindo','47779274829',3),(9,'SELMA MARIA','GOMES','2000-05-17','159','454c7bda62ab8f9b4ff994d78058bb0316495361','11111111111','img/perfil/sem-foto.png',NULL,NULL,NULL,NULL,NULL,NULL,NULL,1),(8,'Jacques','Rousseau','1750-05-17','789','1a2bf0adea0f4b41ed9f7a02d31fa535d5743f3e','11111111111','img/perfil/sem-foto.png','Santa Isabel','Rua pescoÃ§o','SP',1500,'07500000','FranÃ§a','11111111111',2),(7,'111','111','2000-11-11','111','3d4f2bf07dc1be38b20cd6e46949a1071f9d0e3d','11111111111','img/perfil/sem-foto.png',NULL,NULL,NULL,NULL,NULL,NULL,NULL,1);
+INSERT INTO `usuarios` VALUES (1,'Luan','Pessoa','2002-02-10','luan@gmail.com','5629a37edd0faffb55ed645dd205d548ca1d3d79','11996412897','img/perfil/sem-foto.png',NULL,NULL,NULL,NULL,NULL,NULL,NULL,3),(2,'Joana','Maria','1111-11-11','joana123@gmail.com','d36c05a31b0d027c7eb61204257b44da5003fe47','11111111111','img/perfil/sem-foto.png',NULL,NULL,NULL,NULL,NULL,NULL,NULL,1),(3,'Luan','Pessoa','2002-02-10','luan2@gmail.com','4bc70743717959d7df4045f6b5f39f16e489b62b','11940711175','img/perfil/3jpeg','SÃ£o Paulo','Av Predks,adk','SP',122,'07500000','13 de Maio','99999999999',2),(4,'Jorge','Gay','2002-02-02','jorge@gmail.com','5f7b9704c1491a1266e27ea3b2eb13a648be9f6a','11940711171','img/perfil/sem-foto.png',NULL,NULL,NULL,NULL,NULL,NULL,'44444444444',1);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -355,4 +356,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-11-16 22:42:26
+-- Dump completed on 2019-11-17 12:46:55

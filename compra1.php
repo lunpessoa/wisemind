@@ -14,7 +14,7 @@
 	<?php include('menu.php');?>
 	<link rel="shortcut icon" href="img/ico.png" />
 	<link rel="stylesheet" type="text/css" href="style/csscompra.css" />
-	<link rel="stylesheet" href="node_modules//dist/css/bootstrap-select.css">
+	<link rel="stylesheet" href="node_modules/bootstrap-select/dist/css/bootstrap-select.css">
 	<meta charset="UTF-8">
 </head>
 
@@ -115,7 +115,7 @@
 					</section>
 					<section class="form-group col-md-4">
 						<label for="inputState">Estado</label>
-						<select id="uf" name="estado" class="form-control text-light selectpicker" required>
+						<select id="error" class="selectpicker show-tick form-control" data-size="5" required name="estado">
 							<option value="AC">Acre</option>
 							<option value="AL">Alagoas</option>
 							<option value="AP">Amapá</option>
@@ -167,19 +167,13 @@
 	<script src="js/cadastro.js"></script>
 	<script src="node_modules/popper.js/dist/umd/popper.js"></script>
 	<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
-	<script src="../dist/js/bootstrap-select.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.bundle.min.js"></script>
+	<script src="node_modules/bootstrap-select/dist/js/bootstrap-select.js"></script>
+
 
 </body>
 <script>
-	$(document).ready(function () {
-		$(window).keydown(function (event) {
-			if (event.keyCode == 13) {
-				event.preventDefault();
-				return false;
-			}
-		});
-	});
-
+	$('.selectpicker').selectpicker();
 	$(document).ready(function () {
 		$('.cep').mask('99999-999');
 		$('.cpf').mask('999.999.999-99');
