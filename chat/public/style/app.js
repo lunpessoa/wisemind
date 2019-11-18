@@ -56,72 +56,37 @@ app.use('/', (req, res) => {
 let sala = ''
 let messages = []
 var users = []
-var user_total = []
-var id_user 
+var id_user
 var users_sala = []
+
+var num_sala = []
 
 
 
 //Conexão Socket
 io.on('connection', socket => {
 
-        if(users.length == 0){
-            console.log("É zero porra")
-        }
-        // Substitua pelo seu comando
-        var queryString = 'SELECT * FROM usuarios where id_usuario=1;';
-
-        // Executa o comando SQL
-        connection.query(queryString, function(err, usuario, fields) {
-        if (err) throw err;''
-
-        // Faz o laço para retornar os dados
-        for (var i in usuario) {
-        console.log('Usuario logado: ', usuario[i].Nome);
-        }
-        });
-
     //Recebendo dados usuario
     socket.on('sala', data => {
-        
-        sala = data.sala
-        id_user = data.id_usuario + '-' + String(sala)
+        sala = data.sala 
+        socket.id = data.id_usuario 
         socket.sala = data.sala
-
-        console.log(socket.id)
-        console.log('id do usuario: '+id_user)
-        socket.join(sala);
+        id_user = data.id_usuario 
+        socket.join(sala)
         var clients = io.sockets.adapter.rooms[sala]
         console.log(clients)
         console.log('numero usuarios: '+clients.length+' da sala = '+socket.sala)
-        console.log('sala: '+sala)
-        console.log('nome: '+data.nome_usuario)
-        
-        //sala
-        if(users.indexOf(id_user) === -1){
-            users.push(id_user)
-        }
-        //total
-        if(user_total.indexOf(data.id_usuario) === -1){
-            user_total.push(id_user)
-        } 
 
-        users_sala = users.filter((item)=>{
-            var splitSala = item.split("-")
-            return splitSala[1]==String(sala)
-        })
-
-        console.log('usuarios por sala ='+users_sala.length)
-
+    
         var queryChatUpdate = 'UPDATE chat SET Num_Participantes = '+ clients.length +' where id_Chat = '+socket.sala+';';
         connection.query(queryChatUpdate, function (err, result) {
             if (err) throw err;
             console.log(result.affectedRows + " record(s) updated");
           });
 
-        console.log('tamanho user: '+users.length)
-        io.to(sala).emit('usersNum', users_sala)
+        socket.broadcast.to(socket.sala).emit('usersNum', clients);
         socket.broadcast.to(sala).emit('usersList', users_sala)
+
     })
 
 
@@ -145,12 +110,11 @@ io.on('connection', socket => {
     socket.on('sendMessage', data => {
         console.log(data)
         messages.push(data)
-        socket.broadcast.to(sala).emit('receiveMessage', data)
+        socket.broadcast.to(data.sala).emit('receiveMessage', data)
     })
 
     socket.on('disconnect', ()=>{
 
-        
         socket.leave(socket.rooms);
 
         var clients = io.sockets.adapter.rooms[socket.sala]

@@ -97,7 +97,7 @@
                 <div class="buttons d-flex justify-content-center">
                     <a class="btn pb-0" style="color: #fff; cursor: default;" href="">
                         <i class="fas fa-user-friends"></i>
-                        <label class="font-weight-bold font-italic mb-0" style="cursor: default;"><label id="campo_num">01</label>/20</label>
+                        <label class="font-weight-bold font-italic mb-0" style="cursor: default;"><label id="campo_num"></label>/20</label>
                     </a>
                 </div>
             </section>
@@ -279,7 +279,7 @@
     //numero
     socket.on('usersNum', function (data) {
         //userList(data)
-        numUsers(data)
+        numUsers(data.length)
     })
 
 
