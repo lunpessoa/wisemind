@@ -155,8 +155,7 @@ io.on('connection', socket => {
             if(users.indexOf(id_user) !== -1){
                 users.splice(users.indexOf(id_user), 1)
             }
-            console.log("sobrou: "+users.length)
-            console.log("sobrou-usu: "+users_sala.length)
+
             var queryChatUpdate = 'UPDATE chat SET Num_Participantes = '+ users_sala.length +' where id_Chat = '+sala+';';
             connection.query(queryChatUpdate, function (err, result) {
             if (err) throw err;
