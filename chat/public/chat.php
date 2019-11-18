@@ -95,7 +95,7 @@
                     </li>
                 </ul>
                 <div class="buttons d-flex justify-content-center">
-                    <a class="btn" style="color: #fff; cursor: default;" href="">
+                    <a class="btn pb-0" style="color: #fff; cursor: default;" href="">
                         <i class="fas fa-user-friends"></i>
                         <label class="font-weight-bold font-italic mb-0" style="cursor: default;"><label id="campo_num"></label>/20</label>
                     </a>
