@@ -16,14 +16,18 @@
 		$datanasc = array_reverse($datanasc);
 		$datanasc = implode ('/', $datanasc);
 
-		$cpf_test = str_split($con['CPF'], 3);
-		$cpf = $cpf_test[0].'.'.$cpf_test[1].'.'.$cpf_test[2].'-'.$cpf_test[3];
+		if($con['CPF']){
+			$cpf_test = str_split($con['CPF'], 3);
+			$cpf = $cpf_test[0].'.'.$cpf_test[1].'.'.$cpf_test[2].'-'.$cpf_test[3];
+		}
 		
 		$c = str_split($con['Cell'], 1);
 		$cell = '('.$c[0].$c[1].') '.$c[2].$c[3].$c[4].$c[5].$c[6].'-'.$c[7].$c[8].$c[9].$c[10];
 
-		$cep_text = str_split($con['CEP'], 5);
-		$cep = $cep_text[0].'-'.$cep_text[1];
+		if($con['CEP']){
+			$cep_text = str_split($con['CEP'], 5);
+			$cep = $cep_text[0].'-'.$cep_text[1];
+		}
 
 	if($con['id_privilegio']==1){
 		$sql2=('select * from estudantes where id_estudante = '. $_SESSION["id_user"].';');

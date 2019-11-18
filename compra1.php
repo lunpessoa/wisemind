@@ -115,7 +115,7 @@
 					</section>
 					<section class="form-group col-md-4">
 						<label for="inputState">Estado</label>
-						<select id="error" class="selectpicker show-tick form-control" data-size="5" required name="estado">
+						<select id="error" class="form-control text-light" data-size="5" required name="estado">
 							<option value="AC">Acre</option>
 							<option value="AL">Alagoas</option>
 							<option value="AP">Amapá</option>
