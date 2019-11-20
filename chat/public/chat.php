@@ -46,7 +46,7 @@
                 <div class="row">
                     <div class="col-6">
                         <label class="ml-3 chat-name text-light font-weight-bold font-italic mb-0">Sala:
-                            Biologia</label><br>
+                            <?php echo($con_sala['nome']." id=".$con_sala['id_Chat']) ?></label><br>
                         <label class="ml-3 area-chat font-weight-bold font-italic">Área: Biológicas</label>
                     </div>
                     <div class="col-6 justify-content-end align-items-center d-flex">
@@ -97,7 +97,8 @@
                 <div class="buttons d-flex justify-content-center">
                     <a class="btn pb-0" style="color: #fff; cursor: default;" href="">
                         <i class="fas fa-user-friends"></i>
-                        <label class="font-weight-bold font-italic mb-0" style="cursor: default;"><label id="campo_num"></label>/20</label>
+                        <label class="font-weight-bold font-italic mb-0" style="cursor: default;"><label
+                                id="campo_num"></label>/20</label>
                     </a>
                 </div>
             </section>
@@ -154,9 +155,23 @@
     </script>");    
 ?>
 <script>
-    var socket = io.connect("http://localhost:3001");
+    var socket = io.connect("http://localhost:3001", {
+    'reconnection': true,
+    'timeout': 50,
+    'connect_timeout': 100,
+    'reconnectionDelay': 200,
+    'reconnectionDelayMax' : 500,
+    'reconnectionAttempts': 1
+    })
+
+
     //var socket = io(); //conexão
     //sala
+    socket.on('connect_error', function () {
+        window.location.href = "../../chats.php"
+        socket.emit('desconectado')
+    });
+    
 
     const campoMessagem = document.getElementById('msg')
 
@@ -263,7 +278,7 @@
         return now
     }
 
-    function numUsers(num){
+    function numUsers(num) {
         var campoNum = document.getElementById('campo_num')
         campoNum.innerHTML = num;
     }
@@ -291,8 +306,7 @@
     })
 
     //Recebendo usuarios
-    socket.on('usersList', function (data) {
-    })
+    socket.on('usersList', function (data) {})
 
     //Enviando mensagens
     document.getElementById('chat').onsubmit = function (e) {
