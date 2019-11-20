@@ -87,18 +87,26 @@
                 <div id="itens-nav" class="list-nav w-100">
                     <ul class="nav flex-column text-font-calibri text-center">
                         <li class="nav-item config-item ">
-                            <a class="nav-link h5 mb-0 px-3 pt-4" href="users.php"><i class="fas fa-user-cog mr-1"></i>
+                            <a class="nav-link h5 mb-0 px-3 pt-4" href="users.php">
+                                <i class="fas fa-user-cog mr-1"></i>
                                 <label class="h5 cursor-pointer">Usuarios</label></a>
                         </li>
                         <hr class="w-75 bg-white my-1">
                         <li class="nav-item config-item">
-                            <a class="nav-link h5 mb-0 px-3 pt-4" href="suporte.php"><i class="fas fa-headset mr-1"></i>
+                            <a class="nav-link h5 mb-0 px-3 pt-4" href="suporte.php">
+                                <i class="fas fa-headset mr-1"></i>
                                 <label class="h5 cursor-pointer">Suporte</label></a>
                         </li>
                         <hr class="w-75 bg-white my-1">
                         <li class="nav-item config-item">
-                            <a class="nav-link h5 mb-0 px-3 pt-4" href="pagamentos.php"><i
-                                    class="fas fa-credit-card mr-1"></i>
+                            <a class="nav-link h5 mb-0 px-3 pt-4" href="profissional.php">
+                                <i class="fas fa-user-tie mr-1"></i>
+                                <label class="h5 cursor-pointer">Profissional</label></a>
+                        </li>
+                        <hr class="w-75 bg-white my-1">
+                        <li class="nav-item config-item">
+                            <a class="nav-link h5 mb-0 px-3 pt-4" href="pagamentos.php">
+                                <i class="fas fa-credit-card mr-1"></i>
                                 <label class="h5 cursor-pointer">Pagamentos</label></a>
                         </li>
                         <hr class="w-75 bg-white my-1">

@@ -2,7 +2,11 @@
 
 <head>
 	<title> Suporte </title>
-	<?php include('menu.php'); ?>
+	<?php 
+		include('assets/conexao.php');
+		include('menu.php'); 
+	?>
+	
 	<link rel="shortcut icon" href="img/ico.png" />
 	<link rel="stylesheet" type="text/css" href="style/cssuporte.css" />
 	<meta charset="UTF-8">
@@ -79,50 +83,64 @@
 	<section id="formulario" class="container-fluid suporte-form">
 		<section class="container">
 			<p class="h3 text-light font-galada text-center pb-3">Não achou a solução? Envie-nos uma mensagem!</p>
-			<form>
+			<form action="#" method="post" id="formulario">
 				<div class="form-row">
 					<div class="form-group col-sm-6">
 						<label for="inputNome" class="text-light lbl-links">Nome</label>
-						<input type="text" class="form-control text-light" id="inputNome" placeholder="José">
+						<input type="text" class="form-control text-light" name="nome" id="inputNome" placeholder="José">
 					</div>
 					<div class="form-group col-sm-6">
 						<label for="inputSobrenome" class="text-light lbl-links">Sobrenome</label>
-						<input type="text" class="form-control text-light" id="inputSobrenome" placeholder="Magalhães">
+						<input type="text" class="form-control text-light" name="sobrenome" id="inputSobrenome" placeholder="Magalhães">
 					</div>
 				</div>
 				<div class="form-row">
-					<div class="form-group col-sm-8">
+					<div class="form-group col-sm-10">
 						<label for="inputEmail" class="text-light lbl-links">E-mail</label>
-						<input type="text" class="form-control text-light" id="inputEmail"
+						<input type="text" class="form-control text-light" name="email" id="inputEmail"
 							placeholder="email@email.com">
 					</div>
 					<div class="form-group col-sm-2">
-						<label for="inputDDD" class="text-light lbl-links">DDD</label>
-						<input type="text" class="form-control text-light" id="inputDDD" placeholder="DDD">
-					</div>
-					<div class="form-group col-sm-2">
 						<label for="inputTelefone" class="text-light lbl-links">Telefone</label>
-						<input type="text" class="form-control text-light" id="inputTelefone" placeholder="99999-9999">
+						<input type="text" class="form-control text-light phone_with_ddd" name="telefone" id="inputTelefone" placeholder="(00) 99999-9999">
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group col-sm-12">
 						<label for="inputDescricao" class="text-light lbl-links">Descrição</label>
-						<textarea class="form-control text-light" id="inputDescricao" rows="5"
+						<textarea class="form-control text-light" name="descricao" id="inputDescricao" rows="5"
 							placeholder="Descrição..."></textarea>
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group col-sm-12 justify-content-center d-flex mt-5">
-						<button type="submit" class="btn btn-light">Enviar</button>
-						<a tabindex="0" class="btn btn-dark ml-2" role="button" data-toggle="popover"
-							data-placement="right" data-trigger="focus" title="Me ajuda"
-							data-content="Preencha com suas informações">Ajuda</a>
+						<button type="submit" name="enviar" class="btn btn-light w-25">Enviar</button>
 					</div>
 				</div>
 			</form>
 		</section>
 	</section>
+
+	<?php
+
+		if(isset($_POST['enviar'])){
+			function limpar_texto($str){ 
+				return preg_replace("/[^0-9]/", "", $str); 
+			}
+
+			$nome=$_POST['nome'];
+			$sobrenome=$_POST['sobrenome'];
+			$email=$_POST['email'];
+			$telefone=$_POST['telefone'];
+			$celular = limpar_texto($telefone);
+			$descricao=$_POST['descricao'];
+
+			$sql = ('insert into suporte(nome_sup, sobrenome_sup, email, telefone, descricao) values("'.$nome.'", "'.$sobrenome.'", "'.$email.'", "'.$celular.'", "'.$descricao.'");');
+			$sql_resul  = mysqli_query($conexao, $sql);
+			echo('<script>window.location.href = "suporte.php";</script>');
+		}
+
+	?>
 
 	<section class="w-100 position-absolute overflow-hidden" style="margin-top:-120px;">
 		<img src="img/ondinha3.png">
@@ -441,7 +459,20 @@
 	</section>
 
 	<?php include('rodape.html'); ?>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="node_modules/jquery/dist/jquery.js"></script>
+	<script src="node_modules/popper.js/dist/umd/popper.js"></script>
+	<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
 </body>
+<script>
+	$(document).ready(function () {
+		$('.date').mask('99/99/9999');
+		$('.phone_with_ddd').mask('(99) 99999-9999');
+	});
+</script>
 <script>
 	$(document).ready(function () {
 		$('.slide-section').click(function (e) {

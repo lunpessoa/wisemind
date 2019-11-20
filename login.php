@@ -14,13 +14,12 @@ if (!isset($_SESSION)) {
 	<link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
 	<link rel="stylesheet" href="style/login.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
-	<link rel="icon" href="img/logo.png" type="image/x-icon"/>
-  	<link rel="shortcut icon" href="img/logo.png" type="image/x-icon"/>
+	<link rel="icon" href="img/logo.png" type="image/x-icon" />
+	<link rel="shortcut icon" href="img/logo.png" type="image/x-icon" />
 
 </head>
 
-<body style="height:100vh; width:100vw; overflow:hidden;">
-
+<body class="overflow-hidden" style="height:100vh; width:100vw;">
 	<section id="logo" style="z-index:1;">
 		<section class="svgLogo">
 			<svg class="logoWiseMind" version="1.1" width="300px" height="300px" viewBox="0 0 4000 4000"
@@ -100,7 +99,27 @@ if (!isset($_SESSION)) {
 			</div>
 			<div class="card-footer bg-dark border-top-0 text-center text-font"
 				style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; color:#b5b5b5;">
-				Não possui conta? <a href="op-cad.php" class="btn text-warning p-0">Criar!</a>
+				Não possui conta? <button class="btn text-warning m-0 p-0" data-toggle="modal" data-target="#Cadastro">Criar!</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="Cadastro" tabindex="-1" role="dialog"
+		aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content bg-transparent border-0">
+				<div class="modal-header border-dark" style="background-color:#161a20;">
+					<h5 class="modal-title text-white font-roboto">COMO VOCÊ DESEJA SE CADASTRAR?</h5>
+					<button type="button" class="btn text-white" data-dismiss="modal" aria-label="Fechar">
+						<i class="fas fa-times"></i>
+					</button>
+				</div>
+				<div class="modal-body justify-content-center d-flex rounded-bottom" style="background-color:#161a20;">
+					<a class="btn btn-outline-warning mr-3" href="cad-estudy.php"><i class="fas fa-user-graduate"></i>
+						Estudante</a>
+					<a class="btn btn-outline-warning" href="cad-prof.php"><i class="fas fa-user-tie"></i>
+						Profissional</i></a>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -112,7 +131,7 @@ if (!isset($_SESSION)) {
 	<script src="js/javinha.js"></script>
 	<script src="node_modules/popper.js/dist/umd/popper.js"></script>
 	<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
-	
+
 </body>
 <?php
 if (!isset($_SESSION["senha-usuario"])) {
@@ -150,6 +169,6 @@ if( $_SESSION["facaLog"]==true){
 
 ?>
 
-	
+
 
 </html>

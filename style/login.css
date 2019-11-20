@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster|Roboto+Condensed&display=swap');
+
 body {
     background-image: url("../img/back3.png");
     background-size: cover;
@@ -16,6 +18,10 @@ body {
 .login_btn:hover {
     color: black;
     background-color: white;
+}
+
+.font-roboto{
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 .text-font {

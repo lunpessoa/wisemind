@@ -6,10 +6,14 @@
     $resul2=mysqli_query($conexao, $sql2);
     $con2=mysqli_fetch_array($resul2);
 
-    $sql3=('select id_privilegio from usuarios where id_usuario ='. $_SESSION["id_user"].';');
+    $sql3=('select validacao from profissional where id_profissional ='. $_SESSION["id_user"].';');
     $resul3=mysqli_query($conexao, $sql3);
     $con3=mysqli_fetch_array($resul3);
-    if($con2['Plano']==true || $con3['id_privilegio']==2 || $con3['id_privilegio']==3){
+
+    $sql4=('select id_privilegio from usuarios where id_usuario ='. $_SESSION["id_user"].';');
+    $resul4=mysqli_query($conexao, $sql4);
+    $con4=mysqli_fetch_array($resul4);
+    if($con2['Plano']==true || $con3['validacao']==true || $con4['id_privilegio']==3){
 ?>
 
 <!DOCTYPE html>

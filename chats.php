@@ -5,6 +5,10 @@
 	$sql=('select * from usuarios where id_usuario = '. $_SESSION["id_user"].';');
 	$resul=mysqli_query($conexao, $sql);
 	$con=mysqli_fetch_array($resul);
+
+	$sql2=('select validacao from profissional where id_profissional ='. $_SESSION["id_user"].';');
+    $resul2=mysqli_query($conexao, $sql2);
+    $con2=mysqli_fetch_array($resul2);
 ?>
 
 <!DOCTYPE html>
@@ -44,7 +48,7 @@
 	</section>
 
 	<?php
-		if($con['id_privilegio']==2){
+		if($con['id_privilegio']==2 && $con2['validacao']==true){
 			echo('<div class="container d-flex justify-content-center">
 			<button type="button" data-toggle="modal" data-target="#modalExemplo" class="btn btn-warning">Criar Sala</button>
 		</div>');
