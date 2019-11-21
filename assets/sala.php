@@ -20,7 +20,7 @@
                     $resul=mysqli_query($conexao, $sql);
                     $con=mysqli_fetch_array($resul);
                     if($resul){
-                        $_SESSION['sala'] = $sala;
+                        $_SESSION['sala'] = $con['id_Chat'];
                         header("Location: ../chat/public/chat.php");
                     } //cadastro com sucesso
                     

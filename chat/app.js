@@ -62,56 +62,50 @@ var users_sala = []
 
 
 
+
+
 //Conexão Socket
 io.on('connection', socket => {
 
-        if(users.length == 0){
-            console.log("É zero porra")
-        }
-        // Substitua pelo seu comando
-        var queryString = 'SELECT * FROM usuarios where id_usuario=1;';
-
-        // Executa o comando SQL
-        connection.query(queryString, function(err, usuario, fields) {
-        if (err) throw err;''
-
-        // Faz o laço para retornar os dados
-        for (var i in usuario) {
-        console.log('Usuario logado: ', usuario[i].Nome);
-        }
-        });
 
     //Recebendo dados usuario
     socket.on('sala', data => {
+
         
         sala = data.sala
-        id_user = data.id_usuario + '-' + String(sala)
+        socket.id
         socket.sala = data.sala
-
-        console.log(socket.id)
+        socket.user = data.id_usuario + "-" + socket.sala
+        console.log(socket.user)
         console.log('id do usuario: '+id_user)
         socket.join(sala);
         var clients = io.sockets.adapter.rooms[sala]
+        console.log(io.sockets.adapter.rooms[sala])
         console.log(clients)
         console.log('numero usuarios: '+clients.length+' da sala = '+socket.sala)
         console.log('sala: '+sala)
         console.log('nome: '+data.nome_usuario)
         
         //sala
-        if(users.indexOf(id_user) === -1){
-            users.push(id_user)
+        if(users.indexOf(socket.user) === -1){
+            users.push(socket.user)
         }
         //total
         if(user_total.indexOf(data.id_usuario) === -1){
             user_total.push(id_user)
-        } 
+        }
 
         users_sala = users.filter((item)=>{
-            var splitSala = item.split("-")
-            return splitSala[1]==String(sala)
+            let con = item.split("-")
+            if(con[1]==socket.sala){
+                return con
+            }
         })
 
-        console.log('usuarios por sala ='+users_sala.length)
+        console.log(users_sala)
+
+
+        console.log('usuarios por sala ='+users_sala)
 
         var queryChatUpdate = 'UPDATE chat SET Num_Participantes = '+ clients.length +' where id_Chat = '+socket.sala+';';
         connection.query(queryChatUpdate, function (err, result) {
@@ -120,8 +114,9 @@ io.on('connection', socket => {
           });
 
         console.log('tamanho user: '+users.length)
-        io.to(sala).emit('usersNum', users_sala)
+        io.to(socket.sala).emit('usersNum', clients)
         socket.broadcast.to(sala).emit('usersList', users_sala)
+        
     })
 
 
@@ -148,30 +143,32 @@ io.on('connection', socket => {
         socket.broadcast.to(sala).emit('receiveMessage', data)
     })
 
+
     socket.on('disconnect', ()=>{
 
         
         socket.leave(socket.rooms);
 
-        var clients = io.sockets.adapter.rooms[socket.sala]
-        if(clients!=undefined){
+        clients = io.sockets.adapter.rooms[socket.sala]
+        console.log(clients)
+        if(clients!=undefined && socket.sala!=undefined){
             console.log(clients)
             console.log('sobrou numero usuarios: '+clients.length+' da sala = '+socket.sala)
 
-            socket.broadcast.to(socket.sala).emit('usersNum', clients);
+            io.to(socket.sala).emit('usersNum', clients)
             var queryChatUpdate = 'UPDATE chat SET Num_Participantes = '+ clients.length +' where id_Chat = '+socket.sala+';';
             connection.query(queryChatUpdate, function (err, result) {
             if (err) throw err;
-                console.log(result.affectedRows + " record(s) updated");
+            console.log(result.affectedRows + " record(s) updated");
             });
             
-        }else{
+        }else if(socket.sala!=undefined){
             console.log('cabo')
             var queryChatUpdate = 'UPDATE chat SET Num_Participantes = '+ 0 +' where id_Chat = '+socket.sala+';';
-            connection.query(queryChatUpdate, function (err, result) {
+             connection.query(queryChatUpdate, function (err, result) {
             if (err) throw err;
-                console.log(result.affectedRows + " record(s) updated");
-            });
+            console.log(result.affectedRows + " record(s) updated");
+          });
         }
         
           socket.broadcast.to(sala).emit('usersList', users_sala)

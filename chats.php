@@ -68,7 +68,7 @@
 
 	echo('
 			<section class="col-12 col-md-4" id="sala'.$con["id_Chat"].'">
-				<a class="btn" href="#">
+				<a class="btn" href="assets/redmin_sala.php?sala='.$con['id_Chat'].'.">
 					<section class="card">
 						<img src="img/slide_amarelo.gif" class="card-img-top" alt="...">
 						<section class="card-body text-center pb-2">
@@ -128,21 +128,7 @@
 	<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
 	<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
 </body>
-<?php
-	echo(
-		'<script>
-			for (let x = 1; x <= '.$num_salas.'; x++) {
-				var link = document.getElementById("sala" + x)
-				if (link != null) {
-					link.onclick = (e) => {
-						e.preventDefault()
-						window.location.href = "assets/redmin_sala.php?sala=" + x
-					}
-				}
-			}
-		</script>');
 
-?>
 <script>
 	$(document).ready(function () {
 		$(window).keydown(function (event) {

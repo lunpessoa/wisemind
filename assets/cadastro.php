@@ -112,7 +112,7 @@
                 $sqlinserir2 = ('insert into date_login (pri_login, ultimo_login, id_usu) values("'.date('Y-m-d').'", "'.date('Y-m-d H:i:s', time()).'", '.$con['id_usuario'].');');
                 $inserir2=mysqli_query($conexao,$sqlinserir2) or die (mysqli_error($conexao));
 
-                $sqlinserir3 = ('insert into profissional (id_profissional, experiencia, certificado) values('.$con['id_usuario'].',"'.$exp.'","'.$cert.'");');
+                $sqlinserir3 = ('insert into profissional (id_profissional, experiencia, certificado, validacao) values('.$con['id_usuario'].',"'.$exp.'","'.$cert.'",0);');
                 $inserir3=mysqli_query($conexao,$sqlinserir3) or die (mysqli_error($conexao));
 
                 if($inserir3){ 
