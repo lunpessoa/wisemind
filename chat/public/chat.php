@@ -62,37 +62,8 @@
         </section>
         <section class="corpo border-top-0">
             <section class="estudantes bg-dark float-left">
-                <ul class="pt-3 pl-0">
-                    <li class="list-user">
-                        <a href="#" class="users text-decoration-none">
-                            <div class="position-relative p-0 ml-5 class-users">
-                                <img class="class-img" src="img/lima.jpg" alt="">
-                                <div class="status"></div>
-                            </div>
-                            <label class="user-name ml-3 mt-3 h6 font-weight-bold font-italic">Lima_Barreto <br><label
-                                    class="users-situacao font-weight-bold font-italic">#Online</label> </label>
-                        </a>
-                    </li>
-                    <li class="list-user">
-                        <a href="#" class="users text-decoration-none">
-                            <div class="position-relative p-0 ml-5 class-users">
-                                <img class="class-img" src="img/antonio.jpg" alt="">
-                                <div class="status"></div>
-                            </div>
-                            <label class="user-name ml-3 mt-3 h6 font-weight-bold font-italic">Antonio_Conselheiro
-                                <br><label class="users-situacao font-weight-bold font-italic">#Online</label></label>
-                        </a>
-                    </li>
-                    <li class="list-user">
-                        <a href="#" class="users text-decoration-none">
-                            <div class="position-relative p-0 ml-5 class-users">
-                                <img class="class-img" src="img/jorge.jpg" alt="">
-                                <div class="status"></div>
-                            </div>
-                            <label class="user-name ml-3 mt-3 h6 font-weight-bold font-italic">Jorge_MegaFire <br><label
-                                    class="users-situacao font-weight-bold font-italic">#Online</label></label>
-                        </a>
-                    </li>
+                <ul class="pt-3 pl-0" id="list-users">
+                    
                 </ul>
                 <div class="buttons d-flex justify-content-center">
                     <a class="btn pb-0" style="color: #fff; cursor: default;" href="">
@@ -152,8 +123,17 @@
         var id_usuario = ".$con['id_usuario']."
         var nome_usuario = '".$con['Nome']."'
         var sala = ".$con_sala['id_Chat']."
-    </script>");    
+    </script>");
+    
 ?>
+<script>
+    function renderUsers(data){
+        for(var x = 0;x<data.length;x++){
+            $.post('../../assets/chat-users.php', {pag: data}, function (data2) {
+            $("#list-users").html(data2);
+        });
+        }
+    }</script>
 <script>
     var socket = io.connect("http://localhost:3001", {
     'reconnection': true,
@@ -283,6 +263,8 @@
         campoNum.innerHTML = num;
     }
 
+    
+
 
 
     document.getElementById("sair").onclick = (e) => {
@@ -306,7 +288,9 @@
     })
 
     //Recebendo usuarios
-    socket.on('usersList', function (data) {})
+    socket.on('usersList', function (data) {
+        renderUsers(data)
+    })
 
     //Enviando mensagens
     document.getElementById('chat').onsubmit = function (e) {
