@@ -1,4 +1,5 @@
 <?php
+	ob_start();
 	include('assets/conexao.php');
 	session_start();
 	if(isset($_SESSION["log_status"]) && $_SESSION["log_status"]==true){
@@ -557,7 +558,15 @@
 														placeholder="'.$con_prof["Profissao"].'"
 														value="'.$con_prof["Profissao"].'"
 														name="profissao'.$con_prof["id_espc"].'" required></td>
+														<td><a class="btn text-light" href="painel-usu.php?ex='.$con_prof['id_espc'].'" style="cursor:pointer"><i class="fas fa-times-circle"></i></a></td>
 											</tr>');
+
+											if(isset($_GET['ex'])){
+												$ex = $_GET['ex'];
+												$sql_del=('delete from especializacao where id_prof = '.$con_prof["id_prof"].' and id_espc = '.$ex.';');
+												$del_sql=mysqli_query($conexao, $sql_del);    
+												header("Refresh:0");
+											}
 									}
 								?>
 								</tbody>

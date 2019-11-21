@@ -12,10 +12,10 @@
     box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.5);
 }
 
-.icon-info{
-    font-size:120px; 
-    opacity:0.5; 
-    z-index:-1
+.icon-info {
+    font-size: 120px;
+    opacity: 0.5;
+    z-index: -1
 }
 
 .areas-slide {
@@ -26,7 +26,7 @@
     font-family: 'Lobster', cursive;
 }
 
-.font-roboto{
+.font-roboto {
     font-family: 'Roboto Condensed', sans-serif;
 }
 
@@ -56,21 +56,21 @@
     height: 80px;
 }
 
-.sobre-back{
+.sobre-back {
     background-image: url('../img/fundo_azul.png');
     background-attachment: fixed;
     background-position: center;
     padding-top: 80px;
     padding-bottom: 100px;
-    margin-top:50px;
-    margin-bottom:200px;
+    margin-top: 50px;
+    margin-bottom: 200px;
 }
 
-.plataform-back{
-    height:200px;
+.plataform-back {
+    height: 200px;
     background-image: url('../img/fundo.png');
     background-attachment: fixed;
-    margin-top:100px;
+    margin-top: 100px;
 }
 
 /* JQUERY Menu */
