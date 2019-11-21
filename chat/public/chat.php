@@ -133,7 +133,9 @@
             $("#list-users").html(data2);
         });
         }
-    }</script>
+    }
+    
+</script>
 <script>
     var socket = io.connect("http://localhost:3001", {
     'reconnection': true,
