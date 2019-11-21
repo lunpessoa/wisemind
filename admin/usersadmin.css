@@ -16,11 +16,11 @@ body {
 }
 
 thead {
-    background-color: rgba(38, 40, 46, 0.8)
+    background-color: rgba(38, 40, 46, 0.8);
 }
 
 tbody {
-    background-color: rgba(47, 49, 56, 0.75)
+    background-color: rgba(47, 49, 56, 0.75);
 }
 
 .text-clear {
@@ -51,6 +51,19 @@ tbody {
     position: relative;
     top: -200px;
     box-shadow: 10px 10px 14px -9px rgba(0, 0, 0, 0.75);
+}
+
+.item{
+    justify-content: center;
+    display: flex;
+}
+
+.card-header {
+    background-color: rgba(38, 40, 46, 0.8);
+}
+
+.card-body {
+    background-color: rgba(47, 49, 56, 0.75);
 }
 
 @keyframes float {
