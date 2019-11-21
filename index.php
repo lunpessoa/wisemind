@@ -33,7 +33,7 @@ if (!isset($_SESSION)) {
       <section class="carousel-item active">
         <img src="img/back.png" class="img-fluid d-block">
         <section class="carousel-caption d-none d-md-block text-light">
-          <h3>Wise Mind</h3>
+          <h3 id="test">Wise Mind</h3>
           <p>Aprenda, Dedique-se e Conquiste</p>
         </section>
       </section>
@@ -228,13 +228,10 @@ if (!isset($_SESSION)) {
       touchSupport: true,
       snapHandle: true
     },
-    callbacks : {
-      onScroll : function(eventArgs) {
-        
-       }
+    callbacks: {
+      
     }
   });
-  
 </script>
 
 <?php

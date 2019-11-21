@@ -5,7 +5,6 @@ $(document).ready(function () {
     })
 })
 
-
 var zero = 0;
 $(document).ready(function () {
     $(window).on('scroll', function () {
@@ -13,6 +12,8 @@ $(document).ready(function () {
         $('.svgLogo').toggleClass('logoRetrat', $(window).scrollTop() > zero);
     })
 })
+
+
 
 $(function () {
     $('[data-toggle="tooltip"]').tooltip()
