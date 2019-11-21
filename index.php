@@ -20,7 +20,6 @@ if (!isset($_SESSION)) {
 
 <body>
 
-
   <?php include('menu.php');?>
 
   <section id="carouselSite" class="carousel slide" style="z-index: 0" data-ride="carousel">
@@ -192,8 +191,6 @@ if (!isset($_SESSION)) {
     </section>
   </section>
 
-
-
   <?php include('rodape.html'); ?>
   <script src="node_modules/jquery/dist/jquery.js"></script>
   <script src="node_modules/popper.js/dist/umd/popper.js"></script>
@@ -202,38 +199,9 @@ if (!isset($_SESSION)) {
   <!-- javascript SimpleBar -->
   <script src="node_modules/OverlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
   <script src="node_modules/OverlayScrollbars/js/OverlayScrollbars.min.js"></script>
+  <script src="js/javinha.js"></script>
 
 </body>
-
-<script>
-  var instance = OverlayScrollbars(document.getElementsByTagName("body"), {
-    className: "os-theme-dark",
-    resize: "none",
-    sizeAutoCapable: true,
-    clipAlways: true,
-    normalizeRTL: true,
-    paddingAbsolute: false,
-    autoUpdate: null,
-    autoUpdateInterval: 33,
-    nativeScrollbarsOverlaid: {
-      showNativeScrollbars: false,
-      initialize: true
-    },
-    scrollbars: {
-      visibility: "auto",
-      autoHide: "move",
-      autoHideDelay: 500,
-      dragScrolling: true,
-      clickScrolling: false,
-      touchSupport: true,
-      snapHandle: true
-    },
-    callbacks: {
-      
-    }
-  });
-</script>
-
 <?php
 if (!isset($_SESSION["cadastrado"])) {
 	$_SESSION["cadastrado"]=false;

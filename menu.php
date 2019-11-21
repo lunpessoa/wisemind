@@ -19,6 +19,9 @@ if (!isset($_SESSION)) {
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
   <link rel="icon" href="img/logo.png" type="image/x-icon" />
   <link rel="shortcut icon" href="img/logo.png" type="image/x-icon" />
+
+  <!-- ScrollBar Stylesheets -->
+	<link rel="stylesheet" href="node_modules/OverlayScrollbars/css/OverlayScrollbars.min.css">
 </head>
 
 <body>
@@ -56,8 +59,8 @@ if (!isset($_SESSION)) {
   </div>
 
   <section id="logo">
-    <section class="fundoLogo">
-      <section class="svgLogo">
+    <section class="fundoLogo" id="fundo">
+      <section class="svgLogo" id="logosvg">
         <svg class="logoWiseMind" version="1.1" viewBox="0 0 847 847">
           <defs>
             <style type="text/css">
@@ -97,7 +100,7 @@ if (!isset($_SESSION)) {
     </section>
   </section>
 
-  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-dark navbarMenuItens">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-dark navbarMenuItens" id="nav">
     <button class="navbar-toggler border-0" data-toggle="collapse" data-target="#navbarSite">
       <i class="fa fa-bars text-warning" aria-hidden="true"></i>
     </button>
@@ -140,9 +143,9 @@ if (!isset($_SESSION)) {
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="node_modules/jquery/dist/jquery.js"></script>
-  <script src="js/javinha.js"></script>
   <script src="node_modules/popper.js/dist/umd/popper.js"></script>
-  <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>  
+  
 </body>
 
 </html>

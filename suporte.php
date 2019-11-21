@@ -6,14 +6,17 @@
 		include('assets/conexao.php');
 		include('menu.php'); 
 	?>
-	
+
 	<link rel="shortcut icon" href="img/ico.png" />
 	<link rel="stylesheet" type="text/css" href="style/cssuporte.css" />
 	<meta charset="UTF-8">
 
+	<!-- ScrollBar Stylesheets -->
+  	<link rel="stylesheet" href="node_modules/OverlayScrollbars/css/OverlayScrollbars.min.css">
+
 </head>
 
-<body id="body">
+<body>
 	<nav class="nav position-fixed button-back text-center align-items-center d-flex">
 		<a href="#inicio" class="slide-section text-dark bg-warning"><i class="fas fa-angle-up"></i></a>
 	</nav>
@@ -87,11 +90,13 @@
 				<div class="form-row">
 					<div class="form-group col-sm-6">
 						<label for="inputNome" class="text-light lbl-links">Nome</label>
-						<input type="text" class="form-control text-light" name="nome" id="inputNome" placeholder="José">
+						<input type="text" class="form-control text-light" name="nome" id="inputNome"
+							placeholder="José">
 					</div>
 					<div class="form-group col-sm-6">
 						<label for="inputSobrenome" class="text-light lbl-links">Sobrenome</label>
-						<input type="text" class="form-control text-light" name="sobrenome" id="inputSobrenome" placeholder="Magalhães">
+						<input type="text" class="form-control text-light" name="sobrenome" id="inputSobrenome"
+							placeholder="Magalhães">
 					</div>
 				</div>
 				<div class="form-row">
@@ -102,7 +107,8 @@
 					</div>
 					<div class="form-group col-sm-2">
 						<label for="inputTelefone" class="text-light lbl-links">Telefone</label>
-						<input type="text" class="form-control text-light phone_with_ddd" name="telefone" id="inputTelefone" placeholder="(00) 99999-9999">
+						<input type="text" class="form-control text-light phone_with_ddd" name="telefone"
+							id="inputTelefone" placeholder="(00) 99999-9999">
 					</div>
 				</div>
 				<div class="form-row">
@@ -445,7 +451,8 @@
 							(suporte@wisemind.com ) falando da área e profissão para que possamos inseri-la se possível.
 							<br><br>
 							<h5><b>Utilize do formulário acima</b></h5>
-							Vá até o ínicio da pagina suporte e utilize do formulário disponivel, informe-nos sobre os problemas e faltas.
+							Vá até o ínicio da pagina suporte e utilize do formulário disponivel, informe-nos sobre os
+							problemas e faltas.
 							<br><br>
 							<b><em>Ainda não funciona?</em></b>
 							<a href="#formulario" class="slide-section">clique aqui</a> <em>para nos informar sobre
@@ -459,13 +466,16 @@
 	</section>
 
 	<?php include('rodape.html'); ?>
-
-	<!-- Optional JavaScript -->
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="node_modules/jquery/dist/jquery.js"></script>
 	<script src="node_modules/popper.js/dist/umd/popper.js"></script>
 	<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
 	<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+
+	<!-- javascript SimpleBar -->
+	<script src="node_modules/OverlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+	<script src="node_modules/OverlayScrollbars/js/OverlayScrollbars.min.js"></script>
+	<script src="js/javinha.js"></script>
+	
 </body>
 <script>
 	$(document).ready(function () {
@@ -473,7 +483,8 @@
 		$('.phone_with_ddd').mask('(99) 99999-9999');
 	});
 </script>
-<script>
+<script> 
+	// parou
 	$(document).ready(function () {
 		$('.slide-section').click(function (e) {
 			var linkHref = $(this).attr('href');
