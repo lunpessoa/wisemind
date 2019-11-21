@@ -141,7 +141,7 @@ io.on('connection', socket => {
 
         clients = io.sockets.adapter.rooms[socket.sala]
         console.log(clients)
-        if(clients!=undefined){
+        if(clients!=undefined && socket.sala!=undefined){
             console.log(clients)
             console.log('sobrou numero usuarios: '+clients.length+' da sala = '+socket.sala)
 
@@ -152,7 +152,7 @@ io.on('connection', socket => {
             console.log(result.affectedRows + " record(s) updated");
             });
             
-        }else{
+        }else if(socket.sala!=undefined){
             console.log('cabo')
             var queryChatUpdate = 'UPDATE chat SET Num_Participantes = '+ 0 +' where id_Chat = '+socket.sala+';';
              connection.query(queryChatUpdate, function (err, result) {
