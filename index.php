@@ -11,8 +11,11 @@ if (!isset($_SESSION)) {
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="icon" href="img/logo.png" type="image/x-icon"/>
-  <link rel="shortcut icon" href="img/logo.png" type="image/x-icon"/>
+  <link rel="icon" href="img/logo.png" type="image/x-icon" />
+  <link rel="shortcut icon" href="img/logo.png" type="image/x-icon" />
+
+  <!-- ScrollBar Stylesheets -->
+  <link rel="stylesheet" href="node_modules/OverlayScrollbars/css/OverlayScrollbars.min.css">
 </head>
 
 <body>
@@ -195,9 +198,44 @@ if (!isset($_SESSION)) {
   <script src="node_modules/jquery/dist/jquery.js"></script>
   <script src="node_modules/popper.js/dist/umd/popper.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
-  <script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+
+  <!-- javascript SimpleBar -->
+  <script src="node_modules/OverlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+  <script src="node_modules/OverlayScrollbars/js/OverlayScrollbars.min.js"></script>
 
 </body>
+
+<script>
+  var instance = OverlayScrollbars(document.getElementsByTagName("body"), {
+    className: "os-theme-dark",
+    resize: "none",
+    sizeAutoCapable: true,
+    clipAlways: true,
+    normalizeRTL: true,
+    paddingAbsolute: false,
+    autoUpdate: null,
+    autoUpdateInterval: 33,
+    nativeScrollbarsOverlaid: {
+      showNativeScrollbars: false,
+      initialize: true
+    },
+    scrollbars: {
+      visibility: "auto",
+      autoHide: "move",
+      autoHideDelay: 500,
+      dragScrolling: true,
+      clickScrolling: false,
+      touchSupport: true,
+      snapHandle: true
+    },
+    callbacks : {
+      onScroll : function(eventArgs) {
+        
+       }
+    }
+  });
+  
+</script>
 
 <?php
 if (!isset($_SESSION["cadastrado"])) {
