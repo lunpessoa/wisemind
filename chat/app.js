@@ -73,7 +73,7 @@ io.on('connection', socket => {
 
         
         sala = data.sala
-        socket.id
+        socket.info = data.id_usuario
         socket.sala = data.sala
         socket.user = data.id_usuario + "-" + socket.sala
         console.log(socket.user)
@@ -127,8 +127,8 @@ io.on('connection', socket => {
     })
 
     //usuario esta digitando...press
-    socket.on('typing', (dados) => {
-        socket.broadcast.to(dados.sala).emit('renderTyping', dados.user)
+    socket.on('typing', (data) => {
+        socket.broadcast.to(data.sala).emit('renderTyping', data.id_usuario)
     })
 
     //usuario esta digitando...up
@@ -146,20 +146,46 @@ io.on('connection', socket => {
 
     socket.on('disconnect', ()=>{
 
-        
+
         socket.leave(socket.rooms);
 
+        if(users.indexOf(socket.user) !== -1){
+            users.splice(users.indexOf(socket.user),1)
+        }
+
+        if(users_sala.indexOf(socket.user) !== -1){
+            users_sala.splice(users_sala.indexOf(socket.user),1)
+        }
+
         clients = io.sockets.adapter.rooms[socket.sala]
+
+        if(clients==undefined){
+            users_sala = []
+
+        }else if(clients.length ==1 ){
+            users_sala = []
+        }else{
+
+        
+
+        users_sala = users_sala.filter((item)=>{
+            let con = item.split("-")
+                
+            if(item!=socket.user && socket.sala!=undefined && socket.user!=undefined && con[1]==socket.sala){
+                return item
+            }
+        })
+        }
+        console.log(users_sala)
+
+        
+
+       
 
         console.log(clients)
         if(clients!=undefined && socket.sala!=undefined){
 
-            users_sala = users.filter((item)=>{
-                
-                if(item!=socket.user){
-                    return item
-                }
-            })
+            
 
             console.log(clients)
             console.log('sobrou numero usuarios: '+clients.length+' da sala = '+socket.sala)

@@ -79,9 +79,9 @@
                         <div id="teste">
                             <ol id="messages">
                             </ol>
-
+                            <div class='font-weight-bold isTyping  ml-2 ' id='isTyping'></div>
                             <div id="bottom"></div>
-
+                            
                         </div>
 
                 </section>
@@ -92,7 +92,7 @@
                         <form autocomplete="off" id="chat">
                             <div class="input-group form-group">
                                 <input autofocus type="text" class="form-control bg-dark text-light"
-                                    placeholder="Conversar no chat.." aria-describedby="basic-addon2" name="email"
+                                    placeholder="Conversar no chat.." aria-describedby="basic-addon2" name="mensagem"
                                     style="border-color:#1f1f1f;" id="msg">
                                 <div class="input-group-append">
                                     <button class="chat-btn btn bg-dark text-light" style="border: 1px solid #1f1f1f;"
@@ -170,33 +170,40 @@
     funSala(sala)
 
     //usuario esta digitando...press
-    /*campoMessagem.onkeydown = () => {
-        let user = document.getElementById("user").value
-        let dataObject = {
-            user,
-            sala
-        }
-        socket.emit('typing', dataObject)
-    }
+    
+
+    
     //Renderizando 
     socket.on('renderTyping', function (id) {
-        let typingSpace = document.getElementById('typingSpace')
-        typingSpace.style.display = "block"
-        typingSpace.innerHTML = `<b>${id} esta digitando</b>`
+        let teste = document.getElementById('isTyping')
+        teste.innerHTML = ` ta digitando igual`
+
+        
+        setInterval(function(){
+            $('#isTyping').fadeIn(500)},1000)
+        
+
+       
+        setInterval(function(){
+            $('#isTyping').fadeOut(500)},1000)
+        
+        
 
     })
 
     //usuario esta digitando...up
     campoMessagem.onkeyup = () => {
-        socket.emit('typingUp', sala)
+        var salaObject = {
+            id_usuario,
+            nome_usuario,
+            sala
+        }
+        
+        socket.emit('typing',salaObject)
     }
     //Parando de renderizar
-    socket.on('noRenderTyping', () => {
-        setTimeout(() => {
-            typingSpace.style.display = "none"
-        }, 1000)
-    })
-    */
+    
+    
 
 
     //função renderizar mensagens próprias
