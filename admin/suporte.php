@@ -89,19 +89,16 @@
         </div>
     </section>
 
-    <script src="../node_modules/jquery/dist/jquery.js"></script>
-    <script src="../node_modules/popper.js/dist/umd/popper.js"></script>
-    <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
-
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="../node_modules/jquery/dist/jquery.js"></script>
     <script src="../node_modules/popper.js/dist/umd/popper.js"></script>
-    <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>   
 
     <!-- javascript -->
     <script src="../node_modules/OwlCarousel/dist/owl.carousel.min.js"></script>
     <script src="../node_modules/OverlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
     <script src="../node_modules/OverlayScrollbars/js/OverlayScrollbars.min.js"></script>
+    <script src="../js/javinha.js"></script>
 
 </body>
 <?php

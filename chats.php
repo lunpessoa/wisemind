@@ -35,7 +35,7 @@
 		<h3 class="display-3"><i class="fas fa-comments "></i> <b><em>WiseChat</em></b></h3>
 		<h3 class="h5"><em>Faça parte desta comunidade<em></h3>
 	</section>
-	
+
 	<section class="container d-flex justify-content-center">
 		<div class="input-group mb-3 w-50">
 			<input type="text" id="form-border-none" class="form-control border-right-0 search-place"
@@ -127,6 +127,17 @@
 	<script src="node_modules/popper.js/dist/umd/popper.js"></script>
 	<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
 	<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+
+	<?php include('rodape.html'); ?>
+	<script src="node_modules/jquery/dist/jquery.js"></script>
+	<script src="node_modules/popper.js/dist/umd/popper.js"></script>
+	<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+	<!-- javascript SimpleBar -->
+	<script src="node_modules/OverlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+	<script src="node_modules/OverlayScrollbars/js/OverlayScrollbars.min.js"></script>
+	<script src="js/javinha.js"></script>
+	
 </body>
 
 <script>

@@ -741,7 +741,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<div class="row mb-5" id="informacao-reg">
 			<div class="col-7 offset-4">
 				<div class="card border border-0 bg-transparent">
@@ -782,21 +782,21 @@
 		<?php
 			if($con['id_privilegio']==2){
 		?>
-			<div class="row mb-5" id="acesso">
-				<div class="col-7 offset-4">
-					<div class="card border border-0 bg-transparent">
-						<div class="card-header border-bottom-0 text-white p-4 d-flex">
-							<label class="h3 text-font-calibri"><b>CONFIRMAÇÃO DE ACESSO</b></label>
-							<button class="btn btn-hover-white ml-auto d-none"><i class="fas fa-pen"></i><b>
-									ATUALIZAR</b></button>
-						</div>
-						<div class="card-body border-0 p-5">
-							<div class="row p-2">
-								<div class="col-3">
-									<span class="text-clear">Validação</span>
-								</div>
-								<div class="col-9">
-									<span class="h5 text-white">
+		<div class="row mb-5" id="acesso">
+			<div class="col-7 offset-4">
+				<div class="card border border-0 bg-transparent">
+					<div class="card-header border-bottom-0 text-white p-4 d-flex">
+						<label class="h3 text-font-calibri"><b>CONFIRMAÇÃO DE ACESSO</b></label>
+						<button class="btn btn-hover-white ml-auto d-none"><i class="fas fa-pen"></i><b>
+								ATUALIZAR</b></button>
+					</div>
+					<div class="card-body border-0 p-5">
+						<div class="row p-2">
+							<div class="col-3">
+								<span class="text-clear">Validação</span>
+							</div>
+							<div class="col-9">
+								<span class="h5 text-white">
 									<?php
 										if($est['validacao']==true){
 											echo('<i class="fas fa-check mr-3"></i> Confirmado');
@@ -804,13 +804,13 @@
 											echo('<i class="fas fa-times mr-3"></i> Não Confirmado');
 										}
 									?>
-									</span>
-								</div>
+								</span>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+		</div>
 		<?php } ?>
 
 		<div class="row mb-5 d-none" id="endereco">
@@ -1038,15 +1038,22 @@
 
 	</div>
 
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="node_modules/jquery/dist/jquery.js"></script>
+	<script src='assets/painel-usu.js'></script>
+	<script src="node_modules/popper.js/dist/umd/popper.js"></script>
+	<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+
+	<!-- javascript SimpleBar -->
+	<script src="node_modules/OverlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+	<script src="node_modules/OverlayScrollbars/js/OverlayScrollbars.min.js"></script>
+	<script src="js/javinha.js"></script>
+
 </body>
 
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="node_modules/jquery/dist/jquery.js"></script>
-<script src='assets/painel-usu.js'></script>
-<script src="node_modules/popper.js/dist/umd/popper.js"></script>
-<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
-<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+
 <?php
 	if($con['id_privilegio']==1){
 		echo("<script>estudante();</script>");

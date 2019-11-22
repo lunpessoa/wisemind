@@ -14,8 +14,6 @@ if (!isset($_SESSION)) {
   <link rel="icon" href="img/logo.png" type="image/x-icon" />
   <link rel="shortcut icon" href="img/logo.png" type="image/x-icon" />
 
-  <!-- ScrollBar Stylesheets -->
-  <link rel="stylesheet" href="node_modules/OverlayScrollbars/css/OverlayScrollbars.min.css">
 </head>
 
 <body>

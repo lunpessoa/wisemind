@@ -99,13 +99,14 @@ if (!isset($_SESSION)) {
 			</div>
 			<div class="card-footer bg-dark border-top-0 text-center text-font"
 				style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; color:#b5b5b5;">
-				Não possui conta? <button class="btn text-warning m-0 p-0" data-toggle="modal" data-target="#Cadastro">Criar!</button>
+				Não possui conta? <button class="btn text-warning m-0 p-0" data-toggle="modal"
+					data-target="#Cadastro">Criar!</button>
 			</div>
 		</div>
 	</div>
 
-	<div class="modal fade" id="Cadastro" tabindex="-1" role="dialog"
-		aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+	<div class="modal fade" id="Cadastro" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
+		aria-hidden="true">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content bg-transparent border-0">
 				<div class="modal-header border-dark" style="background-color:#161a20;">
@@ -128,9 +129,13 @@ if (!isset($_SESSION)) {
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="node_modules/jquery/dist/jquery.js"></script>
-	<script src="js/javinha.js"></script>
 	<script src="node_modules/popper.js/dist/umd/popper.js"></script>
 	<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+	<!-- javascript SimpleBar -->
+	<script src="node_modules/OverlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+	<script src="node_modules/OverlayScrollbars/js/OverlayScrollbars.min.js"></script>
+	<script src="js/javinha.js"></script>
 
 </body>
 <?php

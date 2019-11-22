@@ -20,7 +20,7 @@
 
 <body>
 	<section class="container mb-5" style="margin-top:150px">
-	
+
 		<!-- <section class="container d-flex justify-content-center">
 			<div class="input-group mb-3 w-50">
 				<input type="text" id="form-border-none" class="form-control border-right-0 search-place"
@@ -46,7 +46,11 @@
 								<div class="card-body text-left">
 									<h5 class="card-title h4 mt-4 font-italic">International Business Machines
 										Corporation </h5>
-									<p class="card-text mt-4">A empresa IBM está voltada totalmente a área da tecnologia. International Business Machines Corporation é uma empresa Americana, fundada por Charles Ranlett Flint no século XIX. Os problemas nos inspiram a consertar as coisas. Transformá-las. Melhorá-las. Eles nos desafiam a resolver o insolúvel.</p>
+									<p class="card-text mt-4">A empresa IBM está voltada totalmente a área da
+										tecnologia. International Business Machines Corporation é uma empresa Americana,
+										fundada por Charles Ranlett Flint no século XIX. Os problemas nos inspiram a
+										consertar as coisas. Transformá-las. Melhorá-las. Eles nos desafiam a resolver o
+										insolúvel.</p>
 									<button class="btn p-0 d-block text-primary"
 										href="https://www.ibm.com/br-pt">www.ibm.com/br-pt</button>
 									<label
@@ -71,7 +75,10 @@
 							<div class="col-md-8">
 								<div class="card-body text-left">
 									<h5 class="card-title h4 mt-4 font-italic">Buffet Patrícia Festas </h5>
-									<p class="card-text mt-4"> Empresa Patrícia Festas tem como objetivo sperar as expectativas dos clientes em todos os momentos, antecipando as suas necessidades e atingindo grau máximo de satisfação,para assim estabelecer a sua fidelização, valorizando a marca e as pessoas.</p>
+									<p class="card-text mt-4"> Empresa Patrícia Festas tem como objetivo sperar as
+										expectativas dos clientes em todos os momentos, antecipando as suas necessidades
+										e atingindo grau máximo de satisfação,para assim estabelecer a sua fidelização,
+										valorizando a marca e as pessoas.</p>
 									<button class="btn p-0 d-block text-primary"
 										href="https://www.facebook.com/BuffetPatriciaFestas/">www.facebook.com/BuffetPatriciaFestas/</button>
 									<label
@@ -121,10 +128,14 @@
 
 	<?php include('rodape.html'); ?>
 	<script src="node_modules/jquery/dist/jquery.js"></script>
-	<script src="js/cadastro.js"></script>
 	<script src="node_modules/popper.js/dist/umd/popper.js"></script>
 	<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
-	<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+
+	<!-- javascript SimpleBar -->
+	<script src="node_modules/OverlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+	<script src="node_modules/OverlayScrollbars/js/OverlayScrollbars.min.js"></script>
+	<script src="js/javinha.js"></script>
+	
 </body>
 <script>
 	$(document).ready(function () {

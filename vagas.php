@@ -108,6 +108,12 @@
 	<script src="node_modules/popper.js/dist/umd/popper.js"></script>
 	<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
 	<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+
+	<!-- javascript SimpleBar -->
+	<script src="node_modules/OverlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+	<script src="node_modules/OverlayScrollbars/js/OverlayScrollbars.min.js"></script>
+	<script src="js/javinha.js"></script>
+	
 </body>
 <script>
 	$(document).ready(function () {

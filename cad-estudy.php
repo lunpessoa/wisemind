@@ -14,8 +14,8 @@ if (!isset($_SESSION)) {
 	<link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
 	<link rel="stylesheet" href="style/login.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
-	<link rel="icon" href="img/logo.png" type="image/x-icon"/>
-  	<link rel="shortcut icon" href="img/logo.png" type="image/x-icon"/>
+	<link rel="icon" href="img/logo.png" type="image/x-icon" />
+	<link rel="shortcut icon" href="img/logo.png" type="image/x-icon" />
 
 </head>
 
@@ -161,6 +161,11 @@ if (!isset($_SESSION)) {
 	<script src="node_modules/popper.js/dist/umd/popper.js"></script>
 	<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
 	<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+
+	<!-- javascript SimpleBar -->
+	<script src="node_modules/OverlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+	<script src="node_modules/OverlayScrollbars/js/OverlayScrollbars.min.js"></script>
+	<script src="js/javinha.js"></script>
 
 
 </body>

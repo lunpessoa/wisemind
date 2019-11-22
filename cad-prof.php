@@ -14,8 +14,8 @@ if (!isset($_SESSION)) {
 	<link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
 	<link rel="stylesheet" href="style/login.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
-	<link rel="icon" href="img/logo.png" type="image/x-icon"/>
-  	<link rel="shortcut icon" href="img/logo.png" type="image/x-icon"/>
+	<link rel="icon" href="img/logo.png" type="image/x-icon" />
+	<link rel="shortcut icon" href="img/logo.png" type="image/x-icon" />
 
 </head>
 
@@ -77,7 +77,8 @@ if (!isset($_SESSION)) {
 				</div>
 			</div>
 			<div class="card-body bg-dark border-0">
-				<form name="cad" action="assets/cadastro.php" method="POST" class="container was-validated" novalidate="" autocomplete="off">
+				<form name="cad" action="assets/cadastro.php" method="POST" class="container was-validated"
+					novalidate="" autocomplete="off">
 					<div id="fase1">
 						<div class="row ">
 							<div class="col-6">
@@ -123,14 +124,16 @@ if (!isset($_SESSION)) {
 							<div class="col-4">
 								<label style="color:#b5b5b5; text-dark" class="text-font">UF</label>
 								<div class="input-group form-group">
-									<input id="estado-camp" type="text" placeholder="XX" class="form-control uf text-light"
+									<input id="estado-camp" type="text" placeholder="XX"
+										class="form-control uf text-light"
 										style="background-color:#282d30; border-color:#1f1f1f;" name="estado" required>
 								</div>
 							</div>
 							<div class="col-8" id="cidade">
 								<label class="text-font" style="color:#b5b5b5;">Cidade</label>
 								<div class="input-group form-group">
-									<input id="cidade-camp" type="text" placeholder="Suzano" class="form-control text-light"
+									<input id="cidade-camp" type="text" placeholder="Suzano"
+										class="form-control text-light"
 										style="background-color:#282d30; border-color:#1f1f1f;" name="cidade" required>
 								</div>
 							</div>
@@ -139,14 +142,16 @@ if (!isset($_SESSION)) {
 							<div class="col-8">
 								<label class="text-font" style="color:#b5b5b5;">Bairro</label>
 								<div class="input-group form-group">
-									<input id="bairro-camp" type="text" placeholder="25 de Janeiro" class="form-control text-light"
+									<input id="bairro-camp" type="text" placeholder="25 de Janeiro"
+										class="form-control text-light"
 										style="background-color:#282d30; border-color:#1f1f1f;" name="bairro" required>
 								</div>
 							</div>
 							<div class="col-4" id="numero">
 								<label class="text-font" style="color:#b5b5b5;">N°</label>
 								<div class="input-group form-group">
-									<input id="numero-camp" type="text" placeholder="XXX" class="form-control text-light"
+									<input id="numero-camp" type="text" placeholder="XXX"
+										class="form-control text-light"
 										style="background-color:#282d30; border-color:#1f1f1f;" name="numero" required>
 								</div>
 							</div>
@@ -155,7 +160,8 @@ if (!isset($_SESSION)) {
 							<div class="col-12">
 								<label style="color:#b5b5b5; text-dark" class="text-font">Rua</label>
 								<div class="input-group form-group">
-									<input id="rua-camp" type="text" placeholder="R. Vila Rica" class="form-control text-light"
+									<input id="rua-camp" type="text" placeholder="R. Vila Rica"
+										class="form-control text-light"
 										style="background-color:#282d30; border-color:#1f1f1f;" name="rua" required>
 								</div>
 							</div>
@@ -164,14 +170,16 @@ if (!isset($_SESSION)) {
 							<div class="col-6">
 								<label class="text-font" style="color:#b5b5b5;">CEP</label>
 								<div class="input-group form-group">
-									<input id="cep-camp" type="text" placeholder="00000-000" class="form-control cep text-light"
+									<input id="cep-camp" type="text" placeholder="00000-000"
+										class="form-control cep text-light"
 										style="background-color:#282d30; border-color:#1f1f1f;" name="cep" required>
 								</div>
 							</div>
 							<div class="col-6">
 								<label class="text-font" style="color:#b5b5b5;">CPF</label>
 								<div class="input-group form-group">
-									<input id="cpf-camp" type="text" placeholder="000.000.000-00" class="form-control cpf text-light"
+									<input id="cpf-camp" type="text" placeholder="000.000.000-00"
+										class="form-control cpf text-light"
 										style="background-color:#282d30; border-color:#1f1f1f;" name="cpf" required>
 								</div>
 							</div>
@@ -270,6 +278,12 @@ if (!isset($_SESSION)) {
 	<script src="node_modules/popper.js/dist/umd/popper.js"></script>
 	<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
 	<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+
+	<!-- javascript SimpleBar -->
+	<script src="node_modules/OverlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+	<script src="node_modules/OverlayScrollbars/js/OverlayScrollbars.min.js"></script>
+	<script src="js/javinha.js"></script>
+	
 </body>
 <script>
 	$(document).ready(function () {

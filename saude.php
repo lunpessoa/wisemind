@@ -7,7 +7,7 @@
 	<?php include('menu.php'); ?>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
 	<link rel="stylesheet" type="text/css" href="style/areas.css">
-	  
+
 </head>
 
 <body>
@@ -56,7 +56,7 @@
 		<div class="row py-5" style="background-color:#90c8ff">
 			<div class="col-6 p-0 justify-content-center d-flex">
 				<div class="w-75 overflow-hidden zoom">
-					<img class="img-fluid" alt="zoom" src="img/areas/saude/medicina.jpg" >
+					<img class="img-fluid" alt="zoom" src="img/areas/saude/medicina.jpg">
 				</div>
 			</div>
 			<div class="col-6 p-5">
@@ -121,7 +121,16 @@
 			</div>
 		</div>
 	</section>
+
 	<?php include('rodape.html'); ?>
+	<script src="node_modules/jquery/dist/jquery.js"></script>
+	<script src="node_modules/popper.js/dist/umd/popper.js"></script>
+	<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+	<!-- javascript SimpleBar -->
+	<script src="node_modules/OverlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+	<script src="node_modules/OverlayScrollbars/js/OverlayScrollbars.min.js"></script>
+	<script src="js/javinha.js"></script>
 
 </body>
 

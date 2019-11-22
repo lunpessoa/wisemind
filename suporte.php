@@ -11,9 +11,6 @@
 	<link rel="stylesheet" type="text/css" href="style/cssuporte.css" />
 	<meta charset="UTF-8">
 
-	<!-- ScrollBar Stylesheets -->
-  	<link rel="stylesheet" href="node_modules/OverlayScrollbars/css/OverlayScrollbars.min.css">
-
 </head>
 
 <body>

@@ -33,10 +33,10 @@
     <div class="accordion" id="accordionExample">
       <section class="card border border-0 bg-transparent">
         <div class="card-header gradheader config-item p-0" id="headingOne">
-            <button class="btn btn-link text-decoration-none p-4 " id="botao-conteudo-1" data-toggle="collapse" data-target="#collapseOne"
-              aria-expanded="true" aria-controls="collapseOne">
-              <h3>Medicina <i class="fas fa-plus"></i></h3>
-            </button>
+          <button class="btn btn-link text-decoration-none p-4 " id="botao-conteudo-1" data-toggle="collapse"
+            data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            <h3>Medicina <i class="fas fa-plus"></i></h3>
+          </button>
         </div>
 
         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
@@ -155,8 +155,8 @@
       <section class="card border border-0 bg-transparent">
         <div class="card-header gradheader config-item p-0" id="headingTwo">
           <h5 class="mb-0">
-            <button class="btn btn-link text-decoration-none p-4" id="botao-conteudo-2" data-toggle="collapse" data-target="#collapseTwo"
-              aria-expanded="true" aria-controls="collapseTwo">
+            <button class="btn btn-link text-decoration-none p-4" id="botao-conteudo-2" data-toggle="collapse"
+              data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
               <h3>Direito <i class="fas fa-plus"></i></h3>
             </button>
           </h5>
@@ -277,8 +277,8 @@
       <section class="card border border-0 bg-transparent">
         <div class="card-header gradheader config-item p-0" id="headingThree">
           <h5 class="mb-0">
-            <button class="btn btn-link text-decoration-none p-4" id="botao-conteudo-3" data-toggle="collapse" data-target="#collapseThree"
-              aria-expanded="true" aria-controls="collapseThree">
+            <button class="btn btn-link text-decoration-none p-4" id="botao-conteudo-3" data-toggle="collapse"
+              data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
               <h3>Engenharia <i class="fas fa-plus"></i></h3>
             </button>
           </h5>
@@ -291,7 +291,8 @@
                 <div class="card bg-white">
                   <div class="card-body">
                     <h5 class="card-title">Vídeo - A Engenharia no futuro</h5>
-                    <p class="card-text">Os principais rumos que a Engenharia irá tomar para se adadptar a tecnologia.</p>
+                    <p class="card-text">Os principais rumos que a Engenharia irá tomar para se adadptar a tecnologia.
+                    </p>
                     <a href="#" class="btn btn-primary">Assistir</a>
                   </div>
                 </div>
@@ -313,7 +314,8 @@
                 <div class="card">
                   <div class="card-body">
                     <h5 class="card-title">Documento - Questões que envolvem Engenharia, resolvidas e comentadas.</h5>
-                    <p class="card-text">Questões de diversos temas relacionados à Engenharia, abordadas em vestibulares,
+                    <p class="card-text">Questões de diversos temas relacionados à Engenharia, abordadas em
+                      vestibulares,
                       resolvidas e comentadas.</p>
                     <button type="button" class="btn btn-primary" data-toggle="modal"
                       data-target="#ModalQuestMed">Ler</button>
@@ -399,8 +401,8 @@
       <section class="card border border-0 bg-transparent">
         <div class="card-header gradheader config-item p-0" id="headingFour">
           <h5 class="mb-0">
-            <button class="btn btn-link text-decoration-none p-4" id="botao-conteudo-4" data-toggle="collapse" data-target="#collapseFour"
-              aria-expanded="true" aria-controls="collapseThree">
+            <button class="btn btn-link text-decoration-none p-4" id="botao-conteudo-4" data-toggle="collapse"
+              data-target="#collapseFour" aria-expanded="true" aria-controls="collapseThree">
               <h3>Biologia <i class="fas fa-plus"></i></h3>
             </button>
           </h5>
@@ -521,8 +523,8 @@
       <section class="card border border-0 bg-transparent">
         <div class="card-header gradheader config-item p-0" id="headingFive">
           <h5 class="mb-0">
-            <button class="btn btn-link text-decoration-none p-4" id="botao-conteudo-5" data-toggle="collapse" data-target="#collapseFive"
-              aria-expanded="true" aria-controls="collapseThree">
+            <button class="btn btn-link text-decoration-none p-4" id="botao-conteudo-5" data-toggle="collapse"
+              data-target="#collapseFive" aria-expanded="true" aria-controls="collapseThree">
               <h3>Psicologia <i class="fas fa-plus"></i></h3>
             </button>
           </h5>
@@ -535,7 +537,8 @@
                 <div class="card">
                   <div class="card-body">
                     <h5 class="card-title">Vídeo - A Psicologia no futuro</h5>
-                    <p class="card-text">Os principais rumos que a Psicologia irá tomar para se adadptar a tecnologia.</p>
+                    <p class="card-text">Os principais rumos que a Psicologia irá tomar para se adadptar a tecnologia.
+                    </p>
                     <a href="#" class="btn btn-primary">Assistir</a>
                   </div>
                 </div>
@@ -557,7 +560,8 @@
                 <div class="card">
                   <div class="card-body">
                     <h5 class="card-title">Documento - Questões que envolvem Psicologia, resolvidas e comentadas.</h5>
-                    <p class="card-text">Questões de diversos temas relacionados à Psicologia, abordadas em vestibulares,
+                    <p class="card-text">Questões de diversos temas relacionados à Psicologia, abordadas em
+                      vestibulares,
                       resolvidas e comentadas.</p>
                     <button type="button" class="btn btn-primary" data-toggle="modal"
                       data-target="#ModalQuestMed">Ler</button>
@@ -643,27 +647,34 @@
   </section>
 
   <?php include('rodape.html'); ?>
+  <script src="node_modules/jquery/dist/jquery.js"></script>
+  <script src="node_modules/popper.js/dist/umd/popper.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+  <!-- javascript SimpleBar -->
+  <script src="node_modules/OverlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+  <script src="node_modules/OverlayScrollbars/js/OverlayScrollbars.min.js"></script>
+  <script src="js/javinha.js"></script>
+
   <script>
-  
-      var ativar = function(x){
-        for(let y=1;y<=5;y++)
-        if(y==x){
-          var botao = document.getElementById("botao-conteudo-"+x)
+    var ativar = function (x) {
+      for (let y = 1; y <= 5; y++)
+        if (y == x) {
+          var botao = document.getElementById("botao-conteudo-" + x)
           botao.setAttribute('class', 'btn btn-link text-decoration-none p-4 ativado')
-        }else{
-          var botao = document.getElementById("botao-conteudo-"+y)
+        } else {
+          var botao = document.getElementById("botao-conteudo-" + y)
           botao.setAttribute('class', 'btn btn-link text-decoration-none p-4')
         }
-      }
+    }
 
-      for(let x=1;x<=5;x++){
-        var link = document.getElementById("botao-conteudo-"+x)
-        link.onclick = (e) => {
-          e.preventDefault()
-          ativar(x)
-        }
+    for (let x = 1; x <= 5; x++) {
+      var link = document.getElementById("botao-conteudo-" + x)
+      link.onclick = (e) => {
+        e.preventDefault()
+        ativar(x)
       }
-  
+    }
   </script>
 </body>
 <?php

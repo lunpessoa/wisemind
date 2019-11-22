@@ -9,8 +9,8 @@
 	<link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
 	<link rel="stylesheet" href="style/login.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
-	<link rel="icon" href="img/logo.png" type="image/x-icon"/>
-  	<link rel="shortcut icon" href="img/logo.png" type="image/x-icon"/>
+	<link rel="icon" href="img/logo.png" type="image/x-icon" />
+	<link rel="shortcut icon" href="img/logo.png" type="image/x-icon" />
 
 </head>
 
@@ -53,7 +53,7 @@
 					<polygon class="fil3" points="257,631 254,652 173,652 129,457 141,402 " />
 					<polygon class="fil0" points="210,27 48,27 189,643 325,643 " />
 				</g>
-			</svg>	
+			</svg>
 		</section>
 	</section>
 
@@ -63,16 +63,17 @@
 			<div class="card-header border-bottom-0 bg-dark"
 				style="border-top-left-radius: 10px; border-top-right-radius: 10px;">
 				<div class="row">
-						<div class="col-12 text-center">
-							<h1 class="h4 text-warning"><b>REDEFINIR SENHA</b></h1>
-						</div>
-						<div class="col-12 text-center mt-3">
-							<h6 class="text-font h5" style="color:#b5b5b5;">Alterar senha, lembre-se de não esquece-la!
-							</h6>
-						</div>
+					<div class="col-12 text-center">
+						<h1 class="h4 text-warning"><b>REDEFINIR SENHA</b></h1>
 					</div>
+					<div class="col-12 text-center mt-3">
+						<h6 class="text-font h5" style="color:#b5b5b5;">Alterar senha, lembre-se de não esquece-la!
+						</h6>
+					</div>
+				</div>
 			</div>
-			<div class="card-body bg-dark border-0" style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
+			<div class="card-body bg-dark border-0"
+				style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
 				<form>
 					<label style="color:#b5b5b5;" class="text-font">Senha</label>
 					<div class="input-group form-group">
@@ -100,6 +101,12 @@
 	<script src="js/javinha.js"></script>
 	<script src="node_modules/popper.js/dist/umd/popper.js"></script>
 	<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+	<!-- javascript SimpleBar -->
+	<script src="node_modules/OverlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+	<script src="node_modules/OverlayScrollbars/js/OverlayScrollbars.min.js"></script>
+	<script src="js/javinha.js"></script>
+	
 </body>
 
 </html>

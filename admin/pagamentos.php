@@ -31,6 +31,9 @@
     <link rel="icon" href="../img/logo.png" type="image/x-icon" />
     <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon" />
 
+    <!-- ScrollBar Stylesheets -->
+    <link rel="stylesheet" href="../node_modules/OverlayScrollbars/css/OverlayScrollbars.min.css">
+
 </head>
 
 <body>
@@ -99,13 +102,43 @@
             </tbody>
         </table>
     </section>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="../node_modules/jquery/dist/jquery.js"></script>
     <script src="../node_modules/popper.js/dist/umd/popper.js"></script>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
 
+    <!-- javascript SimpleBar -->
+    <script src="../node_modules/OverlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <script src="../node_modules/OverlayScrollbars/js/OverlayScrollbars.min.js"></script>
+
 </body>
+<script>
+    var instance = OverlayScrollbars(document.getElementsByTagName("body"), {
+        className: "os-theme-dark",
+        resize: "none",
+        sizeAutoCapable: true,
+        clipAlways: true,
+        normalizeRTL: true,
+        paddingAbsolute: false,
+        autoUpdate: null,
+        autoUpdateInterval: 33,
+        nativeScrollbarsOverlaid: {
+            showNativeScrollbars: false,
+            initialize: true
+        },
+        scrollbars: {
+            visibility: "auto",
+            autoHide: "move",
+            autoHideDelay: 500,
+            dragScrolling: true,
+            clickScrolling: false,
+            touchSupport: true,
+            snapHandle: true
+        }
+    });
+</script>
 <?php
     }else{
         $_SESSION["facaLog"]=true;
@@ -115,7 +148,9 @@
 <script>
     $("#busca").keyup(function () {
         var busca = $("#busca").val();
-        $.post('../assets/pesquisar.php', {pag: busca}, function (data) {
+        $.post('../assets/pesquisar.php', {
+            pag: busca
+        }, function (data) {
             $("#result").html(data);
         });
     });

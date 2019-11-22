@@ -160,16 +160,18 @@
 			</form>
 		</section>
 	</section>
+
 	<?php include('rodape.html'); ?>
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="node_modules/jquery/dist/jquery.js"></script>
-	<script src="js/cadastro.js"></script>
 	<script src="node_modules/popper.js/dist/umd/popper.js"></script>
 	<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.bundle.min.js"></script>
-	<script src="node_modules/bootstrap-select/dist/js/bootstrap-select.js"></script>
 
+	<!-- javascript SimpleBar -->
+	<script src="node_modules/OverlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+	<script src="node_modules/OverlayScrollbars/js/OverlayScrollbars.min.js"></script>
+	<script src="js/javinha.js"></script>
 
 </body>
 <script>

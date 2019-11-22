@@ -21,6 +21,9 @@
     <link rel="icon" href="../img/logo.png" type="image/x-icon" />
     <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon" />
 
+    <!-- ScrollBar Stylesheets -->
+	<link rel="stylesheet" href="node_modules/OverlayScrollbars/css/OverlayScrollbars.min.css">
+
 </head>
 
 <body>
@@ -121,6 +124,18 @@
             </div>
         </div>
     </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/popper.js/dist/umd/popper.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+    <!-- javascript SimpleBar -->
+    <script src="../node_modules/OverlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <script src="../node_modules/OverlayScrollbars/js/OverlayScrollbars.min.js"></script>
+    <script src="../js/javinha.js"></script>
+
 </body>
 <?php
    }else{
@@ -128,11 +143,6 @@
         echo('<script>window.location.href = "../login.php";</script>');
    }
 ?>
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="../node_modules/jquery/dist/jquery.js"></script>
-<script src="../node_modules/popper.js/dist/umd/popper.js"></script>
-<script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
 <?php
 	if (!isset( $_SESSION["admin"])) {
 		$_SESSION["admin"]=false;
