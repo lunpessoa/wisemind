@@ -7,6 +7,7 @@
     $con=mysqli_fetch_array($resul);
 ?>
 
+<!DOCTYPE html>
 <html>
 
 <head>
