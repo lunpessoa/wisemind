@@ -114,7 +114,7 @@
                         </li>
                         <hr class="w-75 bg-white my-1">
                         <li class="nav-item config-item">
-                            <a class="nav-link h5 mb-0 px-3 pt-4" href="../assets/destroy-log.php">
+                            <a class="nav-link h5 mb-0 px-3 pt-4" href="../index.php">
                                 <i class="fas fa-sign-out-alt"></i>
                                 <label class="h5 cursor-pointer">Sair</label>
                             </a>
@@ -140,7 +140,7 @@
 <?php
    }else{
         $_SESSION["facaLog"]=true;
-        echo('<script>window.location.href = "../login.php";</script>');
+        echo('<script>window.location.href = "../index.php";</script>');
    }
 ?>
 <?php

@@ -32,6 +32,9 @@ if (!isset($_SESSION)) {
             if(isset($_SESSION["log_status"]) && $_SESSION["log_status"]==true){
               echo('<a class="btn btn-outline-dark btn-sm" href="painel-usu.php">Perfil <i class="fa fa-user-circle" aria-hidden="true"></i></a>
               <a class="btn btn-outline-dark btn-sm" href="assets/destroy-log.php">Sair <i class="fas fa-sign-in-alt"></i></a>');
+            }else if(isset($_SESSION["adminlog_status"]) && $_SESSION["adminlog_status"]==true){
+              echo('<a class="btn btn-outline-dark btn-sm" href="admin/admin.php">Admin <i class="fas fa-lock aria-hidden="true"></i></a>
+              <a class="btn btn-outline-dark btn-sm" href="assets/destroy-log.php">Sair <i class="fas fa-sign-in-alt"></i></a>');
             }else{
               echo('<a class="btn btn-outline-dark btn-sm" href="login.php">Entrar <i class="fas fa-sign-in-alt"></i></a>
               <button class="btn btn-outline-dark btn-sm"  data-toggle="modal" data-target="#Cadastro">Registre-se <i class="fa fa-user-circle" aria-hidden="true"></i></button>');

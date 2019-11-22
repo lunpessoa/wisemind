@@ -36,7 +36,7 @@
                     }else if($con['id_privilegio']==3){
                         $_SESSION["adminlog_status"]=true;
                         $_SESSION["admin"]=true;
-                        echo"<script language='javascript' type='text/javascript'>window.location.href='../admin/admin.php';</script>";
+                        echo"<script>window.location.href='../index.php';</script>";
                     }
             }
         }
