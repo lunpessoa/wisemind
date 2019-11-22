@@ -63,7 +63,7 @@
         <section class="corpo border-top-0">
             <section class="estudantes bg-dark float-left">
                 <ul class="pt-3 pl-0" id="list-users">
-                    
+
                 </ul>
                 <div class="buttons d-flex justify-content-center">
                     <a class="btn pb-0" style="color: #fff; cursor: default;" href="">
@@ -127,24 +127,23 @@
     
 ?>
 <script>
-    function renderUsers(data){
-        
-            
-            $.post('../../assets/chat-users.php', {pag: data}, function (data2) {
+    function renderUsers(data) {
+        $.post('../../assets/chat-users.php', {
+            pag: data
+        }, function (data2) {
             $("#list-users").html(data2);
         });
-        
+
     }
-    
 </script>
 <script>
     var socket = io.connect("http://localhost:3001", {
-    'reconnection': true,
-    'timeout': 1000,
-    'connect_timeout': 100,
-    'reconnectionDelay': 200,
-    'reconnectionDelayMax' : 500,
-    'reconnectionAttempts': 1
+        'reconnection': true,
+        'timeout': 1000,
+        'connect_timeout': 100,
+        'reconnectionDelay': 200,
+        'reconnectionDelayMax': 500,
+        'reconnectionAttempts': 1
     })
 
 
@@ -154,7 +153,7 @@
         window.location.href = "../../chats.php"
         socket.emit('desconectado')
     });
-    
+
 
     const campoMessagem = document.getElementById('msg')
 
@@ -266,7 +265,7 @@
         campoNum.innerHTML = num;
     }
 
-    
+
 
 
 

@@ -150,8 +150,17 @@ io.on('connection', socket => {
         socket.leave(socket.rooms);
 
         clients = io.sockets.adapter.rooms[socket.sala]
+
         console.log(clients)
         if(clients!=undefined && socket.sala!=undefined){
+
+            users_sala = users.filter((item)=>{
+                
+                if(item!=socket.user){
+                    return item
+                }
+            })
+
             console.log(clients)
             console.log('sobrou numero usuarios: '+clients.length+' da sala = '+socket.sala)
 
