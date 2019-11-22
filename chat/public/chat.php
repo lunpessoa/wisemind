@@ -128,18 +128,19 @@
 ?>
 <script>
     function renderUsers(data){
-        for(var x = 0;x<data.length;x++){
+        
+            
             $.post('../../assets/chat-users.php', {pag: data}, function (data2) {
             $("#list-users").html(data2);
         });
-        }
+        
     }
     
 </script>
 <script>
     var socket = io.connect("http://localhost:3001", {
     'reconnection': true,
-    'timeout': 50,
+    'timeout': 1000,
     'connect_timeout': 100,
     'reconnectionDelay': 200,
     'reconnectionDelayMax' : 500,

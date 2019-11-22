@@ -115,7 +115,7 @@ io.on('connection', socket => {
 
         console.log('tamanho user: '+users.length)
         io.to(socket.sala).emit('usersNum', clients)
-        socket.broadcast.to(sala).emit('usersList', users_sala)
+        io.to(socket.sala).emit('usersList', users_sala)
         
     })
 
