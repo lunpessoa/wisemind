@@ -299,3 +299,7 @@ ul {
     transform: translateX(-50%);
 
 }
+
+.isTyping{
+    color: #43b581;
+}

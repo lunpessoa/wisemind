@@ -11,7 +11,7 @@
         
         for($x=0;$x<$conta;$x++){
         $dados = explode("-",$log[$x]);
-        
+        if($dados[0]!= $_SESSION["id_user"]){
         $sqlmostrar=('select * from usuarios where id_usuario = '.$dados[0].';');
          $resul=mysqli_query($conexao, $sqlmostrar);
             while($con_usu=mysqli_fetch_array($resul)){
@@ -25,6 +25,7 @@
                             class="users-situacao font-weight-bold font-italic">#Online</label> </label>
                 </a>
             </li>');
+            }
         }
         
     }
