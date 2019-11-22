@@ -1,7 +1,7 @@
 <?php
   include('assets/conexao.php');
   session_start();
-  if(isset($_SESSION["log_status"]) && $_SESSION["log_status"]==true){
+  if(isset($_SESSION["log_status"]) && $_SESSION["log_status"]==true || isset($_SESSION["adminlog_status"]) && $_SESSION["adminlog_status"]==true){
     $sql2=('select Plano from estudantes where id_estudante ='. $_SESSION["id_user"].';');
     $resul2=mysqli_query($conexao, $sql2);
     $con2=mysqli_fetch_array($resul2);

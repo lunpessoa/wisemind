@@ -3,7 +3,7 @@ if (!isset($_SESSION)) {
 	session_start();
 }
 ?>
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-br">
 
 <head>

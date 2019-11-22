@@ -1132,6 +1132,8 @@
 	});
 </script>
 <?php
+		}else if(isset($_SESSION["adminlog_status"]) && $_SESSION["adminlog_status"]==true){
+			echo('<script>window.location.href = "index.php";</script>');
 		}else{
 			$_SESSION["facaLog"]=true;
         	echo('<script>window.location.href = "login.php";</script>');
