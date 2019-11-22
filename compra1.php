@@ -12,10 +12,8 @@
 
 <head>
 	<title> Torne-se Wiser </title>
-	<?php include('menu.php');?>
-	<link rel="shortcut icon" href="img/ico.png" />
+	<?php include('menu.php'); ?>
 	<link rel="stylesheet" type="text/css" href="style/csscompra.css" />
-	<link rel="stylesheet" href="node_modules/bootstrap-select/dist/css/bootstrap-select.css">
 	<meta charset="UTF-8">
 </head>
 
@@ -163,18 +161,24 @@
 	</section>
 
 	<?php include('rodape.html'); ?>
+
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="node_modules/jquery/dist/jquery.js"></script>
 	<script src="node_modules/popper.js/dist/umd/popper.js"></script>
 	<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
 
 	<!-- javascript SimpleBar -->
 	<script src="node_modules/OverlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 	<script src="node_modules/OverlayScrollbars/js/OverlayScrollbars.min.js"></script>
 	<script src="js/javinha.js"></script>
 
+	<!-- javascript Select -->
+	<script src="node_modules/bootstrap-select/dist/js/bootstrap-select.js"></script>
+
 </body>
+
 <script>
 	$('.selectpicker').selectpicker();
 	$(document).ready(function () {
@@ -184,27 +188,26 @@
 		$('.uf').mask('AA');
 	});
 </script>
+
 <?php
-		}else{
-			$_SESSION["facaLog"]=true;
-        	echo('<script>window.location.href = "login.php";</script>');
-		}
-	
+	}else{
+		$_SESSION["facaLog"]=true;
+		echo('<script>window.location.href = "login.php";</script>');
+	}
 ?>
 <?php
 	if (!isset($_SESSION["assinatura"])) {
 		$_SESSION["assinatura"]=false;
 	}
-
 ?>
-<?php  if($_SESSION["assinatura"]==true){ 
-	include('toast.php');
-	echo("<script src='assets/toast.js'></script>
-	<script>assinatura();</script>");
+<?php  
+	if($_SESSION["assinatura"]==true){ 
+		include('toast.php');
+		echo("<script src='assets/toast.js'></script>
+		<script>assinatura();</script>");
 
-	$_SESSION["assinatura"]=false;
+		$_SESSION["assinatura"]=false;
 	}
-
 ?>
 
 </html>
