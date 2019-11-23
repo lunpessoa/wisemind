@@ -3,8 +3,9 @@ if (!isset($_SESSION)) {
   session_start();
 }
 
-if(isset($_SESSION['log_status'])){ // ARRUMAR
+if(isset($_SESSION["log_status"]) && $_SESSION["log_status"]==true){ // ATUALIZAR STATUS PAGAMENTO
   include('assets/conexao.php');
+  
   setlocale( LC_ALL , 'pt_BR' );
   date_default_timezone_set('America/Bahia');
 
@@ -20,7 +21,6 @@ if(isset($_SESSION['log_status'])){ // ARRUMAR
       $up_val = mysqli_query($conexao, $update);
   }
 }
-
 
 ?>
 <!DOCTYPE html>
@@ -123,7 +123,7 @@ if(isset($_SESSION['log_status'])){ // ARRUMAR
     </section>
   </section>
 
-  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-dark navbarMenuItens d-none" id="nav">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-dark navbarMenuItens" id="nav">
     <button class="navbar-toggler border-0" data-toggle="collapse" data-target="#navbarSite">
       <i class="fa fa-bars text-warning" aria-hidden="true"></i>
     </button>
