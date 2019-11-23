@@ -1,6 +1,7 @@
 <?php
     include('conexao.php');
     session_start();
+
     if(isset($_POST['Entrar'])){
 
         $email=$_POST['email'];
@@ -30,6 +31,7 @@
                     $_SESSION["id_user"]=$con['id_usuario'];
                     if($con['id_privilegio']==1 || $con['id_privilegio']==2){
                         $_SESSION["log_status"]=true;
+
                         //$_SESSION["logado"]=true;
                         echo"<script>window.location.href='../index.php';</script>";
                         //setcookie("login",$login);

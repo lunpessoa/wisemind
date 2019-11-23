@@ -2,6 +2,10 @@
 	ob_start();
 	include('assets/conexao.php');
 	session_start();
+
+	setlocale( LC_ALL , 'pt_BR' );
+	date_default_timezone_set( "America/Sao_Paulo" );
+
 	if(isset($_SESSION["log_status"]) && $_SESSION["log_status"]==true){
 		$sql=('select * from usuarios where id_usuario = '. $_SESSION["id_user"].';');
 		$resul=mysqli_query($conexao, $sql);
@@ -762,9 +766,6 @@
 							<div class="col-5 align-items-center d-flex">
 								<span class="h5 text-white align-middle">
 									<?php
-										setlocale( LC_ALL , 'pt_BR' );
-										date_default_timezone_set( "America/Sao_Paulo" );
-
 										$sql_register= ('select ultimo_login from date_login where id_usu = '.$_SESSION['id_user'].';');
 										$ultimo_date = mysqli_query($conexao, $sql_register);
 										$register = mysqli_fetch_array($ultimo_date);
@@ -1051,6 +1052,25 @@
 										echo("<i class='fas fa-check mr-2'></i> Confirmado");
 									}else{
 										echo("<i class='fas fa-times mr-2'></i> Não confirmado");
+									}
+								?>
+								</span>
+							</div>
+						</div>
+						<div class="row p-2">
+							<div class="col-3">
+								<span class="text-clear">Data de Validade</span>
+							</div>
+							<div class="col-9">
+								<span class="h5 text-white">
+									<?php
+									if($est['Plano_val']){
+										$exploded = multiexplode (array(" ","-",":"),$est['Plano_val']);
+										$data_val = $exploded[2].'/'.$exploded[1].'/'.$exploded[0];
+										echo($data_val.' às '.$exploded[3].':'.$exploded[4]);
+
+									}else{
+										echo("<i class='fas fa-times mr-2'></i>Pagamento não confirmado");
 									}
 								?>
 								</span>

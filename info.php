@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 	<title> Informação e Tecnologia </title>
 	<meta charset="utf-8">

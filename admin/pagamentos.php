@@ -1,6 +1,9 @@
 <?php
    include('../assets/conexao.php');
    session_start();
+   setlocale( LC_ALL , 'pt_BR' );
+   date_default_timezone_set('America/Bahia');
+    
    if(isset($_SESSION["adminlog_status"]) && $_SESSION["adminlog_status"]=true){
         $sql=('select * from usuarios where id_usuario = '. $_SESSION["id_user"].';');
         $resul=mysqli_query($conexao, $sql);
@@ -91,7 +94,8 @@
 
                         if(isset($_GET["val"])){
                             $val=$_GET["val"];
-                            $sql_val=('update estudantes set Plano=true where id_estudante='.$val.';');
+                            $data_val = date('Y-m-d H:i:s', strtotime('+1 month'));
+                            $sql_val=('update estudantes set Plano=true, Plano_val="'.$data_val.'" where id_estudante='.$val.';');
                             $sql_del=('delete from pedido where id_estuda='.$val.';');
                             $mostrar_sql=mysqli_query($conexao, $sql_val);    
                             $mostrar_sql=mysqli_query($conexao, $sql_del);    

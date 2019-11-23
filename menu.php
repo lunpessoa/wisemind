@@ -1,7 +1,27 @@
 <?php
 if (!isset($_SESSION)) {
-	session_start();
+  session_start();
 }
+
+if(isset($_SESSION['log_status'])){ // ARRUMAR
+  include('assets/conexao.php');
+  setlocale( LC_ALL , 'pt_BR' );
+  date_default_timezone_set('America/Bahia');
+
+  $sql = ('select * from estudantes where id_estudante = '.$_SESSION["id_user"].';');
+  $date_query = mysqli_query($conexao, $sql);
+  $date_val = mysqli_fetch_array($date_query);
+  
+  $date = strtotime($date_val["Plano_val"]);
+  $today = strtotime(date("Y-m-d H:i:s"));
+
+  if($date <= $today){
+      $update = ('update estudantes set Plano = false, Plano_val = null where id_estudante = '.$_SESSION["id_user"].';');
+      $up_val = mysqli_query($conexao, $update);
+  }
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -21,7 +41,7 @@ if (!isset($_SESSION)) {
   <link rel="shortcut icon" href="img/logo.png" type="image/x-icon" />
 
   <!-- ScrollBar Stylesheets -->
-	<link rel="stylesheet" href="node_modules/OverlayScrollbars/css/OverlayScrollbars.min.css">
+  <link rel="stylesheet" href="node_modules/OverlayScrollbars/css/OverlayScrollbars.min.css">
 </head>
 
 <body>
@@ -43,18 +63,18 @@ if (!isset($_SESSION)) {
     </section>
   </nav>
 
-  <div class="modal fade" id="Cadastro" tabindex="-1" role="dialog"
-    aria-labelledby="Cadastro" aria-hidden="true">
+  <div class="modal fade" id="Cadastro" tabindex="-1" role="dialog" aria-labelledby="Cadastro" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content bg-transparent border-0">
         <div class="modal-header border-dark" style="background-color:#161a20;">
           <h5 class="modal-title text-white font-roboto">COMO VOCÊ DESEJA SE CADASTRAR?</h5>
           <button type="button" class="btn text-white" data-dismiss="modal" aria-label="Fechar">
-          <i class="fas fa-times"></i>
+            <i class="fas fa-times"></i>
           </button>
         </div>
         <div class="modal-body justify-content-center d-flex rounded-bottom" style="background-color:#161a20;">
-          <a class="btn btn-outline-warning mr-3" href="cad-estudy.php"><i class="fas fa-user-graduate"></i> Estudante</a>
+          <a class="btn btn-outline-warning mr-3" href="cad-estudy.php"><i class="fas fa-user-graduate"></i>
+            Estudante</a>
           <a class="btn btn-outline-warning" href="cad-prof.php"><i class="fas fa-user-tie"></i> Profissional</i></a>
         </div>
       </div>
@@ -103,7 +123,7 @@ if (!isset($_SESSION)) {
     </section>
   </section>
 
-  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-dark navbarMenuItens" id="nav">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-dark navbarMenuItens d-none" id="nav">
     <button class="navbar-toggler border-0" data-toggle="collapse" data-target="#navbarSite">
       <i class="fa fa-bars text-warning" aria-hidden="true"></i>
     </button>
@@ -142,7 +162,7 @@ if (!isset($_SESSION)) {
       </section>
     </section>
   </nav>
-  
+
 </body>
 
 </html>
