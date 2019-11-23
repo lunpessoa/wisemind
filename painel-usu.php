@@ -907,11 +907,40 @@
 								</div>
 								<div class="col-9">
 									<div class="input-group form-group w-50">
-										<input type="text" class="form-control text-light"
-											style="background-color:#282d30; border-color:#1f1f1f;"
-											placeholder="<?php if($con['Estado']==null){echo("Adicionar");}else{echo($con['Estado']);}?>"
-											value="<?php echo($con['Estado']);?>" name="Estado"
-											<?php if($con['Estado']!=null){echo("required");}?>>
+										<select id="uf" class="form-control text-light"
+											style="background-color:#282d30; border-color:#1f1f1f;" data-size="5"
+											<?php if($con['Estado']!=null){echo("required");}?> name="Estado">
+											<option value="<?php echo($con['Estado']);?>" selected disabled hidden>
+												<?php if($con['Estado']==null){echo("Adicionar");}else{echo($con['Estado']);}?>
+											</option>
+											<option value="AC">AC</option>
+											<option value="AL">AL</option>
+											<option value="AP">AP</option>
+											<option value="AM">AM</option>
+											<option value="BA">BA</option>
+											<option value="CE">CE</option>
+											<option value="DF">DF</option>
+											<option value="ES">ES</option>
+											<option value="GO">GO</option>
+											<option value="MA">MA</option>
+											<option value="MT">MT</option>
+											<option value="MS">MS</option>
+											<option value="MG">MG</option>
+											<option value="PA">PA</option>
+											<option value="PB">PB</option>
+											<option value="PR">PR</option>
+											<option value="PE">PE</option>
+											<option value="PI">PI</option>
+											<option value="RJ">RJ</option>
+											<option value="RN">RN</option>
+											<option value="RS">RS</option>
+											<option value="RO">RO</option>
+											<option value="RR">RR</option>
+											<option value="SC">SC</option>
+											<option value="SP">SP</option>
+											<option value="SE">SE</option>
+											<option value="TO">TO</option>
+										</select>
 									</div>
 								</div>
 							</div>

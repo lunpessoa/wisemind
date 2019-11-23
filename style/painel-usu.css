@@ -111,6 +111,17 @@ body {
   content: "Buscar";
 }
 
+select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* For IE10 */
+select::-ms-expand {
+  display: none;
+}
+
 /* Opção Ativado */
 
 .ativado {
