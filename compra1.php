@@ -88,7 +88,8 @@
 						boleto.</label>
 				</section>
 			</section>
-			<form action="assets/compra-config.php" method="POST" name="form-boleto" autocomplete="off">
+			<form action="assets/compra-config.php" method="POST" name="form-boleto" autocomplete="off"
+				class="selectpicker">
 				<section class="form-row">
 					<section class="form-group col-md-8">
 						<label>Rua</label>
@@ -169,26 +170,22 @@
 	<script src="node_modules/jquery/dist/jquery.js"></script>
 	<script src="node_modules/popper.js/dist/umd/popper.js"></script>
 	<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
-	<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+	<script src="node_modules/JQuery-Mask/dist/jquery.mask.min.js"></script>
+
 
 	<!-- javascript SimpleBar -->
 	<script src="node_modules/OverlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 	<script src="node_modules/OverlayScrollbars/js/OverlayScrollbars.min.js"></script>
 	<script src="js/javinha.js"></script>
 
-	<!-- javascript Select -->
-	<script src="node_modules/bootstrap-select/dist/js/bootstrap-select.js"></script>
+	<script type="text/javascript" src="js/enderecamento.js"></script>
 
 </body>
-<script type="text/javascript" src="js/enderecamento.js"></script>
+
 
 <script>
-	$('.selectpicker').selectpicker();
 	$(document).ready(function () {
-		$('.cep').mask('99999-999');
-		$('.cpf').mask('999.999.999-99');
-		$('.phone_with_ddd').mask('(99) 99999-9999');
-		$('.uf').mask('AA');
+		$('.cep').mask('00000-000');
 	});
 </script>
 
