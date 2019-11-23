@@ -77,8 +77,8 @@ if (!isset($_SESSION)) {
 				</div>
 			</div>
 			<div class="card-body bg-dark border-0">
-				<form name="cad" action="assets/cadastro.php" method="POST" class="container was-validated"
-					novalidate="" autocomplete="off">
+				<form name="cad" action="assets/cadastro.php" method="POST" class="container was-validated" novalidate=""
+					autocomplete="off">
 					<div id="fase1">
 						<div class="row ">
 							<div class="col-6">
@@ -112,7 +112,7 @@ if (!isset($_SESSION)) {
 							<div class="col-6">
 								<label class="text-font" style="color:#b5b5b5;">Celular</label>
 								<div class="input-group form-group">
-									<input id="celular" type="text" placeholder="(11) 99999-9999"
+									<input id="celular" type="text" placeholder="(00) 00000-0000"
 										class="form-control phone_with_ddd text-light"
 										style="background-color:#282d30; border-color:#1f1f1f;" name="celular" required>
 								</div>
@@ -120,34 +120,62 @@ if (!isset($_SESSION)) {
 						</div>
 					</div>
 					<div id="fase2" style="display: none;">
-						<div class="row" id="estado">
+						<div class="row">
 							<div class="col-4">
 								<label style="color:#b5b5b5; text-dark" class="text-font">UF</label>
 								<div class="input-group form-group">
-									<input id="estado-camp" type="text" placeholder="XX"
-										class="form-control uf text-light"
-										style="background-color:#282d30; border-color:#1f1f1f;" name="estado" required>
+									<select id="uf" class="form-control text-light"
+										style="background-color:#282d30; border-color:#1f1f1f;" data-size="5" required
+										name="estado">
+										<option value="" selected disabled hidden>XX</option>
+										<option value="AC">AC</option>
+										<option value="AL">AL</option>
+										<option value="AP">AP</option>
+										<option value="AM">AM</option>
+										<option value="BA">BA</option>
+										<option value="CE">CE</option>
+										<option value="DF">DF</option>
+										<option value="ES">ES</option>
+										<option value="GO">GO</option>
+										<option value="MA">MA</option>
+										<option value="MT">MT</option>
+										<option value="MS">MS</option>
+										<option value="MG">MG</option>
+										<option value="PA">PA</option>
+										<option value="PB">PB</option>
+										<option value="PR">PR</option>
+										<option value="PE">PE</option>
+										<option value="PI">PI</option>
+										<option value="RJ">RJ</option>
+										<option value="RN">RN</option>
+										<option value="RS">RS</option>
+										<option value="RO">RO</option>
+										<option value="RR">RR</option>
+										<option value="SC">SC</option>
+										<option value="SP">SP</option>
+										<option value="SE">SE</option>
+										<option value="TO">TO</option>
+									</select>
 								</div>
 							</div>
-							<div class="col-8" id="cidade">
+							<div class="col-8">
 								<label class="text-font" style="color:#b5b5b5;">Cidade</label>
 								<div class="input-group form-group">
-									<input id="cidade-camp" type="text" placeholder="Suzano"
-										class="form-control text-light"
+									<input id="cidade" type="text" placeholder="Suzano" class="form-control text-light"
 										style="background-color:#282d30; border-color:#1f1f1f;" name="cidade" required>
 								</div>
 							</div>
 						</div>
-						<div class="row" id="bairro">
+						<div class="row">
 							<div class="col-8">
 								<label class="text-font" style="color:#b5b5b5;">Bairro</label>
 								<div class="input-group form-group">
-									<input id="bairro-camp" type="text" placeholder="25 de Janeiro"
+									<input id="bairro" type="text" placeholder="25 de Janeiro"
 										class="form-control text-light"
 										style="background-color:#282d30; border-color:#1f1f1f;" name="bairro" required>
 								</div>
 							</div>
-							<div class="col-4" id="numero">
+							<div class="col-4">
 								<label class="text-font" style="color:#b5b5b5;">N°</label>
 								<div class="input-group form-group">
 									<input id="numero-camp" type="text" placeholder="XXX"
@@ -156,21 +184,21 @@ if (!isset($_SESSION)) {
 								</div>
 							</div>
 						</div>
-						<div class="row " id="rua">
+						<div class="row">
 							<div class="col-12">
 								<label style="color:#b5b5b5; text-dark" class="text-font">Rua</label>
 								<div class="input-group form-group">
-									<input id="rua-camp" type="text" placeholder="R. Vila Rica"
+									<input id="rua" type="text" placeholder="R. Vila Rica"
 										class="form-control text-light"
 										style="background-color:#282d30; border-color:#1f1f1f;" name="rua" required>
 								</div>
 							</div>
 						</div>
-						<div class="row" id="cep">
+						<div class="row">
 							<div class="col-6">
 								<label class="text-font" style="color:#b5b5b5;">CEP</label>
 								<div class="input-group form-group">
-									<input id="cep-camp" type="text" placeholder="00000-000"
+									<input id="cep" type="text" placeholder="00000-000"
 										class="form-control cep text-light"
 										style="background-color:#282d30; border-color:#1f1f1f;" name="cep" required>
 								</div>
@@ -197,7 +225,7 @@ if (!isset($_SESSION)) {
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-12" id="cidade">
+							<div class="col-12">
 								<label class="text-font" style="color:#b5b5b5;">Experiência</label>
 								<div class="input-group form-group">
 									<input id="experiencia" type="text" class="form-control text-light" rows="5"
@@ -283,8 +311,10 @@ if (!isset($_SESSION)) {
 	<script src="node_modules/OverlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 	<script src="node_modules/OverlayScrollbars/js/OverlayScrollbars.min.js"></script>
 	<script src="js/javinha.js"></script>
-	
+
 </body>
+<script type="text/javascript" src="js/enderecamento.js"></script>
+
 <script>
 	$(document).ready(function () {
 		$(window).keydown(function (event) {

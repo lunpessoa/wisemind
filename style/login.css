@@ -20,7 +20,7 @@ body {
     background-color: white;
 }
 
-.font-roboto{
+.font-roboto {
     font-family: 'Roboto Condensed', sans-serif;
 }
 
@@ -50,27 +50,43 @@ body {
     animation: move_eye 50s linear infinite alternate;
 }
 
-.card{
+.card {
     animation: zoomInDown 0.5s linear;
 }
 
-@keyframes move_eye{
-    from{
+select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+/* For IE10 */
+select::-ms-expand {
+    display: none;
+}
+
+@keyframes move_eye {
+    from {
         transform: rotate(30deg);
     }
-    20%{
+
+    20% {
         transform: rotate(-10deg);
     }
-    40%{
+
+    40% {
         transform: rotate(10deg);
     }
-    60%{
+
+    60% {
         transform: rotate(30deg);
     }
-    80%{
+
+    80% {
         transform: rotate(-20deg);
     }
-    100%{
+
+    100% {
         transform: rotate(30deg);
     }
 }

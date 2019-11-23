@@ -89,32 +89,34 @@
 				</section>
 			</section>
 			<form action="assets/compra-config.php" method="POST" name="form-boleto" autocomplete="off">
-				<section class="form-group">
-					<label for="inputAddress">Rua</label>
-					<input type="text" class="form-control text-light" id="inputAddress" placeholder="R. João Manoel"
-						name="rua" required>
-				</section>
 				<section class="form-row">
 					<section class="form-group col-md-8">
-						<label for="inputAddress2">Complemento</label>
-						<input type="text" class="form-control text-light" id="inputAddress2"
-							placeholder="Apartamento, Casa, Estudio..." name="complemento">
+						<label>Rua</label>
+						<input type="text" class="form-control text-light" id="rua" placeholder="R. João Manoel"
+							name="rua" required>
 					</section>
 					<section class="form-group col-md-4">
-						<label for="inputTelefone">CEP</label>
-						<input id="inputTelefone" class="form-control text-light cep" placeholder="07500-000" name="cep"
-							required>
+						<label>CEP</label>
+						<input id="cep" class="form-control text-light cep" placeholder="XXXXX-XXX" name="cep" required>
+					</section>
+				</section>
+				<section class="form-row">
+					<section class="form-group col-md-12">
+						<label>Complemento</label>
+						<input type="text" class="form-control text-light" placeholder="Apartamento, Casa, Estudio..."
+							name="complemento">
 					</section>
 				</section>
 				<section class="form-row">
 					<section class="form-group col-md-6">
-						<label for="inputCity">Cidade</label>
-						<input type="text" name="cidade" class="form-control text-light" id="inputCity"
+						<label>Cidade</label>
+						<input type="text" name="cidade" class="form-control text-light" id="cidade"
 							placeholder="São Paulo" required>
 					</section>
 					<section class="form-group col-md-4">
 						<label for="inputState">Estado</label>
-						<select id="error" class="form-control text-light" data-size="5" required name="estado">
+						<select id="uf" class="form-control text-light" data-size="5" required name="estado">
+							<option value="" selected disabled hidden>Estado</option>
 							<option value="AC">Acre</option>
 							<option value="AL">Alagoas</option>
 							<option value="AP">Amapá</option>
@@ -145,9 +147,9 @@
 						</select>
 					</section>
 					<section class="form-group col-md-2">
-						<label for="inputNumero">Número</label>
-						<input type="text" name="numero" class="form-control text-light" id="inputNumero"
-							placeholder="142" name="numero" required>
+						<label>Número</label>
+						<input type="text" name="numero" class="form-control text-light" placeholder="142" name="numero"
+							required>
 					</section>
 				</section>
 				<section class="form-row">
@@ -178,6 +180,7 @@
 	<script src="node_modules/bootstrap-select/dist/js/bootstrap-select.js"></script>
 
 </body>
+<script type="text/javascript" src="js/enderecamento.js"></script>
 
 <script>
 	$('.selectpicker').selectpicker();

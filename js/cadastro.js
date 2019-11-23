@@ -20,9 +20,9 @@ botao.onclick = () => {
     }
 }
 botao2.onclick = () => {
-    if(document.getElementById("estado-camp").value.length < 1 || document.getElementById("cidade-camp").value.length < 1
-    || document.getElementById("bairro-camp").value.length < 1 || document.getElementById("numero-camp").value.length < 1
-    || document.getElementById("rua-camp").value.length < 1 || document.getElementById("cep-camp").value.length < 1
+    if(document.getElementById("uf").value.length < 1 || document.getElementById("cidade").value.length < 1
+    || document.getElementById("bairro").value.length < 1 || document.getElementById("numero-camp").value.length < 1
+    || document.getElementById("rua").value.length < 1 || document.getElementById("cep").value.length < 1
     || document.getElementById("cpf-camp").value.length < 14){
         alert("preencha todos os campos")
     }else{
