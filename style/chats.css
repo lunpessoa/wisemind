@@ -9,7 +9,8 @@
 .search-place:focus {
     outline: none;
     box-shadow:none !important;
-    border:1px solid #ced4da;
+	border:1px solid #ced4da;
+	z-index: 0 !important;
   }
 
   .backimage {

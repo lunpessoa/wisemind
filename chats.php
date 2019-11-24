@@ -38,8 +38,8 @@
 
 	<section class="container d-flex justify-content-center">
 		<div class="input-group mb-3 w-50">
-			<input type="text" id="form-border-none" class="form-control border-right-0 search-place"
-				placeholder="Pesquisar" aria-label="Pesquisar" aria-describedby="basic-addon2">
+			<input type="text" id="busca" class="form-control border-right-0 search-place"
+				placeholder="Pesquisar por áreas" aria-label="Pesquisar" aria-describedby="basic-addon2">
 			<div class="input-group-append">
 				<span class="input-group-text bg-transparent border-left-0" id="basic-addon2"><i
 						class="fas fa-search"></i></span>
@@ -56,7 +56,7 @@
 	?>
 	<section class="container mb-5">
 		<hr>
-		<section class="row mt-5">
+		<section id="result" class="row mt-5">
 			<?php
 		$sql2=('select * from chat;');
 		$resul2=mysqli_query($conexao, $sql2);
@@ -66,23 +66,23 @@
 			$resul3=mysqli_query($conexao, $sql3);
 			$con2=mysqli_fetch_array($resul3);
 
-	echo('
-			<section class="col-12 col-md-4" id="sala'.$con["id_Chat"].'">
-				<a class="btn" href="assets/redmin_sala.php?sala='.$con['id_Chat'].'.">
-					<section class="card">
-						<img src="img/slide_amarelo.gif" class="card-img-top" alt="...">
-						<section class="card-body text-center pb-2">
-							<h3 class="card-title h3"><b><em>'.$con["nome"].'</em></b></h3>
-							<h3 class="text-left h5 mt-4 text-primary mb-0"><em>Prof. '.$con2["Nome"].' '.$con2["Sobrenome"].'</em></h3>
+			echo('
+				<section class="col-12 col-md-4" id="sala'.$con["id_Chat"].'">
+					<a class="btn" href="assets/redmin_sala.php?sala='.$con['id_Chat'].'.">
+						<section class="card">
+							<img src="img/slide_amarelo.gif" class="card-img-top" alt="...">
+							<section class="card-body text-center pb-2">
+								<h3 class="card-title h3"><b><em>'.$con["nome"].'</em></b></h3>
+								<h3 class="text-left h5 mt-4 text-primary mb-0"><em>Prof. '.$con2["Nome"].' '.$con2["Sobrenome"].'</em></h3>
+							</section>
+							<section class="card-footer text-center">
+								<h5 class="float-left text-muted">'.$con["Area"].'</h5>
+								<h5 class="float-right text-muted"> '.$con["Num_Participantes"].'/20</h5>
+							</section>
 						</section>
-						<section class="card-footer text-center">
-							<h5 class="float-left text-muted">'.$con["Area"].'</h5>
-							<h5 class="float-right text-muted"> '.$con["Num_Participantes"].'/20</h5>
-						</section>
-					</section>
-				</a>
-			</section>
-		');
+					</a>
+				</section>
+			');
 		}
 		
 	?>
@@ -136,6 +136,13 @@
 </body>
 
 <script>
+    $("#busca").keyup(function () {
+        var busca = $("#busca").val();
+        $.post('assets/pesquisar.php', {chat: busca}, function (data) {
+            $("#result").html(data);
+        });
+	});
+	
 	$(document).ready(function () {
 		$(window).keydown(function (event) {
 			if (event.keyCode == 13) {
@@ -154,11 +161,10 @@
 	});
 </script>
 <?php
-		}else{
-			$_SESSION["facaLog"]=true;
-        	echo('<script>window.location.href = "login.php";</script>');
-		}
-	
+	}else{
+		$_SESSION["facaLog"]=true;
+		echo('<script>window.location.href = "login.php";</script>');
+	}
 ?>
 
 </html>

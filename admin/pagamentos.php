@@ -152,9 +152,7 @@
 <script>
     $("#busca").keyup(function () {
         var busca = $("#busca").val();
-        $.post('../assets/pesquisar.php', {
-            pag: busca
-        }, function (data) {
+        $.post('../assets/pesquisar.php', {pag: busca}, function (data) {
             $("#result").html(data);
         });
     });
