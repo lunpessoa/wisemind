@@ -15,7 +15,7 @@
 </head>
 
 <body>
-	<nav class="nav position-fixed button-back text-center align-items-center d-flex">
+	<nav class="nav position-fixed button-back text-center">
 		<a href="#inicio" class="slide-section text-dark bg-warning"><i class="fas fa-angle-up"></i></a>
 	</nav>
 
