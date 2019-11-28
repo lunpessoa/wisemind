@@ -830,7 +830,7 @@
 
 
 					<div class="card-body border-0 p-5 d-none" id="informacoes-alter-5">
-						<form name="cad" action=alterar-admin.php" method="POST" class="container was-validated"
+						<form name="cad" action="alterar-admin.php" method="POST" class="container was-validated"
 							novalidate="" autocomplete="off">
 							<div class="row p-2">
 								<div class="col-3">
