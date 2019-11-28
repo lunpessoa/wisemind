@@ -171,21 +171,16 @@ if (!isset($_SESSION)) {
 
   <section class="container-fluid p-0" style="margin-top:100px">
     <div class="row mr-0 ml-0">
-      <div class="col-md-6 col-12 p-0">
-        <div class="profissional">
-          <aside class="content_profissional"></aside>
+      <div class="col-12">
+        <div class="card mb-3">
+          <img class="card-img-top" src="img/teste.png" alt="Imagem de capa do card">
+          <div class="card-body">
+            <h5 class="card-title">Título do card</h5>
+            <p class="card-text">Este é um card maior com suporte a texto embaixo, que funciona como uma introdução a um
+              conteúdo adicional. Este conteúdo é um pouco maior, para demonstração.</p>
+            <p class="card-text"><small class="text-muted">Atualizados 3 minutos atrás</small></p>
+          </div>
         </div>
-      </div>
-      <div class="col-md-6 col-12 text-right p-5">
-        <h3 class="display-3 mt-5 font-lobster justify-content-center align-items-end d-flex">
-          <p>Profissional</p>
-          <i class="fas fa-user-tie position-absolute text-warning icon-info"></i>
-        </h3>
-        <p class="lead mr-5 mt-3 text-justify" style="font-size:25px">O profissional é muito valorizado em nossa
-          plataforma, pois é ele o
-          responsável por boa parte das realizações do nosso serviço, além de aumentar o seu horizonte de conhecimento
-          com outros profissionais e com os jovens, o profisional tem a oportunidade e encontrar e ser indicado a vagas
-          de emprego.</p>
       </div>
     </div>
   </section>
