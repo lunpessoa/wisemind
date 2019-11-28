@@ -22,7 +22,7 @@
     <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon" />
 
     <!-- ScrollBar Stylesheets -->
-	<link rel="stylesheet" href="node_modules/OverlayScrollbars/css/OverlayScrollbars.min.css">
+	<link rel="stylesheet" href="../node_modules/OverlayScrollbars/css/OverlayScrollbars.min.css">
 
 </head>
 
@@ -137,6 +137,19 @@
     <script src="../js/javinha.js"></script>
 
 </body>
+<?php
+	if (!isset($_SESSION["adminchange"])) {
+		$_SESSION["adminchange"]=false;
+    }
+    if( $_SESSION["adminchange"]==true){ 
+        include('toast-admin.php');
+        echo("<script src='../assets/toast.js'></script>
+        <script>adminchange();</script>");
+    
+        $_SESSION["adminchange"]=false;
+        }
+
+?>
 <?php
    }else{
         $_SESSION["facaLog"]=true;

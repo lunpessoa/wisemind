@@ -110,6 +110,7 @@
 
 
 <script>
+	var tempo = 10000
 	$(document).ready(function () {
 		$.post('assets/pesquisar.php', {
 			mostar: true,
@@ -119,47 +120,25 @@
 
 		$("#busca").keyup(function () {
 			var busca = $("#busca").val();
-			if (busca != '') {
-				$.post('assets/pesquisar.php', {
-					chat: busca
-				}, function (data) {
-					$("#result").html(data);
-				});
-			} else {
-				setInterval(function () {
-					$.post('assets/pesquisar.php', {
-						mostar: true,
-					}, function (data) {
-						$("#result").html(data);
-					});
-				}, 1000);
-			}
-		});
+			$.post('assets/pesquisar.php', {
+				chat: busca
+			}, function (data) {
+				$("#result").html(data);
+			});
+
+		})
+
+		setInterval(function () {
+			$.post('assets/pesquisar.php', {
+				mostar: true,
+			}, function (data) {
+				$("#result").html(data);
+			});
+		}, tempo);
 
 
 
 	});
-
-
-	/*$(document).ready(function () {
-		setInterval(function () {
-			var I = $("#useralert").val();
-			var info = 'id=' + I;
-			$.ajax({
-				url: 'assets/pesquisar.php',
-				mostar : info,
-				type: 'POST',
-				cache: false,
-				success: function (data) {
-					if (data.status == "success") {
-						$("#result").html(data);
-					}
-				},
-			});
-		}, 5000);
-
-
-	});*/
 
 	$(document).ready(function () {
 		$(window).keydown(function (event) {

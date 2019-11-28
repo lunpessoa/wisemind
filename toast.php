@@ -24,11 +24,23 @@
         opacity: 0.8;
     }
 </style>
+<?php
+    $endereco = $_SERVER['REQUEST_URI'];
+    $endereco = explode("/",$endereco);
+    $endereco = end($endereco);
+  
+    if (strpos($endereco, 'admin') !== false) {
+      $url_status = false;
+    }else{
+      $url_status = true;
+    }
+    
+?>
 <div class="position-fixed" style="z-index:10; right:20px; top:110px;">
     <div class="toast bg-transparent" role="status" aria-live="polite" aria-atomic="true" data-autohide="false"
         id="toast">
         <div class="toast-header" >
-            <img src="img/logo.png" class="rounded mr-2 " alt="...">
+            <img src=<?php if($url_status == false){echo("../img/logo.png");}else{echo("img/logo.png");}?> class="rounded mr-2 " alt="...">
             <div id="header"></div>
             <button type="button" class="btn ml-2 mb-1 toast-btn" data-dismiss="toast" aria-label="Close">
                 <i class="fas fa-times"></i>

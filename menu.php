@@ -4,7 +4,12 @@ if (!isset($_SESSION)) {
 }
 
 if(isset($_SESSION["log_status"]) && $_SESSION["log_status"]==true){ // ATUALIZAR STATUS PAGAMENTO
-  include('assets/conexao.php');
+  if(isset($_SESSION["adminlog_status"]) && $_SESSION["adminlog_status"]==true){
+    include('../assets/conexao.php');
+  }else{
+    include('assets/conexao.php');
+  }
+  
   
   setlocale( LC_ALL , 'pt_BR' );
   date_default_timezone_set('America/Bahia');
@@ -21,6 +26,23 @@ if(isset($_SESSION["log_status"]) && $_SESSION["log_status"]==true){ // ATUALIZA
       $up_val = mysqli_query($conexao, $update);
   }
 }
+  
+  $endereco = $_SERVER['REQUEST_URI'];
+  $endereco = explode("/",$endereco);
+  $endereco = end($endereco);
+
+  if (strpos($endereco, 'painel-usu-alter?us') !== false) {
+    $url_status = false;
+  }else{
+    $url_status = true;
+  }
+  if($endereco =='index.php'){
+    $url = './admin/admin.php';
+    $url_status = true;
+  }else{
+    $url = './admin.php';
+    
+  }
 
 ?>
 <!DOCTYPE html>
@@ -33,15 +55,32 @@ if(isset($_SESSION["log_status"]) && $_SESSION["log_status"]==true){ // ATUALIZA
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="node_modules/bootstrap/compiler/bootstrap.css">
-  <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
-  <link rel="stylesheet" href="style/style.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
-  <link rel="icon" href="img/logo.png" type="image/x-icon" />
-  <link rel="shortcut icon" href="img/logo.png" type="image/x-icon" />
+  <?php
+  if(isset($_SESSION["adminlog_status"]) && $_SESSION["adminlog_status"]==true && $url_status==false){
+    echo('
+      <link rel="stylesheet" href="../node_modules/bootstrap/compiler/bootstrap.css">
+      <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.css">
+      <link rel="stylesheet" href="../style/style.css">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+      <link rel="icon" href="../img/logo.png" type="image/x-icon" />
+      <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon" />
+    
+      <!-- ScrollBar Stylesheets -->
+      <link rel="stylesheet" href="../node_modules/OverlayScrollbars/css/OverlayScrollbars.min.css">');
+  }else{
+    echo('
+      <link rel="stylesheet" href="node_modules/bootstrap/compiler/bootstrap.css">
+      <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
+      <link rel="stylesheet" href="style/style.css">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+      <link rel="icon" href="img/logo.png" type="image/x-icon" />
+      <link rel="shortcut icon" href="img/logo.png" type="image/x-icon" />
+    
+      <!-- ScrollBar Stylesheets -->
+      <link rel="stylesheet" href="node_modules/OverlayScrollbars/css/OverlayScrollbars.min.css">');
+  }
+  ?>
 
-  <!-- ScrollBar Stylesheets -->
-  <link rel="stylesheet" href="node_modules/OverlayScrollbars/css/OverlayScrollbars.min.css">
 </head>
 
 <body>
@@ -49,11 +88,12 @@ if(isset($_SESSION["log_status"]) && $_SESSION["log_status"]==true){ // ATUALIZA
   <nav class="navbar navbar-light bg-warning">
     <section class="ml-auto" id="botoes-entrada">
       <?php
+            
             if(isset($_SESSION["log_status"]) && $_SESSION["log_status"]==true){
               echo('<a class="btn btn-outline-dark btn-sm" href="painel-usu.php">Perfil <i class="fa fa-user-circle" aria-hidden="true"></i></a>
               <a class="btn btn-outline-dark btn-sm" href="assets/destroy-log.php">Sair <i class="fas fa-sign-in-alt"></i></a>');
             }else if(isset($_SESSION["adminlog_status"]) && $_SESSION["adminlog_status"]==true){
-              echo('<a class="btn btn-outline-dark btn-sm" href="admin/admin.php">Admin <i class="fas fa-lock aria-hidden="true"></i></a>
+              echo('<a class="btn btn-outline-dark btn-sm" href="'.$url.'">Admin <i class="fas fa-lock aria-hidden="true"></i></a>
               <a class="btn btn-outline-dark btn-sm" href="assets/destroy-log.php">Sair <i class="fas fa-sign-in-alt"></i></a>');
             }else{
               echo('<a class="btn btn-outline-dark btn-sm" href="login.php">Entrar <i class="fas fa-sign-in-alt"></i></a>
