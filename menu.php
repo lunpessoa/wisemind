@@ -34,9 +34,11 @@ if(isset($_SESSION["log_status"]) && $_SESSION["log_status"]==true){ // ATUALIZA
   if (strpos($endereco, 'painel-usu-alter?us') !== false) {
     $url_status = false;
     $url_sair = '../assets/destroy-log.php';
+    $url_pag = '../';
   }else{
     $url_status = true;
     $url_sair = 'assets/destroy-log.php';
+    $url_pag = './';
   }
   if($endereco =='index.php'){
     $url = './admin/admin.php';
@@ -179,13 +181,13 @@ if(isset($_SESSION["log_status"]) && $_SESSION["log_status"]==true){ // ATUALIZA
           <section class="col-lg-5">
             <ul class="navbar-nav d-flex justify-content-end mandarparadireita">
               <li class="nav-item text-uppercase">
-                <a class="nav-link text-warning mr-4" href="index.php">Home</a>
+                <a class="nav-link text-warning mr-4" href="<?php echo($url_pag); ?>index.php">Home</a>
               </li>
               <li class="nav-item text-uppercase">
-                <a class="nav-link text-warning mr-4" href="chats.php">Chat</a>
+                <a class="nav-link text-warning mr-4" href="<?php echo($url_pag); ?>chats.php">Chat</a>
               </li>
               <li class="nav-item text-uppercase">
-                <a class="nav-link text-warning" href="conteudo_pago.php">Conteúdo Adicional</a>
+                <a class="nav-link text-warning" href="<?php echo($url_pag); ?>conteudo_pago.php">Conteúdo Adicional</a>
               </li>
             </ul>
           </section>
@@ -193,13 +195,13 @@ if(isset($_SESSION["log_status"]) && $_SESSION["log_status"]==true){ // ATUALIZA
           <section class="col-lg-5">
             <ul class="navbar-nav">
               <li class="nav-item text-uppercase">
-                <a class="nav-link text-warning mr-4" href="parcerias.php">Parcerias</a>
+                <a class="nav-link text-warning mr-4" href="<?php echo($url_pag); ?>parcerias.php">Parcerias</a>
               </li>
               <li class="nav-item text-uppercase">
-                <a class="nav-link text-warning mr-4" href="compra1.php">TORNE-SE WISER</a>
+                <a class="nav-link text-warning mr-4" href="<?php echo($url_pag); ?>compra1.php">TORNE-SE WISER</a>
               </li>
               <li class="nav-item text-uppercase">
-                <a class="nav-link text-warning" href="suporte.php">Suporte</a>
+                <a class="nav-link text-warning" href="<?php echo($url_pag); ?>suporte.php">Suporte</a>
               </li>
             </ul>
           </section>
