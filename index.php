@@ -172,7 +172,7 @@ if (!isset($_SESSION)) {
   <section class="container-fluid p-0" style="margin-top:100px">
     <div class="row mr-0 ml-0 prop">
       <div class="col-12 text-center">
-        <img src="img/wiserpropaganda.png" class="position-relative wiserelement" alt="">
+        <img src="img/wiserpropaganda.png" class="position-relative wiserprop" alt="">
       </div>
     </div>
     <div class="row">

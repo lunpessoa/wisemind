@@ -19,7 +19,7 @@
 		<a href="#inicio" class="slide-section text-dark bg-warning"><i class="fas fa-angle-up"></i></a>
 	</nav>
 
-	<section id="inicio" class="img-fluid backimage" alt="Responsive image">
+	<section id="inicio" class="backimage" alt="Responsive image">
 		<img src="img/wiserhelp.png" class="position-relative wiserelement" alt="">
 	</section>
 
