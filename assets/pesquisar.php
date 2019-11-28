@@ -10,7 +10,7 @@
             while($row = mysqli_fetch_array($sql_query)){
                 echo ('<tr class="text-clear">
                 <th scope="row">'.$row["id_usuario"].' </th>
-                <td> '.$row["Nome"].' </td>
+                <td><a href="painel-usu-alter?us='.$row['id_usuario'].'"> '.$row["Nome"].' </a></td>
                 <td> '.$row["Email"].' </td>
                 <td> ');if($row["id_privilegio"]==1){
                             echo("Usuario");
