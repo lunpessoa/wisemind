@@ -1,8 +1,8 @@
 <?php
-	include('conexao.php');
+	include('../assets/conexao.php');
 	session_start();
-	if(isset($_SESSION["log_status"]) && $_SESSION["log_status"]==true){
-        $sql=('select * from usuarios where id_usuario = '. $_SESSION["id_user"].';');
+	if(isset($_SESSION["adminlog_status"]) && $_SESSION["adminlog_status"]==true){
+        $sql=('select * from usuarios where id_usuario = '.$_SESSION["user"].';');
         $resul=mysqli_query($conexao, $sql);
         $con=mysqli_fetch_array($resul);
 
@@ -10,11 +10,11 @@
             return preg_replace("/[^0-9]/", "", $str); 
         }
         if($con['id_privilegio']==1){
-            $sql2=('select * from estudantes where id_estudante = '. $_SESSION["id_user"].';');
+            $sql2=('select * from estudantes where id_estudante = '. $_SESSION["user"].';');
             $resul2=mysqli_query($conexao, $sql2);
             $est=mysqli_fetch_array($resul2);
         }else if($con['id_privilegio']==2){
-            $sql2=('select * from profissional where id_profissional = '. $_SESSION["id_user"].';');
+            $sql2=('select * from profissional where id_profissional = '. $_SESSION["user"].';');
             $resul2=mysqli_query($conexao, $sql2);
             $est=mysqli_fetch_array($resul2);
         }
@@ -31,26 +31,26 @@
             
             $cpf = limpar_texto($cpf);
             
-            $sqlinserir = ('update usuarios set Nome = "'.$nome.'",Sobrenome ="'.$sobrenome.'", Data_Nasc = "'.$datanasc.'" where id_usuario = '.$_SESSION['id_user'].';');
+            $sqlinserir = ('update usuarios set Nome = "'.$nome.'",Sobrenome ="'.$sobrenome.'", Data_Nasc = "'.$datanasc.'" where id_usuario = '.$_SESSION["user"].';');
                     $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));
 
                     if($inserir){ 
                         
                         if($cpf!=0){
-                            $sqlinserir = ('update usuarios set CPF = "'.$cpf.'" where id_usuario = '.$_SESSION['id_user'].';');
+                            $sqlinserir = ('update usuarios set CPF = "'.$cpf.'" where id_usuario = '.$_SESSION["user"].';');
                             $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));
                             if($sqlinserir){
                                 $_SESSION["alterado"]=true;
-                                echo('<script>window.location.href = "../painel-usu.php";</script>');
+                                echo('<script>window.location.href = "./painel-usu-alter.php";</script>');
                             }
                         }else{
                             $_SESSION["erroAlterado"]=true;
-                            echo('<script>window.location.href = "../painel-usu.php";</script>');
+                            echo('<script>window.location.href = "./painel-usu-alter.php";</script>');
                         }
                         
                     }else{
                         $_SESSION["erroAlterado"]=true;
-                        echo('<script>window.location.href = "../painel-usu.php";</script>');
+                        echo('<script>window.location.href = "./painel-usu-alter.php";</script>');
                     }
 
 
@@ -58,16 +58,16 @@
         if(isset($_POST['Enviar-2'])){
             $descricao = $_POST['descricao'];
             
-            $sqlinserir = ('update estudantes set Situacao = "'.$descricao.'" where id_estudante = '.$_SESSION['id_user'].';');
+            $sqlinserir = ('update estudantes set Situacao = "'.$descricao.'" where id_estudante = '.$_SESSION["user"].';');
                     $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));
 
                     if($inserir){ 
                         $_SESSION["alterado"]=true;
-                        echo('<script>window.location.href = "../painel-usu.php";</script>');
+                        echo('<script>window.location.href = "./painel-usu-alter.php";</script>');
                         
                     }else{
                         $_SESSION["erroAlterado"]=true;
-                        echo('<script>window.location.href = "../painel-usu.php";</script>');
+                        echo('<script>window.location.href = "./painel-usu-alter.php";</script>');
                     }
 
 
@@ -80,7 +80,7 @@
             if($tendencia!=null){
             
                 $sqlinserir = ('update estudantes set Tendencia_de_area =
-                "'.$tendencia.'" where id_estudante = '.$_SESSION['id_user'].';');
+                "'.$tendencia.'" where id_estudante = '.$_SESSION["user"].';');
                 $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));
 
                     if($inserir){ 
@@ -92,7 +92,7 @@
 
             if($skill!=null){
             
-                $sqlinserir = ('update estudantes set Skills ="'.$skill.'" where id_estudante = '.$_SESSION['id_user'].';');
+                $sqlinserir = ('update estudantes set Skills ="'.$skill.'" where id_estudante = '.$_SESSION["user"].';');
                 $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));
 
                     if($inserir){ 
@@ -102,7 +102,7 @@
                     }
             }
 
-            echo('<script>window.location.href = "../painel-usu.php";</script>');
+            echo('<script>window.location.href = "./painel-usu-alter.php";</script>');
             
 
 
@@ -112,16 +112,16 @@
             $celular = $_POST['celular'];
             $celular = limpar_texto($celular);
             
-                    $sqlinserir = ('update usuarios set Cell = "'.$celular.'" where id_usuario = '.$_SESSION['id_user'].';');
+                    $sqlinserir = ('update usuarios set Cell = "'.$celular.'" where id_usuario = '.$_SESSION["user"].';');
                     $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));
 
                     if($inserir){ 
                             $_SESSION["alterado"]=true;
-                            echo('<script>window.location.href = "../painel-usu.php";</script>');
+                            echo('<script>window.location.href = "./painel-usu-alter.php";</script>');
                         
                     }else{
                         $_SESSION["erroAlterado"]=true;
-                        echo('<script>window.location.href = "../painel-usu.php";</script>');
+                        echo('<script>window.location.href = "./painel-usu-alter.php";</script>');
                     }
 
 
@@ -141,7 +141,7 @@
             if($rua!=null){
             
                 $sqlinserir = ('update usuarios set Rua =
-                "'.$rua.'" where id_usuario = '.$_SESSION['id_user'].';');
+                "'.$rua.'" where id_usuario = '.$_SESSION["user"].';');
                 $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));
 
                     if($inserir){ 
@@ -154,7 +154,7 @@
             if($numero!=null){
             
                 $sqlinserir = ('update usuarios set Numero =
-                '.$numero.' where id_usuario = '.$_SESSION['id_user'].';');
+                '.$numero.' where id_usuario = '.$_SESSION["user"].';');
                 $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));
 
                     if($inserir){ 
@@ -167,7 +167,7 @@
             if($CEP!=null){
             
                 $sqlinserir = ('update usuarios set CEP =
-                "'.$CEP.'" where id_usuario = '.$_SESSION['id_user'].';');
+                "'.$CEP.'" where id_usuario = '.$_SESSION["user"].';');
                 $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));
 
                     if($inserir){ 
@@ -180,7 +180,7 @@
             if($Bairro!=null){
             
                 $sqlinserir = ('update usuarios set Bairro =
-                "'.$Bairro.'" where id_usuario = '.$_SESSION['id_user'].';');
+                "'.$Bairro.'" where id_usuario = '.$_SESSION["user"].';');
                 $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));
 
                     if($inserir){ 
@@ -193,7 +193,7 @@
             if($Cidade!=null){
             
                 $sqlinserir = ('update usuarios set Cidade =
-                "'.$Cidade.'" where id_usuario = '.$_SESSION['id_user'].';');
+                "'.$Cidade.'" where id_usuario = '.$_SESSION["user"].';');
                 $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));
 
                     if($inserir){ 
@@ -206,7 +206,7 @@
             if($Estado!=null){
             
                 $sqlinserir = ('update usuarios set Estado =
-                "'.$Estado.'" where id_usuario = '.$_SESSION['id_user'].';');
+                "'.$Estado.'" where id_usuario = '.$_SESSION["user"].';');
                 $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));
 
                     if($inserir){ 
@@ -216,7 +216,7 @@
                     }
             }
 
-            echo('<script>window.location.href = "../painel-usu.php";</script>');
+            echo('<script>window.location.href = "./painel-usu-alter.php";</script>');
             
 
 
@@ -233,37 +233,37 @@
                 if($senha_nova==$confirm_senha){
 
                 
-                    $sqlinserir = ('update usuarios set Senha = "'.sha1($senha_nova.$con['Email']).'" where id_usuario = '.$_SESSION['id_user'].';');
+                    $sqlinserir = ('update usuarios set Senha = "'.sha1($senha_nova.$con['Email']).'" where id_usuario = '.$_SESSION["user"].';');
                     $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));
 
 
                     if($inserir){
                         $_SESSION["alterado"]=true;
-                        echo('<script>window.location.href = "../painel-usu.php";</script>');
+                        echo('<script>window.location.href = "./painel-usu-alter.php";</script>');
                     }else{
                         $_SESSION["erroAlterado"]=true;
-                        echo('<script>window.location.href = "../painel-usu.php";</script>');
+                        echo('<script>window.location.href = "./painel-usu-alter.php";</script>');
                     }
                 
                 }else{
                     $_SESSION["senhas-difer"]=true;
-                    echo('<script>window.location.href = "../painel-usu.php";</script>');
+                    echo('<script>window.location.href = "./painel-usu-alter.php";</script>');
                 }
              }else{
                 $_SESSION["senhas-difer"]=true;
-                echo('<script>window.location.href = "../painel-usu.php";</script>');
+                echo('<script>window.location.href = "./painel-usu-alter.php";</script>');
              }
         }
 
         if(isset($_POST['Enviar-8'])){
-            $sqlmostrar=('select * from especializacao where id_prof = "'.$_SESSION["id_user"].'";');
+            $sqlmostrar=('select * from especializacao where id_prof = "'.$_SESSION["user"].'";');
             $resul3=mysqli_query($conexao, $sqlmostrar);
 			while($con_prof=mysqli_fetch_array($resul3)){
                 $area[$con_prof['id_espc']]=$_POST['area'.$con_prof['id_espc']];
                 $profissao[$con_prof['id_espc']]=$_POST['profissao'.$con_prof['id_espc']];						
             }
 
-            $sqlmostrar=('select * from especializacao where id_prof = "'.$_SESSION["id_user"].'";');
+            $sqlmostrar=('select * from especializacao where id_prof = "'.$_SESSION["user"].'";');
             $resul3=mysqli_query($conexao, $sqlmostrar);
             while($con_prof=mysqli_fetch_array($resul3)){
                 $sqlinserir = ('update especializacao set Area = "'.$area[$con_prof['id_espc']].'"
@@ -277,11 +277,11 @@
 
                     if($inserir){ 
                         $_SESSION["alterado"]=true;
-                        echo('<script>window.location.href = "../painel-usu.php";</script>');
+                        echo('<script>window.location.href = "./painel-usu-alter.php";</script>');
                         
                     }else{
                         $_SESSION["erroAlterado"]=true;
-                        echo('<script>window.location.href = "../painel-usu.php";</script>');
+                        echo('<script>window.location.href = "./painel-usu-alter.php";</script>');
                     }
 
 
@@ -293,16 +293,16 @@
             $area = $_POST['area'];
             $profissao = $_POST['profissao'];
             
-            $sqlinserir = ('insert into especializacao (Area, Profissao, id_prof) values ("'.$area.'", "'.$profissao.'", '.$_SESSION['id_user'].');');
+            $sqlinserir = ('insert into especializacao (Area, Profissao, id_prof) values ("'.$area.'", "'.$profissao.'", '.$_SESSION["user"].');');
                     $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));
 
                     if($inserir){ 
                         $_SESSION["alterado"]=true;
-                        echo('<script>window.location.href = "../painel-usu.php";</script>');
+                        echo('<script>window.location.href = "./painel-usu-alter.php";</script>');
                         
                     }else{
                         $_SESSION["erroAlterado"]=true;
-                        echo('<script>window.location.href = "../painel-usu.php";</script>');
+                        echo('<script>window.location.href = "./painel-usu-alter.php";</script>');
                     }
 
 
@@ -314,28 +314,28 @@
         date_default_timezone_set("Brazil/East"); 
 
         $ext = strtolower(substr($_FILES['avatar']['name'],-4)); //Pegando extensão do arquivo
-        $new_name =  $_SESSION['id_user']. $ext; //Definindo um novo nome para o arquivo
+        $new_name = $_SESSION["user"]. $ext; //Definindo um novo nome para o arquivo
         $dir = '../img/perfil/'; //Diretório para uploads
 
         move_uploaded_file($_FILES['avatar']['tmp_name'], $dir.$new_name); //Fazer upload do arquivo
 
-        echo('<script>window.location.href = "../painel-usu.php";</script>');
+        echo('<script>window.location.href = "./painel-usu-alter.php";</script>');
 
-        $sqlinserir = ('update usuarios set perfil_img = "img/perfil/'.$new_name.'" where id_usuario = '.$_SESSION['id_user'].';');
+        $sqlinserir = ('update usuarios set perfil_img = "img/perfil/'.$new_name.'" where id_usuario = '.$_SESSION["user"].';');
                     $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));
 
                     if($inserir){ 
                             $_SESSION["alterado"]=true;
-                            echo('<script>window.location.href = "../painel-usu.php";</script>');
+                            echo('<script>window.location.href = "./painel-usu-alter.php";</script>');
                         
                     }else{
                         $_SESSION["erroAlterado"]=true;
-                        echo('<script>window.location.href = "../painel-usu.php";</script>');
+                        echo('<script>window.location.href = "./painel-usu-alter.php";</script>');
                     }
         }
     }else{
         $_SESSION["facaLog"]=true;
-        echo('<script>window.location.href = "login.php";</script>');
+        echo('<script>window.location.href = "../login.php";</script>');
     }
 
 
