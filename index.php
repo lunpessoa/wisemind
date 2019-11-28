@@ -170,15 +170,18 @@ if (!isset($_SESSION)) {
   </section>
 
   <section class="container-fluid p-0" style="margin-top:100px">
-    <div class="row mr-0 ml-0">
-      <div class="col-12">
-        <div class="card mb-3">
-          <img class="card-img-top" src="img/teste.png" alt="Imagem de capa do card">
+    <div class="row mr-0 ml-0 prop">
+      <div class="col-12 text-center">
+        <img src="img/wiserpropaganda.png" class="position-relative wiserelement" alt="">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 align-items-center d-flex font-lobster">
+        <div class="card">
           <div class="card-body">
-            <h5 class="card-title">Título do card</h5>
-            <p class="card-text">Este é um card maior com suporte a texto embaixo, que funciona como uma introdução a um
-              conteúdo adicional. Este conteúdo é um pouco maior, para demonstração.</p>
-            <p class="card-text"><small class="text-muted">Atualizados 3 minutos atrás</small></p>
+            <p class="card-text h3 my-5">Apenas R$ 39,90</p>
+            <p class="card-text h3 my-5">Conteúdos Adicionais</p>
+            <p class="card-text h3 my-5">Melhor Experiência</p>
           </div>
         </div>
       </div>
