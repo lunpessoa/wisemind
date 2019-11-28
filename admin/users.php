@@ -68,7 +68,7 @@
                     while($con_usu=mysqli_fetch_array($resul)){
                         echo('<tr class="text-clear">
                             <th scope="row">'.$con_usu["id_usuario"].' </th>
-                            <td><a href="painel-usu-alter?us='.$con_usu['id_usuario'].'"> '.$con_usu["Nome"].' </td>
+                            <td><a href="painel-usu-alter?us='.$con_usu['id_usuario'].'"> '.$con_usu["Nome"].' </a></td>
                             <td> '.$con_usu["Email"].' </td>
                             <td> ');if($con_usu["id_privilegio"]==1){
                                         echo("Estudante");
