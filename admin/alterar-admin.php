@@ -41,16 +41,16 @@
                             $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));
                             if($sqlinserir){
                                 $_SESSION["alterado"]=true;
-                                echo('<script>window.location.href = "./painel-usu-alter.php";</script>');
+                                echo('<script>window.location.href = "./painel-usu-alter?us='.$_SESSION["user"].'";</script>');
                             }
                         }else{
                             $_SESSION["erroAlterado"]=true;
-                            echo('<script>window.location.href = "./painel-usu-alter.php";</script>');
+                            echo('<script>window.location.href ="./painel-usu-alter?us='.$_SESSION["user"].'";</script>');
                         }
                         
                     }else{
                         $_SESSION["erroAlterado"]=true;
-                        echo('<script>window.location.href = "./painel-usu-alter.php";</script>');
+                        echo('<script>window.location.href = "./painel-usu-alter?us='.$_SESSION["user"].'";</script>');
                     }
 
 
@@ -63,11 +63,11 @@
 
                     if($inserir){ 
                         $_SESSION["alterado"]=true;
-                        echo('<script>window.location.href = "./painel-usu-alter.php";</script>');
+                        echo('<script>window.location.href = "./painel-usu-alter?us='.$_SESSION["user"].'";</script>');
                         
                     }else{
                         $_SESSION["erroAlterado"]=true;
-                        echo('<script>window.location.href = "./painel-usu-alter.php";</script>');
+                        echo('<script>window.location.href = "./painel-usu-alter?us='.$_SESSION["user"].'";</script>');
                     }
 
 
@@ -102,7 +102,7 @@
                     }
             }
 
-            echo('<script>window.location.href = "./painel-usu-alter.php";</script>');
+            echo('<script>window.location.href = "./painel-usu-alter?us='.$_SESSION["user"].'";</script>');
             
 
 
@@ -117,11 +117,11 @@
 
                     if($inserir){ 
                             $_SESSION["alterado"]=true;
-                            echo('<script>window.location.href = "./painel-usu-alter.php";</script>');
+                            echo('<script>window.location.href = "./painel-usu-alter?us='.$_SESSION["user"].'";</script>');
                         
                     }else{
                         $_SESSION["erroAlterado"]=true;
-                        echo('<script>window.location.href = "./painel-usu-alter.php";</script>');
+                        echo('<script>window.location.href = "./painel-usu-alter?us='.$_SESSION["user"].'";</script>');
                     }
 
 
@@ -216,7 +216,7 @@
                     }
             }
 
-            echo('<script>window.location.href = "./painel-usu-alter.php";</script>');
+            echo('<script>window.location.href ="./painel-usu-alter?us='.$_SESSION["user"].'";</script>');
             
 
 
@@ -239,19 +239,19 @@
 
                     if($inserir){
                         $_SESSION["alterado"]=true;
-                        echo('<script>window.location.href = "./painel-usu-alter.php";</script>');
+                        echo('<script>window.location.href = "./painel-usu-alter?us='.$_SESSION["user"].'";</script>');
                     }else{
                         $_SESSION["erroAlterado"]=true;
-                        echo('<script>window.location.href = "./painel-usu-alter.php";</script>');
+                        echo('<script>window.location.href = "./painel-usu-alter?us='.$_SESSION["user"].'";</script>');
                     }
                 
                 }else{
                     $_SESSION["senhas-difer"]=true;
-                    echo('<script>window.location.href = "./painel-usu-alter.php";</script>');
+                    echo('<script>window.location.href = "./painel-usu-alter?us='.$_SESSION["user"].'";</script>');
                 }
              }else{
                 $_SESSION["senhas-difer"]=true;
-                echo('<script>window.location.href = "./painel-usu-alter.php";</script>');
+                echo('<script>window.location.href = "./painel-usu-alter?us='.$_SESSION["user"].'";</script>');
              }
         }
 
@@ -277,11 +277,11 @@
 
                     if($inserir){ 
                         $_SESSION["alterado"]=true;
-                        echo('<script>window.location.href = "./painel-usu-alter.php";</script>');
+                        echo('<script>window.location.href = "./painel-usu-alter?us='.$_SESSION["user"].'";</script>');
                         
                     }else{
                         $_SESSION["erroAlterado"]=true;
-                        echo('<script>window.location.href = "./painel-usu-alter.php";</script>');
+                        echo('<script>window.location.href = "./painel-usu-alter?us='.$_SESSION["user"].'";</script>');
                     }
 
 
@@ -298,11 +298,11 @@
 
                     if($inserir){ 
                         $_SESSION["alterado"]=true;
-                        echo('<script>window.location.href = "./painel-usu-alter.php";</script>');
+                        echo('<script>window.location.href = "./painel-usu-alter?us='.$_SESSION["user"].'";</script>');
                         
                     }else{
                         $_SESSION["erroAlterado"]=true;
-                        echo('<script>window.location.href = "./painel-usu-alter.php";</script>');
+                        echo('<script>window.location.href = "./painel-usu-alter?us='.$_SESSION["user"].'";</script>');
                     }
 
 
@@ -319,18 +319,18 @@
 
         move_uploaded_file($_FILES['avatar']['tmp_name'], $dir.$new_name); //Fazer upload do arquivo
 
-        echo('<script>window.location.href = "./painel-usu-alter.php";</script>');
+        echo('<script>window.location.href = "./painel-usu-alter?us='.$_SESSION["user"].'";</script>');
 
         $sqlinserir = ('update usuarios set perfil_img = "img/perfil/'.$new_name.'" where id_usuario = '.$_SESSION["user"].';');
                     $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));
 
                     if($inserir){ 
                             $_SESSION["alterado"]=true;
-                            echo('<script>window.location.href = "./painel-usu-alter.php";</script>');
+                            echo('<script>window.location.href = "./painel-usu-alter?us='.$_SESSION["user"].'";</script>');
                         
                     }else{
                         $_SESSION["erroAlterado"]=true;
-                        echo('<script>window.location.href = "./painel-usu-alter.php";</script>');
+                        echo('<script>window.location.href = "./painel-usu-alter?us='.$_SESSION["user"].'";</script>');
                     }
         }
     }else{

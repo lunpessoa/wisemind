@@ -1,7 +1,7 @@
 <?php
 	if(isset($_GET["us"])){
 	$id_user = $_GET['us'];
-	$_SESSION["user"]=$id_user;
+	
         
 	ob_start();
 	include('../assets/conexao.php');
@@ -11,6 +11,7 @@
 	date_default_timezone_set( "America/Sao_Paulo" );
 
 	if(isset($_SESSION["adminlog_status"]) && $_SESSION["adminlog_status"]==true){
+		$_SESSION["user"]=$id_user;
 		$sql=('select * from usuarios where id_usuario = '. $id_user.';');
 		$resul=mysqli_query($conexao, $sql);
 		$con=mysqli_fetch_array($resul);
@@ -1203,8 +1204,8 @@
 
 ?>
 <?php if( $_SESSION["alterado"]==true){ 
-	include('../toast.php');
-	echo("<script src='assets/toast.js'></script>
+	include('toast-admin.php');
+	echo("<script src='../assets/toast.js'></script>
 	<script>alterado();</script>");
 
 	$_SESSION["alterado"]=false;
@@ -1218,8 +1219,8 @@
 
 ?>
 <?php if($_SESSION["erroAlterado"]==true){ 
-	include('../toast.php');
-	echo("<script src='assets/toast.js'></script>
+	include('toast-admin.php');
+	echo("<script src='../assets/toast.js'></script>
 	<script>erroAlterado();</script>");
 
 	$_SESSION["erroAlterado"]=false;
@@ -1235,8 +1236,8 @@
 
 ?>
 <?php if($_SESSION["senhas-difer"]==true){ 
-	include('../toast.php');
-	echo("<script src='assets/toast.js'></script>
+	include('toast-admin.php');
+	echo("<script src='../assets/toast.js'></script>
 	<script>senhas();</script>");
 
 	$_SESSION["senhas-difer"]=false;
