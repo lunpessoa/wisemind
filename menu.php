@@ -33,16 +33,18 @@ if(isset($_SESSION["log_status"]) && $_SESSION["log_status"]==true){ // ATUALIZA
 
   if (strpos($endereco, 'painel-usu-alter?us') !== false) {
     $url_status = false;
+    $url_sair = '../assets/destroy-log.php';
   }else{
     $url_status = true;
+    $url_sair = 'assets/destroy-log.php';
   }
   if($endereco =='index.php'){
     $url = './admin/admin.php';
-    $url_sair = 'assets/destroy-log.php';
+    
     $url_status = true;
   }else{
     
-    $url_sair = '../assets/destroy-log.php';
+    
     $url = './admin.php';
     
   }
