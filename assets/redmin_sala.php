@@ -11,7 +11,12 @@
             $_SESSION['sala'] = $sala;
             header("Location: ../chat/public/chat.php");
         } 
-    }   
+    }
+
+    if(isset($_POST['note'])){
+       $_SESSION['note']=true;
+       header("Location: ../chats.php");
+    }
 
 ?>           
                     

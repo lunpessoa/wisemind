@@ -101,6 +101,9 @@ io.on('connection', socket => {
                 return con
             }
         })
+        if(clients.length>20){
+            socket.to(socket.sala).emit('chockFull');
+        }
 
         console.log(users_sala)
 

@@ -109,8 +109,29 @@
 
 
 
+<?php
+	if (!isset( $_SESSION["note"])) {
+		$_SESSION["note"]=false;
+	}
+
+?>
+<?php if($_SESSION["note"]==true){ 
+	include('toast.php');
+	echo("<script src='assets/toast.js'></script>
+	<script>salaCheia();</script>");
+
+	$_SESSION["note"]=false;
+	}
+
+?>
+
+
+
+
+
+
 <script>
-	var tempo = 10000
+	var tempo = 1000
 	$(document).ready(function () {
 		$.post('assets/pesquisar.php', {
 			mostar: true,
@@ -118,17 +139,23 @@
 			$("#result").html(data);
 		});
 
-		$("#busca").keyup(function () {
-			var busca = $("#busca").val();
-			$.post('assets/pesquisar.php', {
-				chat: busca
-			}, function (data) {
-				$("#result").html(data);
-			});
 
-		})
 
 		setInterval(function () {
+
+			$("#busca").keyup(function () {
+				var busca = $("#busca").val();
+				$.post('assets/pesquisar.php', {
+					chat: busca
+				}, function (data) {
+
+					$("#result").html(data);
+
+				});
+
+			})
+
+
 			$.post('assets/pesquisar.php', {
 				mostar: true,
 			}, function (data) {
