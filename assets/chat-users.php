@@ -16,7 +16,7 @@
          $resul=mysqli_query($conexao, $sqlmostrar);
             while($con_usu=mysqli_fetch_array($resul)){
                 echo('<li class="list-user">
-                <a href="#" class="users text-decoration-none">
+                <a href="../../perfil-view?us='.$con_usu['id_usuario'].'" class="users text-decoration-none" target="_blank">
                     <div class="position-relative p-0 ml-5 class-users">
                         <img class="class-img" src="../../'.$con_usu['perfil_img'].'" alt="">
                         <div class="status"></div>

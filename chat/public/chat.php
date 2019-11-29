@@ -47,7 +47,7 @@
                     <div class="col-6">
                         <label class="ml-3 chat-name text-light font-weight-bold font-italic mb-0">Sala:
                             <?php echo($con_sala['nome']." id=".$con_sala['id_Chat']) ?></label><br>
-                        <label class="ml-3 area-chat font-weight-bold font-italic">Área: Biológicas</label>
+                        <label class="ml-3 area-chat font-weight-bold font-italic">Área: <?php echo($con_sala['Area']);?></label>
                     </div>
                     <div class="col-6 justify-content-end align-items-center d-flex">
                         <a class="sair-btn text-decoration-none text-danger mr-3" href="" id="sair">
