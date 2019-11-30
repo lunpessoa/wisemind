@@ -169,29 +169,6 @@ if (!isset($_SESSION)) {
     <hr>
   </section>
 
-  <section class="container-fluid p-0" style="margin-top:100px">
-    <div class="row mr-0 ml-0 prop">
-      <div class="col-12 text-center">
-        <img src="img/wiserpropaganda.png" class="position-relative wiserprop" alt="">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12 align-items-center d-flex font-lobster">
-        <div class="card">
-          <div class="card-body">
-            <p class="card-text h3 my-5">Apenas R$ 39,90</p>
-            <p class="card-text h3 my-5">Conteúdos Adicionais</p>
-            <p class="card-text h3 my-5">Melhor Experiência</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="container" style="margin-top:100px">
-    <hr>
-  </section>
-
   <section class="container text-center" style="margin-top:100px">
     <section class="row mb-5">
       <section class="col-12">

@@ -73,17 +73,6 @@
     margin-top: 100px;
 }
 
-.prop {
-    height: 450px;
-}
-
-.wiserprop {
-    margin-left: -50px;
-    top: 50%;
-    transform: translateY(-50%);
-    animation: float 6s ease-in-out infinite;
-}
-
 @keyframes float {
     0% {
         transform: translatey(-160px);
