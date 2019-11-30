@@ -152,7 +152,7 @@ io.on('connection', socket => {
 
     //Enviando mensagem
     socket.on('sendMessage', data => {
-        var queryMessage = 'insert into mensagens (menssagem, hora_envio, id_usuario, id_sala) values ("'+data.message+'", "'+getHours()+'",'+data.id_usuario+','+data.sala+');';
+        var queryMessage = 'insert into mensagens (mensagem, hora_envio, id_usuario, id_sala) values ("'+data.message+'", "'+getHours()+'",'+data.id_usuario+','+data.sala+');';
              connection.query(queryMessage, function (err, result) {
             if (err) throw err;
             console.log(result.affectedRows + " record(s) updated");
