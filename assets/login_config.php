@@ -31,12 +31,14 @@
                     $_SESSION["id_user"]=$con['id_usuario'];
                     if($con['id_privilegio']==1 || $con['id_privilegio']==2){
                         $_SESSION["log_status"]=true;
-
+                        $_SESSION["logado"]=true;
                         //$_SESSION["logado"]=true;
                         echo"<script>window.location.href='../index.php';</script>";
                         //setcookie("login",$login);
                     }else if($con['id_privilegio']==3){
                         $_SESSION["adminlog_status"]=true;
+                        $_SESSION["admin"]=true;
+                        $_SESSION['Nome-admin']=$con['Nome'];
                         //$_SESSION["admin"]=true;
                         echo"<script>window.location.href='../index.php';</script>";
                     }

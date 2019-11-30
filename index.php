@@ -242,12 +242,28 @@ $_SESSION["cadastrado"]=false;
 
 ?>
 <?php if( $_SESSION["logado"]==true){ 
-  include('toast.php');
+  
   echo("<script src='assets/toast.js'></script>
   <script>logado()</script>");
 
 $_SESSION["logado"]=false;
 }
+
+?>
+
+<?php
+	if (!isset( $_SESSION["admin"])) {
+		$_SESSION["admin"]=false;
+	}
+
+?>
+<?php if($_SESSION["admin"]==true){ 
+	include('toast.php');
+	echo("<script src='assets/toast.js'></script>
+	<script>admin('". $_SESSION['Nome-admin']."');</script>");
+
+	$_SESSION["admin"]=false;
+	}
 
 ?>
 

@@ -267,26 +267,7 @@
 	<script src="js/javinha.js"></script>
 
 </body>
-<script>
-	var ativar = function (x) {
-		for (let y = 1; y <= 5; y++)
-			if (y == x) {
-				var botao = document.getElementById("botao-conteudo-" + x)
-				botao.setAttribute('class', 'nav-link h5 mb-0 px-3 pt-4 ativado')
-			} else {
-				var botao = document.getElementById("botao-conteudo-" + y)
-				botao.setAttribute('class', 'nav-link h5 mb-0 px-3 pt-4')
-			}
-	}
 
-	for (let x = 1; x <= 5; x++) {
-		var link = document.getElementById("botao-conteudo-" + x)
-		link.onclick = (e) => {
-			e.preventDefault()
-			ativar(x)
-		}
-	}
-</script>
 <?php
 		}else{
 			$_SESSION["facaLog"]=true;

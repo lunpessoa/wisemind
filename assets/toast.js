@@ -281,7 +281,7 @@ var salaCheia = function(){
         var header = document.getElementById("header")
         var strong = document.createElement('strong')
         strong.setAttribute('class','mr-5 text-light')
-        var cabecalho = document.createTextNode('CHAT   ')
+        var cabecalho = document.createTextNode('CHAT')
         strong.appendChild(cabecalho)
         header.appendChild(strong)
         var mae = document.getElementById('toast')
