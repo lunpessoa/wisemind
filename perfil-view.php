@@ -1,11 +1,46 @@
 <?php
 	include('assets/conexao.php');
 	session_start();
+	$perfil = true;
 	if(isset($_SESSION["log_status"]) && $_SESSION["log_status"]==true || isset($_SESSION["adminlog_status"]) && $_SESSION["adminlog_status"]==true){
-	$sql=('select * from usuarios where id_usuario = '. $_SESSION["id_user"].';');
-	$resul=mysqli_query($conexao, $sql);
-	$con=mysqli_fetch_array($resul);
-	$perfil=true;
+		
+		if(isset($_GET["us"])){
+			$sql=('select * from usuarios where id_usuario = '. $_SESSION["id_user"].';');
+			$resul=mysqli_query($conexao, $sql);
+			$con=mysqli_fetch_array($resul);
+
+			function multiexplode ($delimiters,$string) {
+				$ready = str_replace($delimiters, $delimiters[0], $string);
+				$launch = explode($delimiters[0], $ready);
+				return  $launch;
+			}
+
+			$datanasc = explode("-",$con['Data_Nasc']);
+			$datanasc = array_reverse($datanasc);
+			$datanasc = implode ('/', $datanasc);
+
+			if($con['CPF']){
+				$cpf_test = str_split($con['CPF'], 3);
+				$cpf = $cpf_test[0].'.'.$cpf_test[1].'.'.$cpf_test[2].'-'.$cpf_test[3];
+			}
+			
+			$c = str_split($con['Cell'], 1);
+			$cell = '('.$c[0].$c[1].') '.$c[2].$c[3].$c[4].$c[5].$c[6].'-'.$c[7].$c[8].$c[9].$c[10];
+
+			if($con['CEP']){
+				$cep_text = str_split($con['CEP'], 5);
+				$cep = $cep_text[0].'-'.$cep_text[1];
+			}
+
+			if($con['id_privilegio']==1){
+				$sql2=('select * from estudantes where id_estudante = '. $_SESSION["id_user"].';');
+				$resul2=mysqli_query($conexao, $sql2);
+				$est=mysqli_fetch_array($resul2);
+			}else if($con['id_privilegio']==2){
+				$sql2=('select * from profissional where id_profissional = '. $_SESSION["id_user"].';');
+				$resul2=mysqli_query($conexao, $sql2);
+				$est=mysqli_fetch_array($resul2);
+			}
 ?>
 
 <!DOCTYPE html>
@@ -206,56 +241,6 @@
 
 	</div>
 
-	<!--
-	<div class="container d-flex align-items-center justify-content-center" style="height: 170vh;">
-		<div class="card border border-0 bg-transparent" style="border-radius: 10px;">
-			<div class="card-header border-bottom-0 bg-dark" style="border-top-left-radius: 10px; border-top-right-radius: 10px;">
-				<div class="row">
-					<div class="col-12 text-center">
-						<h1 class="h1 text-warning"><b>Perfil</b></h1>
-					</div>
-				</div>
-			</div>
-			<div class="card-body bg-dark border-0">
-
-				<div class="row mb-5">
-					<div class="col-12 d-flex justify-content-center">
-						<div class="ft-perfil">
-							<img src="img/foto-perfil.jpg" class="img-fluid">
-						</div>
-					</div>
-
-				</div>
-				<form>
-					<div class="container d-flex justify-content-start">
-						<div class="col-6 input-group form-group">
-							<label style="color:#b5b5b5;" class="text-font">Nome</label>
-							<input type="text" class="form-control text-light" style="background-color:#282d30; width:100%; border-color:#1f1f1f;">
-						</div>
-						<div class="col-6 input-group form-group">
-							<label class="text-font" style="color:#b5b5b5;">Sobrenome</label>
-							<input type="password" class="form-control text-light" style="background-color:#282d30; width:100%; border-color:#1f1f1f;">
-						</div>
-					</div>
-					<label class="text-font" style="color:#b5b5b5;">Email</label>
-					<div class="col-11 input-group form-group">
-						<input type="password" class="form-control text-light" style="background-color:#282d30; border-color:#1f1f1f;">
-					</div>
-					<label class="text-font" style="color:#b5b5b5;">Endereço</label>
-					<div class="input-group form-group">
-						<input type="password" class="form-control text-light" style="background-color:#282d30; border-color:#1f1f1f;">
-					</div>
-					<label class="text-font" style="color:#b5b5b5;">CPF</label>
-					<div class="input-group form-group">
-						<input type="password" class="form-control text-light" style="background-color:#282d30; border-color:#1f1f1f;">
-					</div>
-				</form>
-			</div>
-			<div class="card-footer bg-dark border-top-0 text-center text-font">
-			</div>
-		</div>
-	</div>
-	-->
 	<script src="node_modules/jquery/dist/jquery.js"></script>
 	<script src="node_modules/popper.js/dist/umd/popper.js"></script>
 	<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
@@ -268,10 +253,15 @@
 </body>
 
 <?php
+	
 		}else{
-			$_SESSION["facaLog"]=true;
-        	echo('<script>window.location.href = "login.php";</script>');
+        	echo('<script>window.close();</script>');
 		}
+	}else{
+		$_SESSION["facaLog"]=true;
+		echo('<script>window.location.href = "login.php";</script>');
+	}
+
 	
 ?>
 

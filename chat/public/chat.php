@@ -94,10 +94,7 @@
                                 <input autofocus type="text" class="form-control bg-dark text-light"
                                     placeholder="Conversar no chat.." aria-describedby="basic-addon2" name="mensagem"
                                     style="border-color:#1f1f1f;" id="msg">
-                                <div class="input-group-append">
-                                    <button class="chat-btn btn bg-dark text-light" style="border: 1px solid #1f1f1f;"
-                                        id="button-addon2"><i class="fas fa-paperclip"></i></button>
-                                </div>
+                                
                                 <div class="input-group-append">
                                     <button class="chat-btn btn bg-dark text-light" style="border: 1px solid #1f1f1f;"
                                         id="button-addon2"><i class="fas fa-paper-plane"></i></button>

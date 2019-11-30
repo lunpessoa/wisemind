@@ -24,6 +24,7 @@ main {
     overflow: auto;
 }
 
+
 /*mensagens*/
 #self {
     color: #000;
@@ -93,6 +94,7 @@ main {
     padding: 0.5rem;
     overflow: hidden;
     display: flex;
+    
 }
 
 #typingSpace {
