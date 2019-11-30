@@ -17,17 +17,14 @@
     <link rel="stylesheet" href="../node_modules/bootstrap/compiler/bootstrap.css">
     <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
-    <link rel="stylesheet" href="admin.css">
     <link rel="icon" href="../img/logo.png" type="image/x-icon" />
     <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon" />
-
-    <!-- ScrollBar Stylesheets -->
-	<link rel="stylesheet" href="../node_modules/OverlayScrollbars/css/OverlayScrollbars.min.css">
+    
+    <link rel="stylesheet" href="admin.css">
 
 </head>
 
 <body>
-
     <section id="logo" style="z-index:1;">
         <section class="svgLogo">
             <svg class="logoWiseMind" version="1.1" width="300px" height="300px" viewBox="0 0 4000 4000"
@@ -130,11 +127,6 @@
     <script src="../node_modules/jquery/dist/jquery.js"></script>
     <script src="../node_modules/popper.js/dist/umd/popper.js"></script>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
-
-    <!-- javascript SimpleBar -->
-    <script src="../node_modules/OverlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-    <script src="../node_modules/OverlayScrollbars/js/OverlayScrollbars.min.js"></script>
-    <script src="../js/javinha.js"></script>
 
 </body>
 <?php
