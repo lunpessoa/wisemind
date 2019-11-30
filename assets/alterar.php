@@ -25,36 +25,46 @@
             $data=$_POST['data'];
             $cpf=$_POST['cpf'];
 
-            $datanasc = explode("/",$data);
-		    $datanasc = array_reverse($datanasc);
-            $datanasc = implode ('-', $datanasc);
-            
             $cpf = limpar_texto($cpf);
-            
-            $sqlinserir = ('update usuarios set Nome = "'.$nome.'",Sobrenome ="'.$sobrenome.'", Data_Nasc = "'.$datanasc.'" where id_usuario = '.$_SESSION['id_user'].';');
-                    $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));
 
-                    if($inserir){ 
-                        
-                        if($cpf!=0){
-                            $sqlinserir = ('update usuarios set CPF = "'.$cpf.'" where id_usuario = '.$_SESSION['id_user'].';');
-                            $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));
-                            if($sqlinserir){
-                                $_SESSION["alterado"]=true;
-                                echo('<script>window.location.href = "../painel-usu.php";</script>');
-                            }
-                        }else{
-                            $_SESSION["erroAlterado"]=true;
+            $datanasc = explode("/",$data);
+            
+            $date_check = checkdate($datanasc[1], $datanasc[0], $datanasc[2]);
+
+            $datanasc = array_reverse($datanasc);
+            $datanasc = implode ('-', $datanasc);
+
+            $date_temp = strtotime($datanasc);
+            $today = strtotime(date("Y-m-d"));
+            
+            if($date_check == true && $today > $date_temp){
+                $sqlinserir = ('update usuarios set Nome = "'.$nome.'",Sobrenome ="'.$sobrenome.'", Data_Nasc = "'.$datanasc.'" where id_usuario = '.$_SESSION['id_user'].';');
+                $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));
+
+                if($inserir){ 
+                    
+                    if($cpf!=0){
+                        $sqlinserir = ('update usuarios set CPF = "'.$cpf.'" where id_usuario = '.$_SESSION['id_user'].';');
+                        $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));
+                        if($sqlinserir){
+                            $_SESSION["alterado"]=true;
                             echo('<script>window.location.href = "../painel-usu.php";</script>');
                         }
-                        
                     }else{
                         $_SESSION["erroAlterado"]=true;
                         echo('<script>window.location.href = "../painel-usu.php";</script>');
                     }
-
-
+                    
+                }else{
+                    $_SESSION["erroAlterado"]=true;
+                    echo('<script>window.location.href = "../painel-usu.php";</script>');
+                }
+            }else{
+                $_SESSION["erroAlterado"]=true;
+                    echo('<script>window.location.href = "../painel-usu.php";</script>');
+            }
         }
+
         if(isset($_POST['Enviar-2'])){
             $descricao = $_POST['descricao'];
             

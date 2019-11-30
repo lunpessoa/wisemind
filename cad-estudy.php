@@ -205,8 +205,18 @@ if (!isset($_SESSION)) {
 	}
 
 ?>
+<?php
+	if (!isset($_SESSION["datas"])) {
+		$_SESSION["datas"]=false;
+	}
+	
+	if($_SESSION["datas"]==true){ 
+	include('toast.php');
+	echo("<script src='assets/toast.js'></script>
+	<script>datas()</script>");
 
+	$_SESSION["datas"]=false;
+	}
 
-
-
+?>
 </html>

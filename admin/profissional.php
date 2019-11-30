@@ -58,6 +58,7 @@
                     <th scope="col">Nome</th>
                     <th scope="col">Sobrenome</th>
                     <th scope="col">Email</th>
+                    <th scope="col">Certificado</th>
                     <th scope="col" class="text-center">Validar</th>
                 </tr>
             </thead>
@@ -70,7 +71,8 @@
                             <th scope="row">'.$con_usu["id_profissional"].' </th>
                             <td> '.$con_usu["Nome"].' </td>
                             <td> '.$con_usu["Sobrenome"].' </td>
-                            <td> '.$con_usu["Email"].'</td>'
+                            <td> '.$con_usu["Email"].'</td>
+                            <td> '.$con_usu["certificado"].'</td>'
                         );
                         echo('<td class="justify-content-center d-flex"><a class="btn text-clear" href="profissional.php?val='.$con_usu['id_profissional'].'"><i class="fas fa-check-square h5"></i></a></td>');
                         echo('</tr>');

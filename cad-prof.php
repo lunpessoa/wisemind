@@ -77,8 +77,8 @@ if (!isset($_SESSION)) {
 				</div>
 			</div>
 			<div class="card-body bg-dark border-0">
-				<form name="cad" action="assets/cadastro.php" method="POST" class="container was-validated" novalidate=""
-					autocomplete="off">
+				<form name="cad" action="assets/cadastro.php" method="POST" class="container was-validated"
+					novalidate="" autocomplete="off">
 					<div id="fase1">
 						<div class="row ">
 							<div class="col-6">
@@ -120,6 +120,34 @@ if (!isset($_SESSION)) {
 						</div>
 					</div>
 					<div id="fase2" style="display: none;">
+						<div class="row">
+							<div class="col-6">
+								<label class="text-font" style="color:#b5b5b5;">CEP</label>
+								<div class="input-group form-group">
+									<input id="cep" type="text" placeholder="00000-000"
+										class="form-control cep text-light"
+										style="background-color:#282d30; border-color:#1f1f1f;" name="cep" required>
+								</div>
+							</div>
+							<div class="col-6">
+								<label class="text-font" style="color:#b5b5b5;">CPF</label>
+								<div class="input-group form-group">
+									<input id="cpf-camp" type="text" placeholder="000.000.000-00"
+										class="form-control cpf text-light"
+										style="background-color:#282d30; border-color:#1f1f1f;" name="cpf" required>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-12">
+								<label style="color:#b5b5b5; text-dark" class="text-font">Rua</label>
+								<div class="input-group form-group">
+									<input id="rua" type="text" placeholder="R. Vila Rica"
+										class="form-control text-light"
+										style="background-color:#282d30; border-color:#1f1f1f;" name="rua" required>
+								</div>
+							</div>
+						</div>
 						<div class="row">
 							<div class="col-4">
 								<label style="color:#b5b5b5; text-dark" class="text-font">UF</label>
@@ -181,34 +209,6 @@ if (!isset($_SESSION)) {
 									<input id="numero-camp" type="text" placeholder="XXX"
 										class="form-control text-light"
 										style="background-color:#282d30; border-color:#1f1f1f;" name="numero" required>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-12">
-								<label style="color:#b5b5b5; text-dark" class="text-font">Rua</label>
-								<div class="input-group form-group">
-									<input id="rua" type="text" placeholder="R. Vila Rica"
-										class="form-control text-light"
-										style="background-color:#282d30; border-color:#1f1f1f;" name="rua" required>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-6">
-								<label class="text-font" style="color:#b5b5b5;">CEP</label>
-								<div class="input-group form-group">
-									<input id="cep" type="text" placeholder="00000-000"
-										class="form-control cep text-light"
-										style="background-color:#282d30; border-color:#1f1f1f;" name="cep" required>
-								</div>
-							</div>
-							<div class="col-6">
-								<label class="text-font" style="color:#b5b5b5;">CPF</label>
-								<div class="input-group form-group">
-									<input id="cpf-camp" type="text" placeholder="000.000.000-00"
-										class="form-control cpf text-light"
-										style="background-color:#282d30; border-color:#1f1f1f;" name="cpf" required>
 								</div>
 							</div>
 						</div>
@@ -360,6 +360,20 @@ if (!isset($_SESSION)) {
 	<script>senhas()</script>");
 
 	$_SESSION["senhas"]=false;
+	}
+
+?>
+<?php
+	if (!isset($_SESSION["datas"])) {
+		$_SESSION["datas"]=false;
+	}
+	
+	if($_SESSION["datas"]==true){ 
+	include('toast.php');
+	echo("<script src='assets/toast.js'></script>
+	<script>datas()</script>");
+
+	$_SESSION["datas"]=false;
 	}
 
 ?>

@@ -57,7 +57,8 @@
                     <th scope="row">'.$row["id_profissional"].' </th>
                     <td> '.$row["Nome"].' </td>
                     <td> '.$row["Sobrenome"].' </td>
-                    <td> '.$row["Email"].'</td>'
+                    <td> '.$row["Email"].'</td>
+                    <td> '.$con_usu["certificado"].'</td>'
                 );
                 echo('<td class="justify-content-center d-flex"><a class="btn text-clear" href="profissional.php?val='.$row['id_profissional'].'"><i class="fas fa-check-square h5"></i></a></td>');
                 echo('</tr>');

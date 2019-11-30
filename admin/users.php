@@ -58,7 +58,8 @@
                     <th scope="col">Nome</th>
                     <th scope="col">Email</th>
                     <th scope="col">Privilegio</th>
-                    <th scope="col" class="text-center">Excluir</th>
+                    <th scope="col">Editar</th>
+                    <th scope="col">Excluir</th>
                 </tr>
             </thead>
             <tbody id="result">
@@ -68,7 +69,7 @@
                     while($con_usu=mysqli_fetch_array($resul)){
                         echo('<tr class="text-clear">
                             <th scope="row">'.$con_usu["id_usuario"].' </th>
-                            <td><a href="painel-usu-alter?us='.$con_usu['id_usuario'].'"> '.$con_usu["Nome"].' </a></td>
+                            <td> '.$con_usu["Nome"].'</td>
                             <td> '.$con_usu["Email"].' </td>
                             <td> ');if($con_usu["id_privilegio"]==1){
                                         echo("Estudante");
@@ -79,9 +80,11 @@
                                     }
                             echo('</td>');
                             if($con_usu["id_privilegio"]==3){
-                                echo('<td class="justify-content-center d-flex"><a class="btn text-clear disabled" href="users.php?ex='.$con_usu['id_usuario'].'"><i class="fas fa-user-times"></i></a></td>');
+                                echo('<td> <a class="btn text-clear disabled" href="painel-usu-alter?us='.$con_usu['id_usuario'].'"><i class="fas fa-user-edit"></i></a></td>');
+                                echo('<td> <a class="btn text-clear disabled" href="users.php?ex='.$con_usu['id_usuario'].'"><i class="fas fa-user-times"></i></a></td>');
                             } else{
-                                echo('<td class="justify-content-center d-flex"><a class="btn text-clear" href="users.php?ex='.$con_usu['id_usuario'].'"><i class="fas fa-user-times"></i></a></td>');
+                                echo('<td> <a class="btn text-clear" href="painel-usu-alter?us='.$con_usu['id_usuario'].'"><i class="fas fa-user-edit"></i></a></td>');
+                                echo('<td> <a class="btn text-clear" href="users.php?ex='.$con_usu['id_usuario'].'"><i class="fas fa-user-times"></i></a></td>');
                             }
                             echo('</tr>');
 
