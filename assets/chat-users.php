@@ -31,5 +31,37 @@
     }
 }
 
+    if(isset($_POST['his'])){
+        $sql_men=('select * from mensagens where id_sala = '.$_SESSION['sala'].';');
+        $resul_men=mysqli_query($conexao, $sql_men);
+        while($con_men=mysqli_fetch_array($resul_men)){
+            $hora = explode(":",$con_men["hora_envio"]);
+
+            if($con_men['id_usuario']==$_SESSION["id_user"]){
+                echo('<li class="d-flex justify-content-end text-break">
+                <div id="self">'.$con_men["mensagem"].
+                '<label id="data-self" class="float-right ml-2 mb-0">'.$hora[0].':'.$hora[1].'</label>
+                </div>
+                </li>');
+            }else{
+                $sql_use=('select * from usuarios where id_usuario = '.$con_men["id_usuario"].';');
+                $resul_use=mysqli_query($conexao, $sql_use);
+                $con_use=mysqli_fetch_array($resul_use);
+                echo('<li class="text-break">
+                <div id="fild">
+                <a href="../../perfil-view?us='.$con_use['id_usuario'].'"
+                id="link-user" class="text-decoration-none float-left p-0">
+                '.$con_use['Nome'].'</a>
+                <label id="data-fild" class="float-right ml-2 mb-0">'.$hora[0].':'.$hora[1].'</label><br/>
+                '.$con_men["mensagem"].
+                '
+                </div>
+                </li>');
+                
+            }
+        }
+    
+    }
+
     
 ?>

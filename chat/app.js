@@ -66,12 +66,10 @@ var users_sala = []
 
 //Conexão Socket
 io.on('connection', socket => {
-
+    socket.emit('history');
 
     //Recebendo dados usuario
     socket.on('sala', data => {
-
-        
         sala = data.sala
         socket.info = data.id_usuario
         socket.sala = data.sala
@@ -131,7 +129,7 @@ io.on('connection', socket => {
 
     //usuario esta digitando...press
     socket.on('typing', (data) => {
-        socket.broadcast.to(data.sala).emit('renderTyping', data.id_usuario)
+        socket.broadcast.to(data.sala).emit('renderTyping', data.nome_usuario)
     })
 
     //usuario esta digitando...up
@@ -139,8 +137,26 @@ io.on('connection', socket => {
         socket.broadcast.to(sala).emit('noRenderTyping')
     })
 
+    //pegar hora de envio
+    function getHours() {
+        var data = new Date()
+        var hora = data.getHours()
+        var min = data.getMinutes()
+        if (min < 10) {
+            min = "0" + min
+        }
+
+        var now = `${hora}:${min}:00`
+        return now
+    }
+
     //Enviando mensagem
     socket.on('sendMessage', data => {
+        var queryMessage = 'insert into mensagens (menssagem, hora_envio, id_usuario, id_sala) values ("'+data.message+'", "'+getHours()+'",'+data.id_usuario+','+data.sala+');';
+             connection.query(queryMessage, function (err, result) {
+            if (err) throw err;
+            console.log(result.affectedRows + " record(s) updated");
+          });
         console.log(data)
         messages.push(data)
         socket.broadcast.to(sala).emit('receiveMessage', data)

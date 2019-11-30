@@ -79,7 +79,7 @@
                         <div id="teste">
                             <ol id="messages">
                             </ol>
-                            <div class='font-weight-bold isTyping  ml-2 ' id='isTyping'></div>
+                            <div class='font-weight-bold isTyping  ml-2 d-none' id='isTyping'></div>
                             <div id="bottom"></div>
                             
                         </div>
@@ -132,6 +132,16 @@
         });
 
     }
+
+    function history() {
+        $.post('../../assets/chat-users.php', {
+            his: true
+        }, function (data3) {
+            $("#messages").html(data3);
+            document.getElementById('bottom').scrollIntoView(false);
+        });
+
+    }
 </script>
 <script>
     var socket = io.connect("http://localhost:3001", {
@@ -176,30 +186,39 @@
     }
     funSala(sala)
 
-    //usuario esta digitando...press
+    //messnagens antigas
+    socket.on('history',()=> {
+        history()
+        
+
+    })
     
 
     
     //Renderizando 
-    socket.on('renderTyping', function (id) {
+    socket.on('renderTyping', function (nome) {
         let teste = document.getElementById('isTyping')
-        teste.innerHTML = ` ta digitando igual`
+        teste.setAttribute('class', 'font-weight-bold isTyping  ml-2')
+        teste.innerHTML = `${nome} ta digitando igual otario`
+        document.getElementById('bottom').scrollIntoView(false);
+ 
 
-        
-        setInterval(function(){
-            $('#isTyping').fadeIn(500)},1000)
-        
+    })
 
+    socket.on('noRenderTyping', function (nome) {
        
-        setInterval(function(){
-            $('#isTyping').fadeOut(500)},1000)
+    
+        let teste = document.getElementById('isTyping')
+        setTimeout(function(){
+            teste.setAttribute('class', 'font-weight-bold isTyping  ml-2 d-none')
+        }, 1500);
         
         
 
     })
 
     //usuario esta digitando...up
-    campoMessagem.onkeyup = () => {
+    campoMessagem.onkeydown = () => {
         var salaObject = {
             id_usuario,
             nome_usuario,
@@ -209,7 +228,10 @@
         socket.emit('typing',salaObject)
     }
     //Parando de renderizar
-    
+    campoMessagem.onkeyup = () => {
+        sala
+        socket.emit('typingUp',sala)
+    }
     
 
 
@@ -247,7 +269,7 @@
         var div = document.createElement("div")
         div.setAttribute('id', 'fild')
         var link = document.createElement("a")
-        link.setAttribute(`href`, `http://localhost/index2.php?id=${message.nome_usuario}`)
+        link.setAttribute(`href`, `../../perfil-view?us=${message.id_usuario}`)
         link.setAttribute(`id`, `link-user`)
         link.setAttribute(`class`, `text-decoration-none float-left p-0`)
         var text = document.createTextNode(message.nome_usuario)
@@ -317,6 +339,7 @@
         //Dados da mensgem
         if (msg.length != 0) {
             var messageObject = {
+                id_usuario: id_usuario,
                 nome_usuario: nome_usuario,
                 message: msg,
                 sala: sala
