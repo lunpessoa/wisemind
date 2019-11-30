@@ -13,21 +13,19 @@
 <head>
 	<title>Perfil</title>
 	<meta charset="utf-8">
+	<?php include('menu.php'); ?>
 	<link rel="stylesheet" href="style/perfil-view.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" href="node_modules/bootstrap/compiler/bootstrap.css">
-      <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
-      <link rel="stylesheet" href="style/style.css">
-      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
-      <link rel="icon" href="img/logo.png" type="image/x-icon" />
-      <link rel="shortcut icon" href="img/logo.png" type="image/x-icon" />
-    
-      <!-- ScrollBar Stylesheets -->
-      <link rel="stylesheet" href="node_modules/OverlayScrollbars/css/OverlayScrollbars.min.css">');
+	<link rel="icon" href="img/logo.png" type="image/x-icon"/>
+	<link rel="shortcut icon" href="img/logo.png" type="image/x-icon" />
+
+	<!-- ScrollBar Stylesheets -->
+	<link rel="stylesheet" href="node_modules/OverlayScrollbars/css/OverlayScrollbars.min.css">');
 
 </head>
 
 <body>
+	
+	
 	<div class="container-fluid position-fixed" style="margin-top:130px">
 		<div class="row">
 			<div class="col-2 offset-1">
