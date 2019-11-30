@@ -16,9 +16,13 @@
 				return  $launch;
 			}
 
+			// Separa em dia, mês e ano
 			list($dia, $mes, $ano) = explode('-', $con['Data_Nasc']);
+			// Descobre que dia é hoje e retorna a unix timestamp
 			$hoje = mktime(0, 0, 0, date('m'), date('d'), date('Y'));
+			// Descobre a unix timestamp da data de nascimento
 			$diadonascimento = mktime( 0, 0, 0, $mes, $dia, $ano);
+			// Calculo da idade
 			$idade = floor((((($hoje - $diadonascimento) / 60) / 60) / 24) / 365.25);
 
 			if($con['CPF']){
