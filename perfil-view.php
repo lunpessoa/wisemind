@@ -5,7 +5,8 @@
 	if(isset($_SESSION["log_status"]) && $_SESSION["log_status"]==true || isset($_SESSION["adminlog_status"]) && $_SESSION["adminlog_status"]==true){
 		
 		if(isset($_GET["us"])){
-			$sql=('select * from usuarios where id_usuario = '. $_SESSION["id_user"].';');
+			$usu = $_GET["us"];
+			$sql=('select * from usuarios where id_usuario = '.$usu.';');
 			$resul=mysqli_query($conexao, $sql);
 			$con=mysqli_fetch_array($resul);
 
@@ -15,9 +16,10 @@
 				return  $launch;
 			}
 
-			$datanasc = explode("-",$con['Data_Nasc']);
-			$datanasc = array_reverse($datanasc);
-			$datanasc = implode ('/', $datanasc);
+			list($dia, $mes, $ano) = explode('-', $con['Data_Nasc']);
+			$hoje = mktime(0, 0, 0, date('m'), date('d'), date('Y'));
+			$diadonascimento = mktime( 0, 0, 0, $mes, $dia, $ano);
+			$idade = floor((((($hoje - $diadonascimento) / 60) / 60) / 24) / 365.25);
 
 			if($con['CPF']){
 				$cpf_test = str_split($con['CPF'], 3);
@@ -33,13 +35,17 @@
 			}
 
 			if($con['id_privilegio']==1){
-				$sql2=('select * from estudantes where id_estudante = '. $_SESSION["id_user"].';');
+				$sql2=('select * from estudantes where id_estudante = '. $usu.';');
 				$resul2=mysqli_query($conexao, $sql2);
 				$est=mysqli_fetch_array($resul2);
+				$tipo = "Estudante";
+				
 			}else if($con['id_privilegio']==2){
-				$sql2=('select * from profissional where id_profissional = '. $_SESSION["id_user"].';');
+				$sql2=('select * from profissional where id_profissional = '. $usu.';');
 				$resul2=mysqli_query($conexao, $sql2);
 				$est=mysqli_fetch_array($resul2);
+
+				$tipo = "Profissional";
 			}
 ?>
 
@@ -51,7 +57,7 @@
 	<meta charset="utf-8">
 	<?php include('menu.php'); ?>
 	<link rel="stylesheet" href="style/perfil-view.css">
-	<link rel="icon" href="img/logo.png" type="image/x-icon"/>
+	<link rel="icon" href="img/logo.png" type="image/x-icon" />
 	<link rel="shortcut icon" href="img/logo.png" type="image/x-icon" />
 
 	<!-- ScrollBar Stylesheets -->
@@ -60,14 +66,14 @@
 </head>
 
 <body>
-	
-	
+
+
 	<div class="container-fluid position-fixed" style="margin-top:130px">
 		<div class="row">
 			<div class="col-2 offset-1">
 				<div class="card border border-0">
 					<div class="card-header bg-warning border-0 pt-3 pb-0">
-						<img class="img-fluid" src="img/Luan.jpeg" alt="">
+						<img class="img-fluid" src="<?php echo($con['perfil_img']); ?>" alt="">
 						<label
 							class="d-flex justify-content-center text-font-calibri h3 font-italic font-weight-bold mt-3">
 							<p class="p-0">#<?php echo($con['Nome']);?></p>
@@ -89,6 +95,14 @@
 					<div class="card-body border-0 p-5">
 						<div class="row p-2">
 							<div class="col-3">
+								<span class="text-clear">Usuário</span>
+							</div>
+							<div class="col-9">
+								<span class="h5 text-white"><?php echo($tipo);?></span>
+							</div>
+						</div>
+						<div class="row p-2">
+							<div class="col-3">
 								<span class="text-clear">Nome</span>
 							</div>
 							<div class="col-9">
@@ -108,7 +122,7 @@
 								<span class="text-clear">Idade</span>
 							</div>
 							<div class="col-9">
-								<span class="h5 text-white"></span>
+								<span class="h5 text-white"><?php echo ($idade.' anos');?></span>
 							</div>
 						</div>
 						<div class="row p-2">
@@ -116,7 +130,7 @@
 								<span class="text-clear">E-mail</span>
 							</div>
 							<div class="col-9">
-								<span class="h5 text-white"></span>
+								<span class="h5 text-white"><?php echo($con['Email']);?></span>
 							</div>
 						</div>
 					</div>
@@ -124,11 +138,15 @@
 			</div>
 		</div>
 
+		<?php 
+			if($con['id_privilegio']==1){	
+		?>
+
 		<div class="row mb-5">
 			<div class="col-7 offset-4">
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
-						<label class="h3 text-font-calibri"><b>DESCRIÇÃO - Estudante</b></label>
+						<label class="h3 text-font-calibri"><b>DESCRIÇÃO</b></label>
 					</div>
 					<div class="card-body border-0 p-5">
 						<div class="row p-2">
@@ -136,14 +154,7 @@
 								<span class="text-clear">Descrição</span>
 							</div>
 							<div class="col-9">
-								<span class="h5 text-white">Silvio Santos Ipsum wellintaaammmmmmmmm. Eu não queria
-									perguntar isso publicamenteam, ma vou perguntar. Carla, você tem o ensino
-									fundamentauam? Você veio da caravana de ondeammm? É dinheiro ou não é? Ma você,
-									topa
-									ou no topamm. Mah ooooee vem pra cá. Vem pra cá. Mah é a porta da esperçamm.
-									Boca
-									sujuam... sem vergonhuamm. Ma quem quer dinheiroam? Ma vai pra lá. O Raul Gil é
-									gayam! ... Maa O Ah Ae! Ih Ih! O Raul Gil é gayamm!</span>
+								<span class="h5 text-white"><?php echo($est['Situacao']); ?></span>
 							</div>
 						</div>
 					</div>
@@ -155,7 +166,7 @@
 			<div class="col-7 offset-4">
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
-						<label class="h3 text-font-calibri"><b>SITUAÇÃO - Estudante</b></label>
+						<label class="h3 text-font-calibri"><b>SITUAÇÃO</b></label>
 					</div>
 					<div class="card-body border-0 p-5">
 						<div class="row p-2">
@@ -163,9 +174,7 @@
 								<span class="text-clear">Tendencia de área</span>
 							</div>
 							<div class="col-9">
-								<span class="h5 text-white">Silvio Santos Ipsum wellintaaammmmmmmmm. Eu não queria
-									perguntar isso publicamenteam, ma vou perguntar. Carla, você tem o ensino
-									fundamentauam?</span>
+								<span class="h5 text-white"><?php $est['Tendencia_de_area'] ?></span>
 							</div>
 						</div>
 						<div class="row p-2">
@@ -173,10 +182,7 @@
 								<span class="text-clear">Skills</span>
 							</div>
 							<div class="col-9">
-								<span class="h5 text-white">Mah é a porta da esperçamm.
-									Boca
-									sujuam... sem vergonhuamm. Ma quem quer dinheiroam? Ma vai pra lá. O Raul Gil é
-									gayam! ... Maa O Ah Ae! Ih Ih! O Raul Gil é gayamm!</span>
+								<span class="h5 text-white"><?php echo($est['Skills']); ?></span>
 							</div>
 						</div>
 					</div>
@@ -184,11 +190,17 @@
 			</div>
 		</div>
 
+		<?php 
+			}
+
+			if($con['id_privilegio']==2){	
+		?>
+
 		<div class="row mb-5">
 			<div class="col-7 offset-4">
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
-						<label class="h3 text-font-calibri"><b>SITUAÇÃO - Profissional</b></label>
+						<label class="h3 text-font-calibri"><b>SITUAÇÃO</b></label>
 					</div>
 					<div class="card-body border-0 p-5">
 						<div class="row p-2">
@@ -196,9 +208,7 @@
 								<span class="text-clear">Experiência</span>
 							</div>
 							<div class="col-9">
-								<span class="h5 text-white">Silvio Santos Ipsum wellintaaammmmmmmmm. Eu não queria
-									perguntar isso publicamenteam, ma vou perguntar. Carla, você tem o ensino
-									fundamentauam?</span>
+								<span class="h5 text-white"><?php echo($est['experiencia']); ?></span>
 							</div>
 						</div>
 					</div>
@@ -210,34 +220,38 @@
 			<div class="col-7 offset-4">
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
-						<label class="h3 text-font-calibri"><b>ESPECIALIZAÇÃO - Profissional</b></label>
+						<label class="h3 text-font-calibri"><b>ESPECIALIZAÇÃO</b></label>
 					</div>
 					<div class="card-body border-0 p-5">
-						<div class="row p-2">
-							<div class="col-3">
-								<span class="text-clear">Área</span>
-							</div>
-							<div class="col-9">
-								<span class="h5 text-white">Silvio Santos Ipsum wellintaaammmmmmmmm. Eu não queria
-									perguntar isso publicamenteam, ma vou perguntar. Carla, você tem o ensino
-									fundamentauam?</span>
-							</div>
-						</div>
-						<div class="row p-2">
-							<div class="col-3">
-								<span class="text-clear">Profissão</span>
-							</div>
-							<div class="col-9">
-								<span class="h5 text-white">Mah é a porta da esperçamm.
-									Boca
-									sujuam... sem vergonhuamm. Ma quem quer dinheiroam? Ma vai pra lá. O Raul Gil é
-									gayam! ... Maa O Ah Ae! Ih Ih! O Raul Gil é gayamm!</span>
-							</div>
-						</div>
+						<table class="table table-borderless text-light">
+							<thead>
+								<tr>
+									<th scope="col">Área</th>
+									<th scope="col">Profissão</th>
+								</tr>
+							</thead>
+							<tbody>
+								<?php
+								$sqlmostrar=('select * from especializacao where id_prof = "'.$usu.'";');
+								$resul3=mysqli_query($conexao, $sqlmostrar);
+								while($con_prof=mysqli_fetch_array($resul3)){
+									echo('
+										<tr>
+											<td>'.$con_prof["Area"].'</td>
+											<td>'.$con_prof["Profissao"].'</td>
+											</tr>');
+									}
+								?>
+							</tbody>
+						</table>
 					</div>
 				</div>
 			</div>
 		</div>
+
+		<?php 
+			}
+		?>
 
 	</div>
 

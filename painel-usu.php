@@ -150,17 +150,17 @@
 
 
 	<div class="container-fluid" style="margin-top:130px">
-		<div class="row mb-5 d-block d-lg-none">
+		<div class="row mb-5 d-block d-lg-none" id="perfil-image">
 			<div class="col-12 col-lg-7 offset-lg-4">
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
 						<label class="h3 text-font-calibri"><b>IMAGEM PERFIL</b></label>
-						<button class="btn btn-hover-white ml-auto" id="atualizar-1"><i class="fas fa-pen"></i><b>
+						<button class="btn btn-hover-white ml-auto" id="atualizar-0"><i class="fas fa-pen"></i><b>
 								ATUALIZAR</b></button>
 					</div>
 
 					<!--sumir- alterar-->
-					<div class="card-body border-0 p-5 d-none" id="informacoes-alter-1">
+					<div class="card-body border-0 p-5 d-none" id="informacoes-alter-0">
 						<div class="row p-2">
 							<div class="col-3 align-items-center d-flex">
 								<span class="text-clear">Foto de Perfil</span>
@@ -177,7 +177,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="card-body border-0 p-5 " id="informacoes-1">
+					<div class="card-body border-0 p-5" id="informacoes-0">
 						<div class="row p-2">
 							<div class="col-3 align-items-center d-flex">
 								<span class="text-clear">Foto de Perfil</span>
@@ -1163,7 +1163,7 @@
 		document.getElementById("informacoes-alter-6").setAttribute('class', 'card-body border-0 p-5 d-none')
 	}
 	var atualizar = function (a) {
-		for (let k = 1; k <= 8; k++)
+		for (let k = 0; k <= 8; k++)
 			if (k == a) {
 				document.getElementById("atualizar-" + a).setAttribute('class', 'd-none')
 				document.getElementById("informacoes-" + a).setAttribute('class', 'card-body border-0 p-5 d-none')
@@ -1172,7 +1172,7 @@
 	}
 
 
-	for (let a = 1; a <= 8; a++) {
+	for (let a = 0; a <= 8; a++) {
 		var link_alter = document.getElementById("atualizar-" + a)
 		if (link_alter != null) {
 			link_alter.onclick = (e) => {
