@@ -93,7 +93,7 @@ body {
   background-size: cover;
 }
 
-.btn-perfil-img:hover img{
+.btn-perfil-img:hover .imagem-perfil{
   filter: blur(1px);
   filter: brightness(40%);
 }

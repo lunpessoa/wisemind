@@ -59,13 +59,13 @@
 
 <body>
 	<div class="container-fluid position-fixed" style="margin-top:130px">
-		<div class="row">
+		<div class="row d-none d-lg-block">
 			<div class="col-3 ml-5">
 				<div class="card border border-0">
 					<div class="card-header bg-warning border-0 pl-2 image-card">
 						<button class="btn position-relative p-0 mr-3 btn-perfil-img overflow-hidden"
 							data-toggle='modal' data-target='#modalExemplo' href="#">
-							<img src="<?php echo($con['perfil_img']); ?>" alt="">
+							<img class="imagem-perfil" src="<?php echo($con['perfil_img']); ?>" alt="">
 							<label class="lnd-alter position-relative text-light text-font-calibri h3"><i
 									class="fas fa-pen" style="cursor:pointer;"></i></label>
 						</button>
@@ -150,8 +150,51 @@
 
 
 	<div class="container-fluid" style="margin-top:130px">
+		<div class="row mb-5 d-block d-lg-none" id="informacao">
+			<div class="col-12 col-lg-7 offset-lg-4">
+				<div class="card border border-0 bg-transparent">
+					<div class="card-header border-bottom-0 text-white p-4 d-flex">
+						<label class="h3 text-font-calibri"><b>IMAGEM PERFIL</b></label>
+						<button class="btn btn-hover-white ml-auto" id="atualizar-1"><i class="fas fa-pen"></i><b>
+								ATUALIZAR</b></button>
+					</div>
+
+					<!--sumir- alterar-->
+					<div class="card-body border-0 p-5 d-none" id="informacoes-alter-1">
+						<div class="row p-2">
+							<div class="col-3 align-items-center d-flex">
+								<span class="text-clear">Foto de Perfil</span>
+							</div>
+							<div class="col-9">
+								<div class="input-group form-group w-50">
+									<button class="btn position-relative p-0 mr-3 btn-perfil-img overflow-hidden"
+										data-toggle='modal' data-target='#modalExemplo' href="#">
+										<img src="<?php echo($con['perfil_img']); ?>" alt="">
+										<label class="lnd-alter position-relative text-light text-font-calibri h3"><i
+												class="fas fa-pen" style="cursor:pointer;"></i></label>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card-body border-0 p-5 " id="informacoes-1">
+						<div class="row p-2">
+							<div class="col-3 align-items-center d-flex">
+								<span class="text-clear">Foto de Perfil</span>
+							</div>
+							<div class="col-9">
+								<div class="position-relative p-0 mr-3 btn-perfil-img overflow-hidden">
+									<img src="<?php echo($con['perfil_img']); ?>" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<div class="row mb-5" id="informacao">
-			<div class="col-7 offset-4">
+			<div class="col-12 col-lg-7 offset-lg-4">
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
 						<label class="h3 text-font-calibri"><b>INFORMAÇÕES PESSOAIS</b></label>
@@ -161,8 +204,8 @@
 
 					<!--sumir- alterar-->
 					<div class="card-body border-0 p-5 d-none" id="informacoes-alter-1">
-						<form name="cad" action="assets/alterar.php" method="POST" class="container was-validated"
-							novalidate="" autocomplete="off">
+						<form name="cad" action="assets/alterar.php" method="POST" class="was-validated" novalidate=""
+							autocomplete="off">
 							<div class="row p-2">
 								<div class="col-3">
 									<span class="text-clear">Nome</span>
@@ -265,7 +308,7 @@
 			
 		?>
 		<div class="row mb-5 " id="informacao-1-1">
-			<div class="col-7 offset-4">
+			<div class="col-12 col-lg-7 offset-lg-4">
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
 						<label class="h3 text-font-calibri"><b>DESCRIÇÃO</b></label>
@@ -273,8 +316,8 @@
 								ATUALIZAR</b></button>
 					</div>
 					<div class="card-body border-0 p-5 d-none" id="informacoes-alter-2">
-						<form name="cad" action="assets/alterar.php" method="POST" class="container was-validated"
-							novalidate="" autocomplete="off">
+						<form name="cad" action="assets/alterar.php" method="POST" class="was-validated" novalidate=""
+							autocomplete="off">
 							<div class="row p-2">
 								<div class="col-3">
 									<span class="text-clear">Descrição</span>
@@ -317,7 +360,7 @@
 			if($con['id_privilegio']==1){
 		?>
 		<div class="row mb-5" id="informacao-1-2">
-			<div class="col-7 offset-4">
+			<div class="col-12 col-lg-7 offset-lg-4">
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
 						<label class="h3 text-font-calibri"><b>SITUAÇÃO</b></label>
@@ -326,8 +369,8 @@
 					</div>
 
 					<div class="card-body border-0 p-5 d-none" id="informacoes-alter-3">
-						<form name="cad" action="assets/alterar.php" method="POST" class="container was-validated"
-							novalidate="" autocomplete="off">
+						<form name="cad" action="assets/alterar.php" method="POST" class="was-validated" novalidate=""
+							autocomplete="off">
 							<div class="row p-2">
 								<div class="col-3">
 									<span class="text-clear">Tendência de área</span>
@@ -400,7 +443,7 @@
 			if($con['id_privilegio']==2){	
 		?>
 		<div class="row mb-5" id="informacao-2-1">
-			<div class="col-7 offset-4">
+			<div class="col-12 col-lg-7 offset-lg-4">
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
 						<label class="h3 text-font-calibri"><b>SITUAÇÃO</b></label>
@@ -409,8 +452,8 @@
 					</div>
 
 					<div class="card-body border-0 p-5 d-none" id="informacoes-alter-7">
-						<form name="cad" action="assets/alterar.php" method="POST" class="container was-validated"
-							novalidate="" autocomplete="off">
+						<form name="cad" action="assets/alterar.php" method="POST" class="was-validated" novalidate=""
+							autocomplete="off">
 							<div class="row p-2">
 								<div class="col-3">
 									<span class="text-clear">Experiência</span>
@@ -476,7 +519,7 @@
 
 
 		<div class="row mb-5" id="informacao-2-2">
-			<div class="col-7 offset-4">
+			<div class="col-12 col-lg-7 offset-lg-4">
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
 						<label class="h3 text-font-calibri"><b>ESPECIALIZAÇÃO</b></label>
@@ -534,8 +577,8 @@
 							</div>');
 						}else{
 					?>
-						<form name="cad" action="assets/alterar.php" method="POST" class="container was-validated"
-							novalidate="" autocomplete="off">
+						<form name="cad" action="assets/alterar.php" method="POST" class="was-validated" novalidate=""
+							autocomplete="off">
 
 
 							<table class="table table-borderless text-light w-50">
@@ -632,8 +675,8 @@
 			}
 		?>
 
-		<div class="row mb-5 d-none" id="seguranca-1">
-			<div class="col-7 offset-4">
+		<div class="row mb-5 d-lg-none" id="seguranca-1">
+			<div class="col-12 col-lg-7 offset-lg-4">
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
 						<label class="h3 text-font-calibri"><b>NÚMERO DE CONTATO</b></label>
@@ -641,8 +684,8 @@
 								ATUALIZAR</b></button>
 					</div>
 					<div class="card-body border-0 p-5 d-none" id="informacoes-alter-4">
-						<form name="cad" action="assets/alterar.php" method="POST" class="container was-validated"
-							novalidate="" autocomplete="off">
+						<form name="cad" action="assets/alterar.php" method="POST" class="was-validated" novalidate=""
+							autocomplete="off">
 							<div class="row p-2">
 								<div class="col-3">
 									<span class="text-clear">Número de celular</span>
@@ -676,8 +719,8 @@
 			</div>
 		</div>
 
-		<div class="row mb-5 d-none" id="seguranca-2">
-			<div class="col-7 offset-4">
+		<div class="row mb-5 d-lg-none" id="seguranca-2">
+			<div class="col-12 col-lg-7 offset-lg-4">
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
 						<label class="h3 text-font-calibri"><b>SENHA</b></label>
@@ -685,8 +728,8 @@
 								ATUALIZAR</b></button>
 					</div>
 					<div class="card-body border-0 p-5 d-none" id="informacoes-alter-6">
-						<form name="cad" action="assets/alterar.php" method="POST" class="container was-validated"
-							novalidate="" autocomplete="off">
+						<form name="cad" action="assets/alterar.php" method="POST" class="was-validated" novalidate=""
+							autocomplete="off">
 							<div class="row p-2">
 								<div class="col-3">
 									<span class="text-clear">Senha atual</span>
@@ -747,7 +790,7 @@
 		</div>
 
 		<div class="row mb-5" id="informacao-reg">
-			<div class="col-7 offset-4">
+			<div class="col-12 col-lg-7 offset-lg-4">
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
 						<label class="h3 text-font-calibri"><b>REGISTROS</b></label>
@@ -784,7 +827,7 @@
 			if($con['id_privilegio']==2){
 		?>
 		<div class="row mb-5" id="acesso">
-			<div class="col-7 offset-4">
+			<div class="col-12 col-lg-7 offset-lg-4">
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
 						<label class="h3 text-font-calibri"><b>CONFIRMAÇÃO DE ACESSO</b></label>
@@ -814,8 +857,8 @@
 		</div>
 		<?php } ?>
 
-		<div class="row mb-5 d-none" id="endereco">
-			<div class="col-7 offset-4">
+		<div class="row mb-5 d-lg-none" id="endereco">
+			<div class="col-12 col-lg-7 offset-lg-4">
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
 						<label class="h3 text-font-calibri"><b>ENDEREÇO</b></label>
@@ -825,8 +868,8 @@
 
 
 					<div class="card-body border-0 p-5 d-none" id="informacoes-alter-5">
-						<form name="cad" action="assets/alterar.php" method="POST" class="container was-validated"
-							novalidate="" autocomplete="off">
+						<form name="cad" action="assets/alterar.php" method="POST" class="was-validated" novalidate=""
+							autocomplete="off">
 							<div class="row p-2">
 								<div class="col-3">
 									<span class="text-clear">Rua</span>
@@ -1016,8 +1059,8 @@
 		<?php
 			if($con['id_privilegio']==1){
 		?>
-		<div class="row mb-5 d-none" id="plano">
-			<div class="col-7 offset-4">
+		<div class="row mb-5 d-lg-none" id="plano">
+			<div class="col-12 col-lg-7 offset-lg-4">
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
 						<label class="h3 text-font-calibri"><b>STATUS</b></label>
@@ -1093,7 +1136,7 @@
 	<script src='assets/painel-usu.js'></script>
 	<script src="node_modules/popper.js/dist/umd/popper.js"></script>
 	<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
-	
+
 	<script src="node_modules/JQuery-Mask/dist/jquery.mask.min.js"></script>
 
 	<!-- javascript SimpleBar -->
