@@ -150,7 +150,7 @@
 
 
 	<div class="container-fluid" style="margin-top:130px">
-		<div class="row mb-5 d-block d-lg-none" id="informacao">
+		<div class="row mb-5 d-block d-lg-none">
 			<div class="col-12 col-lg-7 offset-lg-4">
 				<div class="card border border-0 bg-transparent">
 					<div class="card-header border-bottom-0 text-white p-4 d-flex">
