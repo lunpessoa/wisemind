@@ -50,7 +50,7 @@
                 echo('<li class="text-break">
                 <div id="fild">
                 <a href="../../perfil-view?us='.$con_use['id_usuario'].'"
-                id="link-user" class="text-decoration-none float-left p-0">
+                id="link-user" class="text-decoration-none float-left p-0" target="_blank">
                 '.$con_use['Nome'].'</a>
                 <label id="data-fild" class="float-right ml-2 mb-0">'.$hora[0].':'.$hora[1].'</label><br/>
                 '.$con_men["mensagem"].

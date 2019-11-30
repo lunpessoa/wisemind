@@ -218,7 +218,8 @@
     })
 
     //usuario esta digitando...up
-    campoMessagem.onkeydown = () => {
+    campoMessagem.onkeydown = (event) => {
+        if(event.key != 'F5'){
         var salaObject = {
             id_usuario,
             nome_usuario,
@@ -226,6 +227,7 @@
         }
         
         socket.emit('typing',salaObject)
+    }
     }
     //Parando de renderizar
     campoMessagem.onkeyup = () => {
@@ -270,6 +272,7 @@
         div.setAttribute('id', 'fild')
         var link = document.createElement("a")
         link.setAttribute(`href`, `../../perfil-view?us=${message.id_usuario}`)
+        link.setAttribute(`targe`, `_blank`)
         link.setAttribute(`id`, `link-user`)
         link.setAttribute(`class`, `text-decoration-none float-left p-0`)
         var text = document.createTextNode(message.nome_usuario)
