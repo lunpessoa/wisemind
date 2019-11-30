@@ -33,17 +33,15 @@ app.set('view engine', 'html')*/
 // Importa o módulo
 
 
- 
+
 
 // Dados do banco de Dados
-var connection = mysql.createConnection(
-{
-host : 'localhost',
-user : 'root',
-password : '',
-database : 'wisemind',
-}
-);
+var connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'wisemind',
+});
 
 // Estabelece a conexão
 connection.connect();
@@ -57,7 +55,7 @@ let sala = ''
 let messages = []
 var users = []
 var user_total = []
-var id_user 
+var id_user
 var users_sala = []
 
 
@@ -65,21 +63,22 @@ var users_sala = []
 //Conexão Socket
 io.on('connection', socket => {
 
-        if(users.length == 0){
-            console.log("É zero porra")
-        }
-        // Substitua pelo seu comando
-        var queryString = 'SELECT * FROM usuarios where id_usuario=1;';
+    if (users.length == 0) {
+        console.log("É zero porra")
+    }
+    // Substitua pelo seu comando
+    var queryString = 'SELECT * FROM usuarios where id_usuario=1;';
 
-        // Executa o comando SQL
-        connection.query(queryString, function(err, usuario, fields) {
-        if (err) throw err;''
+    // Executa o comando SQL
+    connection.query(queryString, function (err, usuario, fields) {
+        if (err) throw err;
+        ''
 
         // Faz o laço para retornar os dados
         for (var i in usuario) {
-        console.log('Usuario logado: ', usuario[i].Nome);
+            console.log('Usuario logado: ', usuario[i].Nome);
         }
-        });
+    });
 
     //Recebendo dados usuario
     socket.on('sala', data => {
@@ -88,34 +87,34 @@ io.on('connection', socket => {
 
 
         console.log(socket.id)
-        console.log('id do usuario: '+id_user)
+        console.log('id do usuario: ' + id_user)
         socket.join(sala);
-        console.log('sala: '+sala)
-        console.log('nome: '+data.nome_usuario)
-        
+        console.log('sala: ' + sala)
+        console.log('nome: ' + data.nome_usuario)
+
         //sala
-        if(users.indexOf(id_user) === -1){
+        if (users.indexOf(id_user) === -1) {
             users.push(id_user)
         }
         //total
-        if(user_total.indexOf(data.id_usuario) === -1){
+        if (user_total.indexOf(data.id_usuario) === -1) {
             user_total.push(id_user)
-        } 
+        }
 
-        users_sala = users.filter((item)=>{
+        users_sala = users.filter((item) => {
             var splitSala = item.split("-")
-            return splitSala[1]==String(sala)
+            return splitSala[1] == String(sala)
         })
 
-        console.log('usuarios por sala ='+users_sala.length)
+        console.log('usuarios por sala =' + users_sala.length)
 
-        var queryChatUpdate = 'UPDATE chat SET Num_Participantes = '+ users_sala.length +' where id_Chat = '+sala+';';
+        var queryChatUpdate = 'UPDATE chat SET Num_Participantes = ' + users_sala.length + ' where id_Chat = ' + sala + ';';
         connection.query(queryChatUpdate, function (err, result) {
             if (err) throw err;
             console.log(result.affectedRows + " record(s) updated");
-          });
+        });
 
-        console.log('tamanho user: '+users.length)
+        console.log('tamanho user: ' + users.length)
         io.to(sala).emit('usersNum', users_sala)
         socket.broadcast.to(sala).emit('usersList', users_sala)
     })
@@ -123,7 +122,7 @@ io.on('connection', socket => {
 
 
     //usuario clica em sair
-    socket.on('leaveUser',(sala)=>{
+    socket.on('leaveUser', (sala) => {
         socket.leave(sala)
     })
 
@@ -139,36 +138,41 @@ io.on('connection', socket => {
 
     //Enviando mensagem
     socket.on('sendMessage', data => {
+        var queryMessage = 'insert into mensagens (mensagem, hora_envio, id_usuario, id_sala) values ("' + data.message + '", "' + getHours() + '",' + data.id_usuario + ',' + data.sala + ');';
+        connection.query(queryMessage, function (err, result) {
+            if (err) throw err;
+            console.log(result.affectedRows + " record(s) updated");
+        });
         console.log(data)
         messages.push(data)
         socket.broadcast.to(sala).emit('receiveMessage', data)
     })
 
-    socket.on('disconnect', ()=>{
+    socket.on('disconnect', () => {
 
-        
-            //users.splice(2, 1);
-            if(users_sala.indexOf(id_user) !== -1){
-                users_sala.splice(users_sala.indexOf(id_user), 1)
-            }
-            console.log("sobrou: "+users_sala.length)
-            if(users.indexOf(id_user) !== -1){
-                users.splice(users.indexOf(id_user), 1)
-            }
 
-            var queryChatUpdate = 'UPDATE chat SET Num_Participantes = '+ users_sala.length +' where id_Chat = '+sala+';';
-            connection.query(queryChatUpdate, function (err, result) {
+        //users.splice(2, 1);
+        if (users_sala.indexOf(id_user) !== -1) {
+            users_sala.splice(users_sala.indexOf(id_user), 1)
+        }
+        console.log("sobrou: " + users_sala.length)
+        if (users.indexOf(id_user) !== -1) {
+            users.splice(users.indexOf(id_user), 1)
+        }
+
+        var queryChatUpdate = 'UPDATE chat SET Num_Participantes = ' + users_sala.length + ' where id_Chat = ' + sala + ';';
+        connection.query(queryChatUpdate, function (err, result) {
             if (err) throw err;
-                console.log(result.affectedRows + " record(s) updated");
-            });
-          
+            console.log(result.affectedRows + " record(s) updated");
+        });
 
-        
-        
-        
-          io.to(sala).emit('usersNum', users_sala)
-          socket.broadcast.to(sala).emit('usersList', users_sala)
-        
+
+
+
+
+        io.to(sala).emit('usersNum', users_sala)
+        socket.broadcast.to(sala).emit('usersList', users_sala)
+
     })
 })
 
