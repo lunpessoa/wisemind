@@ -45,13 +45,10 @@ if(isset($_SESSION["log_status"]) && $_SESSION["log_status"]==true){ // ATUALIZA
     
     $url_status = true;
   }else{
-    
-    
     $url = './admin.php';
-    
   }
-
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -96,7 +93,9 @@ if(isset($_SESSION["log_status"]) && $_SESSION["log_status"]==true){ // ATUALIZA
     <section class="ml-auto" id="botoes-entrada">
       <?php
             
-            if(isset($_SESSION["log_status"]) && $_SESSION["log_status"]==true){
+            if(isset($perfil) && $perfil==true){
+              echo('<a class="btn btn-outline-dark btn-sm" href="javascript:window.close();">Fechar <i class="fas fa-times"></i></a>');
+            }else if(isset($_SESSION["log_status"]) && $_SESSION["log_status"]==true){
               echo('<a class="btn btn-outline-dark btn-sm" href="painel-usu.php">Perfil <i class="fa fa-user-circle" aria-hidden="true"></i></a>
               <a class="btn btn-outline-dark btn-sm" href="assets/destroy-log.php">Sair <i class="fas fa-sign-in-alt"></i></a>');
             }else if(isset($_SESSION["adminlog_status"]) && $_SESSION["adminlog_status"]==true){
@@ -171,43 +170,58 @@ if(isset($_SESSION["log_status"]) && $_SESSION["log_status"]==true){ // ATUALIZA
   </section>
 
   <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-dark navbarMenuItens" id="nav">
-    <button class="navbar-toggler border-0" data-toggle="collapse" data-target="#navbarSite">
-      <i class="fa fa-bars text-warning" aria-hidden="true"></i>
-    </button>
-
-    <section class="collapse navbar-collapse" id="navbarSite">
-      <section class="container-fluid">
-        <section class="row justify-content-center">
-          <section class="col-lg-5">
-            <ul class="navbar-nav d-flex justify-content-end mandarparadireita">
-              <li class="nav-item text-uppercase">
-                <a class="nav-link text-warning mr-4" href="<?php echo($url_pag); ?>index.php">Home</a>
-              </li>
-              <li class="nav-item text-uppercase">
-                <a class="nav-link text-warning mr-4" href="<?php echo($url_pag); ?>chats.php">Chat</a>
-              </li>
-              <li class="nav-item text-uppercase">
-                <a class="nav-link text-warning" href="<?php echo($url_pag); ?>conteudo_pago.php">Conteúdo Adicional</a>
-              </li>
-            </ul>
+    <?php 
+      if(isset($perfil) && $perfil==true){
+          echo('
+          <section class="collapse navbar-collapse" id="navbarSite" style="height:40px">
+            <section class="container-fluid">
+              <section class="row justify-content-center">
+                <section class="col-lg-5"></section>
+                <section class="col-lg-2"></section>
+                <section class="col-lg-5"></section>
+              </section>
+            </section>
+          </section>');
+      }else{
+        echo('
+        <button class="navbar-toggler border-0" data-toggle="collapse" data-target="#navbarSite">
+          <i class="fa fa-bars text-warning" aria-hidden="true"></i>
+        </button>
+        <section class="collapse navbar-collapse" id="navbarSite">
+          <section class="container-fluid">
+            <section class="row justify-content-center">
+              <section class="col-lg-5">
+                <ul class="navbar-nav d-flex justify-content-end mandarparadireita">
+                  <li class="nav-item text-uppercase">
+                    <a class="nav-link text-warning mr-4" href="<?php echo($url_pag); ?>index.php">Home</a>
+                  </li>
+                  <li class="nav-item text-uppercase">
+                    <a class="nav-link text-warning mr-4" href="<?php echo($url_pag); ?>chats.php">Chat</a>
+                  </li>
+                  <li class="nav-item text-uppercase">
+                    <a class="nav-link text-warning" href="<?php echo($url_pag); ?>conteudo_pago.php">Conteúdo Adicional</a>
+                  </li>
+                </ul>
+              </section>
+              <section class="col-lg-2"></section>
+              <section class="col-lg-5">
+                <ul class="navbar-nav">
+                  <li class="nav-item text-uppercase">
+                    <a class="nav-link text-warning mr-4" href="<?php echo($url_pag); ?>parcerias.php">Parcerias</a>
+                  </li>
+                  <li class="nav-item text-uppercase">
+                    <a class="nav-link text-warning mr-4" href="<?php echo($url_pag); ?>compra1.php">TORNE-SE WISER</a>
+                  </li>
+                  <li class="nav-item text-uppercase">
+                    <a class="nav-link text-warning" href="<?php echo($url_pag); ?>suporte.php">Suporte</a>
+                  </li>
+                </ul>
+              </section>
+            </section>
           </section>
-          <section class="col-lg-2"></section>
-          <section class="col-lg-5">
-            <ul class="navbar-nav">
-              <li class="nav-item text-uppercase">
-                <a class="nav-link text-warning mr-4" href="<?php echo($url_pag); ?>parcerias.php">Parcerias</a>
-              </li>
-              <li class="nav-item text-uppercase">
-                <a class="nav-link text-warning mr-4" href="<?php echo($url_pag); ?>compra1.php">TORNE-SE WISER</a>
-              </li>
-              <li class="nav-item text-uppercase">
-                <a class="nav-link text-warning" href="<?php echo($url_pag); ?>suporte.php">Suporte</a>
-              </li>
-            </ul>
-          </section>
-        </section>
-      </section>
-    </section>
+        </section>');
+      }
+    ?>
   </nav>
 
 </body>

@@ -4,7 +4,8 @@
 	if(isset($_SESSION["log_status"]) && $_SESSION["log_status"]==true || isset($_SESSION["adminlog_status"]) && $_SESSION["adminlog_status"]==true){
 	$sql=('select * from usuarios where id_usuario = '. $_SESSION["id_user"].';');
 	$resul=mysqli_query($conexao, $sql);
-    $con=mysqli_fetch_array($resul);
+	$con=mysqli_fetch_array($resul);
+	$perfil=true;
 ?>
 
 <!DOCTYPE html>
