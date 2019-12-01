@@ -40,8 +40,6 @@
 </head>
 
 <body>
-
-
     <section class="container-fluid header-title d-flex align-items-end">
         <nav class="button-back">
             <a href="admin.php" class="btn p-0 text-dark bg-warning"><i class="fas fa-chevron-left"></i></a>

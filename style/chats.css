@@ -16,7 +16,8 @@
   .backimage {
 	width: 100%;
 	height: 100vh;
-	background-image: url('../img/backimage.png');
+	background-image: url('../img/backimage.jpg');
+	background-size: cover;
 	background-attachment: fixed;
 	background-position: center;
 }

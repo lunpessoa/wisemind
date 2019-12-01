@@ -55,11 +55,9 @@
                         </a>
                     </div>
                 </div>
-
-
-
             </section>
         </section>
+        
         <section class="corpo border-top-0">
             <section class="estudantes bg-dark float-left">
                 <ul class="pt-3 pl-0" id="list-users">
@@ -81,9 +79,7 @@
                             </ol>
                             <div class='font-weight-bold isTyping  ml-2 d-none' id='isTyping'></div>
                             <div id="bottom"></div>
-                            
                         </div>
-
                 </section>
 
                 <section class="menssage">
