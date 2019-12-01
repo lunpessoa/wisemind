@@ -209,8 +209,13 @@
     //Renderizando 
     socket.on('renderTyping', function (nome) {
         let teste = document.getElementById('isTyping')
+<<<<<<< HEAD
+        teste.setAttribute('class', 'font-weight-bold isTyping  ml-2')
+        teste.innerHTML = `${nome} esta digitando`
+=======
         teste.setAttribute('class', 'isTyping  ml-3')
         teste.innerHTML = `${nome} está digitando...`
+>>>>>>> a9686d289cd5dedda090b7d60cfba8c1c0abcc0a
         document.getElementById('bottom').scrollIntoView(false);
  
 

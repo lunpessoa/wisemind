@@ -310,7 +310,7 @@ if (!isset($_SESSION)) {
 	<script src="node_modules/OverlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 	<script src="node_modules/OverlayScrollbars/js/OverlayScrollbars.min.js"></script>
 	<script src="js/javinha.js"></script>
-
+	<div id="note"></div>
 </body>
 <script type="text/javascript" src="js/enderecamento.js"></script>
 

@@ -126,10 +126,6 @@
 ?>
 
 
-
-
-
-
 <script>
 	var tempo = 1000
 	$(document).ready(function () {

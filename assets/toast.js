@@ -312,3 +312,41 @@ var salaCheia = function(){
 
     })
 }
+
+var preencha = function(){
+    $(document).ready(function () {
+        $('.toast').toast('show');
+        var header = document.getElementById("header")
+        var strong = document.createElement('strong')
+        strong.setAttribute('class','mr-5 text-light')
+        var cabecalho = document.createTextNode('CHAT')
+        strong.appendChild(cabecalho)
+        header.appendChild(strong)
+        var mae = document.getElementById('toast')
+        var div = document.createElement('div')
+        div.setAttribute('class','toast-body toast-red text-light')
+        var text = document.createTextNode('Preencha todos os campos!')
+        div.appendChild(text)
+        mae.appendChild(div)
+
+    })
+}
+
+var cep = function(){
+    $(document).ready(function () {
+        $('.toast').toast('show');
+        var header = document.getElementById("header")
+        var strong = document.createElement('strong')
+        strong.setAttribute('class','mr-5 text-light')
+        var cabecalho = document.createTextNode('CHAT')
+        strong.appendChild(cabecalho)
+        header.appendChild(strong)
+        var mae = document.getElementById('toast')
+        var div = document.createElement('div')
+        div.setAttribute('class','toast-body toast-red text-light')
+        var text = document.createTextNode('CEP não encotrado!')
+        div.appendChild(text)
+        mae.appendChild(div)
+
+    })
+}
