@@ -50,7 +50,7 @@
                         <label class="ml-3 area-chat font-weight-bold font-italic">Área: <?php echo($con_sala['Area']);?></label>
                     </div>
                     <div class="col-6 justify-content-end align-items-center d-flex">
-                        <a class="sair-btn text-decoration-none text-danger mr-3" href="" id="sair">
+                        <a class="sair-btn text-decoration-none mr-3" href="" id="sair">
                             <i class="fas fa-sign-out-alt"></i>
                         </a>
                     </div>
@@ -209,8 +209,8 @@
     //Renderizando 
     socket.on('renderTyping', function (nome) {
         let teste = document.getElementById('isTyping')
-        teste.setAttribute('class', 'font-weight-bold isTyping  ml-2')
-        teste.innerHTML = `${nome} ta digitando igual otario`
+        teste.setAttribute('class', 'isTyping  ml-3')
+        teste.innerHTML = `${nome} está digitando...`
         document.getElementById('bottom').scrollIntoView(false);
  
 
@@ -221,7 +221,7 @@
     
         let teste = document.getElementById('isTyping')
         setTimeout(function(){
-            teste.setAttribute('class', 'font-weight-bold isTyping  ml-2 d-none')
+            teste.setAttribute('class', 'isTyping  ml-3 d-none')
         }, 1500);
         
         
