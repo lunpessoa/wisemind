@@ -77,8 +77,7 @@ if (!isset($_SESSION)) {
 				</div>
 			</div>
 			<div class="card-body bg-dark border-0">
-				<form name="cad" action="assets/cadastro.php" method="POST" class="container was-validated"
-					novalidate="" autocomplete="off">
+				<form name="cad" action="assets/cadastro.php" method="POST" class="container was-validated" autocomplete="off">
 					<div id="fase1">
 						<div class="row ">
 							<div class="col-6">
@@ -228,7 +227,7 @@ if (!isset($_SESSION)) {
 							<div class="col-12">
 								<label class="text-font" style="color:#b5b5b5;">Experiência</label>
 								<div class="input-group form-group">
-									<input id="experiencia" type="text" class="form-control text-light" rows="5"
+									<input id="experiencia" type="text" class="form-control text-light"
 										style="background-color:#282d30; border-color:#1f1f1f;resize: none;"
 										name="experiencia" required>
 								</div>
@@ -250,7 +249,7 @@ if (!isset($_SESSION)) {
 								<label style="color:#b5b5b5; text-dark" class="text-font">Senha</label>
 								<div class="input-group form-group">
 									<input type="password" class="form-control text-light"
-										style="background-color:#282d30; border-color:#1f1f1f;" name="senha" required>
+										style="background-color:#282d30; border-color:#1f1f1f;" minlength="8" maxlength="20" name="senha" required>
 								</div>
 							</div>
 						</div>
@@ -259,7 +258,7 @@ if (!isset($_SESSION)) {
 								<label style="color:#b5b5b5; text-dark" class="text-font">Confirmar Senha</label>
 								<div class="input-group form-group">
 									<input type="password" class="form-control text-light"
-										style="background-color:#282d30; border-color:#1f1f1f;" name="confirme"
+										style="background-color:#282d30; border-color:#1f1f1f;" minlength="8" maxlength="20" name="confirme"
 										required>
 								</div>
 							</div>

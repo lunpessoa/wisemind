@@ -70,7 +70,7 @@
 					<div class="card mb-3 w-100">
 						<div class="row">
 							<div class="col-md-4">
-								<img src="img/patricia.png" class="card-img" alt="...">
+								<img src="img/patricia.jpg" class="card-img" alt="...">
 							</div>
 							<div class="col-md-8">
 								<div class="card-body text-left">

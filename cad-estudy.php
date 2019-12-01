@@ -77,14 +77,14 @@ if (!isset($_SESSION)) {
 				</div>
 			</div>
 			<div class="card-body bg-dark border-0">
-				<form name="cad" action="assets/cadastro.php" method="POST" class="container was-validated"
-					novalidate="" autocomplete="off">
+				<form name="cad" id="se-form" action="assets/cadastro.php" method="POST"
+					class="container was-validated" autocomplete="off">
 					<div class="row">
 						<div class="col-6">
 							<label style="color:#b5b5b5; text-dark" class="text-font">Nome</label>
 							<div class="input-group form-group">
 								<input type="text" placeholder="Ex. Joaquim" class="form-control text-light" name="nome"
-									style="background-color:#282d30; border-color:#1f1f1f;" required="">
+									style="background-color:#282d30; border-color:#1f1f1f;" required>
 
 							</div>
 						</div>
@@ -126,7 +126,7 @@ if (!isset($_SESSION)) {
 						<div class="col-12">
 							<label style="color:#b5b5b5; text-dark" class="text-font">Senha</label>
 							<div class="input-group form-group">
-								<input type="password" class="form-control text-light" name="senha"
+								<input type="password" class="form-control text-light" minlength="8" maxlength="20" name="senha"
 									style="background-color:#282d30; border-color:#1f1f1f;" required>
 							</div>
 						</div>
@@ -135,14 +135,14 @@ if (!isset($_SESSION)) {
 						<div class="col-12">
 							<label style="color:#b5b5b5; text-dark" class="text-font">Confirmar Senha</label>
 							<div class="input-group form-group">
-								<input type="password" class="form-control text-light" name="confirme"
+								<input type="password" class="form-control text-light" minlength="8" maxlength="20" name="confirme"
 									style="background-color:#282d30; border-color:#1f1f1f;" required>
 							</div>
 						</div>
 					</div>
 					<div class="form-group d-flex justify-content-center mt-3">
 						<input type="submit" value="Criar" class="btn w-50 entrar" name="criar"
-							style="font-waight:bold; font-family:'Franklin Gothic';" required>
+							style="font-waight:bold; font-family:'Franklin Gothic';">
 					</div>
 				</form>
 			</div>
@@ -157,7 +157,6 @@ if (!isset($_SESSION)) {
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="node_modules/jquery/dist/jquery.js"></script>
-	<script src="js/javinha.js"></script>
 	<script src="node_modules/popper.js/dist/umd/popper.js"></script>
 	<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
 	<script src="node_modules/JQuery-Mask/dist/jquery.mask.min.js"></script>
@@ -166,7 +165,6 @@ if (!isset($_SESSION)) {
 	<script src="node_modules/OverlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 	<script src="node_modules/OverlayScrollbars/js/OverlayScrollbars.min.js"></script>
 	<script src="js/javinha.js"></script>
-
 
 </body>
 <script>
@@ -219,4 +217,5 @@ if (!isset($_SESSION)) {
 	}
 
 ?>
+
 </html>

@@ -57,7 +57,7 @@
 }
 
 .sobre-back {
-    background-image: url('../img/fundo_azul.png');
+    background-image: url('../img/fundo_azul.jpg');
     background-attachment: fixed;
     background-position: center;
     padding-top: 80px;
@@ -68,8 +68,9 @@
 
 .plataform-back {
     height: 200px;
-    background-image: url('../img/fundo.png');
+    background-image: url('../img/fundo.jpg');
     background-attachment: fixed;
+    background-position: center;
     margin-top: 100px;
 }
 
@@ -207,7 +208,7 @@
 
 .profissional {
     height: 100%;
-    background-image: url('../img/profissional.png');
+    background-image: url('../img/profissional.jpg');
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;

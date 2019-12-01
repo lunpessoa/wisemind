@@ -50,16 +50,14 @@
                         <label class="ml-3 area-chat font-weight-bold font-italic">Área: <?php echo($con_sala['Area']);?></label>
                     </div>
                     <div class="col-6 justify-content-end align-items-center d-flex">
-                        <a class="sair-btn text-decoration-none text-danger mr-3" href="" id="sair">
+                        <a class="sair-btn text-decoration-none mr-3" href="" id="sair">
                             <i class="fas fa-sign-out-alt"></i>
                         </a>
                     </div>
                 </div>
-
-
-
             </section>
         </section>
+        
         <section class="corpo border-top-0">
             <section class="estudantes bg-dark float-left">
                 <ul class="pt-3 pl-0" id="list-users">
@@ -81,9 +79,7 @@
                             </ol>
                             <div class='font-weight-bold isTyping  ml-2 d-none' id='isTyping'></div>
                             <div id="bottom"></div>
-                            
                         </div>
-
                 </section>
 
                 <section class="menssage">
@@ -213,8 +209,13 @@
     //Renderizando 
     socket.on('renderTyping', function (nome) {
         let teste = document.getElementById('isTyping')
+<<<<<<< HEAD
         teste.setAttribute('class', 'font-weight-bold isTyping  ml-2')
         teste.innerHTML = `${nome} esta digitando`
+=======
+        teste.setAttribute('class', 'isTyping  ml-3')
+        teste.innerHTML = `${nome} está digitando...`
+>>>>>>> a9686d289cd5dedda090b7d60cfba8c1c0abcc0a
         document.getElementById('bottom').scrollIntoView(false);
  
 
@@ -225,7 +226,7 @@
     
         let teste = document.getElementById('isTyping')
         setTimeout(function(){
-            teste.setAttribute('class', 'font-weight-bold isTyping  ml-2 d-none')
+            teste.setAttribute('class', 'isTyping  ml-3 d-none')
         }, 1500);
         
         

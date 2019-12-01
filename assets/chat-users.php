@@ -20,9 +20,9 @@
          $resul=mysqli_query($conexao, $sqlmostrar);
             while($con_usu=mysqli_fetch_array($resul)){
                 if($con_sala['id_profissional']==$con_usu['id_usuario']){
-                    $color="#ffcf29";
+                    $color='style="color:#ffcf29"';
                 }else{
-                    $color="#949799";
+                    $color='';
                 }
                 echo('<li class="list-user">
                 
@@ -32,11 +32,11 @@
                         <img class="class-img" src="../../'.$con_usu['perfil_img'].'" alt="">
                         <div class="status"></div>
                     </div>
-                    <label style="color: '.$color.';" class="user-name ml-3 mt-3 h6 font-weight-bold font-italic">'.$con_usu['Nome'].'<br><label
+                    <label '.$color.' class="user-name pointer ml-3 mt-3 h6 font-weight-bold font-italic">'.$con_usu['Nome'].'<br><label
                             class="users-situacao font-weight-bold font-italic">#Online</label> </label>
                 </a>');
                 if($con_sala['id_profissional']==$_SESSION["id_user"]){
-                    echo('<button class="exc-btn btn nav-link h5 pt-4 mb-0 " onclick="apagar('.$con_usu['id_usuario'].')"  name="'.$con_usu['id_usuario'].'"><i class="fas fa-user-slash"></i></button>');
+                    echo('<button class="btn exc-btn" onclick="apagar('.$con_usu['id_usuario'].')"  name="'.$con_usu['id_usuario'].'"><i class="fas fa-user-slash"></i></button>');
                 }
             echo('</li>');
             }
