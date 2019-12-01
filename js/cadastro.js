@@ -10,7 +10,11 @@ var enviar = document.getElementById("enviar")
 botao.onclick = () => {
     if(document.getElementById("nome").value.length < 1 || document.getElementById("sobrenome").value.length < 1
     || document.getElementById("datanasc").value.length < 10 || document.getElementById("celular").value.length < 15){
-        alert("preencha todos os campos")
+        $.post('./assets/cadastro.php', {
+            tudo: true,
+        }, function (data) {
+            $("#note").html(data);
+        });
     }else{
         fase1.style.display = "none"
         fase2.style.display = "block"
@@ -24,7 +28,11 @@ botao2.onclick = () => {
     || document.getElementById("bairro").value.length < 1 || document.getElementById("numero-camp").value.length < 1
     || document.getElementById("rua").value.length < 1 || document.getElementById("cep").value.length < 1
     || document.getElementById("cpf-camp").value.length < 14){
-        alert("preencha todos os campos")
+        $.post('./assets/cadastro.php', {
+            tudo: true,
+        }, function (data) {
+            $("#note").html(data);
+        });
     }else{
         fase2.style.display = "none"
         fase3.style.display = "block"
@@ -37,7 +45,11 @@ botao2.onclick = () => {
 botao3.onclick = () => {
     if(document.getElementById("certificado").value.length < 1 
     || document.getElementById("experiencia").value.length < 1){
-        alert("preencha todos os campos")
+        $.post('./assets/cadastro.php', {
+            tudo: true,
+        }, function (data) {
+            $("#note").html(data);
+        });
     }else{
     fase2.style.display = "none"
     fase3.style.display = "none"

@@ -179,7 +179,7 @@
 	<script src="js/javinha.js"></script>
 
 	<script type="text/javascript" src="js/enderecamento.js"></script>
-
+	<div id="note"></div>
 </body>
 
 

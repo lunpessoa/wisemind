@@ -214,7 +214,7 @@
     socket.on('renderTyping', function (nome) {
         let teste = document.getElementById('isTyping')
         teste.setAttribute('class', 'font-weight-bold isTyping  ml-2')
-        teste.innerHTML = `${nome} ta digitando igual otario`
+        teste.innerHTML = `${nome} esta digitando`
         document.getElementById('bottom').scrollIntoView(false);
  
 

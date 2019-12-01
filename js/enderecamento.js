@@ -45,7 +45,11 @@ $(document).ready(function () {
                     else {
                         //CEP pesquisado não foi encontrado.
                         limpa_formulário_cep();
-                        alert("CEP não encontrado.");
+                        $.post('./assets/cadastro.php', {
+                            cep: true,
+                        }, function (data) {
+                            $("#note").html(data);
+                        });
                     }
                 });
 

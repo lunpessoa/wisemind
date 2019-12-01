@@ -135,4 +135,37 @@
         }
     }
 
+
+    if(isset($_POST['tudo'])){
+      
+        $tudo = $_POST['tudo'];
+        if($tudo==true){ 
+        include('../toast.php');
+        echo("
+        <script src='assets/toast.js'></script>
+        <script>preencha()</script>");
+
+        $tudo=false;
+        }
+
+
+    
+    }
+
+    if(isset($_POST['cep'])){
+      
+        $cep = $_POST['cep'];
+        if($cep==true){ 
+        include('../toast.php');
+        echo("
+        <script src='assets/toast.js'></script>
+        <script>cep()</script>");
+
+        $cep=false;
+        }
+
+
+    
+    }
+
 ?>
