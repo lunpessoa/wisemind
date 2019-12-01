@@ -45,8 +45,8 @@
             <section class="info-class position-relative bg-dark float-right p-3">
                 <div class="row">
                     <div class="col-6">
-                        <label class="ml-3 chat-name text-light font-weight-bold font-italic mb-0">Sala:
-                            <?php echo($con_sala['nome']." id=".$con_sala['id_Chat']) ?></label><br>
+                        <label class="ml-3 chat-name text-light font-weight-bold font-italic mb-0 font-lobster">Sala:
+                            <?php echo($con_sala['nome']); ?></label><br>
                         <label class="ml-3 area-chat font-weight-bold font-italic">Área: <?php echo($con_sala['Area']);?></label>
                     </div>
                     <div class="col-6 justify-content-end align-items-center d-flex">
@@ -142,6 +142,18 @@
         });
 
     }
+
+    function sair(id) {
+        $.post('../../assets/chat-users.php', {
+            sair: id
+        }, function (id) {
+           if(id == 1){
+            window.location.href = "../../chats.php"
+            
+           }
+        });
+
+    }
 </script>
 <script>
     var socket = io.connect("http://localhost:3001", {
@@ -171,8 +183,11 @@
         socket.emit('desconectado')
     });
 
-
+    
+    
     const campoMessagem = document.getElementById('msg')
+
+    
 
 
     //Enviando a sala para o servidor - posteriormente outros dados 
@@ -311,7 +326,7 @@
     document.getElementById("sair").onclick = (e) => {
         e.preventDefault()
         socket.emit('leaveUser', sala)
-        window.location.href = '../../index.php'
+        window.location.href = '../../chats.php'
     }
 
     //numero
@@ -332,6 +347,21 @@
     socket.on('usersList', function (data) {
         renderUsers(data)
     })
+
+    socket.on('apagar_exit', function (id) {
+        sair(id)
+    })
+
+    const  apagar_usu = document.getElementById('apagar-usu')
+    console.log(apagar_usu)
+
+    function apagar(id){
+        var deletegeObject = {
+                id: id,
+                sala: sala
+            }
+        socket.emit('apagar_usu', deletegeObject)
+    }
 
     //Enviando mensagens
     document.getElementById('chat').onsubmit = function (e) {

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster|Palanquin+Dark&display=swap');
+
 body {
     height: 100vh;
     width: 100vw;
@@ -119,6 +121,17 @@ main {
     color: #af0011;
 }
 
+.exc-btn {
+    font-size: 25px;
+    position: relative;
+    color:  #282d30;
+    transition: 0.1s linear;
+}
+
+.exc-btn:hover {
+    color: #af0011;
+}
+
 .topo {
     width: 100%;
     height: 10%;
@@ -228,10 +241,10 @@ main {
 
 .status:hover{
     border-color:#282d30;
+    
 }
 
 .user-name {
-    color: #949799;
     width: 50%;
     cursor: pointer;
 }

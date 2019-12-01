@@ -162,6 +162,9 @@ io.on('connection', socket => {
         socket.broadcast.to(sala).emit('receiveMessage', data)
     })
 
+    socket.on('apagar_usu', id => {
+        socket.broadcast.to(id.sala).emit('apagar_exit',id.id)
+    })
 
     socket.on('disconnect', ()=>{
 
