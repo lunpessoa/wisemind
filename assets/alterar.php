@@ -319,7 +319,7 @@
         }
 
         //Alterar iamgem usuario
-        if(isset($_FILES['avatar'])){
+        if(isset($_POST['alter-img'])){
 
         date_default_timezone_set("Brazil/East"); 
 
@@ -328,8 +328,6 @@
         $dir = '../img/perfil/'; //Diretório para uploads
 
         move_uploaded_file($_FILES['avatar']['tmp_name'], $dir.$new_name); //Fazer upload do arquivo
-
-        echo('<script>window.location.href = "../painel-usu.php";</script>');
 
         $sqlinserir = ('update usuarios set perfil_img = "img/perfil/'.$new_name.'" where id_usuario = '.$_SESSION['id_user'].';');
                     $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));
