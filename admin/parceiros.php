@@ -142,6 +142,12 @@
 
                     if(isset($_GET['emp'])){
                         $emp = $_GET['emp'];
+
+                        $sql_emp=('select empresa_img from empresa where id_empresa='.$emp.';');
+                        $resul_emp = mysqli_query($conexao, $sql_emp);
+                        $img_emp = mysqli_fetch_array($resul_emp);
+                        unlink('../img/parcerias/'.$img_emp['empresa_img']); //Apaga imagem!
+
                         $sql_del1=('delete from vagas_emprego where id_empresa='.$emp.';');   
                         $sql_del2=('delete from empresa where id_empresa='.$emp.';');   
                         $del_sql1=mysqli_query($conexao, $sql_del1);    
