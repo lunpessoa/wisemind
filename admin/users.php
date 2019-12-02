@@ -83,7 +83,7 @@
                                 echo('<td> <a class="btn text-clear disabled" href="painel-usu-alter?us='.$con_usu['id_usuario'].'"><i class="fas fa-user-edit"></i></a></td>');
                                 echo('<td> <a class="btn text-clear disabled" href="users.php?ex='.$con_usu['id_usuario'].'"><i class="fas fa-user-times"></i></a></td>');
                             } else{
-                                echo('<td> <a class="btn text-clear" href="painel-usu-alter?us='.$con_usu['id_usuario'].'"><i class="fas fa-user-edit"></i></a></td>');
+                                echo('<td> <a class="btn text-clear" href="painel-usu-alter.php?us='.$con_usu['id_usuario'].'"><i class="fas fa-user-edit"></i></a></td>');
                                 echo('<td> <a class="btn text-clear" href="users.php?ex='.$con_usu['id_usuario'].'"><i class="fas fa-user-times"></i></a></td>');
                             }
                             echo('</tr>');
