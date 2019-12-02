@@ -88,9 +88,6 @@ if (!isset($_SESSION)) {
 						<input type="password" class="form-control text-light"
 							style="background-color:#282d30; border-color:#1f1f1f;" name="senha">
 					</div>
-					<div class="d-flex justify-content links">
-						<a href="fgt.php" class="btn text-warning p-0 mb-3 text-font">Esqueceu sua senha?</a>
-					</div>
 					<div class="form-group d-flex justify-content-center mt-3">
 						<input type="submit" value="Entrar" class="btn w-50 entrar" name="Entrar"
 							style="font-waight:bold; font-family:'Franklin Gothic';">
