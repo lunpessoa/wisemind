@@ -112,6 +112,7 @@
 <!-- <script src="/socket.io/socket.io.js"></script>  -->
 <script src="../node_modules/socket.io-client/dist/socket.io.js"></script>
 <?php
+    
     echo("<script>
         var id_usuario = ".$con['id_usuario']."
         var nome_usuario = '".$con['Nome']."'
@@ -161,7 +162,6 @@
         'reconnectionAttempts': 1
     })
 
-
     //var socket = io(); //conexão
     //sala
     socket.on('connect_error', function () {
@@ -184,14 +184,12 @@
     const campoMessagem = document.getElementById('msg')
 
     
-
-
     //Enviando a sala para o servidor - posteriormente outros dados 
     var funSala = function (salaObject) {
         var salaObject = {
             id_usuario,
             nome_usuario,
-            sala
+            sala: sala
         }
         socket.emit('sala', salaObject)
     }
@@ -205,17 +203,17 @@
     })
     
 
+    socket.on('apagado',()=> {
+       window.location.href = "../../chats.php"
+
+    })
+
     
     //Renderizando 
     socket.on('renderTyping', function (nome) {
         let teste = document.getElementById('isTyping')
-<<<<<<< HEAD
-        teste.setAttribute('class', 'font-weight-bold isTyping  ml-2')
-        teste.innerHTML = `${nome} esta digitando`
-=======
         teste.setAttribute('class', 'isTyping  ml-3')
         teste.innerHTML = `${nome} está digitando...`
->>>>>>> a9686d289cd5dedda090b7d60cfba8c1c0abcc0a
         document.getElementById('bottom').scrollIntoView(false);
  
 
@@ -228,9 +226,6 @@
         setTimeout(function(){
             teste.setAttribute('class', 'isTyping  ml-3 d-none')
         }, 1500);
-        
-        
-
     })
 
     //usuario esta digitando...up
