@@ -31,7 +31,7 @@ if(isset($_SESSION["log_status"]) && $_SESSION["log_status"]==true){ // ATUALIZA
   $endereco = explode("/",$endereco);
   $endereco = end($endereco);
 
-  if (strpos($endereco, 'painel-usu-alter?us') !== false) {
+  if (strpos($endereco, 'painel-usu-alter.php?us') !== false) {
     $url_status = false;
     $url_sair = '../assets/destroy-log.php';
     $url_pag = '../';
