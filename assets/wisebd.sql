@@ -95,7 +95,7 @@ CREATE TABLE `empresa` (
   `descricao` mediumtext NOT NULL,
   PRIMARY KEY (`id_empresa`),
   UNIQUE KEY `id_empresa` (`id_empresa`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -104,7 +104,7 @@ CREATE TABLE `empresa` (
 
 LOCK TABLES `empresa` WRITE;
 /*!40000 ALTER TABLE `empresa` DISABLE KEYS */;
-INSERT INTO `empresa` VALUES (1,'ibm@gmail.com','International Business Machine Corporation','33372251012677','IBM BRASIL-INDUSTRIA MAQUINAS E SERVICOS LIMITADA','Desenvolvimento','www.ibm.com/br-pt','International Business Machine Corporation.jpg','A empresa IBM estÃ¡ voltada totalmente a Ã¡rea da tecnologia. International Business Machines Corporation Ã© uma empresa Americana, fundada por Charles Ranlett Flint no sÃ©culo XIX. Os problemas nos inspiram a consertar as coisas. TransformÃ¡-las. MelhorÃ¡-las. Eles nos desafiam a resolver o insolÃºvel.'),(5,'patriciafestas@gmail.com','Buffet PatrÃ­cia Festas','12314151354262','PatrÃ­cia Festas','Buffet','www.facebook.com/BuffetPatriciaFestas/','Buffet PatrÃ­cia Festas.jpg','Empresa PatrÃ­cia Festas tem como objetivo sperar as expectativas dos clientes em todos os momentos, antecipando as suas necessidades e atingindo grau mÃ¡ximo de satisfaÃ§Ã£o,para assim estabelecer a sua fidelizaÃ§Ã£o, valorizando a marca e as pessoas.');
+INSERT INTO `empresa` VALUES (1,'ibm@gmail.com','International Business Machine Corporation','33372251012677','IBM BRASIL-INDUSTRIA MAQUINAS E SERVICOS LIMITADA','Desenvolvimento','www.ibm.com/br-pt','International.jpg','A empresa IBM estÃ¡ voltada totalmente a Ã¡rea da tecnologia. International Business Machines Corporation Ã© uma empresa Americana, fundada por Charles Ranlett Flint no sÃ©culo XIX. Os problemas nos inspiram a consertar as coisas. TransformÃ¡-las. MelhorÃ¡-las. Eles nos desafiam a resolver o insolÃºvel.'),(5,'patriciafestas@gmail.com','Buffet PatrÃ­cia Festas','12314151354262','PatrÃ­cia Festas','Buffet','www.facebook.com/BuffetPatriciaFestas/','Buffet.jpg','Empresa PatrÃ­cia Festas tem como objetivo sperar as expectativas dos clientes em todos os momentos, antecipando as suas necessidades e atingindo grau mÃ¡ximo de satisfaÃ§Ã£o,para assim estabelecer a sua fidelizaÃ§Ã£o, valorizando a marca e as pessoas.');
 /*!40000 ALTER TABLE `empresa` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -411,4 +411,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-12-01 23:18:52
+-- Dump completed on 2019-12-02  0:26:35
