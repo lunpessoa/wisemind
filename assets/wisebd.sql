@@ -72,7 +72,7 @@ CREATE TABLE `date_login` (
 
 LOCK TABLES `date_login` WRITE;
 /*!40000 ALTER TABLE `date_login` DISABLE KEYS */;
-INSERT INTO `date_login` VALUES ('2019-12-01','2019-12-02 02:17:53',1);
+INSERT INTO `date_login` VALUES ('2019-12-02','2019-12-02 06:15:57',1);
 /*!40000 ALTER TABLE `date_login` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -175,14 +175,14 @@ DROP TABLE IF EXISTS `mensagens`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `mensagens` (
   `id_message` int(11) NOT NULL AUTO_INCREMENT,
-  `mensagem` varchar(255) DEFAULT NULL,
+  `mensagem` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
   `hora_envio` time DEFAULT NULL,
-  `id_usuario` int(11) DEFAULT NULL,
-  `id_sala` int(11) DEFAULT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `id_sala` int(11) NOT NULL,
   PRIMARY KEY (`id_message`),
   KEY `fk_user` (`id_usuario`),
   KEY `fk_sala` (`id_sala`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -367,7 +367,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'Luan','Pessoa','2002-02-10','luan@gmail.com','f0f631ec3d37a8fd5c1d2067e5acea509ef0b337','11996412897','img/perfil/sem-foto.png',NULL,NULL,NULL,NULL,NULL,NULL,NULL,3);
+INSERT INTO `usuarios` VALUES (1,'Wise','Mind','2002-02-10','wisemind@wisemind.com','9601391eb7edf6eca66b3c8a6d5a1ac6e27b3b92','11999999999','img/perfil/sem-foto.png',NULL,NULL,NULL,NULL,NULL,NULL,NULL,3);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -411,4 +411,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-12-02  0:26:35
+-- Dump completed on 2019-12-02  3:17:31
