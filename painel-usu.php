@@ -738,7 +738,7 @@
 									<div class="input-group form-group w-50">
 										<input type="password" class="form-control text-light"
 											style="background-color:#282d30; border-color:#1f1f1f;"
-											placeholder="Senha atual" name="senha" required>
+											placeholder="Senha atual" name="senha" minlength="8" maxlength="20" required>
 									</div>
 								</div>
 							</div>
@@ -751,7 +751,7 @@
 									<div class="input-group form-group w-50">
 										<input type="password" class="form-control text-light"
 											style="background-color:#282d30; border-color:#1f1f1f;"
-											placeholder="Senha nova" name="senha-nova" required>
+											placeholder="Senha nova" name="senha-nova" minlength="8" maxlength="20" required>
 									</div>
 								</div>
 							</div>
@@ -764,7 +764,7 @@
 									<div class="input-group form-group w-50">
 										<input type="password" class="form-control text-light"
 											style="background-color:#282d30; border-color:#1f1f1f;"
-											placeholder="Senha nova" name="confirm-senha" required>
+											placeholder="Senha nova" name="confirm-senha" minlength="8" maxlength="20" required>
 									</div>
 								</div>
 							</div>
