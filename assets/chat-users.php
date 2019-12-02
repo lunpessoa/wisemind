@@ -26,7 +26,7 @@
                 }
                 echo('<li class="list-user">
                 
-                <a href="../../perfil-view?us='.$con_usu['id_usuario'].'" class="users text-decoration-none" target="_blank">
+                <a href="../../perfil-view.php?us='.$con_usu['id_usuario'].'" class="users text-decoration-none" target="_blank">
                     <div class="position-relative p-0 ml-5 class-users">
                     
                         <img class="class-img" src="../../'.$con_usu['perfil_img'].'" alt="">
@@ -63,7 +63,7 @@
                 $con_use=mysqli_fetch_array($resul_use);
                 echo('<li class="text-break">
                 <div id="fild">
-                <a href="../../perfil-view?us='.$con_use['id_usuario'].'"
+                <a href="../../perfil-view.php?us='.$con_use['id_usuario'].'"
                 id="link-user" class="text-decoration-none float-left p-0" >
                 '.$con_use['Nome'].'</a>
                 <label id="data-fild" class="float-right ml-2 mb-0">'.$hora[0].':'.$hora[1].'</label><br/>
