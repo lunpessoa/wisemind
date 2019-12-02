@@ -11,7 +11,13 @@
         $data = explode("/",$data);
         $data = array_reverse($data);
         $data = implode ('-', $data);
-        
+            $sql_teste=('select * from chat where id_profissional = '.$_SESSION["id_user"].';');
+            $resul_teste=mysqli_query($conexao, $sql_teste);
+            $num = mysqli_num_rows($resul_teste);
+            if($num>0){
+                $_SESSION["chatja"] = true;
+                echo('<script>window.location.href = "../chats.php";</script>');
+            }else{
                 $sqlinserir = ('insert into chat(nome,area,num_participantes,data_criacao, id_profissional) values ("'.$nome.'","'.$area.'",0,"'.$data.'", '.$_SESSION["id_user"].');');
                 $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));
 
@@ -29,6 +35,7 @@
                     window.location.href = "../chats.php";</script>');
                     
                 }
+            }
 
 
 

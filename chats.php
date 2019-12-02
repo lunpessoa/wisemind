@@ -19,7 +19,7 @@
 	<?php include('menu.php'); ?>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="style/chats.css">
-
+	
 </head>
 
 <body>
@@ -49,9 +49,19 @@
 
 	<?php
 		if($con['id_privilegio']==2 && $con2['validacao']==true){
+			$sql3=('select * from chat where id_profissional='.$_SESSION["id_user"].';');
+			$resul3=mysqli_query($conexao, $sql3);
+			$num_salas = mysqli_num_rows($resul3);
+			$con3=mysqli_fetch_array($resul3);
+			if($num_salas == 0){
 			echo('<div class="container d-flex justify-content-center">
 			<button type="button" data-toggle="modal" data-target="#modalExemplo" class="btn btn-warning">Criar Sala</button>
-		</div>');
+			</div>');
+			}else{
+				echo('<div class="container d-flex justify-content-center">
+			<button type="button"  class="btn btn-danger" onclick="apagar('.$con3['id_Chat'].')">Apagar sala ja criada</button>
+			</div>');
+			}
 		}
 	?>
 	<section class="container mb-5">
@@ -104,8 +114,19 @@
 	<script src="node_modules/OverlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 	<script src="node_modules/OverlayScrollbars/js/OverlayScrollbars.min.js"></script>
 	<script src="js/javinha.js"></script>
+	<script src="chat/node_modules/socket.io-client/dist/socket.io.js"></script>
 
 </body>
+
+<script>
+	 var socket = io.connect("http://localhost:3001/chats")
+
+	 var apagar = function(sala){
+		socket.emit('apagarSala', sala)
+		location.reload();
+	 }
+
+</script>
 
 
 
@@ -127,7 +148,7 @@
 
 
 <script>
-	var tempo = 1000
+	var tempo = 2000
 	$(document).ready(function () {
 		$.post('assets/pesquisar.php', {
 			mostar: true,
@@ -181,10 +202,25 @@
 	});
 </script>
 <?php
+	if (!isset($_SESSION["chatja"])) {
+		$_SESSION["chatja"]=false;
+	}
+	
+	if($_SESSION["chatja"]==true){ 
+	include('toast.php');
+	echo("<script src='assets/toast.js'></script>
+	<script>chatja()</script>");
+
+	$_SESSION["chatja"]=false;
+	}
+
+?>
+<?php
 	}else{
 		$_SESSION["facaLog"]=true;
 		echo('<script>window.location.href = "login.php";</script>');
 	}
 ?>
+
 
 </html>

@@ -219,7 +219,7 @@ $_SESSION["cadastrado"]=false;
 
 ?>
 <?php if( $_SESSION["logado"]==true){ 
-  
+  include('toast.php');
   echo("<script src='assets/toast.js'></script>
   <script>logado()</script>");
 

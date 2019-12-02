@@ -12,6 +12,17 @@ body{
     padding: 0px;
 }
 
+.exc-btn {
+    position: relative;
+    color:  #6e6f70;
+    transition: 0.1s linear;
+}
+
+.exc-btn:hover {
+    color: #ffcf29;
+}
+
+
 .sair-btn{
     font-size:25px;
     position: relative;

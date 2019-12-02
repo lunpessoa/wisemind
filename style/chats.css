@@ -6,6 +6,18 @@
     transform: scale(1.1);
 }
 
+.exc-btn {
+	position: relative;
+	font-size: 30pt;
+    color:  #6e6f70;
+    transition: 0.1s linear;
+}
+
+.exc-btn:hover {
+    color: #ffcf29;
+}
+
+
 .search-place:focus {
     outline: none;
     box-shadow:none !important;

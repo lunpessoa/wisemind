@@ -1,20 +1,3 @@
-/*var express = require('express');
-var app = express();
-var path = require('path');
-var server = require('http').createServer(app);
-var io = require('socket.io')(server);
-var port = process.env.PORT || 3001;
-
-server.listen(port, () => {
-  console.log('Server listening at port %d', port);
-});
-
-// Routing
-app.use(express.static(path.join(__dirname, 'public')));
-
-*/
-
-//Teste diferentes caminhos
 
 const express = require('express')
 const path = require('path')
@@ -22,18 +5,6 @@ const app = express()
 const server = require('http').createServer(app)
 const io = require('socket.io')(server)
 var mysql = require('mysql')
-
-//Caminhos
-/*app.use(express.static(path.join(__dirname, 'public')))
-app.set('views', path.join(__dirname, 'public'))
-app.engine('html', require('ejs').renderFile)
-app.set('view engine', 'html')*/
-
-//Desativado para uso do php na pagina
-// Importa o módulo
-
-
- 
 
 // Dados do banco de Dados
 var connection = mysql.createConnection(
@@ -59,27 +30,7 @@ var users = []
 var user_total = []
 var id_user 
 var users_sala = []
-
-
-
-var nsp = io.of('/chats');
-nsp.on('connection', function(socket) {
-   console.log('someone connected');
-   
-   socket.on('apagarSala',(sala)=>{
-        io.of('/').to(sala).emit('apagado');
-        var queryChatUpdate = 'DELETE FROM chat WHERE id_Chat = '+sala+';';
-        connection.query(queryChatUpdate, function (err, result) {
-            if (err) throw err;
-            console.log(result.affectedRows + " record(s) updated");
-          });
-          var queryChatUpdate = 'DELETE FROM mensagens WHERE id_sala = '+sala+';';
-        connection.query(queryChatUpdate, function (err, result) {
-            if (err) throw err;
-            console.log(result.affectedRows + " record(s) updated");
-          });
-    })
-});
+var admin = []
 
 
 //Conexão Socket
@@ -117,6 +68,7 @@ io.on('connection', socket => {
                 return con
             }
         })
+
         if(clients.length>20){
             socket.to(socket.sala).emit('chockFull');
         }
@@ -138,7 +90,14 @@ io.on('connection', socket => {
         
     })
 
+    socket.on('adminOn',()=>{
+       if(admin.indexOf(socket.user) === -1){
+            admin.push(socket.user)
+        }
+        console.log(admin)
+        socket.adminStatus = true;
 
+    })
 
     //usuario clica em sair
     socket.on('leaveUser',(sala)=>{
@@ -185,7 +144,17 @@ io.on('connection', socket => {
     })
 
     socket.on('disconnect', ()=>{
-
+        if( socket.adminStatus==true){
+            if(admin.indexOf(socket.user) !== -1){
+                sala = admin.filter((item)=>{
+                let con = item.split("-")
+                if(con[0]==socket.info){
+                    return con[1]
+                }
+            })
+                socket.broadcast.to(socket.sala).emit('adminExit')
+            }
+        }
 
         socket.leave(socket.rooms);
 
@@ -217,10 +186,6 @@ io.on('connection', socket => {
         })
         }
         console.log(users_sala)
-
-        
-
-       
 
         console.log(clients)
         if(clients!=undefined && socket.sala!=undefined){
