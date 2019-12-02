@@ -48,7 +48,7 @@
 			</div>
 			<div class="col-6 p-0 justify-content-center d-flex">
 				<div class="w-75 overflow-hidden zoom">
-					<img class="img-fluid" alt="zoom" src="img/areas/tecno/computação.jpg">
+					<img class="img-fluid" alt="zoom" src="img/areas/tecno/computacao.jpg">
 				</div>
 			</div>
 		</div>
