@@ -694,19 +694,6 @@
 							novalidate="" autocomplete="off">
 							<div class="row p-2">
 								<div class="col-3">
-									<span class="text-clear">Senha atual</span>
-								</div>
-								<div class="col-9">
-									<div class="input-group form-group w-50">
-										<input type="password" class="form-control text-light"
-											style="background-color:#282d30; border-color:#1f1f1f;"
-											placeholder="Senha atual" name="senha" required>
-									</div>
-								</div>
-							</div>
-
-							<div class="row p-2">
-								<div class="col-3">
 									<span class="text-clear">Nova senha</span>
 								</div>
 								<div class="col-9">

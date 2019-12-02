@@ -235,34 +235,27 @@
         
         //senha
         if(isset($_POST['Enviar-6'])){
-            $senha = $_POST['senha'];
             $senha_nova = $_POST['senha-nova'];
             $confirm_senha = $_POST['confirm-senha'];
             
-            if(sha1($senha.$con['Email'])==$con['Senha']){
-                if($senha_nova==$confirm_senha){
+            if($senha_nova==$confirm_senha){
 
-                
-                    $sqlinserir = ('update usuarios set Senha = "'.sha1($senha_nova.$con['Email']).'" where id_usuario = '.$_SESSION["user"].';');
-                    $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));
+                $sqlinserir = ('update usuarios set Senha = "'.sha1($senha_nova.$con['Email']).'" where id_usuario = '.$_SESSION["user"].';');
+                $inserir=mysqli_query($conexao,$sqlinserir) or die (mysqli_error($conexao));
 
 
-                    if($inserir){
-                        $_SESSION["alterado"]=true;
-                        echo('<script>window.location.href = "./painel-usu-alter.php?us='.$_SESSION["user"].'";</script>');
-                    }else{
-                        $_SESSION["erroAlterado"]=true;
-                        echo('<script>window.location.href = "./painel-usu-alter.php?us='.$_SESSION["user"].'";</script>');
-                    }
-                
+                if($inserir){
+                    $_SESSION["alterado"]=true;
+                    echo('<script>window.location.href = "./painel-usu-alter.php?us='.$_SESSION["user"].'";</script>');
                 }else{
-                    $_SESSION["senhas-difer"]=true;
+                    $_SESSION["erroAlterado"]=true;
                     echo('<script>window.location.href = "./painel-usu-alter.php?us='.$_SESSION["user"].'";</script>');
                 }
-             }else{
+            
+            }else{
                 $_SESSION["senhas-difer"]=true;
                 echo('<script>window.location.href = "./painel-usu-alter.php?us='.$_SESSION["user"].'";</script>');
-             }
+            }
         }
 
         if(isset($_POST['Enviar-8'])){
