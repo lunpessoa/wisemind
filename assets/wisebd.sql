@@ -39,7 +39,7 @@ CREATE TABLE `chat` (
   `id_profissional` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_Chat`),
   KEY `id_profissional` (`id_profissional`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -48,7 +48,6 @@ CREATE TABLE `chat` (
 
 LOCK TABLES `chat` WRITE;
 /*!40000 ALTER TABLE `chat` DISABLE KEYS */;
-INSERT INTO `chat` VALUES (1,'InglÃªs','Linguagens',0,'2019-11-17',3);
 /*!40000 ALTER TABLE `chat` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -73,7 +72,7 @@ CREATE TABLE `date_login` (
 
 LOCK TABLES `date_login` WRITE;
 /*!40000 ALTER TABLE `date_login` DISABLE KEYS */;
-INSERT INTO `date_login` VALUES ('2019-11-17','2019-11-18 02:47:16',1),('2019-11-17','2019-11-20 03:30:40',2),('2019-11-17','2019-11-20 04:12:53',3),('2019-11-17','2019-11-18 02:39:51',4),('2019-11-17','2019-11-18 02:46:40',5);
+INSERT INTO `date_login` VALUES ('2019-12-01','2019-12-02 02:17:53',1);
 /*!40000 ALTER TABLE `date_login` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -86,20 +85,17 @@ DROP TABLE IF EXISTS `empresa`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `empresa` (
   `id_empresa` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(150) NOT NULL,
   `Nome_Fantasia` varchar(150) NOT NULL,
-  `CNPJ` int(14) NOT NULL,
+  `CNPJ` varchar(14) NOT NULL,
   `Razao_Social` varchar(255) NOT NULL,
   `Area_de_Atuacao` varchar(100) NOT NULL,
-  `Estado` varchar(2) NOT NULL,
-  `CEP` varchar(9) NOT NULL,
-  `Cidade` varchar(100) DEFAULT NULL,
-  `Bairro` varchar(100) DEFAULT NULL,
-  `Rua` varchar(150) DEFAULT NULL,
-  `Cell` varchar(12) NOT NULL,
-  `Tell` varchar(11) NOT NULL,
+  `link` varchar(255) NOT NULL,
+  `empresa_img` varchar(64) NOT NULL,
+  `descricao` mediumtext NOT NULL,
   PRIMARY KEY (`id_empresa`),
   UNIQUE KEY `id_empresa` (`id_empresa`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -108,6 +104,7 @@ CREATE TABLE `empresa` (
 
 LOCK TABLES `empresa` WRITE;
 /*!40000 ALTER TABLE `empresa` DISABLE KEYS */;
+INSERT INTO `empresa` VALUES (1,'ibm@gmail.com','International Business Machine Corporation','33372251012677','IBM BRASIL-INDUSTRIA MAQUINAS E SERVICOS LIMITADA','Desenvolvimento','www.ibm.com/br-pt','International Business Machine Corporation.jpg','A empresa IBM estÃ¡ voltada totalmente a Ã¡rea da tecnologia. International Business Machines Corporation Ã© uma empresa Americana, fundada por Charles Ranlett Flint no sÃ©culo XIX. Os problemas nos inspiram a consertar as coisas. TransformÃ¡-las. MelhorÃ¡-las. Eles nos desafiam a resolver o insolÃºvel.'),(5,'patriciafestas@gmail.com','Buffet PatrÃ­cia Festas','12314151354262','PatrÃ­cia Festas','Buffet','www.facebook.com/BuffetPatriciaFestas/','Buffet PatrÃ­cia Festas.jpg','Empresa PatrÃ­cia Festas tem como objetivo sperar as expectativas dos clientes em todos os momentos, antecipando as suas necessidades e atingindo grau mÃ¡ximo de satisfaÃ§Ã£o,para assim estabelecer a sua fidelizaÃ§Ã£o, valorizando a marca e as pessoas.');
 /*!40000 ALTER TABLE `empresa` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -125,7 +122,7 @@ CREATE TABLE `especializacao` (
   `id_prof` int(11) NOT NULL,
   PRIMARY KEY (`id_espc`),
   KEY `fk_EspecProf` (`id_prof`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -134,7 +131,6 @@ CREATE TABLE `especializacao` (
 
 LOCK TABLES `especializacao` WRITE;
 /*!40000 ALTER TABLE `especializacao` DISABLE KEYS */;
-INSERT INTO `especializacao` VALUES (1,'EducaÃ§Ã£o','Pedagogo',3),(2,'CiÃªncias','QuÃ­mico',3),(3,'Pedro','Fildelis',3),(4,'SaÃºde','Professor de Ed. FÃ­sica',3);
 /*!40000 ALTER TABLE `especializacao` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -153,6 +149,7 @@ CREATE TABLE `estudantes` (
   `chat_presenca` int(11) DEFAULT NULL,
   `id_vgs` int(11) DEFAULT NULL,
   `Plano` tinyint(1) DEFAULT NULL,
+  `Plano_val` datetime DEFAULT NULL,
   PRIMARY KEY (`id_estudante`),
   UNIQUE KEY `id_vgs` (`id_vgs`),
   KEY `chat` (`chat_presenca`)
@@ -165,8 +162,36 @@ CREATE TABLE `estudantes` (
 
 LOCK TABLES `estudantes` WRITE;
 /*!40000 ALTER TABLE `estudantes` DISABLE KEYS */;
-INSERT INTO `estudantes` VALUES (1,'Estudando',NULL,NULL,NULL,NULL,0),(2,'Estudando',NULL,NULL,NULL,NULL,0),(4,'Estudando',NULL,NULL,NULL,NULL,1),(5,'Estudando',NULL,NULL,NULL,NULL,1);
+INSERT INTO `estudantes` VALUES (1,'Estudando',NULL,NULL,NULL,NULL,0,NULL);
 /*!40000 ALTER TABLE `estudantes` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `mensagens`
+--
+
+DROP TABLE IF EXISTS `mensagens`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `mensagens` (
+  `id_message` int(11) NOT NULL AUTO_INCREMENT,
+  `mensagem` varchar(255) DEFAULT NULL,
+  `hora_envio` time DEFAULT NULL,
+  `id_usuario` int(11) DEFAULT NULL,
+  `id_sala` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id_message`),
+  KEY `fk_user` (`id_usuario`),
+  KEY `fk_sala` (`id_sala`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `mensagens`
+--
+
+LOCK TABLES `mensagens` WRITE;
+/*!40000 ALTER TABLE `mensagens` DISABLE KEYS */;
+/*!40000 ALTER TABLE `mensagens` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -180,7 +205,7 @@ CREATE TABLE `moderador` (
   `id_moderar` int(11) NOT NULL AUTO_INCREMENT,
   `privilegio` varchar(30) NOT NULL,
   PRIMARY KEY (`id_moderar`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -189,6 +214,7 @@ CREATE TABLE `moderador` (
 
 LOCK TABLES `moderador` WRITE;
 /*!40000 ALTER TABLE `moderador` DISABLE KEYS */;
+INSERT INTO `moderador` VALUES (1,'Estudante'),(2,'Profissional'),(3,'Admin');
 /*!40000 ALTER TABLE `moderador` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -210,7 +236,7 @@ CREATE TABLE `pedido` (
   UNIQUE KEY `id_pedido` (`id_pedido`),
   KEY `pedido` (`id_estuda`),
   KEY `plano` (`id_plano`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -274,7 +300,6 @@ CREATE TABLE `profissional` (
 
 LOCK TABLES `profissional` WRITE;
 /*!40000 ALTER TABLE `profissional` DISABLE KEYS */;
-INSERT INTO `profissional` VALUES (3,'Sla','Sla',1,NULL,NULL);
 /*!40000 ALTER TABLE `profissional` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -293,7 +318,7 @@ CREATE TABLE `suporte` (
   `telefone` varchar(12) NOT NULL,
   `descricao` mediumtext NOT NULL,
   PRIMARY KEY (`id_suporte`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -302,7 +327,7 @@ CREATE TABLE `suporte` (
 
 LOCK TABLES `suporte` WRITE;
 /*!40000 ALTER TABLE `suporte` DISABLE KEYS */;
-INSERT INTO `suporte` VALUES (1,'Luan','Pessoa','luan2@gmail.com','11996412897','Jorge Gay');
+INSERT INTO `suporte` VALUES (3,'Douglas','Kurtz','douglas@gmail.com','11111111111','Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss deixa as pessoas mais interessantis. Em pÃ© sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Cevadis im ampola pa arma uma pindureta.'),(2,'Antonio','Garcia','antonio@gmail.com','11996412897','aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'),(4,'Greg','Doido','greg@gmail.com','11111111111','Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss deixa as pessoas mais interessantis. Em pÃ© sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Cevadis im ampola pa arma uma pindureta.'),(6,'Evandro','Loco','evando@gmail.com','13145636902','Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss deixa as pessoas mais interessantis. Em pÃ© sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Cevadis im ampola pa arma uma pindureta.'),(7,'Julia','Lima','julia@gmail.com','12314814199','Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss deixa as pessoas mais interessantis. Em pÃ© sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Cevadis im ampola pa arma uma pindureta.');
 /*!40000 ALTER TABLE `suporte` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -333,7 +358,7 @@ CREATE TABLE `usuarios` (
   PRIMARY KEY (`id_usuario`),
   UNIQUE KEY `id_usuario` (`id_usuario`),
   KEY `privilegio` (`id_privilegio`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -342,7 +367,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'Luan','Pessoa','2002-02-10','luan@gmail.com','5629a37edd0faffb55ed645dd205d548ca1d3d79','11996412897','img/perfil/sem-foto.png',NULL,NULL,NULL,NULL,NULL,NULL,NULL,3),(2,'Joana','Maria','1111-11-11','joana123@gmail.com','d36c05a31b0d027c7eb61204257b44da5003fe47','11111111111','img/perfil/sem-foto.png',NULL,NULL,NULL,NULL,'00000000',NULL,'11111111111',1),(3,'Mateus','Lima','2002-02-10','luan2@gmail.com','4bc70743717959d7df4045f6b5f39f16e489b62b','11940711175','img/perfil/3.jpg','SÃ£o Paulo','Av Predks,adk','SP',122,'07500000','13 de Maio','99999999999',2),(4,'Jorge','Gay','2002-02-02','jorge@gmail.com','5f7b9704c1491a1266e27ea3b2eb13a648be9f6a','11940711171','img/perfil/sem-foto.png',NULL,NULL,NULL,NULL,'00000000',NULL,'44444444444',1),(5,'Douglas','Kurtz','1111-11-11','doug@gmail.com','1784bb260b45cc1c5675a253a144bae73e4b1682','11111111111','img/perfil/sem-foto.png',NULL,NULL,NULL,NULL,NULL,NULL,NULL,1);
+INSERT INTO `usuarios` VALUES (1,'Luan','Pessoa','2002-02-10','luan@gmail.com','f0f631ec3d37a8fd5c1d2067e5acea509ef0b337','11996412897','img/perfil/sem-foto.png',NULL,NULL,NULL,NULL,NULL,NULL,NULL,3);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -364,7 +389,7 @@ CREATE TABLE `vagas_emprego` (
   PRIMARY KEY (`id_vgs`),
   UNIQUE KEY `id_vgs` (`id_vgs`),
   KEY `empresa` (`id_empresa`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -373,6 +398,7 @@ CREATE TABLE `vagas_emprego` (
 
 LOCK TABLES `vagas_emprego` WRITE;
 /*!40000 ALTER TABLE `vagas_emprego` DISABLE KEYS */;
+INSERT INTO `vagas_emprego` VALUES (1,'Analista de Sistemas','Necessidade de melhoramento da seguranÃ§a em nossos servidores.','Tecnologia','EstagiÃ¡rio','SeguranÃ§a da InformaÃ§Ã£o',1),(2,'Desenvolvedor de Software','Desenvolvimento de softwares inovadores para a empresa.','Tecnologia','EstagiÃ¡rio','Desenvolvimento de sistemas complexos',1),(6,'GestÃ£o de Pessoas','Trabalhar com a contabilidade da empresa.','AdministraÃ§Ã£o','Executivo de Contas','Contabilidade',5),(5,'Gastronomia','Necessitamos de um cozinheiro para cozinhar em grandes eventos.','Buffet','Cozinheiro','Cozinhar para grandes eventos',5);
 /*!40000 ALTER TABLE `vagas_emprego` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -385,4 +411,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-11-20 14:36:49
+-- Dump completed on 2019-12-01 23:18:52
