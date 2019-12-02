@@ -42,6 +42,8 @@ host : 'localhost',
 user : 'root',
 password : '',
 database : 'wisemind',
+charset : 'utf8mb4'
+
 }
 );
 
@@ -60,7 +62,28 @@ var user_total = []
 var id_user 
 var users_sala = []
 
+function retira_acentos(str) 
+{
 
+    com_acento = "ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝŔÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿŕ";
+
+sem_acento = "AAAAAAACEEEEIIIIDNOOOOOOUUUUYRsBaaaaaaaceeeeiiiionoooooouuuuybyr";
+    novastr="";
+    for(i=0; i<str.length; i++) {
+        troca=false;
+        for (a=0; a<com_acento.length; a++) {
+            if (str.substr(i,1)==com_acento.substr(a,1)) {
+                novastr+=sem_acento.substr(a,1);
+                troca=true;
+                break;
+            }
+        }
+        if (troca==false) {
+            novastr+=str.substr(i,1);
+        }
+    }
+    return novastr;
+}    
 
 var nsp = io.of('/chats');
 nsp.on('connection', function(socket) {
@@ -159,6 +182,7 @@ io.on('connection', socket => {
     function getHours() {
         var data = new Date()
         var hora = data.getHours()
+        hora = hora-3;
         var min = data.getMinutes()
         if (min < 10) {
             min = "0" + min
@@ -170,7 +194,8 @@ io.on('connection', socket => {
 
     //Enviando mensagem
     socket.on('sendMessage', data => {
-        var queryMessage = 'insert into mensagens (mensagem, hora_envio, id_usuario, id_sala) values ("'+data.message+'", "'+getHours()+'",'+data.id_usuario+','+data.sala+');';
+        
+        var queryMessage = 'insert into mensagens (mensagem, hora_envio, id_usuario, id_sala) values ("'+retira_acentos(data.message)+'", "'+getHours()+'",'+data.id_usuario+','+data.sala+');';
              connection.query(queryMessage, function (err, result) {
             if (err) throw err;
             console.log(result.affectedRows + " record(s) updated");
@@ -181,6 +206,7 @@ io.on('connection', socket => {
     })
 
     socket.on('apagar_usu', id => {
+        console.log(id)
         socket.broadcast.to(id.sala).emit('apagar_exit',id.id)
     })
 

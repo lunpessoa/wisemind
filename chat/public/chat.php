@@ -144,6 +144,7 @@
         $.post('../../assets/chat-users.php', {
             sair: id
         }, function (id) {
+            console.log(id)
            if(id == 1){
             window.location.href = "../../chats.php"
             
