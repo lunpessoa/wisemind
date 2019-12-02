@@ -10,6 +10,13 @@
         $descricao=$_POST['descricao'];
         $area=$_POST['area'];
 
+        function tirarAcentos($string){
+            return preg_replace(array("/(á|à|ã|â|ä)/","/(Á|À|Ã|Â|Ä)/","/(é|è|ê|ë)/","/(É|È|Ê|Ë)/","/(í|ì|î|ï)/","/(Í|Ì|Î|Ï)/","/(ó|ò|õ|ô|ö)/","/(Ó|Ò|Õ|Ô|Ö)/","/(ú|ù|û|ü)/","/(Ú|Ù|Û|Ü)/","/(ñ)/","/(Ñ)/", "/(ç)/", "/(Ç)/", "/(~)/"),explode(" ","a A e E i I o O u U n N c C z"),$string);
+        }
+
+        $file_name = tirarAcentos($nome);
+        $file_name = explode(" ", $file_name);
+
         function limpar_texto($str){ 
             return preg_replace("/[^0-9]/", "", $str); 
         }
@@ -18,7 +25,7 @@
 
         date_default_timezone_set("Brazil/East"); 
         $ext = strtolower(substr($_FILES['logo']['name'],-4)); //Pegando extensão do arquivo
-        $new_name =  $nome. $ext; //Definindo um novo nome para o arquivo
+        $new_name =  $file_name[0]. $ext; //Definindo um novo nome para o arquivo
         $dir = '../img/parcerias/'; //Diretório para uploads
 
         move_uploaded_file($_FILES['logo']['tmp_name'], $dir.$new_name); 
