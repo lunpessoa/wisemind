@@ -111,6 +111,12 @@
                         </li>
                         <hr class="w-75 bg-white my-1">
                         <li class="nav-item config-item">
+                            <a class="nav-link h5 mb-0 px-3 pt-4" href="parceiros.php">
+                            <i class="fas fa-users mr-1"></i>
+                                <label class="h5 cursor-pointer">Parceiros</label></a>
+                        </li>
+                        <hr class="w-75 bg-white my-1">
+                        <li class="nav-item config-item">
                             <a class="nav-link h5 mb-0 px-3 pt-4" href="../index.php">
                                 <i class="fas fa-sign-out-alt"></i>
                                 <label class="h5 cursor-pointer">Sair</label>

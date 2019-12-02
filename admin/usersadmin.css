@@ -66,6 +66,10 @@ tbody {
     background-color: rgba(47, 49, 56, 0.75);
 }
 
+.resize{
+    resize: none;
+}
+
 @keyframes float {
     0% {
         transform: translatex(20px);
